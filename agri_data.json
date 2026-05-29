@@ -199,13 +199,13 @@
       "onion":     {"value": 0,    "unit": "/qtl", "season": "N/A",         "effective": "N/A"}
     }
   },
-  "doca": {
-    "paddy":     {"retail": [], "wholesale": []},
-    "wheat":     {"retail": [], "wholesale": []},
+"doca": {
+    "paddy":     {"retail": [{"date": "2026-05-29", "price": 43.23, "unit": "/kg", "source": "DOCA-Rice"}], "wholesale": []},
+    "wheat":     {"retail": [{"date": "2026-05-29", "price": 31.05, "unit": "/kg", "source": "DOCA"}], "wholesale": []},
     "maize":     {"retail": [], "wholesale": []},
-    "sugarcane": {"retail": [], "wholesale": []},
-    "tur":       {"retail": [], "wholesale": []},
-    "gram":      {"retail": [], "wholesale": []},
-    "onion":     {"retail": [], "wholesale": []}
-  }
+    "sugarcane": {"retail": [{"date": "2026-05-29", "price": 46.82, "unit": "/kg", "source": "DOCA-Sugar"}], "wholesale": []},
+    "tur":       {"retail": [{"date": "2026-05-29", "price": 122.47, "unit": "/kg", "source": "DOCA"}], "wholesale": []},
+    "gram":      {"retail": [{"date": "2026-05-29", "price": 85.34, "unit": "/kg", "source": "DOCA"}], "wholesale": []},
+    "onion":     {"retail": [{"date": "2026-05-29", "price": 25.67, "unit": "/kg", "source": "DOCA"}], "wholesale": []}
+}
 }
