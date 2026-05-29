@@ -589,48 +589,13 @@
   },
   "config": {
     "msp": {
-      "paddy": {
-        "value": 2300,
-        "unit": "/qtl",
-        "season": "KMS 2025-26",
-        "effective": "2025-10-01"
-      },
-      "wheat": {
-        "value": 2425,
-        "unit": "/qtl",
-        "season": "RMS 2025-26",
-        "effective": "2025-04-01"
-      },
-      "maize": {
-        "value": 2090,
-        "unit": "/qtl",
-        "season": "KMS 2025-26",
-        "effective": "2025-10-01"
-      },
-      "sugarcane": {
-        "value": 340,
-        "unit": "/qtl",
-        "season": "2025-26",
-        "effective": "2025-10-01"
-      },
-      "tur": {
-        "value": 7550,
-        "unit": "/qtl",
-        "season": "KMS 2025-26",
-        "effective": "2025-10-01"
-      },
-      "gram": {
-        "value": 5650,
-        "unit": "/qtl",
-        "season": "RMS 2025-26",
-        "effective": "2025-04-01"
-      },
-      "onion": {
-        "value": 0,
-        "unit": "/qtl",
-        "season": "N/A",
-        "effective": "N/A"
-      }
+      "paddy":     {"value": 2441, "unit": "/qtl", "season": "KMS 2026-27", "effective": "2026-10-01"},
+      "wheat":     {"value": 2585, "unit": "/qtl", "season": "RMS 2026-27", "effective": "2026-04-01"},
+      "maize":     {"value": 2410, "unit": "/qtl", "season": "KMS 2026-27", "effective": "2026-10-01"},
+      "sugarcane": {"value": 365,  "unit": "/qtl", "season": "FRP 2026-27", "effective": "2026-10-01"},
+      "tur":       {"value": 8450, "unit": "/qtl", "season": "KMS 2026-27", "effective": "2026-10-01"},
+      "gram":      {"value": 5875, "unit": "/qtl", "season": "RMS 2026-27", "effective": "2026-04-01"},
+      "onion":     {"value": 0,    "unit": "/qtl", "season": "N/A",         "effective": "N/A"}
     }
   }
 }
