@@ -133,6 +133,20 @@ def save_to_file(entries):
     else:
         data = {"updated": ""}
 
+    # Ensure config section exists with MSP defaults (user edits these in GitHub)
+    if "config" not in data:
+        data["config"] = {
+            "msp": {
+                "paddy":     {"value": 2300, "unit": "/qtl", "season": "KMS 2025-26", "effective": "2025-10-01"},
+                "wheat":     {"value": 2425, "unit": "/qtl", "season": "RMS 2025-26", "effective": "2025-04-01"},
+                "maize":     {"value": 2090, "unit": "/qtl", "season": "KMS 2025-26", "effective": "2025-10-01"},
+                "sugarcane": {"value": 340,  "unit": "/qtl", "season": "2025-26",     "effective": "2025-10-01"},
+                "tur":       {"value": 7550, "unit": "/qtl", "season": "KMS 2025-26", "effective": "2025-10-01"},
+                "gram":      {"value": 5650, "unit": "/qtl", "season": "RMS 2025-26", "effective": "2025-04-01"},
+                "onion":     {"value": 0,    "unit": "/qtl", "season": "N/A",         "effective": "N/A"}
+            }
+        }
+
     for entry in entries:
         key = entry["commodity"]
 
