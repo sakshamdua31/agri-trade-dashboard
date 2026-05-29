@@ -1,10 +1,87 @@
 {
-  "updated": "2026-05-29 11:36:52 IST",
+  "updated": "2026-05-29 12:27:06 IST",
   "paddy": {
     "history": [
       {
         "date": "2026-05-29",
         "collected_at": "2026-05-29 11:36:52 IST",
+        "commodity": "paddy",
+        "total_markets": 56,
+        "avg_price": 2385,
+        "max_price": 4200,
+        "min_price": 1290,
+        "top_markets": [
+          {
+            "market": "Devarkonda(Dindi) APMC",
+            "state": "Telangana",
+            "variety": "MTU-1010",
+            "modal_price": 4200,
+            "min_price": 4200,
+            "max_price": 4200
+          },
+          {
+            "market": "Devarakonda APMC",
+            "state": "Telangana",
+            "variety": "MTU-1010",
+            "modal_price": 4200,
+            "min_price": 4200,
+            "max_price": 4200
+          },
+          {
+            "market": "Devarkonda(Mallepalli) APMC",
+            "state": "Telangana",
+            "variety": "MTU-1010",
+            "modal_price": 4200,
+            "min_price": 4200,
+            "max_price": 4200
+          },
+          {
+            "market": "Kothagiri APMC",
+            "state": "Tamil Nadu",
+            "variety": "Other",
+            "modal_price": 3250,
+            "min_price": 3000,
+            "max_price": 3500
+          },
+          {
+            "market": "Imphal APMC",
+            "state": "Manipur",
+            "variety": "Other",
+            "modal_price": 3000,
+            "min_price": 3000,
+            "max_price": 3000
+          },
+          {
+            "market": "Lamlong Bazaar APMC",
+            "state": "Manipur",
+            "variety": "Other",
+            "modal_price": 3000,
+            "min_price": 3000,
+            "max_price": 3000
+          },
+          {
+            "market": "Thoubal APMC",
+            "state": "Manipur",
+            "variety": "Other",
+            "modal_price": 2875,
+            "min_price": 2875,
+            "max_price": 2875
+          },
+          {
+            "market": "Bishenpur APMC",
+            "state": "Manipur",
+            "variety": "Other",
+            "modal_price": 2875,
+            "min_price": 2875,
+            "max_price": 2875
+          }
+        ],
+        "arrival_date": "29/05/2026"
+      },
+      {
+        "date": "2026-05-29",
+        "session": "morning",
+        "collected_at": "2026-05-29 12:27:06 IST",
         "commodity": "paddy",
         "total_markets": 56,
         "avg_price": 2385,
