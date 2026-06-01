@@ -13,6 +13,7 @@ Output:
 import json
 import os
 import time
+import statistics
 import urllib.request
 import urllib.parse
 from datetime import datetime, timezone, timedelta
@@ -22,16 +23,51 @@ API_KEY = os.environ.get("API_KEY", "")
 RESOURCE_ID = "9ef84268-d588-465a-a308-a864a43d0070"
 DATA_FILE = "agri_data.json"
 
-# Commodity key → API filter name (must match your HTML dashboard)
+# Commodity config: API filter name + data-cleaning rules
+#  - exclude_varieties: drop any record whose variety contains these (case-insensitive).
+#    Used to remove processed "Dal" and wrong pulses that contaminate whole-grain averages.
+#  - sane_min / sane_max: drop modal prices outside this band (contamination backstop).
+#    Set generously so real price swings are kept but gross errors (e.g. dal in gram) are dropped.
 COMMODITIES = {
-    "paddy":     "Paddy(Dhan)(Common)",
-    "wheat":     "Wheat",
-    "maize":     "Maize",
-    "sugarcane": "Sugarcane",
-    "tur":       "Arhar (Tur/Red Gram)(Whole)",
-    "gram":      "Bengal Gram(Gram)(Whole)",
-    "onion":     "Onion"
+    "paddy": {
+        "filter": "Paddy(Dhan)(Common)",
+        "exclude_varieties": [],
+        "sane_min": 1000, "sane_max": 6000
+    },
+    "wheat": {
+        "filter": "Wheat",
+        "exclude_varieties": [],
+        "sane_min": 1500, "sane_max": 5000
+    },
+    "maize": {
+        "filter": "Maize",
+        "exclude_varieties": ["Popcorn"],
+        "sane_min": 800, "sane_max": 4000
+    },
+    "sugarcane": {
+        "filter": "Sugarcane",
+        "exclude_varieties": [],
+        "sane_min": 150, "sane_max": 600
+    },
+    "tur": {
+        "filter": "Arhar (Tur/Red Gram)(Whole)",
+        "exclude_varieties": ["Dal", "Black Gram", "Green Gram", "Bengal"],
+        "sane_min": 3500, "sane_max": 13000
+    },
+    "gram": {
+        "filter": "Bengal Gram(Gram)(Whole)",
+        "exclude_varieties": ["Dal", "Green", "Black", "Moong", "Urad", "Tur", "Arhar"],
+        "sane_min": 3500, "sane_max": 9000
+    },
+    "onion": {
+        "filter": "Onion",
+        "exclude_varieties": [],
+        "sane_min": 100, "sane_max": 10000
+    }
 }
+
+# Retail farmer markets that report consumer-level (not wholesale) prices — exclude.
+EXCLUDE_MARKETS = ["Uzhavar Sandhai"]
 
 # IST timezone
 IST = timezone(timedelta(hours=5, minutes=30))
@@ -70,8 +106,16 @@ def fetch_prices(commodity_filter):
 
 
 def process_records(records, commodity_key):
-    """Clean records and compute daily summary."""
+    """Clean records and compute daily summary with contamination + outlier removal."""
+    conf = COMMODITIES[commodity_key]
+    exclude_varieties = [v.lower() for v in conf.get("exclude_varieties", [])]
+    sane_min = conf.get("sane_min", 0)
+    sane_max = conf.get("sane_max", 10**9)
+
     clean = []
+    excluded_variety = 0   # dropped as wrong variety / processed dal
+    excluded_market = 0    # dropped as retail farmer market
+    excluded_band = 0      # dropped as outside sane price band
     for r in records:
         try:
             modal = int(float(r.get("modal_price", 0)))
@@ -79,11 +123,28 @@ def process_records(records, commodity_key):
             continue
         if modal <= 0:
             continue
+
+        variety = r.get("variety", "")
+        market = r.get("market", "")
+
+        # 1. Drop retail farmer markets (consumer-level, not wholesale)
+        if any(ex.lower() in market.lower() for ex in EXCLUDE_MARKETS):
+            excluded_market += 1
+            continue
+        # 2. Drop processed dal / wrong-pulse varieties
+        if any(ev in variety.lower() for ev in exclude_varieties):
+            excluded_variety += 1
+            continue
+        # 3. Drop prices outside the sane band (gross contamination backstop)
+        if modal < sane_min or modal > sane_max:
+            excluded_band += 1
+            continue
+
         clean.append({
-            "market": r.get("market", ""),
+            "market": market,
             "state": r.get("state", ""),
             "district": r.get("district", ""),
-            "variety": r.get("variety", ""),
+            "variety": variety,
             "min_price": int(float(r.get("min_price", 0))),
             "max_price": int(float(r.get("max_price", 0))),
             "modal_price": modal,
@@ -93,8 +154,22 @@ def process_records(records, commodity_key):
     if not clean:
         return None
 
+    # 4. Statistical outlier removal via IQR (only with enough data points)
+    outliers_removed = 0
+    if len(clean) >= 8:
+        modals_all = sorted(r["modal_price"] for r in clean)
+        q1, _, q3 = statistics.quantiles(modals_all, n=4)
+        iqr = q3 - q1
+        lo = q1 - 1.5 * iqr
+        hi = q3 + 1.5 * iqr
+        filtered = [r for r in clean if lo <= r["modal_price"] <= hi]
+        outliers_removed = len(clean) - len(filtered)
+        if filtered:  # never wipe everything
+            clean = filtered
+
     modals = [r["modal_price"] for r in clean]
-    avg_price = round(sum(modals) / len(modals))
+    avg_price = round(statistics.mean(modals))
+    median_price = round(statistics.median(modals))
 
     top_markets = sorted(clean, key=lambda x: x["modal_price"], reverse=True)[:8]
 
@@ -108,8 +183,15 @@ def process_records(records, commodity_key):
         "commodity": commodity_key,
         "total_markets": len(clean),
         "avg_price": avg_price,
+        "median_price": median_price,
         "max_price": max(modals),
         "min_price": min(modals),
+        "cleaning": {
+            "excluded_variety": excluded_variety,
+            "excluded_market": excluded_market,
+            "excluded_band": excluded_band,
+            "outliers_removed": outliers_removed
+        },
         "top_markets": [
             {
                 "market": m["market"],
@@ -182,7 +264,8 @@ def main():
 
     entries = []
 
-    for key, api_name in COMMODITIES.items():
+    for key, conf in COMMODITIES.items():
+        api_name = conf["filter"]
         print(f"\n  {key.upper()} ({api_name})...")
 
         records = fetch_prices(api_name)
@@ -196,7 +279,9 @@ def main():
             continue
 
         entries.append(entry)
-        print(f"  ✓ Avg: ₹{entry['avg_price']} | Markets: {entry['total_markets']}")
+        cl = entry["cleaning"]
+        dropped = cl["excluded_variety"] + cl["excluded_market"] + cl["excluded_band"] + cl["outliers_removed"]
+        print(f"  ✓ Avg: ₹{entry['avg_price']} | Median: ₹{entry['median_price']} | Markets: {entry['total_markets']} | Dropped: {dropped}")
 
         # Wait 5 seconds between API calls to avoid rate limiting
         time.sleep(5)
