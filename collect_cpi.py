@@ -138,26 +138,38 @@ def main():
 
     if "cpi" not in data or not isinstance(data.get("cpi"), dict):
         data["cpi"] = {}
-    data["cpi"]["base_year"] = "2024"
-    data["cpi"]["updated"] = datetime.now(IST).strftime("%Y-%m-%d %H:%M:%S IST")
 
-    saved = 0
+    changed = False
     for key, entry in parsed.items():
         hist = data["cpi"].get(key)
         if not isinstance(hist, list):
             hist = []
-        # dedup by year + month_code
+        # Is this exact month already stored with the same index? -> no change
+        existing = next((h for h in hist
+                         if h.get("year") == entry["year"] and h.get("month_code") == entry["month_code"]), None)
+        if existing and abs(float(existing.get("index", -1)) - entry["index"]) < 1e-9:
+            data["cpi"][key] = hist  # unchanged, keep as-is
+            print(f"  {key:10s} index {entry['index']:.2f}  (no change)")
+            continue
+        # New month, or a revised index for the same month -> update
         hist = [h for h in hist if not (h.get("year") == entry["year"] and h.get("month_code") == entry["month_code"])]
         hist.append(entry)
         hist.sort(key=lambda h: (h.get("year", ""), h.get("month_code", 0)))
         hist = hist[-120:]  # keep last 10 years monthly
         data["cpi"][key] = hist
-        saved += 1
-        print(f"  {key:10s} index {entry['index']:.2f}")
+        changed = True
+        print(f"  {key:10s} index {entry['index']:.2f}  (updated)")
+
+    if not changed:
+        print(f"No CPI change since last run ({MONTHS[mcode]} {year} already stored). Nothing to commit.")
+        return
+
+    data["cpi"]["base_year"] = "2024"
+    data["cpi"]["updated"] = datetime.now(IST).strftime("%Y-%m-%d %H:%M:%S IST")
 
     with open(DATA_FILE, "w") as f:
         json.dump(data, f, indent=2)
-    print(f"Saved CPI for {saved} commodities ({MONTHS[mcode]} {year}).")
+    print(f"Saved CPI for {MONTHS[mcode]} {year}.")
     print("Done!")
 
 
