@@ -2,9 +2,10 @@ name: Collect CPI Data (Monthly)
 
 on:
   schedule:
-    # Runs at 06:00 UTC (11:30 AM IST) on the 15th of every month.
-    # CPI for the previous month is released by MOSPI around the 12th-14th.
-    - cron: '0 6 15 * *'
+    # Runs daily at 14:00 UTC (7:30 PM IST). CPI is released mid-month;
+    # running daily means a new month is picked up within ~24h of release,
+    # instead of waiting for a fixed monthly date.
+    - cron: '0 14 * * *'
   workflow_dispatch:        # allows manual "Run workflow" from the Actions tab
 
 jobs:
