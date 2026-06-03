@@ -228,7 +228,7 @@ def main():
 
     # Save
     with open(DATA_FILE, "w") as f:
-        json.dump(data, f)    # no indent — keeps file compact
+        json.dump(data, f, indent=2)    # indent for readability on GitHub
 
     size_kb = os.path.getsize(DATA_FILE) / 1024
     print(f"\nTotal: {grand_total} market records in {DATA_FILE} ({size_kb:.0f} KB)")
