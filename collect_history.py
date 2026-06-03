@@ -28,7 +28,7 @@ from datetime import datetime, timezone, timedelta
 IST = timezone(timedelta(hours=5, minutes=30))
 DATA_FILE = "agri_history.json"
 BASE_URL = "https://api.ceda.ashoka.edu.in/v1/agmarknet/prices"
-API_KEY = os.environ.get("CEDA_API_KEY", "634aca8998a867283e2dfd476170b774f63fca1af314d103634585a712cb309f")
+API_KEY = os.environ.get("CEDA_API_KEY") or "634aca8998a867283e2dfd476170b774f63fca1af314d103634585a712cb309f"
 
 STATE_ID = 0                # All India
 BACKFILL_FROM = "2011-01-01" # CEDA has data from ~2000; 2011 matches UPAg range
