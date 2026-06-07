@@ -169,7 +169,7 @@ def process_records(records, commodity_key):
 
     modals = [r["modal_price"] for r in clean]
     avg_price = round(statistics.mean(modals))
-    median_price = round(statistics.median(modals))
+    modal_price = round(statistics.median(modals))
 
     top_markets = sorted(clean, key=lambda x: x["modal_price"], reverse=True)[:8]
 
@@ -183,7 +183,7 @@ def process_records(records, commodity_key):
         "commodity": commodity_key,
         "total_markets": len(clean),
         "avg_price": avg_price,
-        "median_price": median_price,
+        "modal_price": modal_price,
         "max_price": max(modals),
         "min_price": min(modals),
         "cleaning": {
@@ -281,7 +281,7 @@ def main():
         entries.append(entry)
         cl = entry["cleaning"]
         dropped = cl["excluded_variety"] + cl["excluded_market"] + cl["excluded_band"] + cl["outliers_removed"]
-        print(f"  ✓ Avg: ₹{entry['avg_price']} | Median: ₹{entry['median_price']} | Markets: {entry['total_markets']} | Dropped: {dropped}")
+        print(f"  ✓ Avg: ₹{entry['avg_price']} | Modal: ₹{entry['modal_price']} | Markets: {entry['total_markets']} | Dropped: {dropped}")
 
         # Wait 5 seconds between API calls to avoid rate limiting
         time.sleep(5)
