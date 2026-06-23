@@ -1,6 +1,6 @@
 """
 All-Markets Collector — data.gov.in AgMarknet.
-Fetches EVERY reporting market for all 7 commodities, paginates to get the
+Fetches EVERY reporting market for all 9 commodities, paginates to get the
 complete list, applies the same cleaning as collect_prices.py (excludes
 dal/retail/out-of-band — but NO statistical outlier removal, so every
 legitimate market is kept), and stores in agri_markets.json organized by
@@ -48,6 +48,10 @@ COMMODITIES = {
                   "sane_min": 3500, "sane_max": 9000},
     "onion":     {"filter": "Onion", "exclude_varieties": [],
                   "sane_min": 100,  "sane_max": 10000},
+    "soybean":   {"filter": "Soyabean", "exclude_varieties": [],
+                  "sane_min": 2000, "sane_max": 8000},
+    "mustard":   {"filter": "Mustard", "exclude_varieties": [],
+                  "sane_min": 3000, "sane_max": 9000},
 }
 EXCLUDE_MARKETS = ["Uzhavar Sandhai"]
 
