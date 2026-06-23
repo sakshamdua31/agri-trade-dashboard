@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-23 03:21:16 IST",
+  "updated": "2026-06-23 11:16:19 IST",
   "paddy": {
     "history": [
       {
@@ -2825,7 +2825,7 @@
       {
         "date": "2026-06-23",
         "session": "morning",
-        "collected_at": "2026-06-23 03:20:33 IST",
+        "collected_at": "2026-06-23 11:15:22 IST",
         "commodity": "paddy",
         "total_markets": 189,
         "avg_price": 2424,
@@ -5657,7 +5657,7 @@
       {
         "date": "2026-06-23",
         "session": "morning",
-        "collected_at": "2026-06-23 03:20:41 IST",
+        "collected_at": "2026-06-23 11:15:30 IST",
         "commodity": "wheat",
         "total_markets": 181,
         "avg_price": 2404,
@@ -8481,7 +8481,7 @@
       {
         "date": "2026-06-23",
         "session": "morning",
-        "collected_at": "2026-06-23 03:20:48 IST",
+        "collected_at": "2026-06-23 11:15:37 IST",
         "commodity": "maize",
         "total_markets": 194,
         "avg_price": 1982,
@@ -11604,7 +11604,7 @@
       {
         "date": "2026-06-23",
         "session": "morning",
-        "collected_at": "2026-06-23 03:20:57 IST",
+        "collected_at": "2026-06-23 11:15:45 IST",
         "commodity": "tur",
         "total_markets": 151,
         "avg_price": 6510,
@@ -14372,7 +14372,7 @@
       {
         "date": "2026-06-23",
         "session": "morning",
-        "collected_at": "2026-06-23 03:21:04 IST",
+        "collected_at": "2026-06-23 11:15:52 IST",
         "commodity": "gram",
         "total_markets": 181,
         "avg_price": 5433,
@@ -17204,7 +17204,7 @@
       {
         "date": "2026-06-23",
         "session": "morning",
-        "collected_at": "2026-06-23 03:21:11 IST",
+        "collected_at": "2026-06-23 11:15:59 IST",
         "commodity": "onion",
         "total_markets": 133,
         "avg_price": 1681,
@@ -17646,6 +17646,182 @@
         "index": 105.66,
         "base_year": "2024",
         "source": "MOSPI eSankhyiki (All-India, Combined)"
+      }
+    ]
+  },
+  "soybean": {
+    "history": [
+      {
+        "date": "2026-06-23",
+        "session": "morning",
+        "collected_at": "2026-06-23 11:16:06 IST",
+        "commodity": "soybean",
+        "total_markets": 186,
+        "avg_price": 6667,
+        "modal_price": 6711,
+        "max_price": 7250,
+        "min_price": 5855,
+        "cleaning": {
+          "excluded_variety": 0,
+          "excluded_market": 1,
+          "excluded_band": 0,
+          "outliers_removed": 13
+        },
+        "top_markets": [
+          {
+            "market": "Savner APMC",
+            "state": "Maharashtra",
+            "variety": "Yellow",
+            "modal_price": 7250,
+            "min_price": 7201,
+            "max_price": 7274
+          },
+          {
+            "market": "Bhiloda APMC",
+            "state": "Gujarat",
+            "variety": "Other",
+            "modal_price": 7175,
+            "min_price": 7000,
+            "max_price": 7350
+          },
+          {
+            "market": "Maksudangarh APMC",
+            "state": "Madhya Pradesh",
+            "variety": "Soyabeen",
+            "modal_price": 7150,
+            "min_price": 5000,
+            "max_price": 7700
+          },
+          {
+            "market": "Berasia APMC",
+            "state": "Madhya Pradesh",
+            "variety": "Soyabeen",
+            "modal_price": 7130,
+            "min_price": 5520,
+            "max_price": 7130
+          },
+          {
+            "market": "Ichhawar APMC",
+            "state": "Madhya Pradesh",
+            "variety": "Soyabeen",
+            "modal_price": 7100,
+            "min_price": 5810,
+            "max_price": 7100
+          },
+          {
+            "market": "Petlawad APMC",
+            "state": "Madhya Pradesh",
+            "variety": "Soyabeen",
+            "modal_price": 7100,
+            "min_price": 6600,
+            "max_price": 7100
+          },
+          {
+            "market": "Taal APMC",
+            "state": "Madhya Pradesh",
+            "variety": "Soyabeen",
+            "modal_price": 7100,
+            "min_price": 5400,
+            "max_price": 7100
+          },
+          {
+            "market": "Badod APMC",
+            "state": "Madhya Pradesh",
+            "variety": "Soyabeen",
+            "modal_price": 7066,
+            "min_price": 6770,
+            "max_price": 7066
+          }
+        ],
+        "arrival_date": "22/06/2026"
+      }
+    ]
+  },
+  "mustard": {
+    "history": [
+      {
+        "date": "2026-06-23",
+        "session": "morning",
+        "collected_at": "2026-06-23 11:16:14 IST",
+        "commodity": "mustard",
+        "total_markets": 184,
+        "avg_price": 6960,
+        "modal_price": 7000,
+        "max_price": 7899,
+        "min_price": 6000,
+        "cleaning": {
+          "excluded_variety": 0,
+          "excluded_market": 0,
+          "excluded_band": 5,
+          "outliers_removed": 11
+        },
+        "top_markets": [
+          {
+            "market": "Ghaziabad APMC",
+            "state": "Uttar Pradesh",
+            "variety": "Other",
+            "modal_price": 7899,
+            "min_price": 6300,
+            "max_price": 14762
+          },
+          {
+            "market": "Barad APMC",
+            "state": "Madhya Pradesh",
+            "variety": "Mustard",
+            "modal_price": 7775,
+            "min_price": 7300,
+            "max_price": 7800
+          },
+          {
+            "market": "Shivpuri APMC",
+            "state": "Madhya Pradesh",
+            "variety": "Mustard",
+            "modal_price": 7700,
+            "min_price": 7205,
+            "max_price": 7700
+          },
+          {
+            "market": "Barodamev APMC",
+            "state": "Rajasthan",
+            "variety": "Other",
+            "modal_price": 7605,
+            "min_price": 7466,
+            "max_price": 7847
+          },
+          {
+            "market": "Pohari APMC",
+            "state": "Madhya Pradesh",
+            "variety": "Mustard",
+            "modal_price": 7600,
+            "min_price": 6290,
+            "max_price": 7635
+          },
+          {
+            "market": "Khairagarh APMC",
+            "state": "Uttar Pradesh",
+            "variety": "Sarson(Black)",
+            "modal_price": 7600,
+            "min_price": 7500,
+            "max_price": 7700
+          },
+          {
+            "market": "Ateli APMC",
+            "state": "Haryana",
+            "variety": "Mustard",
+            "modal_price": 7600,
+            "min_price": 7000,
+            "max_price": 8200
+          },
+          {
+            "market": "Malpura APMC",
+            "state": "Rajasthan",
+            "variety": "Other",
+            "modal_price": 7560,
+            "min_price": 7000,
+            "max_price": 7785
+          }
+        ],
+        "arrival_date": "22/06/2026"
       }
     ]
   }
