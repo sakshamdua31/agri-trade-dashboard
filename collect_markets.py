@@ -50,6 +50,10 @@ COMMODITIES = {
                   "sane_min": 100,  "sane_max": 10000},
     "soybean":   {"filter": "Soyabean", "exclude_varieties": [],
                   "sane_min": 2000, "sane_max": 8000},
+    "groundnut": {"filter": "Groundnut", "exclude_varieties": ["Oil"],
+                  "sane_min": 3000, "sane_max": 12000},
+    "sunflower": {"filter": "Sunflower", "exclude_varieties": ["Oil"],
+                  "sane_min": 3000, "sane_max": 10000},
     "mustard":   {"filter": "Mustard", "exclude_varieties": [],
                   "sane_min": 3000, "sane_max": 9000},
 }

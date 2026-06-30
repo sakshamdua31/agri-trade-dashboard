@@ -1,5 +1,5 @@
 """
-Daily Commodity Price Collector — All 9 Commodities
+Daily Commodity Price Collector — All 11 Commodities
 Calls the data.gov.in Agmarknet API for each commodity,
 and appends daily summaries to agri_data.json.
 
@@ -68,6 +68,16 @@ COMMODITIES = {
         "filter": "Soyabean",
         "exclude_varieties": [],
         "sane_min": 2000, "sane_max": 8000
+    },
+    "groundnut": {
+        "filter": "Groundnut",
+        "exclude_varieties": ["Oil"],
+        "sane_min": 3000, "sane_max": 12000
+    },
+    "sunflower": {
+        "filter": "Sunflower",
+        "exclude_varieties": ["Oil"],
+        "sane_min": 3000, "sane_max": 10000
     },
     "mustard": {
         "filter": "Mustard",
@@ -236,6 +246,8 @@ def save_to_file(entries):
                 "tur":       {"value": 7550, "unit": "/qtl", "season": "KMS 2025-26", "effective": "2025-10-01"},
                 "gram":      {"value": 5650, "unit": "/qtl", "season": "RMS 2025-26", "effective": "2025-04-01"},
                 "onion":     {"value": 0,    "unit": "/qtl", "season": "N/A",         "effective": "N/A"},
+                "groundnut": {"value": 6783, "unit": "/qtl", "season": "KMS 2025-26", "effective": "2025-10-01"},
+                "sunflower": {"value": 7280, "unit": "/qtl", "season": "KMS 2025-26", "effective": "2025-10-01"},
                 "soybean":   {"value": 4892, "unit": "/qtl", "season": "KMS 2025-26", "effective": "2025-10-01"},
                 "mustard":   {"value": 5950, "unit": "/qtl", "season": "RMS 2025-26", "effective": "2025-04-01"}
             }
@@ -271,7 +283,7 @@ def save_to_file(entries):
 
 def main():
     now = datetime.now(IST)
-    print(f"Collecting prices for 9 commodities at {now.strftime('%Y-%m-%d %H:%M IST')}...")
+    print(f"Collecting prices for 11 commodities at {now.strftime('%Y-%m-%d %H:%M IST')}...")
     print("=" * 60)
 
     entries = []
@@ -301,7 +313,7 @@ def main():
     if entries:
         save_to_file(entries)
         print(f"\n{'=' * 60}")
-        print(f"Saved {len(entries)}/9 commodities to {DATA_FILE}")
+        print(f"Saved {len(entries)}/11 commodities to {DATA_FILE}")
     else:
         print("\nFAILED: No data collected for any commodity")
 
