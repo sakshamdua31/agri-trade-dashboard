@@ -1,0 +1,1553 @@
+{
+ "source": "CACP / Ministry of Agriculture & Farmers Welfare / PIB",
+ "unit": "Rs per Quintal",
+ "note": "Sugarcane uses FRP (Fair & Remunerative Price) set by CCEA, not MSP. Cotton in Rs/qtl for Medium Staple.",
+ "crops": {
+  "paddy_common": {
+   "label": "Paddy (Common)",
+   "season": "Kharif",
+   "data": [
+    {
+     "year": "2010-11",
+     "msp": 1000,
+     "cost_a2fl": null,
+     "cost_c2": null,
+     "yoy_change_inr": null,
+     "yoy_change_pct": null
+    },
+    {
+     "year": "2011-12",
+     "msp": 1080,
+     "cost_a2fl": null,
+     "cost_c2": null,
+     "yoy_change_inr": 80,
+     "yoy_change_pct": 8.0
+    },
+    {
+     "year": "2012-13",
+     "msp": 1250,
+     "cost_a2fl": null,
+     "cost_c2": null,
+     "yoy_change_inr": 170,
+     "yoy_change_pct": 15.7
+    },
+    {
+     "year": "2013-14",
+     "msp": 1310,
+     "cost_a2fl": null,
+     "cost_c2": null,
+     "yoy_change_inr": 60,
+     "yoy_change_pct": 4.8
+    },
+    {
+     "year": "2014-15",
+     "msp": 1360,
+     "cost_a2fl": null,
+     "cost_c2": null,
+     "yoy_change_inr": 50,
+     "yoy_change_pct": 3.8
+    },
+    {
+     "year": "2015-16",
+     "msp": 1410,
+     "cost_a2fl": null,
+     "cost_c2": null,
+     "yoy_change_inr": 50,
+     "yoy_change_pct": 3.7
+    },
+    {
+     "year": "2016-17",
+     "msp": 1470,
+     "cost_a2fl": null,
+     "cost_c2": null,
+     "yoy_change_inr": 60,
+     "yoy_change_pct": 4.3
+    },
+    {
+     "year": "2017-18",
+     "msp": 1550,
+     "cost_a2fl": null,
+     "cost_c2": null,
+     "yoy_change_inr": 80,
+     "yoy_change_pct": 5.4
+    },
+    {
+     "year": "2018-19",
+     "msp": 1750,
+     "cost_a2fl": 1166,
+     "cost_c2": 1560,
+     "yoy_change_inr": 200,
+     "yoy_change_pct": 12.9
+    },
+    {
+     "year": "2019-20",
+     "msp": 1815,
+     "cost_a2fl": 1208,
+     "cost_c2": 1578,
+     "yoy_change_inr": 65,
+     "yoy_change_pct": 3.7
+    },
+    {
+     "year": "2020-21",
+     "msp": 1868,
+     "cost_a2fl": 1245,
+     "cost_c2": 1592,
+     "yoy_change_inr": 53,
+     "yoy_change_pct": 2.9
+    },
+    {
+     "year": "2021-22",
+     "msp": 1940,
+     "cost_a2fl": 1293,
+     "cost_c2": 1635,
+     "yoy_change_inr": 72,
+     "yoy_change_pct": 3.9
+    },
+    {
+     "year": "2022-23",
+     "msp": 2040,
+     "cost_a2fl": 1360,
+     "cost_c2": 1726,
+     "yoy_change_inr": 100,
+     "yoy_change_pct": 5.2
+    },
+    {
+     "year": "2023-24",
+     "msp": 2183,
+     "cost_a2fl": 1455,
+     "cost_c2": 1803,
+     "yoy_change_inr": 143,
+     "yoy_change_pct": 7.0
+    },
+    {
+     "year": "2024-25",
+     "msp": 2300,
+     "cost_a2fl": 1521,
+     "cost_c2": 1908,
+     "yoy_change_inr": 117,
+     "yoy_change_pct": 5.4
+    },
+    {
+     "year": "2025-26",
+     "msp": 2369,
+     "cost_a2fl": null,
+     "cost_c2": null,
+     "yoy_change_inr": 69,
+     "yoy_change_pct": 3.0
+    },
+    {
+     "year": "2026-27",
+     "msp": 2441,
+     "cost_a2fl": null,
+     "cost_c2": null,
+     "yoy_change_inr": 72,
+     "yoy_change_pct": 3.0
+    }
+   ]
+  },
+  "paddy_grade_a": {
+   "label": "Paddy (Grade A)",
+   "season": "Kharif",
+   "data": [
+    {
+     "year": "2010-11",
+     "msp": 1030,
+     "yoy_change_inr": null,
+     "yoy_change_pct": null
+    },
+    {
+     "year": "2011-12",
+     "msp": 1110,
+     "yoy_change_inr": 80,
+     "yoy_change_pct": 7.8
+    },
+    {
+     "year": "2012-13",
+     "msp": 1280,
+     "yoy_change_inr": 170,
+     "yoy_change_pct": 15.3
+    },
+    {
+     "year": "2013-14",
+     "msp": 1345,
+     "yoy_change_inr": 65,
+     "yoy_change_pct": 5.1
+    },
+    {
+     "year": "2014-15",
+     "msp": 1400,
+     "yoy_change_inr": 55,
+     "yoy_change_pct": 4.1
+    },
+    {
+     "year": "2015-16",
+     "msp": 1450,
+     "yoy_change_inr": 50,
+     "yoy_change_pct": 3.6
+    },
+    {
+     "year": "2016-17",
+     "msp": 1510,
+     "yoy_change_inr": 60,
+     "yoy_change_pct": 4.1
+    },
+    {
+     "year": "2017-18",
+     "msp": 1590,
+     "yoy_change_inr": 80,
+     "yoy_change_pct": 5.3
+    },
+    {
+     "year": "2018-19",
+     "msp": 1770,
+     "yoy_change_inr": 180,
+     "yoy_change_pct": 11.3
+    },
+    {
+     "year": "2019-20",
+     "msp": 1835,
+     "yoy_change_inr": 65,
+     "yoy_change_pct": 3.7
+    },
+    {
+     "year": "2020-21",
+     "msp": 1888,
+     "yoy_change_inr": 53,
+     "yoy_change_pct": 2.9
+    },
+    {
+     "year": "2021-22",
+     "msp": 1960,
+     "yoy_change_inr": 72,
+     "yoy_change_pct": 3.8
+    },
+    {
+     "year": "2022-23",
+     "msp": 2060,
+     "yoy_change_inr": 100,
+     "yoy_change_pct": 5.1
+    },
+    {
+     "year": "2023-24",
+     "msp": 2203,
+     "yoy_change_inr": 143,
+     "yoy_change_pct": 6.9
+    },
+    {
+     "year": "2024-25",
+     "msp": 2320,
+     "yoy_change_inr": 117,
+     "yoy_change_pct": 5.3
+    },
+    {
+     "year": "2025-26",
+     "msp": 2389,
+     "yoy_change_inr": 69,
+     "yoy_change_pct": 3.0
+    },
+    {
+     "year": "2026-27",
+     "msp": 2461,
+     "yoy_change_inr": 72,
+     "yoy_change_pct": 3.0
+    }
+   ]
+  },
+  "wheat": {
+   "label": "Wheat",
+   "season": "Rabi",
+   "data": [
+    {
+     "year": "2010-11",
+     "msp": 1120,
+     "yoy_change_inr": null,
+     "yoy_change_pct": null
+    },
+    {
+     "year": "2011-12",
+     "msp": 1285,
+     "yoy_change_inr": 165,
+     "yoy_change_pct": 14.7
+    },
+    {
+     "year": "2012-13",
+     "msp": 1350,
+     "yoy_change_inr": 65,
+     "yoy_change_pct": 5.1
+    },
+    {
+     "year": "2013-14",
+     "msp": 1400,
+     "yoy_change_inr": 50,
+     "yoy_change_pct": 3.7
+    },
+    {
+     "year": "2014-15",
+     "msp": 1450,
+     "yoy_change_inr": 50,
+     "yoy_change_pct": 3.6
+    },
+    {
+     "year": "2015-16",
+     "msp": 1525,
+     "yoy_change_inr": 75,
+     "yoy_change_pct": 5.2
+    },
+    {
+     "year": "2016-17",
+     "msp": 1625,
+     "yoy_change_inr": 100,
+     "yoy_change_pct": 6.6
+    },
+    {
+     "year": "2017-18",
+     "msp": 1735,
+     "yoy_change_inr": 110,
+     "yoy_change_pct": 6.8
+    },
+    {
+     "year": "2018-19",
+     "msp": 1840,
+     "yoy_change_inr": 105,
+     "yoy_change_pct": 6.1
+    },
+    {
+     "year": "2019-20",
+     "msp": 1925,
+     "yoy_change_inr": 85,
+     "yoy_change_pct": 4.6
+    },
+    {
+     "year": "2020-21",
+     "msp": 1975,
+     "yoy_change_inr": 50,
+     "yoy_change_pct": 2.6
+    },
+    {
+     "year": "2021-22",
+     "msp": 2015,
+     "yoy_change_inr": 40,
+     "yoy_change_pct": 2.0
+    },
+    {
+     "year": "2022-23",
+     "msp": 2125,
+     "yoy_change_inr": 110,
+     "yoy_change_pct": 5.5
+    },
+    {
+     "year": "2023-24",
+     "msp": 2275,
+     "yoy_change_inr": 150,
+     "yoy_change_pct": 7.1
+    },
+    {
+     "year": "2024-25",
+     "msp": 2425,
+     "yoy_change_inr": 150,
+     "yoy_change_pct": 6.6
+    },
+    {
+     "year": "2025-26",
+     "msp": 2585,
+     "yoy_change_inr": 160,
+     "yoy_change_pct": 6.6
+    },
+    {
+     "year": "2026-27",
+     "msp": 2585,
+     "yoy_change_inr": 0,
+     "yoy_change_pct": 0.0
+    }
+   ]
+  },
+  "maize": {
+   "label": "Maize",
+   "season": "Kharif",
+   "data": [
+    {
+     "year": "2010-11",
+     "msp": 880,
+     "yoy_change_inr": null,
+     "yoy_change_pct": null
+    },
+    {
+     "year": "2011-12",
+     "msp": 980,
+     "yoy_change_inr": 100,
+     "yoy_change_pct": 11.4
+    },
+    {
+     "year": "2012-13",
+     "msp": 1175,
+     "yoy_change_inr": 195,
+     "yoy_change_pct": 19.9
+    },
+    {
+     "year": "2013-14",
+     "msp": 1310,
+     "yoy_change_inr": 135,
+     "yoy_change_pct": 11.5
+    },
+    {
+     "year": "2014-15",
+     "msp": 1310,
+     "yoy_change_inr": 0,
+     "yoy_change_pct": 0.0
+    },
+    {
+     "year": "2015-16",
+     "msp": 1325,
+     "yoy_change_inr": 15,
+     "yoy_change_pct": 1.1
+    },
+    {
+     "year": "2016-17",
+     "msp": 1365,
+     "yoy_change_inr": 40,
+     "yoy_change_pct": 3.0
+    },
+    {
+     "year": "2017-18",
+     "msp": 1425,
+     "yoy_change_inr": 60,
+     "yoy_change_pct": 4.4
+    },
+    {
+     "year": "2018-19",
+     "msp": 1700,
+     "yoy_change_inr": 275,
+     "yoy_change_pct": 19.3
+    },
+    {
+     "year": "2019-20",
+     "msp": 1760,
+     "yoy_change_inr": 60,
+     "yoy_change_pct": 3.5
+    },
+    {
+     "year": "2020-21",
+     "msp": 1850,
+     "yoy_change_inr": 90,
+     "yoy_change_pct": 5.1
+    },
+    {
+     "year": "2021-22",
+     "msp": 1870,
+     "yoy_change_inr": 20,
+     "yoy_change_pct": 1.1
+    },
+    {
+     "year": "2022-23",
+     "msp": 1962,
+     "yoy_change_inr": 92,
+     "yoy_change_pct": 4.9
+    },
+    {
+     "year": "2023-24",
+     "msp": 2090,
+     "yoy_change_inr": 128,
+     "yoy_change_pct": 6.5
+    },
+    {
+     "year": "2024-25",
+     "msp": 2225,
+     "yoy_change_inr": 135,
+     "yoy_change_pct": 6.5
+    },
+    {
+     "year": "2025-26",
+     "msp": 2400,
+     "yoy_change_inr": 175,
+     "yoy_change_pct": 7.9
+    },
+    {
+     "year": "2026-27",
+     "msp": 2410,
+     "yoy_change_inr": 10,
+     "yoy_change_pct": 0.4
+    }
+   ]
+  },
+  "tur": {
+   "label": "Tur (Arhar)",
+   "season": "Kharif",
+   "data": [
+    {
+     "year": "2010-11",
+     "msp": 3000,
+     "yoy_change_inr": null,
+     "yoy_change_pct": null
+    },
+    {
+     "year": "2011-12",
+     "msp": 3200,
+     "yoy_change_inr": 200,
+     "yoy_change_pct": 6.7
+    },
+    {
+     "year": "2012-13",
+     "msp": 3850,
+     "yoy_change_inr": 650,
+     "yoy_change_pct": 20.3
+    },
+    {
+     "year": "2013-14",
+     "msp": 4300,
+     "yoy_change_inr": 450,
+     "yoy_change_pct": 11.7
+    },
+    {
+     "year": "2014-15",
+     "msp": 4350,
+     "yoy_change_inr": 50,
+     "yoy_change_pct": 1.2
+    },
+    {
+     "year": "2015-16",
+     "msp": 4625,
+     "yoy_change_inr": 275,
+     "yoy_change_pct": 6.3
+    },
+    {
+     "year": "2016-17",
+     "msp": 5050,
+     "yoy_change_inr": 425,
+     "yoy_change_pct": 9.2
+    },
+    {
+     "year": "2017-18",
+     "msp": 5450,
+     "yoy_change_inr": 400,
+     "yoy_change_pct": 7.9
+    },
+    {
+     "year": "2018-19",
+     "msp": 5675,
+     "yoy_change_inr": 225,
+     "yoy_change_pct": 4.1
+    },
+    {
+     "year": "2019-20",
+     "msp": 5800,
+     "yoy_change_inr": 125,
+     "yoy_change_pct": 2.2
+    },
+    {
+     "year": "2020-21",
+     "msp": 6000,
+     "yoy_change_inr": 200,
+     "yoy_change_pct": 3.4
+    },
+    {
+     "year": "2021-22",
+     "msp": 6300,
+     "yoy_change_inr": 300,
+     "yoy_change_pct": 5.0
+    },
+    {
+     "year": "2022-23",
+     "msp": 6600,
+     "yoy_change_inr": 300,
+     "yoy_change_pct": 4.8
+    },
+    {
+     "year": "2023-24",
+     "msp": 7000,
+     "yoy_change_inr": 400,
+     "yoy_change_pct": 6.1
+    },
+    {
+     "year": "2024-25",
+     "msp": 7550,
+     "yoy_change_inr": 550,
+     "yoy_change_pct": 7.9
+    },
+    {
+     "year": "2025-26",
+     "msp": 8000,
+     "yoy_change_inr": 450,
+     "yoy_change_pct": 6.0
+    },
+    {
+     "year": "2026-27",
+     "msp": 8450,
+     "yoy_change_inr": 450,
+     "yoy_change_pct": 5.6
+    }
+   ]
+  },
+  "gram": {
+   "label": "Gram (Chana)",
+   "season": "Rabi",
+   "data": [
+    {
+     "year": "2010-11",
+     "msp": 2100,
+     "yoy_change_inr": null,
+     "yoy_change_pct": null
+    },
+    {
+     "year": "2011-12",
+     "msp": 2800,
+     "yoy_change_inr": 700,
+     "yoy_change_pct": 33.3
+    },
+    {
+     "year": "2012-13",
+     "msp": 3000,
+     "yoy_change_inr": 200,
+     "yoy_change_pct": 7.1
+    },
+    {
+     "year": "2013-14",
+     "msp": 3100,
+     "yoy_change_inr": 100,
+     "yoy_change_pct": 3.3
+    },
+    {
+     "year": "2014-15",
+     "msp": 3175,
+     "yoy_change_inr": 75,
+     "yoy_change_pct": 2.4
+    },
+    {
+     "year": "2015-16",
+     "msp": 3500,
+     "yoy_change_inr": 325,
+     "yoy_change_pct": 10.2
+    },
+    {
+     "year": "2016-17",
+     "msp": 4000,
+     "yoy_change_inr": 500,
+     "yoy_change_pct": 14.3
+    },
+    {
+     "year": "2017-18",
+     "msp": 4400,
+     "yoy_change_inr": 400,
+     "yoy_change_pct": 10.0
+    },
+    {
+     "year": "2018-19",
+     "msp": 4620,
+     "yoy_change_inr": 220,
+     "yoy_change_pct": 5.0
+    },
+    {
+     "year": "2019-20",
+     "msp": 4875,
+     "yoy_change_inr": 255,
+     "yoy_change_pct": 5.5
+    },
+    {
+     "year": "2020-21",
+     "msp": 5100,
+     "yoy_change_inr": 225,
+     "yoy_change_pct": 4.6
+    },
+    {
+     "year": "2021-22",
+     "msp": 5230,
+     "yoy_change_inr": 130,
+     "yoy_change_pct": 2.5
+    },
+    {
+     "year": "2022-23",
+     "msp": 5335,
+     "yoy_change_inr": 105,
+     "yoy_change_pct": 2.0
+    },
+    {
+     "year": "2023-24",
+     "msp": 5440,
+     "yoy_change_inr": 105,
+     "yoy_change_pct": 2.0
+    },
+    {
+     "year": "2024-25",
+     "msp": 5650,
+     "yoy_change_inr": 210,
+     "yoy_change_pct": 3.9
+    },
+    {
+     "year": "2025-26",
+     "msp": 5875,
+     "yoy_change_inr": 225,
+     "yoy_change_pct": 4.0
+    },
+    {
+     "year": "2026-27",
+     "msp": 5875,
+     "yoy_change_inr": 0,
+     "yoy_change_pct": 0.0
+    }
+   ]
+  },
+  "sugarcane": {
+   "label": "Sugarcane (FRP)",
+   "season": "Annual",
+   "note": "Fair & Remunerative Price set by CCEA. Basic recovery rate 10.25%. Rs per Quintal.",
+   "data": [
+    {
+     "year": "2010-11",
+     "msp": 145,
+     "yoy_change_inr": null,
+     "yoy_change_pct": null
+    },
+    {
+     "year": "2011-12",
+     "msp": 170,
+     "yoy_change_inr": 25,
+     "yoy_change_pct": 17.2
+    },
+    {
+     "year": "2012-13",
+     "msp": 210,
+     "yoy_change_inr": 40,
+     "yoy_change_pct": 23.5
+    },
+    {
+     "year": "2013-14",
+     "msp": 220,
+     "yoy_change_inr": 10,
+     "yoy_change_pct": 4.8
+    },
+    {
+     "year": "2014-15",
+     "msp": 230,
+     "yoy_change_inr": 10,
+     "yoy_change_pct": 4.5
+    },
+    {
+     "year": "2015-16",
+     "msp": 230,
+     "yoy_change_inr": 0,
+     "yoy_change_pct": 0.0
+    },
+    {
+     "year": "2016-17",
+     "msp": 230,
+     "yoy_change_inr": 0,
+     "yoy_change_pct": 0.0
+    },
+    {
+     "year": "2017-18",
+     "msp": 255,
+     "yoy_change_inr": 25,
+     "yoy_change_pct": 10.9
+    },
+    {
+     "year": "2018-19",
+     "msp": 275,
+     "yoy_change_inr": 20,
+     "yoy_change_pct": 7.8
+    },
+    {
+     "year": "2019-20",
+     "msp": 275,
+     "yoy_change_inr": 0,
+     "yoy_change_pct": 0.0
+    },
+    {
+     "year": "2020-21",
+     "msp": 285,
+     "yoy_change_inr": 10,
+     "yoy_change_pct": 3.6
+    },
+    {
+     "year": "2021-22",
+     "msp": 290,
+     "yoy_change_inr": 5,
+     "yoy_change_pct": 1.8
+    },
+    {
+     "year": "2022-23",
+     "msp": 305,
+     "yoy_change_inr": 15,
+     "yoy_change_pct": 5.2
+    },
+    {
+     "year": "2023-24",
+     "msp": 315,
+     "yoy_change_inr": 10,
+     "yoy_change_pct": 3.3
+    },
+    {
+     "year": "2024-25",
+     "msp": 340,
+     "yoy_change_inr": 25,
+     "yoy_change_pct": 7.9
+    },
+    {
+     "year": "2025-26",
+     "msp": 355,
+     "yoy_change_inr": 15,
+     "yoy_change_pct": 4.4
+    },
+    {
+     "year": "2026-27",
+     "msp": 370,
+     "yoy_change_inr": 15,
+     "yoy_change_pct": 4.2
+    }
+   ]
+  },
+  "soybean": {
+   "label": "Soybean (Yellow)",
+   "season": "Kharif",
+   "data": [
+    {
+     "year": "2010-11",
+     "msp": 1440,
+     "yoy_change_inr": null,
+     "yoy_change_pct": null
+    },
+    {
+     "year": "2011-12",
+     "msp": 1690,
+     "yoy_change_inr": 250,
+     "yoy_change_pct": 17.4
+    },
+    {
+     "year": "2012-13",
+     "msp": 2240,
+     "yoy_change_inr": 550,
+     "yoy_change_pct": 32.5
+    },
+    {
+     "year": "2013-14",
+     "msp": 2560,
+     "yoy_change_inr": 320,
+     "yoy_change_pct": 14.3
+    },
+    {
+     "year": "2014-15",
+     "msp": 2560,
+     "yoy_change_inr": 0,
+     "yoy_change_pct": 0.0
+    },
+    {
+     "year": "2015-16",
+     "msp": 2600,
+     "yoy_change_inr": 40,
+     "yoy_change_pct": 1.6
+    },
+    {
+     "year": "2016-17",
+     "msp": 2775,
+     "yoy_change_inr": 175,
+     "yoy_change_pct": 6.7
+    },
+    {
+     "year": "2017-18",
+     "msp": 3050,
+     "yoy_change_inr": 275,
+     "yoy_change_pct": 9.9
+    },
+    {
+     "year": "2018-19",
+     "msp": 3399,
+     "yoy_change_inr": 349,
+     "yoy_change_pct": 11.4
+    },
+    {
+     "year": "2019-20",
+     "msp": 3710,
+     "yoy_change_inr": 311,
+     "yoy_change_pct": 9.1
+    },
+    {
+     "year": "2020-21",
+     "msp": 3880,
+     "yoy_change_inr": 170,
+     "yoy_change_pct": 4.6
+    },
+    {
+     "year": "2021-22",
+     "msp": 3950,
+     "yoy_change_inr": 70,
+     "yoy_change_pct": 1.8
+    },
+    {
+     "year": "2022-23",
+     "msp": 4300,
+     "yoy_change_inr": 350,
+     "yoy_change_pct": 8.9
+    },
+    {
+     "year": "2023-24",
+     "msp": 4600,
+     "yoy_change_inr": 300,
+     "yoy_change_pct": 7.0
+    },
+    {
+     "year": "2024-25",
+     "msp": 4892,
+     "yoy_change_inr": 292,
+     "yoy_change_pct": 6.3
+    },
+    {
+     "year": "2025-26",
+     "msp": 5328,
+     "yoy_change_inr": 436,
+     "yoy_change_pct": 8.9
+    },
+    {
+     "year": "2026-27",
+     "msp": 5708,
+     "yoy_change_inr": 380,
+     "yoy_change_pct": 7.1
+    }
+   ]
+  },
+  "mustard": {
+   "label": "Rapeseed & Mustard",
+   "season": "Rabi",
+   "data": [
+    {
+     "year": "2010-11",
+     "msp": 1850,
+     "yoy_change_inr": null,
+     "yoy_change_pct": null
+    },
+    {
+     "year": "2011-12",
+     "msp": 2500,
+     "yoy_change_inr": 650,
+     "yoy_change_pct": 35.1
+    },
+    {
+     "year": "2012-13",
+     "msp": 3000,
+     "yoy_change_inr": 500,
+     "yoy_change_pct": 20.0
+    },
+    {
+     "year": "2013-14",
+     "msp": 3050,
+     "yoy_change_inr": 50,
+     "yoy_change_pct": 1.7
+    },
+    {
+     "year": "2014-15",
+     "msp": 3100,
+     "yoy_change_inr": 50,
+     "yoy_change_pct": 1.6
+    },
+    {
+     "year": "2015-16",
+     "msp": 3350,
+     "yoy_change_inr": 250,
+     "yoy_change_pct": 8.1
+    },
+    {
+     "year": "2016-17",
+     "msp": 3700,
+     "yoy_change_inr": 350,
+     "yoy_change_pct": 10.4
+    },
+    {
+     "year": "2017-18",
+     "msp": 4000,
+     "yoy_change_inr": 300,
+     "yoy_change_pct": 8.1
+    },
+    {
+     "year": "2018-19",
+     "msp": 4200,
+     "yoy_change_inr": 200,
+     "yoy_change_pct": 5.0
+    },
+    {
+     "year": "2019-20",
+     "msp": 4425,
+     "yoy_change_inr": 225,
+     "yoy_change_pct": 5.4
+    },
+    {
+     "year": "2020-21",
+     "msp": 4650,
+     "yoy_change_inr": 225,
+     "yoy_change_pct": 5.1
+    },
+    {
+     "year": "2021-22",
+     "msp": 5050,
+     "yoy_change_inr": 400,
+     "yoy_change_pct": 8.6
+    },
+    {
+     "year": "2022-23",
+     "msp": 5450,
+     "yoy_change_inr": 400,
+     "yoy_change_pct": 7.9
+    },
+    {
+     "year": "2023-24",
+     "msp": 5650,
+     "yoy_change_inr": 200,
+     "yoy_change_pct": 3.7
+    },
+    {
+     "year": "2024-25",
+     "msp": 5950,
+     "yoy_change_inr": 300,
+     "yoy_change_pct": 5.3
+    },
+    {
+     "year": "2025-26",
+     "msp": 6200,
+     "yoy_change_inr": 250,
+     "yoy_change_pct": 4.2
+    },
+    {
+     "year": "2026-27",
+     "msp": 6200,
+     "yoy_change_inr": 0,
+     "yoy_change_pct": 0.0
+    }
+   ]
+  },
+  "groundnut": {
+   "label": "Groundnut",
+   "season": "Kharif",
+   "data": [
+    {
+     "year": "2010-11",
+     "msp": 2300,
+     "yoy_change_inr": null,
+     "yoy_change_pct": null
+    },
+    {
+     "year": "2011-12",
+     "msp": 2700,
+     "yoy_change_inr": 400,
+     "yoy_change_pct": 17.4
+    },
+    {
+     "year": "2012-13",
+     "msp": 3700,
+     "yoy_change_inr": 1000,
+     "yoy_change_pct": 37.0
+    },
+    {
+     "year": "2013-14",
+     "msp": 4000,
+     "yoy_change_inr": 300,
+     "yoy_change_pct": 8.1
+    },
+    {
+     "year": "2014-15",
+     "msp": 4000,
+     "yoy_change_inr": 0,
+     "yoy_change_pct": 0.0
+    },
+    {
+     "year": "2015-16",
+     "msp": 4030,
+     "yoy_change_inr": 30,
+     "yoy_change_pct": 0.8
+    },
+    {
+     "year": "2016-17",
+     "msp": 4220,
+     "yoy_change_inr": 190,
+     "yoy_change_pct": 4.7
+    },
+    {
+     "year": "2017-18",
+     "msp": 4450,
+     "yoy_change_inr": 230,
+     "yoy_change_pct": 5.5
+    },
+    {
+     "year": "2018-19",
+     "msp": 4890,
+     "yoy_change_inr": 440,
+     "yoy_change_pct": 9.9
+    },
+    {
+     "year": "2019-20",
+     "msp": 5090,
+     "yoy_change_inr": 200,
+     "yoy_change_pct": 4.1
+    },
+    {
+     "year": "2020-21",
+     "msp": 5275,
+     "yoy_change_inr": 185,
+     "yoy_change_pct": 3.6
+    },
+    {
+     "year": "2021-22",
+     "msp": 5550,
+     "yoy_change_inr": 275,
+     "yoy_change_pct": 5.2
+    },
+    {
+     "year": "2022-23",
+     "msp": 5850,
+     "yoy_change_inr": 300,
+     "yoy_change_pct": 5.4
+    },
+    {
+     "year": "2023-24",
+     "msp": 6377,
+     "yoy_change_inr": 527,
+     "yoy_change_pct": 9.0
+    },
+    {
+     "year": "2024-25",
+     "msp": 6783,
+     "yoy_change_inr": 406,
+     "yoy_change_pct": 6.4
+    },
+    {
+     "year": "2025-26",
+     "msp": 7263,
+     "yoy_change_inr": 480,
+     "yoy_change_pct": 7.1
+    },
+    {
+     "year": "2026-27",
+     "msp": 7517,
+     "yoy_change_inr": 254,
+     "yoy_change_pct": 3.5
+    }
+   ]
+  },
+  "sunflower": {
+   "label": "Sunflower Seed",
+   "season": "Kharif",
+   "data": [
+    {
+     "year": "2010-11",
+     "msp": 2350,
+     "yoy_change_inr": null,
+     "yoy_change_pct": null
+    },
+    {
+     "year": "2011-12",
+     "msp": 2800,
+     "yoy_change_inr": 450,
+     "yoy_change_pct": 19.1
+    },
+    {
+     "year": "2012-13",
+     "msp": 3700,
+     "yoy_change_inr": 900,
+     "yoy_change_pct": 32.1
+    },
+    {
+     "year": "2013-14",
+     "msp": 3700,
+     "yoy_change_inr": 0,
+     "yoy_change_pct": 0.0
+    },
+    {
+     "year": "2014-15",
+     "msp": 3750,
+     "yoy_change_inr": 50,
+     "yoy_change_pct": 1.4
+    },
+    {
+     "year": "2015-16",
+     "msp": 3800,
+     "yoy_change_inr": 50,
+     "yoy_change_pct": 1.3
+    },
+    {
+     "year": "2016-17",
+     "msp": 3950,
+     "yoy_change_inr": 150,
+     "yoy_change_pct": 3.9
+    },
+    {
+     "year": "2017-18",
+     "msp": 4100,
+     "yoy_change_inr": 150,
+     "yoy_change_pct": 3.8
+    },
+    {
+     "year": "2018-19",
+     "msp": 5388,
+     "yoy_change_inr": 1288,
+     "yoy_change_pct": 31.4
+    },
+    {
+     "year": "2019-20",
+     "msp": 5650,
+     "yoy_change_inr": 262,
+     "yoy_change_pct": 4.9
+    },
+    {
+     "year": "2020-21",
+     "msp": 5885,
+     "yoy_change_inr": 235,
+     "yoy_change_pct": 4.2
+    },
+    {
+     "year": "2021-22",
+     "msp": 6015,
+     "yoy_change_inr": 130,
+     "yoy_change_pct": 2.2
+    },
+    {
+     "year": "2022-23",
+     "msp": 6400,
+     "yoy_change_inr": 385,
+     "yoy_change_pct": 6.4
+    },
+    {
+     "year": "2023-24",
+     "msp": 6760,
+     "yoy_change_inr": 360,
+     "yoy_change_pct": 5.6
+    },
+    {
+     "year": "2024-25",
+     "msp": 7280,
+     "yoy_change_inr": 520,
+     "yoy_change_pct": 7.7
+    },
+    {
+     "year": "2025-26",
+     "msp": 7721,
+     "yoy_change_inr": 441,
+     "yoy_change_pct": 6.1
+    },
+    {
+     "year": "2026-27",
+     "msp": 8343,
+     "yoy_change_inr": 622,
+     "yoy_change_pct": 8.1
+    }
+   ]
+  }
+ },
+ "comparisons": {
+  "paddy_vs_wheat": {
+   "label": "Paddy (Common) vs Wheat",
+   "data": [
+    {
+     "year": "2010-11",
+     "paddy": 1000,
+     "wheat": 1120,
+     "diff": 120
+    },
+    {
+     "year": "2011-12",
+     "paddy": 1080,
+     "wheat": 1285,
+     "diff": 205
+    },
+    {
+     "year": "2012-13",
+     "paddy": 1250,
+     "wheat": 1350,
+     "diff": 100
+    },
+    {
+     "year": "2013-14",
+     "paddy": 1310,
+     "wheat": 1400,
+     "diff": 90
+    },
+    {
+     "year": "2014-15",
+     "paddy": 1360,
+     "wheat": 1450,
+     "diff": 90
+    },
+    {
+     "year": "2015-16",
+     "paddy": 1410,
+     "wheat": 1525,
+     "diff": 115
+    },
+    {
+     "year": "2016-17",
+     "paddy": 1470,
+     "wheat": 1625,
+     "diff": 155
+    },
+    {
+     "year": "2017-18",
+     "paddy": 1550,
+     "wheat": 1735,
+     "diff": 185
+    },
+    {
+     "year": "2018-19",
+     "paddy": 1750,
+     "wheat": 1840,
+     "diff": 90
+    },
+    {
+     "year": "2019-20",
+     "paddy": 1815,
+     "wheat": 1925,
+     "diff": 110
+    },
+    {
+     "year": "2020-21",
+     "paddy": 1868,
+     "wheat": 1975,
+     "diff": 107
+    },
+    {
+     "year": "2021-22",
+     "paddy": 1940,
+     "wheat": 2015,
+     "diff": 75
+    },
+    {
+     "year": "2022-23",
+     "paddy": 2040,
+     "wheat": 2125,
+     "diff": 85
+    },
+    {
+     "year": "2023-24",
+     "paddy": 2183,
+     "wheat": 2275,
+     "diff": 92
+    },
+    {
+     "year": "2024-25",
+     "paddy": 2300,
+     "wheat": 2425,
+     "diff": 125
+    },
+    {
+     "year": "2025-26",
+     "paddy": 2369,
+     "wheat": 2585,
+     "diff": 216
+    },
+    {
+     "year": "2026-27",
+     "paddy": 2441,
+     "wheat": 2585,
+     "diff": 144
+    }
+   ]
+  },
+  "tur_vs_gram": {
+   "label": "Tur vs Gram",
+   "data": [
+    {
+     "year": "2010-11",
+     "tur": 3000,
+     "gram": 2100,
+     "diff": -900
+    },
+    {
+     "year": "2011-12",
+     "tur": 3200,
+     "gram": 2800,
+     "diff": -400
+    },
+    {
+     "year": "2012-13",
+     "tur": 3850,
+     "gram": 3000,
+     "diff": -850
+    },
+    {
+     "year": "2013-14",
+     "tur": 4300,
+     "gram": 3100,
+     "diff": -1200
+    },
+    {
+     "year": "2014-15",
+     "tur": 4350,
+     "gram": 3175,
+     "diff": -1175
+    },
+    {
+     "year": "2015-16",
+     "tur": 4625,
+     "gram": 3500,
+     "diff": -1125
+    },
+    {
+     "year": "2016-17",
+     "tur": 5050,
+     "gram": 4000,
+     "diff": -1050
+    },
+    {
+     "year": "2017-18",
+     "tur": 5450,
+     "gram": 4400,
+     "diff": -1050
+    },
+    {
+     "year": "2018-19",
+     "tur": 5675,
+     "gram": 4620,
+     "diff": -1055
+    },
+    {
+     "year": "2019-20",
+     "tur": 5800,
+     "gram": 4875,
+     "diff": -925
+    },
+    {
+     "year": "2020-21",
+     "tur": 6000,
+     "gram": 5100,
+     "diff": -900
+    },
+    {
+     "year": "2021-22",
+     "tur": 6300,
+     "gram": 5230,
+     "diff": -1070
+    },
+    {
+     "year": "2022-23",
+     "tur": 6600,
+     "gram": 5335,
+     "diff": -1265
+    },
+    {
+     "year": "2023-24",
+     "tur": 7000,
+     "gram": 5440,
+     "diff": -1560
+    },
+    {
+     "year": "2024-25",
+     "tur": 7550,
+     "gram": 5650,
+     "diff": -1900
+    },
+    {
+     "year": "2025-26",
+     "tur": 8000,
+     "gram": 5875,
+     "diff": -2125
+    },
+    {
+     "year": "2026-27",
+     "tur": 8450,
+     "gram": 5875,
+     "diff": -2575
+    }
+   ]
+  },
+  "soybean_vs_mustard": {
+   "label": "Soybean vs Mustard",
+   "data": [
+    {
+     "year": "2010-11",
+     "soybean": 1440,
+     "mustard": 1850,
+     "diff": 410
+    },
+    {
+     "year": "2011-12",
+     "soybean": 1690,
+     "mustard": 2500,
+     "diff": 810
+    },
+    {
+     "year": "2012-13",
+     "soybean": 2240,
+     "mustard": 3000,
+     "diff": 760
+    },
+    {
+     "year": "2013-14",
+     "soybean": 2560,
+     "mustard": 3050,
+     "diff": 490
+    },
+    {
+     "year": "2014-15",
+     "soybean": 2560,
+     "mustard": 3100,
+     "diff": 540
+    },
+    {
+     "year": "2015-16",
+     "soybean": 2600,
+     "mustard": 3350,
+     "diff": 750
+    },
+    {
+     "year": "2016-17",
+     "soybean": 2775,
+     "mustard": 3700,
+     "diff": 925
+    },
+    {
+     "year": "2017-18",
+     "soybean": 3050,
+     "mustard": 4000,
+     "diff": 950
+    },
+    {
+     "year": "2018-19",
+     "soybean": 3399,
+     "mustard": 4200,
+     "diff": 801
+    },
+    {
+     "year": "2019-20",
+     "soybean": 3710,
+     "mustard": 4425,
+     "diff": 715
+    },
+    {
+     "year": "2020-21",
+     "soybean": 3880,
+     "mustard": 4650,
+     "diff": 770
+    },
+    {
+     "year": "2021-22",
+     "soybean": 3950,
+     "mustard": 5050,
+     "diff": 1100
+    },
+    {
+     "year": "2022-23",
+     "soybean": 4300,
+     "mustard": 5450,
+     "diff": 1150
+    },
+    {
+     "year": "2023-24",
+     "soybean": 4600,
+     "mustard": 5650,
+     "diff": 1050
+    },
+    {
+     "year": "2024-25",
+     "soybean": 4892,
+     "mustard": 5950,
+     "diff": 1058
+    },
+    {
+     "year": "2025-26",
+     "soybean": 5328,
+     "mustard": 6200,
+     "diff": 872
+    },
+    {
+     "year": "2026-27",
+     "soybean": 5708,
+     "mustard": 6200,
+     "diff": 492
+    }
+   ]
+  }
+ }
+}
