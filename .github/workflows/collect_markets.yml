@@ -1,13 +1,8 @@
 name: Collect All Market Prices (Twice Daily)
-
 on:
   schedule:
-    # Runs 15 minutes AFTER the mandi-price collector to avoid git conflicts.
-    # 06:15 UTC = 11:45 AM IST  (morning AgMarknet refresh)
-    # 14:15 UTC =  7:45 PM IST  (evening AgMarknet refresh)
     - cron: '15 6,14 * * *'
-  workflow_dispatch:        # manual "Run workflow" button
-
+  workflow_dispatch:
 jobs:
   collect-markets:
     runs-on: ubuntu-latest
@@ -16,22 +11,19 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
       - name: Run all-markets collector
         env:
           API_KEY: ${{ secrets.API_KEY }}
         run: python collectors/collect_markets.py
-
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add agri_markets.json
+          git add data/live/agri_markets.json
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
