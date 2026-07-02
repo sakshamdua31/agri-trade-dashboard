@@ -1,35 +1,29 @@
 name: Daily Commodity Price Collection
-
 on:
   schedule:
-    # Morning: 11:30 AM IST = 06:00 UTC (after morning refresh)
     - cron: '0 6 * * *'
-    # Evening: 7:30 PM IST = 14:00 UTC (after evening refresh)
     - cron: '0 14 * * *'
-  workflow_dispatch:  # Allows manual trigger from GitHub UI
-
+  workflow_dispatch:
 jobs:
   collect-prices:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
       - name: Run price collector
         env:
           API_KEY: ${{ secrets.API_KEY }}
-        run: python collect_prices.py
-
+        run: python collectors/collect_prices.py
       - name: Commit and push updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add agri_data.json
+          git add data/live/agri_data.json
           git diff --staged --quiet || git commit -m "Commodity prices $(date -u +%Y-%m-%d) $(date -u +%H:%M)UTC"
           git push
