@@ -21,7 +21,7 @@ from datetime import datetime, timezone, timedelta
 # --- Configuration ---
 API_KEY = os.environ.get("API_KEY", "")
 RESOURCE_ID = "9ef84268-d588-465a-a308-a864a43d0070"
-DATA_FILE = "agri_data.json"
+DATA_FILE = "data/live/agri_data.json"
 
 # Commodity config: API filter name + data-cleaning rules
 #  - exclude_varieties: drop any record whose variety contains these (case-insensitive).
