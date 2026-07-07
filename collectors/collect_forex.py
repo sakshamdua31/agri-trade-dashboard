@@ -16,7 +16,7 @@ import urllib.request
 from datetime import datetime, timezone, timedelta
 
 IST = timezone(timedelta(hours=5, minutes=30))
-DATA_FILE = "oilseeds_mir.json"
+DATA_FILE = "data/static/oilseeds_mir.json"
 API_BASE = "https://api.frankfurter.app"
 
 
