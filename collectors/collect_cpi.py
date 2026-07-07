@@ -16,7 +16,7 @@ import urllib.request
 import urllib.error
 from datetime import datetime, timezone, timedelta
 
-DATA_FILE = "agri_data.json"
+DATA_FILE = "data/live/agri_data.json"
 BASE = "https://api.mospi.gov.in"
 IST = timezone(timedelta(hours=5, minutes=30))
 
