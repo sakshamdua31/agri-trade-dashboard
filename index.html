@@ -1644,11 +1644,21 @@ setCommodity('paddy');
 
 
 // ===== REAL DATA PIPELINE =====
-var DATA_BASE='';
-var MARKETS_URL=DATA_BASE+'data/live/agri_markets.json';
-var AGRI_URL=DATA_BASE+'data/live/agri_data.json';
-var HISTORY_URL=DATA_BASE+'data/live/agri_history.json';
-var OILSEEDS_MIR_URL=DATA_BASE+'data/static/oilseeds_mir.json';
+// Auto-detect environment:
+//   - file:// (double-clicked locally) → fetch from GitHub raw (browsers block file:// fetches of local JSON)
+//   - http:// or https:// (Azure, localhost) → use relative paths (fetch from same origin)
+var DATA_BASE = (location.protocol === 'file:')
+  ? 'https://raw.githubusercontent.com/sakshamdua31/agri-trade-dashboard/main/'
+  : '';
+
+// Cache-buster: changes every 5 minutes to force fresh fetches past browser/CDN caches.
+// GitHub raw URLs cache aggressively; without this, updated JSON can be invisible for hours.
+var CACHE_BUSTER = '?t=' + Math.floor(Date.now() / 300000);
+
+var MARKETS_URL=DATA_BASE+'data/live/agri_markets.json'+CACHE_BUSTER;
+var AGRI_URL=DATA_BASE+'data/live/agri_data.json'+CACHE_BUSTER;
+var HISTORY_URL=DATA_BASE+'data/live/agri_history.json'+CACHE_BUSTER;
+var OILSEEDS_MIR_URL=DATA_BASE+'data/static/oilseeds_mir.json'+CACHE_BUSTER;
 var MDATA=null, MDATA_LOADING=false;
 var HISTORY_DATA=null;
 var OILSEEDS_DATA=null, OILSEEDS_LOADING=false;
