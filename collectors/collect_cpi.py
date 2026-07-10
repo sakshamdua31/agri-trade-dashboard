@@ -1,7 +1,7 @@
 """
 Monthly CPI Collector — MOSPI eSankhyiki (base year 2024, All-India, Combined).
-Fetches item-level CPI Index + Inflation for the 7 dashboard commodities and
-appends them to agri_data.json under a "cpi" section.
+Fetches item-level CPI Index for the 7 dashboard commodities and writes them
+to data/cpi/mospi_monthly.json.
 
 No authentication required — public GET endpoints.
 
@@ -16,7 +16,7 @@ import urllib.request
 import urllib.error
 from datetime import datetime, timezone, timedelta
 
-DATA_FILE = "data/live/agri_data.json"
+DATA_FILE = "data/cpi/mospi_monthly.json"
 BASE = "https://api.mospi.gov.in"
 IST = timezone(timedelta(hours=5, minutes=30))
 
@@ -75,7 +75,7 @@ def fetch_month(year, month_code):
 
 
 def candidate_months():
-    """Most recent months first, going back ~5 months from today."""
+    """Most recent months first, going back ~6 months from today."""
     now = datetime.now(IST)
     y, m = now.year, now.month
     out = []
@@ -86,6 +86,23 @@ def candidate_months():
             m = 12
             y -= 1
     return out
+
+
+def load_existing():
+    """Load mospi_monthly.json or return a fresh skeleton."""
+    if os.path.exists(DATA_FILE):
+        with open(DATA_FILE, "r") as f:
+            return json.load(f)
+    return {
+        "source": "MOSPI eSankhyiki (All-India, Combined)",
+        "base_year": "2024",
+        "updated": None,
+        "notes": [
+            "Monthly CPI per commodity, base year 2024 (index=100).",
+            "Grows monthly via collector.",
+        ],
+        "commodities": {},
+    }
 
 
 def main():
@@ -122,41 +139,42 @@ def main():
             "month_code": mcode,
             "index": idx,
             "base_year": "2024",
-            "source": "MOSPI eSankhyiki (All-India, Combined)"
+            "source": "MOSPI eSankhyiki (All-India, Combined)",
         }
 
     if not parsed:
         print("FAILED: could not match any items to commodities")
         return
 
-    # Load existing data file and merge
-    if os.path.exists(DATA_FILE):
-        with open(DATA_FILE, "r") as f:
-            data = json.load(f)
-    else:
-        data = {}
+    # Ensure output directory exists
+    os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
 
-    if "cpi" not in data or not isinstance(data.get("cpi"), dict):
-        data["cpi"] = {}
+    data = load_existing()
+    if "commodities" not in data or not isinstance(data.get("commodities"), dict):
+        data["commodities"] = {}
 
     changed = False
     for key, entry in parsed.items():
-        hist = data["cpi"].get(key)
+        hist = data["commodities"].get(key)
         if not isinstance(hist, list):
             hist = []
         # Is this exact month already stored with the same index? -> no change
-        existing = next((h for h in hist
-                         if h.get("year") == entry["year"] and h.get("month_code") == entry["month_code"]), None)
+        existing = next(
+            (h for h in hist
+             if h.get("year") == entry["year"] and h.get("month_code") == entry["month_code"]),
+            None,
+        )
         if existing and abs(float(existing.get("index", -1)) - entry["index"]) < 1e-9:
-            data["cpi"][key] = hist  # unchanged, keep as-is
+            data["commodities"][key] = hist  # unchanged, keep as-is
             print(f"  {key:10s} index {entry['index']:.2f}  (no change)")
             continue
         # New month, or a revised index for the same month -> update
-        hist = [h for h in hist if not (h.get("year") == entry["year"] and h.get("month_code") == entry["month_code"])]
+        hist = [h for h in hist
+                if not (h.get("year") == entry["year"] and h.get("month_code") == entry["month_code"])]
         hist.append(entry)
         hist.sort(key=lambda h: (h.get("year", ""), h.get("month_code", 0)))
         hist = hist[-120:]  # keep last 10 years monthly
-        data["cpi"][key] = hist
+        data["commodities"][key] = hist
         changed = True
         print(f"  {key:10s} index {entry['index']:.2f}  (updated)")
 
@@ -164,12 +182,12 @@ def main():
         print(f"No CPI change since last run ({MONTHS[mcode]} {year} already stored). Nothing to commit.")
         return
 
-    data["cpi"]["base_year"] = "2024"
-    data["cpi"]["updated"] = datetime.now(IST).strftime("%Y-%m-%d %H:%M:%S IST")
+    data["base_year"] = "2024"
+    data["updated"] = datetime.now(IST).strftime("%Y-%m-%d %H:%M:%S IST")
 
     with open(DATA_FILE, "w") as f:
         json.dump(data, f, indent=2)
-    print(f"Saved CPI for {MONTHS[mcode]} {year}.")
+    print(f"Saved CPI for {MONTHS[mcode]} {year} to {DATA_FILE}.")
     print("Done!")
 
 
