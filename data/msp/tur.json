@@ -1,0 +1,158 @@
+{
+  "crop": "tur",
+  "display_name": "Tur (Arhar)",
+  "unit": "INR/qtl",
+  "season": "Kharif",
+  "source": "CACP / DA&FW",
+  "updated": "2026-05-13",
+  "notes": [
+    "cacp_recommended = CACP-recommended MSP for the year.",
+    "govt_fixed = Government-announced MSP for the year.",
+    "bonus_rs = govt_fixed − cacp_recommended (0 in most years).",
+    "yoy_change_pct is a decimal fraction (e.g. 0.05 = +5%)."
+  ],
+  "summary": {
+    "first_year": "2010-11",
+    "first_msp": 3000.0,
+    "latest_year": "2026-27",
+    "latest_msp": 8450.0
+  },
+  "series": [
+    {
+      "crop_year": "2010-11",
+      "cacp_recommended": 2800.0,
+      "govt_fixed": 3000.0,
+      "yoy_change_rs": null,
+      "yoy_change_pct": null,
+      "bonus_rs": 200.0
+    },
+    {
+      "crop_year": "2011-12",
+      "cacp_recommended": 3100.0,
+      "govt_fixed": 3200.0,
+      "yoy_change_rs": 200.0,
+      "yoy_change_pct": 0.0667,
+      "bonus_rs": 100.0
+    },
+    {
+      "crop_year": "2012-13",
+      "cacp_recommended": 3850.0,
+      "govt_fixed": 3850.0,
+      "yoy_change_rs": 650.0,
+      "yoy_change_pct": 0.2031,
+      "bonus_rs": 0.0
+    },
+    {
+      "crop_year": "2013-14",
+      "cacp_recommended": 3850.0,
+      "govt_fixed": 4300.0,
+      "yoy_change_rs": 450.0,
+      "yoy_change_pct": 0.1169,
+      "bonus_rs": 450.0
+    },
+    {
+      "crop_year": "2014-15",
+      "cacp_recommended": 4350.0,
+      "govt_fixed": 4350.0,
+      "yoy_change_rs": 50.0,
+      "yoy_change_pct": 0.0116,
+      "bonus_rs": 0.0
+    },
+    {
+      "crop_year": "2015-16",
+      "cacp_recommended": 4425.0,
+      "govt_fixed": 4625.0,
+      "yoy_change_rs": 275.0,
+      "yoy_change_pct": 0.0632,
+      "bonus_rs": 200.0
+    },
+    {
+      "crop_year": "2016-17",
+      "cacp_recommended": 4625.0,
+      "govt_fixed": 5050.0,
+      "yoy_change_rs": 425.0,
+      "yoy_change_pct": 0.0919,
+      "bonus_rs": 425.0
+    },
+    {
+      "crop_year": "2017-18",
+      "cacp_recommended": 5250.0,
+      "govt_fixed": 5450.0,
+      "yoy_change_rs": 400.0,
+      "yoy_change_pct": 0.0792,
+      "bonus_rs": 200.0
+    },
+    {
+      "crop_year": "2018-19",
+      "cacp_recommended": 5675.0,
+      "govt_fixed": 5675.0,
+      "yoy_change_rs": 225.0,
+      "yoy_change_pct": 0.0413,
+      "bonus_rs": 0.0
+    },
+    {
+      "crop_year": "2019-20",
+      "cacp_recommended": 5800.0,
+      "govt_fixed": 5800.0,
+      "yoy_change_rs": 125.0,
+      "yoy_change_pct": 0.022,
+      "bonus_rs": 0.0
+    },
+    {
+      "crop_year": "2020-21",
+      "cacp_recommended": 6000.0,
+      "govt_fixed": 6000.0,
+      "yoy_change_rs": 200.0,
+      "yoy_change_pct": 0.0345,
+      "bonus_rs": 0.0
+    },
+    {
+      "crop_year": "2021-22",
+      "cacp_recommended": 6300.0,
+      "govt_fixed": 6300.0,
+      "yoy_change_rs": 300.0,
+      "yoy_change_pct": 0.05,
+      "bonus_rs": 0.0
+    },
+    {
+      "crop_year": "2022-23",
+      "cacp_recommended": 6600.0,
+      "govt_fixed": 6600.0,
+      "yoy_change_rs": 300.0,
+      "yoy_change_pct": 0.0476,
+      "bonus_rs": 0.0
+    },
+    {
+      "crop_year": "2023-24",
+      "cacp_recommended": 7000.0,
+      "govt_fixed": 7000.0,
+      "yoy_change_rs": 400.0,
+      "yoy_change_pct": 0.0606,
+      "bonus_rs": 0.0
+    },
+    {
+      "crop_year": "2024-25",
+      "cacp_recommended": 7550.0,
+      "govt_fixed": 7550.0,
+      "yoy_change_rs": 550.0,
+      "yoy_change_pct": 0.0786,
+      "bonus_rs": 0.0
+    },
+    {
+      "crop_year": "2025-26",
+      "cacp_recommended": 8000.0,
+      "govt_fixed": 8000.0,
+      "yoy_change_rs": 450.0,
+      "yoy_change_pct": 0.0596,
+      "bonus_rs": 0.0
+    },
+    {
+      "crop_year": "2026-27",
+      "cacp_recommended": 8450.0,
+      "govt_fixed": 8450.0,
+      "yoy_change_rs": 450.0,
+      "yoy_change_pct": 0.0563,
+      "bonus_rs": 0.0
+    }
+  ]
+}

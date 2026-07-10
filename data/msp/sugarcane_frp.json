@@ -1,0 +1,134 @@
+{
+  "crop": "sugarcane",
+  "display_name": "Sugarcane FRP",
+  "unit": "INR/qtl",
+  "source": "DFPD / CACP / DA&FW",
+  "updated": "2026-05-13",
+  "notes": [
+    "FRP = Fair and Remunerative Price. Replaces the older SMP from 2009-10.",
+    "Recovery basis changed from 9.5% (2009-10 to 2016-17) to 10% (2017-18 onwards).",
+    "Some states (UP, Punjab, Haryana, Uttarakhand) publish higher State Advised Prices (SAP) — not in this file.",
+    "For every 0.1% recovery above basis, a premium per quintal is payable."
+  ],
+  "series": [
+    {
+      "sugar_season": "2009-10",
+      "frp": 129.84,
+      "yoy_change_rs": null,
+      "yoy_change_pct": null,
+      "recovery_basis_pct": 9.5
+    },
+    {
+      "sugar_season": "2010-11",
+      "frp": 139.12,
+      "yoy_change_rs": 9.28,
+      "yoy_change_pct": 0.0715,
+      "recovery_basis_pct": 9.5
+    },
+    {
+      "sugar_season": "2011-12",
+      "frp": 145.0,
+      "yoy_change_rs": 5.88,
+      "yoy_change_pct": 0.0423,
+      "recovery_basis_pct": 9.5
+    },
+    {
+      "sugar_season": "2012-13",
+      "frp": 170.0,
+      "yoy_change_rs": 25.0,
+      "yoy_change_pct": 0.1724,
+      "recovery_basis_pct": 9.5
+    },
+    {
+      "sugar_season": "2013-14",
+      "frp": 210.0,
+      "yoy_change_rs": 40.0,
+      "yoy_change_pct": 0.2353,
+      "recovery_basis_pct": 9.5
+    },
+    {
+      "sugar_season": "2014-15",
+      "frp": 220.0,
+      "yoy_change_rs": 10.0,
+      "yoy_change_pct": 0.0476,
+      "recovery_basis_pct": 9.5
+    },
+    {
+      "sugar_season": "2015-16",
+      "frp": 230.0,
+      "yoy_change_rs": 10.0,
+      "yoy_change_pct": 0.0455,
+      "recovery_basis_pct": 9.5
+    },
+    {
+      "sugar_season": "2016-17",
+      "frp": 230.0,
+      "yoy_change_rs": 0.0,
+      "yoy_change_pct": 0.0,
+      "recovery_basis_pct": 9.5
+    },
+    {
+      "sugar_season": "2017-18",
+      "frp": 255.0,
+      "yoy_change_rs": 25.0,
+      "yoy_change_pct": 0.1087,
+      "recovery_basis_pct": 10.0
+    },
+    {
+      "sugar_season": "2018-19",
+      "frp": 275.0,
+      "yoy_change_rs": 20.0,
+      "yoy_change_pct": 0.0784,
+      "recovery_basis_pct": 10.0
+    },
+    {
+      "sugar_season": "2019-20",
+      "frp": 275.0,
+      "yoy_change_rs": 0.0,
+      "yoy_change_pct": 0.0,
+      "recovery_basis_pct": 10.0
+    },
+    {
+      "sugar_season": "2020-21",
+      "frp": 285.0,
+      "yoy_change_rs": 10.0,
+      "yoy_change_pct": 0.0364,
+      "recovery_basis_pct": 10.0
+    },
+    {
+      "sugar_season": "2021-22",
+      "frp": 290.0,
+      "yoy_change_rs": 5.0,
+      "yoy_change_pct": 0.0175,
+      "recovery_basis_pct": 10.0
+    },
+    {
+      "sugar_season": "2022-23",
+      "frp": 305.0,
+      "yoy_change_rs": 15.0,
+      "yoy_change_pct": 0.0517,
+      "recovery_basis_pct": 10.0
+    },
+    {
+      "sugar_season": "2023-24",
+      "frp": 315.0,
+      "yoy_change_rs": 10.0,
+      "yoy_change_pct": 0.0328,
+      "recovery_basis_pct": 10.0
+    },
+    {
+      "sugar_season": "2024-25",
+      "frp": 340.0,
+      "yoy_change_rs": 25.0,
+      "yoy_change_pct": 0.0794,
+      "recovery_basis_pct": 10.0
+    },
+    {
+      "sugar_season": "2025-26",
+      "frp": 355.0,
+      "yoy_change_rs": 15.0,
+      "yoy_change_pct": 0.0441,
+      "recovery_basis_pct": 10.0
+    }
+  ]
+}
