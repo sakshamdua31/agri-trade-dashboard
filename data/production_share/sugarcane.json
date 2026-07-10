@@ -1,0 +1,335 @@
+{
+  "crop": "sugarcane",
+  "display_name": "Sugarcane",
+  "unit": "Million Tonnes (MT)",
+  "period": "3-Year Average (2023-24, 2024-25, 2025-26)",
+  "season": "Kharif",
+  "source": "DA&FW",
+  "updated": "2026-05-13",
+  "notes": [
+    "States with individual share < 1% are grouped into 'Others'; their breakdown is in others_breakdown.",
+    "Ranks assigned by descending 3-year average production.",
+    "share_pct is a decimal fraction (e.g. 0.128 = 12.8%).",
+    "2025-26 data are 3rd Advance Estimates (DA&FW)."
+  ],
+  "all_india": {
+    "prod_2023_24": 453.15849,
+    "prod_2024_25": 454.61097,
+    "prod_2025_26": 500.06324,
+    "avg_3yr": 469.27756666666664
+  },
+  "main_states": [
+    {
+      "rank": 1,
+      "state": "Uttar Pradesh",
+      "prod_2023_24": 215.81094,
+      "prod_2024_25": 220.80127,
+      "prod_2025_26": 229.69939,
+      "avg_3yr": 222.10386666666668,
+      "share_pct": 0.473289,
+      "is_aggregated": false
+    },
+    {
+      "rank": 2,
+      "state": "Maharashtra",
+      "prod_2023_24": 112.08756,
+      "prod_2024_25": 109.97018,
+      "prod_2025_26": 131.64876,
+      "avg_3yr": 117.90216666666667,
+      "share_pct": 0.251242,
+      "is_aggregated": false
+    },
+    {
+      "rank": 3,
+      "state": "Karnataka",
+      "prod_2023_24": 41.811,
+      "prod_2024_25": 48.06,
+      "prod_2025_26": 57.288,
+      "avg_3yr": 49.053,
+      "share_pct": 0.104529,
+      "is_aggregated": false
+    },
+    {
+      "rank": 4,
+      "state": "Tamil Nadu",
+      "prod_2023_24": 15.92745,
+      "prod_2024_25": 13.35078,
+      "prod_2025_26": 14.04453,
+      "avg_3yr": 14.44092,
+      "share_pct": 0.030773,
+      "is_aggregated": false
+    },
+    {
+      "rank": 5,
+      "state": "Gujarat",
+      "prod_2023_24": 14.48033,
+      "prod_2024_25": 13.71433,
+      "prod_2025_26": 13.7233,
+      "avg_3yr": 13.972653333333334,
+      "share_pct": 0.029775,
+      "is_aggregated": false
+    },
+    {
+      "rank": 6,
+      "state": "Bihar",
+      "prod_2023_24": 12.0841,
+      "prod_2024_25": 12.1495,
+      "prod_2025_26": 15.10876,
+      "avg_3yr": 13.11412,
+      "share_pct": 0.027945,
+      "is_aggregated": false
+    },
+    {
+      "rank": 7,
+      "state": "Uttarakhand",
+      "prod_2023_24": 7.776,
+      "prod_2024_25": 7.65021,
+      "prod_2025_26": 8.136,
+      "avg_3yr": 7.85407,
+      "share_pct": 0.016737,
+      "is_aggregated": false
+    },
+    {
+      "rank": 8,
+      "state": "Punjab",
+      "prod_2023_24": 7.50951,
+      "prod_2024_25": 7.27948,
+      "prod_2025_26": 6.90784,
+      "avg_3yr": 7.2322766666666665,
+      "share_pct": 0.015412,
+      "is_aggregated": false
+    },
+    {
+      "rank": 9,
+      "state": "Haryana",
+      "prod_2023_24": 7.3736,
+      "prod_2024_25": 5.83021,
+      "prod_2025_26": 7.3736,
+      "avg_3yr": 6.859136666666667,
+      "share_pct": 0.014616,
+      "is_aggregated": false
+    },
+    {
+      "rank": 10,
+      "state": "Madhya Pradesh",
+      "prod_2023_24": 7.59,
+      "prod_2024_25": 6.10863,
+      "prod_2025_26": 6.3612,
+      "avg_3yr": 6.686609999999999,
+      "share_pct": 0.014249,
+      "is_aggregated": false
+    },
+    {
+      "rank": null,
+      "state": "Others (20 states)",
+      "prod_2023_24": 10.70799,
+      "prod_2024_25": 9.69639,
+      "prod_2025_26": 9.18187,
+      "avg_3yr": 9.862083333333333,
+      "share_pct": 0.021015,
+      "is_aggregated": true
+    },
+    {
+      "rank": null,
+      "state": "Sum of Shares (Major + Others)",
+      "prod_2023_24": null,
+      "prod_2024_25": null,
+      "prod_2025_26": null,
+      "avg_3yr": null,
+      "share_pct": 0.999581,
+      "is_aggregated": true
+    },
+    {
+      "rank": null,
+      "state": "Threshold: states with <1% share grouped into \"Others\"",
+      "prod_2023_24": null,
+      "prod_2024_25": null,
+      "prod_2025_26": null,
+      "avg_3yr": null,
+      "share_pct": null,
+      "is_aggregated": true
+    }
+  ],
+  "others_breakdown": [
+    {
+      "rank": 11,
+      "state": "Chhattisgarh",
+      "prod_2023_24": 2.04061,
+      "prod_2024_25": 1.86638,
+      "prod_2025_26": 2.51358,
+      "avg_3yr": 2.14019,
+      "share_pct": 0.004561
+    },
+    {
+      "rank": 12,
+      "state": "Telangana",
+      "prod_2023_24": 2.43313,
+      "prod_2024_25": 1.91619,
+      "prod_2025_26": 1.9331,
+      "avg_3yr": 2.09414,
+      "share_pct": 0.004462
+    },
+    {
+      "rank": 13,
+      "state": "Andhra Pradesh",
+      "prod_2023_24": 2.21385,
+      "prod_2024_25": 1.98532,
+      "prod_2025_26": 1.46413,
+      "avg_3yr": 1.8877666666666666,
+      "share_pct": 0.004023
+    },
+    {
+      "rank": 14,
+      "state": "Assam",
+      "prod_2023_24": 1.37985,
+      "prod_2024_25": 1.23752,
+      "prod_2025_26": 1.2072,
+      "avg_3yr": 1.2748566666666667,
+      "share_pct": 0.002717
+    },
+    {
+      "rank": 15,
+      "state": "West Bengal",
+      "prod_2023_24": 1.10388,
+      "prod_2024_25": 0.87926,
+      "prod_2025_26": 1.0292,
+      "avg_3yr": 1.0041133333333334,
+      "share_pct": 0.00214
+    },
+    {
+      "rank": 16,
+      "state": "Odisha",
+      "prod_2023_24": 0.41186,
+      "prod_2024_25": 0.68074,
+      "prod_2025_26": 0.51448,
+      "avg_3yr": 0.5356933333333334,
+      "share_pct": 0.001142
+    },
+    {
+      "rank": 17,
+      "state": "Rajasthan",
+      "prod_2023_24": 0.34534,
+      "prod_2024_25": 0.46547,
+      "prod_2025_26": 0.36288,
+      "avg_3yr": 0.39123,
+      "share_pct": 0.000834
+    },
+    {
+      "rank": 18,
+      "state": "Manipur",
+      "prod_2023_24": 0.27826,
+      "prod_2024_25": 0.29019,
+      "prod_2025_26": null,
+      "avg_3yr": 0.284225,
+      "share_pct": 0.000606
+    },
+    {
+      "rank": 19,
+      "state": "Puducherry",
+      "prod_2023_24": 0.1508,
+      "prod_2024_25": 0.09225,
+      "prod_2025_26": null,
+      "avg_3yr": 0.121525,
+      "share_pct": 0.000259
+    },
+    {
+      "rank": 20,
+      "state": "Nagaland",
+      "prod_2023_24": 0.11511,
+      "prod_2024_25": 0.08708,
+      "prod_2025_26": null,
+      "avg_3yr": 0.101095,
+      "share_pct": 0.000215
+    },
+    {
+      "rank": 21,
+      "state": "Jharkhand",
+      "prod_2023_24": null,
+      "prod_2024_25": 0.03388,
+      "prod_2025_26": 0.11519,
+      "avg_3yr": 0.074535,
+      "share_pct": 0.000159
+    },
+    {
+      "rank": 22,
+      "state": "Arunachal Pradesh",
+      "prod_2023_24": 0.04668,
+      "prod_2024_25": 0.04686,
+      "prod_2025_26": null,
+      "avg_3yr": 0.04677,
+      "share_pct": 0.0001
+    },
+    {
+      "rank": 23,
+      "state": "Kerala",
+      "prod_2023_24": 0.07586,
+      "prod_2024_25": 0.02111,
+      "prod_2025_26": 0.01928,
+      "avg_3yr": 0.03875,
+      "share_pct": 8.3e-05
+    },
+    {
+      "rank": 24,
+      "state": "Tripura",
+      "prod_2023_24": 0.03789,
+      "prod_2024_25": 0.02972,
+      "prod_2025_26": null,
+      "avg_3yr": 0.033805,
+      "share_pct": 7.2e-05
+    },
+    {
+      "rank": 25,
+      "state": "Goa",
+      "prod_2023_24": 0.02566,
+      "prod_2024_25": 0.02151,
+      "prod_2025_26": null,
+      "avg_3yr": 0.023585000000000002,
+      "share_pct": 5e-05
+    },
+    {
+      "rank": 26,
+      "state": "Mizoram",
+      "prod_2023_24": 0.02423,
+      "prod_2024_25": 0.02131,
+      "prod_2025_26": null,
+      "avg_3yr": 0.02277,
+      "share_pct": 4.9e-05
+    },
+    {
+      "rank": 27,
+      "state": "Himachal Pradesh",
+      "prod_2023_24": 0.02209,
+      "prod_2024_25": 0.02055,
+      "prod_2025_26": 0.02283,
+      "avg_3yr": 0.021823333333333333,
+      "share_pct": 4.7e-05
+    },
+    {
+      "rank": 28,
+      "state": "Andaman And Nicobar Islands",
+      "prod_2023_24": 0.00226,
+      "prod_2024_25": 0.00042,
+      "prod_2025_26": null,
+      "avg_3yr": 0.00134,
+      "share_pct": 3e-06
+    },
+    {
+      "rank": 29,
+      "state": "Meghalaya",
+      "prod_2023_24": 0.00036,
+      "prod_2024_25": 0.00036,
+      "prod_2025_26": null,
+      "avg_3yr": 0.00036,
+      "share_pct": 1e-06
+    },
+    {
+      "rank": 30,
+      "state": "Jammu And Kashmir",
+      "prod_2023_24": 0.00027,
+      "prod_2024_25": 0.00027,
+      "prod_2025_26": null,
+      "avg_3yr": 0.00027,
+      "share_pct": 1e-06
+    }
+  ]
+}
