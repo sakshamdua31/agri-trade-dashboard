@@ -1,13 +1,13 @@
 """
 Daily Commodity Price Collector — All 11 Commodities
-Calls the data.gov.in Agmarknet API for each commodity,
-and appends daily summaries to agri_data.json.
+Calls the data.gov.in AGMARKNET API for each commodity and appends daily
+summaries to data/mandi/daily.json.
 
 Usage:
   python3 collect_prices.py
 
 Output:
-  agri_data.json — grows by one entry per commodity per session
+  data/mandi/daily.json — grows by one entry per commodity per session
 """
 
 import json
@@ -21,7 +21,7 @@ from datetime import datetime, timezone, timedelta
 # --- Configuration ---
 API_KEY = os.environ.get("API_KEY", "")
 RESOURCE_ID = "9ef84268-d588-465a-a308-a864a43d0070"
-DATA_FILE = "data/live/agri_data.json"
+DATA_FILE = "data/mandi/daily.json"
 
 # Commodity config: API filter name + data-cleaning rules
 #  - exclude_varieties: drop any record whose variety contains these (case-insensitive).
@@ -227,37 +227,33 @@ def process_records(records, commodity_key):
     }
 
 
-def save_to_file(entries):
-    """Load existing data, append all entries, save back."""
+def load_existing():
+    """Load daily.json or return fresh skeleton with metadata."""
     if os.path.exists(DATA_FILE):
         with open(DATA_FILE, "r") as f:
-            data = json.load(f)
-    else:
-        data = {"updated": ""}
+            return json.load(f)
+    return {
+        "source": "AGMARKNET via data.gov.in (aggregated)",
+        "unit": "INR/qtl",
+        "updated": "",
+        "notes": [
+            "Daily rollup per commodity: avg/min/max/modal price + top 8 markets.",
+            "Two sessions per day (morning, evening). Retention: last 730 entries per commodity (~1 year × 2 sessions).",
+            "Current MSP values live in data/msp/<crop>.json (source of truth); do not read MSP from this file.",
+        ],
+    }
 
-    # Ensure config section exists with MSP defaults (user edits these in GitHub)
-    if "config" not in data:
-        data["config"] = {
-            "msp": {
-                "paddy":     {"value": 2300, "unit": "/qtl", "season": "KMS 2025-26", "effective": "2025-10-01"},
-                "wheat":     {"value": 2425, "unit": "/qtl", "season": "RMS 2025-26", "effective": "2025-04-01"},
-                "maize":     {"value": 2090, "unit": "/qtl", "season": "KMS 2025-26", "effective": "2025-10-01"},
-                "sugarcane": {"value": 340,  "unit": "/qtl", "season": "2025-26",     "effective": "2025-10-01"},
-                "tur":       {"value": 7550, "unit": "/qtl", "season": "KMS 2025-26", "effective": "2025-10-01"},
-                "gram":      {"value": 5650, "unit": "/qtl", "season": "RMS 2025-26", "effective": "2025-04-01"},
-                "onion":     {"value": 0,    "unit": "/qtl", "season": "N/A",         "effective": "N/A"},
-                "groundnut": {"value": 6783, "unit": "/qtl", "season": "KMS 2025-26", "effective": "2025-10-01"},
-                "sunflower": {"value": 7280, "unit": "/qtl", "season": "KMS 2025-26", "effective": "2025-10-01"},
-                "soybean":   {"value": 4892, "unit": "/qtl", "season": "KMS 2025-26", "effective": "2025-10-01"},
-                "mustard":   {"value": 5950, "unit": "/qtl", "season": "RMS 2025-26", "effective": "2025-04-01"}
-            }
-        }
+
+def save_to_file(entries):
+    """Load existing data, append all entries, save back."""
+    os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
+    data = load_existing()
 
     for entry in entries:
         key = entry["commodity"]
 
         # Ensure structure exists for this commodity
-        if key not in data:
+        if key not in data or not isinstance(data.get(key), dict):
             data[key] = {"history": []}
         if "history" not in data[key]:
             data[key]["history"] = []
