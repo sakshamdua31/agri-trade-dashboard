@@ -1,0 +1,244 @@
+{
+  "generated": "2026-07-10T08:49:03",
+  "notes": "Machine-readable index of every static/live JSON in this data/ tree. Each entry lists source, updated date, cadence, and file size for quick freshness checks.",
+  "files": {
+    "mandi/ticks.json": {
+      "source": "AGMARKNET",
+      "cadence": "daily",
+      "description": "Raw market ticks; 30-day rolling window.",
+      "updated": "2026-07-09 22:08:12 IST",
+      "bytes": 12597035
+    },
+    "mandi/daily.json": {
+      "source": "AGMARKNET (aggregated)",
+      "cadence": "daily append",
+      "description": "Daily rollup per commodity (avg/min/max/modal + top markets).",
+      "updated": "2026-07-09 21:58:03 IST",
+      "bytes": 524394
+    },
+    "mandi/history.json": {
+      "source": "AGMARKNET (aggregated)",
+      "cadence": "daily append",
+      "description": "Long-term daily modal + arrivals per commodity, 2011 \u2192 present.",
+      "updated": null,
+      "bytes": 3466020
+    },
+    "msp/paddy.json": {
+      "source": "CACP / DA&FW",
+      "cadence": "annual (May)",
+      "description": "MSP series for Paddy (Common), 2010-11 onwards.",
+      "updated": "2026-05-13",
+      "bytes": 3764
+    },
+    "msp/wheat.json": {
+      "source": "CACP / DA&FW",
+      "cadence": "annual (Oct)",
+      "description": "MSP series for Wheat, 2010-11 onwards.",
+      "updated": "2026-05-13",
+      "bytes": 3756
+    },
+    "msp/maize.json": {
+      "source": "CACP / DA&FW",
+      "cadence": "annual (May)",
+      "description": "MSP series for Maize, 2010-11 onwards.",
+      "updated": "2026-05-13",
+      "bytes": 3751
+    },
+    "msp/tur.json": {
+      "source": "CACP / DA&FW",
+      "cadence": "annual (May)",
+      "description": "MSP series for Tur (Arhar), 2010-11 onwards.",
+      "updated": "2026-05-13",
+      "bytes": 3784
+    },
+    "msp/gram.json": {
+      "source": "CACP / DA&FW",
+      "cadence": "annual (Oct)",
+      "description": "MSP series for Gram, 2010-11 onwards.",
+      "updated": "2026-05-13",
+      "bytes": 3761
+    },
+    "msp/sugarcane_frp.json": {
+      "source": "DFPD / CACP / DA&FW",
+      "cadence": "annual (Jul)",
+      "description": "Sugarcane FRP series, 2009-10 onwards.",
+      "updated": "2026-05-13",
+      "bytes": 3243
+    },
+    "msp/combined.json": {
+      "source": "CACP / DA&FW",
+      "cadence": "annual",
+      "description": "Multi-crop MSP comparison view (pre-computed).",
+      "updated": "2026-05-13",
+      "bytes": 5260
+    },
+    "retail/doca_items.json": {
+      "source": "Department of Consumer Affairs \u2014 PMD",
+      "cadence": "daily append",
+      "description": "Retail time series for 36 tracked items.",
+      "updated": "2026-07-10",
+      "bytes": 16779
+    },
+    "retail/doca_state_matrix.json": {
+      "source": "Department of Consumer Affairs \u2014 PMD",
+      "cadence": "daily snapshot",
+      "description": "State \u00d7 item retail price matrix; one full snapshot per collection day.",
+      "updated": "2026-07-10",
+      "bytes": 239136
+    },
+    "cpi/mospi_monthly.json": {
+      "source": "MOSPI eSankhyiki (All-India, Combined)",
+      "cadence": "monthly",
+      "description": "Per-commodity CPI, base year 2024.",
+      "updated": "2026-06-13 02:36:14 IST",
+      "bytes": 3254
+    },
+    "apy/statewise_rice.json": {
+      "source": "DA&FW",
+      "cadence": "annual",
+      "description": "State-wise area/production/yield, Rice \u2014 10 years.",
+      "updated": "2026-05-13",
+      "bytes": 121137
+    },
+    "apy/statewise_wheat.json": {
+      "source": "DA&FW",
+      "cadence": "annual",
+      "description": "State-wise area/production/yield, Wheat \u2014 10 years.",
+      "updated": "2026-05-13",
+      "bytes": 72660
+    },
+    "apy/statewise_maize.json": {
+      "source": "DA&FW",
+      "cadence": "annual",
+      "description": "State-wise area/production/yield, Maize \u2014 10 years.",
+      "updated": "2026-05-13",
+      "bytes": 115382
+    },
+    "apy/statewise_tur.json": {
+      "source": "DA&FW",
+      "cadence": "annual",
+      "description": "State-wise area/production/yield, Tur \u2014 10 years.",
+      "updated": "2026-05-13",
+      "bytes": 71912
+    },
+    "apy/statewise_gram.json": {
+      "source": "DA&FW",
+      "cadence": "annual",
+      "description": "State-wise area/production/yield, Gram \u2014 10 years.",
+      "updated": "2026-05-13",
+      "bytes": 70124
+    },
+    "apy/statewise_sugarcane.json": {
+      "source": "DA&FW",
+      "cadence": "annual",
+      "description": "State-wise area/production/yield, Sugarcane \u2014 10 years.",
+      "updated": "2026-05-13",
+      "bytes": 76390
+    },
+    "production_share/rice.json": {
+      "source": "DA&FW",
+      "cadence": "annual",
+      "description": "State-wise 3-year avg production share \u2014 Rice.",
+      "updated": "2026-05-13",
+      "bytes": 9220
+    },
+    "production_share/wheat.json": {
+      "source": "DA&FW",
+      "cadence": "annual",
+      "description": "State-wise 3-year avg production share \u2014 Wheat.",
+      "updated": "2026-05-13",
+      "bytes": 7393
+    },
+    "production_share/maize.json": {
+      "source": "DA&FW",
+      "cadence": "annual",
+      "description": "State-wise 3-year avg production share \u2014 Maize.",
+      "updated": "2026-05-13",
+      "bytes": 8627
+    },
+    "production_share/tur.json": {
+      "source": "DA&FW",
+      "cadence": "annual",
+      "description": "State-wise 3-year avg production share \u2014 Tur.",
+      "updated": "2026-05-13",
+      "bytes": 7505
+    },
+    "production_share/gram.json": {
+      "source": "DA&FW",
+      "cadence": "annual",
+      "description": "State-wise 3-year avg production share \u2014 Gram.",
+      "updated": "2026-05-13",
+      "bytes": 7076
+    },
+    "production_share/sugarcane.json": {
+      "source": "DA&FW",
+      "cadence": "annual",
+      "description": "State-wise 3-year avg production share \u2014 Sugarcane.",
+      "updated": "2026-05-13",
+      "bytes": 8083
+    },
+    "trade/india_rice.json": {
+      "source": "DGCIS / Ministry of Commerce",
+      "cadence": "monthly",
+      "description": "India import/export monthly, Rice \u2014 from Jan 2014.",
+      "updated": "2026-06-15",
+      "bytes": 51056
+    },
+    "trade/india_wheat.json": {
+      "source": "DGCIS / Ministry of Commerce",
+      "cadence": "monthly",
+      "description": "India import/export monthly, Wheat \u2014 from Jan 2014.",
+      "updated": "2026-06-15",
+      "bytes": 50036
+    },
+    "trade/india_maize.json": {
+      "source": "DGCIS / Ministry of Commerce",
+      "cadence": "monthly",
+      "description": "India import/export monthly, Maize \u2014 from Jan 2014.",
+      "updated": "2026-06-15",
+      "bytes": 50531
+    },
+    "trade/usda_corn.json": {
+      "source": "USDA FAS PSD",
+      "cadence": "monthly",
+      "description": "USDA PSD for Corn \u2014 118 countries \u00d7 5 attributes \u00d7 11 marketing years.",
+      "updated": "2026-06-15",
+      "bytes": 209830
+    },
+    "trade/usda_rice.json": {
+      "source": "USDA FAS PSD",
+      "cadence": "monthly",
+      "description": "USDA PSD for Rice (Milled) \u2014 118 countries \u00d7 5 attributes \u00d7 11 MYs.",
+      "updated": "2026-06-15",
+      "bytes": 196653
+    },
+    "trade/usda_wheat.json": {
+      "source": "USDA FAS PSD",
+      "cadence": "monthly",
+      "description": "USDA PSD for Wheat \u2014 118 countries \u00d7 5 attributes \u00d7 11 MYs.",
+      "updated": "2026-06-15",
+      "bytes": 210837
+    },
+    "trade/usda_sugar.json": {
+      "source": "USDA FAS PSD",
+      "cadence": "monthly",
+      "description": "USDA PSD for Sugar (Centrifugal) \u2014 118 countries \u00d7 5 attributes \u00d7 11 MYs.",
+      "updated": "2026-06-15",
+      "bytes": 201384
+    },
+    "global_prices/wb_pink_sheet.json": {
+      "source": "World Bank \u2014 The Pink Sheet",
+      "cadence": "monthly",
+      "description": "10 global commodity price series in nominal USD, 1960 \u2192 present.",
+      "updated": "2026-07-02",
+      "bytes": 259880
+    },
+    "global_prices/fao_indices.json": {
+      "source": "FAO",
+      "cadence": "monthly",
+      "description": "6 FAO price indices (food/meat/dairy/cereals/oils/sugar); nominal + real, monthly + annual.",
+      "updated": "2026-07-04",
+      "bytes": 230409
+    }
+  }
+}

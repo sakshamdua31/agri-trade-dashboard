@@ -1,13 +1,12 @@
 """
 All-Markets Collector — data.gov.in AgMarknet.
-Fetches EVERY reporting market for all 9 commodities, paginates to get the
+Fetches EVERY reporting market for all 11 commodities, paginates to get the
 complete list, applies the same cleaning as collect_prices.py (excludes
 dal/retail/out-of-band — but NO statistical outlier removal, so every
-legitimate market is kept), and stores in agri_markets.json organized by
+legitimate market is kept), and stores in data/mandi/ticks.json organized by
 commodity → date → [market records].
 
 Rolling retention: keeps the last RETENTION_DAYS days per commodity.
-The dashboard will read this file for the exhaustive paginated mandi table.
 
 Runs twice daily via collect_markets.yml (offset 15 min after collect_prices
 to avoid git push conflicts).
@@ -24,7 +23,7 @@ import urllib.error
 from datetime import datetime, timezone, timedelta
 
 IST = timezone(timedelta(hours=5, minutes=30))
-DATA_FILE = "data/live/agri_markets.json"
+DATA_FILE = "data/mandi/ticks.json"
 RESOURCE_ID = "9ef84268-d588-465a-a308-a864a43d0070"
 API_KEY = os.environ.get("API_KEY", "579b464db66ec23bdd000001e6c08e18ba004dd6537d5f85af1d3bfb")
 RETENTION_DAYS = 30
@@ -152,6 +151,9 @@ def main():
     now = datetime.now(IST)
     print(f"Collecting ALL markets at {now.strftime('%Y-%m-%d %H:%M IST')}...")
 
+    # Ensure output directory exists
+    os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
+
     # Load existing file
     if os.path.exists(DATA_FILE):
         with open(DATA_FILE, "r") as f:
@@ -233,6 +235,7 @@ def main():
     # Metadata
     data["updated"] = now.strftime("%Y-%m-%d %H:%M:%S IST")
     data["retention_days"] = RETENTION_DAYS
+    data["source"] = "AGMARKNET via data.gov.in"
 
     # Save
     with open(DATA_FILE, "w") as f:

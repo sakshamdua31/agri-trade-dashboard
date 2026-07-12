@@ -6,7 +6,7 @@ Modes:
   python3 collect_forex.py --backfill   → fetch monthly rates 2014-01 to now
   python3 collect_forex.py              → fetch latest rate (daily cron)
 
-Writes to oilseeds_mir.json under macro.forex_usd_inr
+Writes to data/oilseeds_mir.json under macro.forex_usd_inr
 """
 
 import json
@@ -16,7 +16,7 @@ import urllib.request
 from datetime import datetime, timezone, timedelta
 
 IST = timezone(timedelta(hours=5, minutes=30))
-DATA_FILE = "data/static/oilseeds_mir.json"
+DATA_FILE = "data/oilseeds_mir.json"
 API_BASE = "https://api.frankfurter.app"
 
 
@@ -82,7 +82,9 @@ def fetch_latest():
 
 
 def save(records, mode="backfill"):
-    """Save to oilseeds_mir.json."""
+    """Save to data/oilseeds_mir.json."""
+    os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
+
     if os.path.exists(DATA_FILE):
         with open(DATA_FILE, "r") as f:
             mir = json.load(f)
@@ -108,13 +110,17 @@ def save(records, mode="backfill"):
             existing.append(rec)
         existing.sort(key=lambda x: (x["year"], x["month"]))
         if "forex_usd_inr" not in mir["macro"]:
-            mir["macro"]["forex_usd_inr"] = {"source": "ECB via frankfurter.app", "unit": "INR per 1 USD", "data": []}
+            mir["macro"]["forex_usd_inr"] = {
+                "source": "ECB via frankfurter.app",
+                "unit": "INR per 1 USD",
+                "data": []
+            }
         mir["macro"]["forex_usd_inr"]["data"] = existing
 
     mir["updated"] = datetime.now(IST).strftime("%Y-%m-%d %H:%M:%S IST")
 
     with open(DATA_FILE, "w") as f:
-        json.dump(f, mir) if False else json.dump(mir, f, indent=2)
+        json.dump(mir, f, indent=2)
 
     print(f"  Saved to {DATA_FILE}")
 
