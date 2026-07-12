@@ -1,21 +1,16 @@
 """
 Monthly CPI Collector — MOSPI eSankhyiki (base year 2024, All-India, Combined).
-Fetches item-level CPI Index for the dashboard commodities and writes them
+Fetches item-level CPI Index for the 10 tracked commodities and writes them
 to data/cpi/mospi_monthly.json.
 
 No authentication required — public GET endpoints.
 
-Usage:
-  python collect_cpi.py               → normal daily collection
-  python collect_cpi.py --discover    → scan CPI catalog and print oil-related items
-                                        (one-time helper; codes then get hardcoded above)
+Usage:  python collect_cpi.py
 """
 
 import ssl
-import sys
 import json
 import os
-import time
 import urllib.parse
 import urllib.request
 import urllib.error
@@ -25,37 +20,34 @@ DATA_FILE = "data/cpi/mospi_monthly.json"
 BASE = "https://api.mospi.gov.in"
 IST = timezone(timedelta(hours=5, minutes=30))
 
-# commodity key -> CPI item_code (base year 2024)
-#   sugar was previously mis-labeled "sugarcane" (item 111 is Sugar, not sugarcane).
-#   Oil codes (soybean/mustard/groundnut/sunflower oil) still TODO — run
-#     `python collect_cpi.py --discover`  to identify them, then paste here.
+# commodity key -> CPI item_code (base year 2024, All-India, Combined)
+#   Note: MoSPI 2024 basket has no separate Soybean oil / Sunflower oil;
+#         both are inside "Refined oil" (blended vegetable oil).
+#   Note: Sugar (item 111) was previously mis-labeled 'sugarcane'.
 ITEM_CODES = {
-    "paddy": 1,       # Rice
-    "wheat": 2,       # Wheat
-    "maize": 6,       # Maize and its products
-    "onion": 92,      # Onion
-    "tur": 99,        # Arhar, tur
-    "gram": 104,      # Gram: whole
-    "sugar": 111,     # Sugar
-    # "groundnut_oil": ?,
-    # "mustard_oil":   ?,
-    # "soybean_oil":   ?,
-    # "sunflower_oil": ?,
+    "paddy":         1,     # Rice
+    "wheat":         2,     # Wheat
+    "maize":         6,     # Maize and its products
+    "onion":         92,    # Onion
+    "tur":           99,    # Arhar, tur
+    "gram":          104,   # Gram: whole
+    "sugar":         111,   # Sugar
+    "refined_oil":   45,    # Refined oil (soybean/sunflower/palm blend)
+    "mustard_oil":   46,    # Mustard oil
+    "groundnut_oil": 47,    # Groundnut oil
 }
 # CPI item name (as returned by API, lowercased) -> commodity key
 NAME_TO_KEY = {
-    "rice": "paddy",
-    "wheat": "wheat",
-    "maize and its products": "maize",
-    "onion": "onion",
-    "arhar, tur": "tur",
-    "gram: whole": "gram",
-    "sugar": "sugar",
-    # Oils — item names will be filled in once the discover step returns them
-    # "groundnut oil": "groundnut_oil",
-    # "mustard oil": "mustard_oil",
-    # "soyabean oil": "soybean_oil",
-    # "sunflower oil": "sunflower_oil",
+    "rice":                    "paddy",
+    "wheat":                   "wheat",
+    "maize and its products":  "maize",
+    "onion":                   "onion",
+    "arhar, tur":              "tur",
+    "gram: whole":             "gram",
+    "sugar":                   "sugar",
+    "refined oil":             "refined_oil",
+    "mustard oil":             "mustard_oil",
+    "groundnut oil":           "groundnut_oil",
 }
 MONTHS = ["", "January", "February", "March", "April", "May", "June",
           "July", "August", "September", "October", "November", "December"]
@@ -75,26 +67,20 @@ def get(path, params):
         return json.loads(r.read().decode())
 
 
-def fetch_codes(item_codes, year, month_code):
-    """Fetch a batch of item codes for one (year, month). Returns list of rows or []."""
-    codes = ",".join(str(c) for c in item_codes)
+def fetch_month(year, month_code):
+    """Fetch all configured items for one (year, month). Returns list of rows or []."""
+    codes = ",".join(str(c) for c in ITEM_CODES.values())
     try:
         j = get("/api/cpi/getCPIData", {
             "base_year": "2024", "series": "Current", "level": "Item",
             "state_code": "1", "sector_code": "3",
             "item_code": codes, "year": str(year), "month_code": str(month_code),
-            "Format": "JSON", "limit": str(len(item_codes) + 5)
+            "Format": "JSON", "limit": "50"
         })
         return j.get("data", []) or []
     except Exception as e:
-        print(f"    fetch error for codes {item_codes[:3]}...: {e}")
+        print(f"  fetch error for {year}-{month_code}: {e}")
         return []
-
-
-def fetch_month(year, month_code):
-    """Fetch all configured items for one (year, month)."""
-    codes = list(ITEM_CODES.values())
-    return fetch_codes(codes, year, month_code)
 
 
 def candidate_months():
@@ -111,82 +97,6 @@ def candidate_months():
     return out
 
 
-# ============================================================
-# Discovery mode — scan the CPI catalog for oil-related items
-# ============================================================
-
-def discover_oils():
-    """Scan CPI item codes 1..MAX and print anything oil-related.
-
-    Uses the last month with data (found by scanning back from today).
-    Codes and names are printed so they can be hardcoded into ITEM_CODES
-    and NAME_TO_KEY above.
-    """
-    print("Discovering oil-related CPI items...")
-    print("=" * 60)
-
-    # First, find the latest month that has ANY data — use item code 1 (Rice)
-    # as a probe since we already know it's populated.
-    latest_year, latest_month = None, None
-    for (y, m) in candidate_months():
-        r = fetch_codes([1], y, m)
-        if r:
-            latest_year, latest_month = y, m
-            print(f"Scanning against latest available month: {MONTHS[m]} {y}\n")
-            break
-    if not latest_year:
-        print("Could not find any recent month with CPI data. Aborting discovery.")
-        return
-
-    # Sweep item codes in batches. CPI catalog runs roughly 1..~300 for
-    # base 2024; scan 1..500 to be safe.
-    BATCH = 40
-    MAX_CODE = 500
-    hits = []
-    all_names = []
-
-    for start in range(1, MAX_CODE + 1, BATCH):
-        batch = list(range(start, min(start + BATCH, MAX_CODE + 1)))
-        rows = fetch_codes(batch, latest_year, latest_month)
-        for row in rows:
-            code = row.get("item_code") or row.get("itemCode") or row.get("code")
-            name = (row.get("item") or "").strip()
-            all_names.append((code, name))
-            low = name.lower()
-            if "oil" in low or "vanaspati" in low:
-                hits.append((code, name))
-        # be gentle on the API
-        time.sleep(1.5)
-
-    print("\n" + "=" * 60)
-    print("ALL OIL / FAT / VANASPATI ITEMS FOUND:")
-    print("=" * 60)
-    if not hits:
-        print("(no matches)")
-    else:
-        for code, name in sorted(hits, key=lambda x: (str(x[0]), x[1])):
-            print(f"  code={code!s:>5}   {name}")
-
-    # Also print anything mentioning our target seed names, in case oils
-    # are labeled differently.
-    print("\n" + "=" * 60)
-    print("ALSO — items matching seed keywords:")
-    print("=" * 60)
-    keywords = ["soya", "soyabean", "soybean", "mustard", "groundnut",
-                "sunflower", "palm", "rapeseed", "sesame"]
-    for code, name in all_names:
-        low = name.lower()
-        if any(k in low for k in keywords):
-            print(f"  code={code!s:>5}   {name}")
-
-    print("\nDone. Paste the 4 oil codes into ITEM_CODES and NAME_TO_KEY at the")
-    print("top of collect_cpi.py, then re-run without --discover.")
-
-
-# ============================================================
-# Normal collection
-# ============================================================
-
 def load_existing():
     """Load mospi_monthly.json or return a fresh skeleton."""
     if os.path.exists(DATA_FILE):
@@ -199,6 +109,7 @@ def load_existing():
         "notes": [
             "Monthly CPI per commodity, base year 2024 (index=100).",
             "Grows monthly via collector.",
+            "refined_oil covers soybean/sunflower/palm blends (MoSPI does not track them separately).",
         ],
         "commodities": {},
     }
@@ -212,7 +123,7 @@ def migrate_sugarcane_to_sugar(data):
         print("  (migrated existing 'sugarcane' entries to 'sugar')")
 
 
-def main_collect():
+def main():
     print(f"Collecting CPI at {datetime.now(IST).strftime('%Y-%m-%d %H:%M IST')}...")
 
     # Find the latest month that has data
@@ -231,10 +142,12 @@ def main_collect():
 
     # Map rows to commodities
     parsed = {}
+    unmatched = []
     for row in rows:
         name = (row.get("item") or "").strip().lower()
         key = NAME_TO_KEY.get(name)
         if not key:
+            unmatched.append(name)
             continue
         try:
             idx = float(row.get("index"))
@@ -249,9 +162,16 @@ def main_collect():
             "source": "MOSPI eSankhyiki (All-India, Combined)",
         }
 
+    if unmatched:
+        print(f"  (unmatched names in response: {unmatched})")
+
     if not parsed:
         print("FAILED: could not match any items to commodities")
         return
+
+    missing = set(ITEM_CODES.keys()) - set(parsed.keys())
+    if missing:
+        print(f"  (expected keys missing from response: {sorted(missing)})")
 
     # Ensure output directory exists
     os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
@@ -267,6 +187,7 @@ def main_collect():
         hist = data["commodities"].get(key)
         if not isinstance(hist, list):
             hist = []
+        # Is this exact month already stored with the same index? -> no change
         existing = next(
             (h for h in hist
              if h.get("year") == entry["year"] and h.get("month_code") == entry["month_code"]),
@@ -276,6 +197,7 @@ def main_collect():
             data["commodities"][key] = hist
             print(f"  {key:15s} index {entry['index']:.2f}  (no change)")
             continue
+        # New month, or a revised index for the same month -> update
         hist = [h for h in hist
                 if not (h.get("year") == entry["year"] and h.get("month_code") == entry["month_code"])]
         hist.append(entry)
@@ -299,7 +221,4 @@ def main_collect():
 
 
 if __name__ == "__main__":
-    if "--discover" in sys.argv:
-        discover_oils()
-    else:
-        main_collect()
+    main()
