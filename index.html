@@ -1655,7 +1655,7 @@ var DATA_BASE = (location.protocol === 'file:')
 // GitHub raw URLs cache aggressively; without this, updated JSON can be invisible for hours.
 var CACHE_BUSTER = '?t=' + Math.floor(Date.now() / 300000);
 
-var MARKETS_URL=DATA_BASE+'data/live/agri_markets.json'+CACHE_BUSTER;
+var MARKETS_URL=DATA_BASE+'data/mandi/ticks.json'+CACHE_BUSTER;
 var AGRI_URL=DATA_BASE+'data/live/agri_data.json'+CACHE_BUSTER;
 var HISTORY_URL=DATA_BASE+'data/live/agri_history.json'+CACHE_BUSTER;
 var OILSEEDS_MIR_URL=DATA_BASE+'data/oilseeds_mir.json'+CACHE_BUSTER;
