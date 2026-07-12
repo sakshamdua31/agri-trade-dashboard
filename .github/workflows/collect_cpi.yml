@@ -21,10 +21,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/live/agri_data.json
+          git add data/
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
             git commit -m "Update CPI data ($(date -u '+%Y-%m-%d'))"
+            git pull --rebase
             git push
           fi
