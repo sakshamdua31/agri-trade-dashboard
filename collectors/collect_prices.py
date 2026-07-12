@@ -1,27 +1,29 @@
 """
 Daily Commodity Price Collector — All 11 Commodities
-Calls the data.gov.in Agmarknet API for each commodity,
-and appends daily summaries to agri_data.json.
+Calls the data.gov.in AGMARKNET API for each commodity and appends daily
+summaries to data/mandi/daily.json.
 
 Usage:
   python3 collect_prices.py
 
 Output:
-  agri_data.json — grows by one entry per commodity per session
+  data/mandi/daily.json — grows by one entry per commodity per session
 """
 
 import json
 import os
+import socket
 import time
 import statistics
-import urllib.request
+import urllib.error
 import urllib.parse
+import urllib.request
 from datetime import datetime, timezone, timedelta
 
 # --- Configuration ---
 API_KEY = os.environ.get("API_KEY", "")
 RESOURCE_ID = "9ef84268-d588-465a-a308-a864a43d0070"
-DATA_FILE = "data/live/agri_data.json"
+DATA_FILE = "data/mandi/daily.json"
 
 # Commodity config: API filter name + data-cleaning rules
 #  - exclude_varieties: drop any record whose variety contains these (case-insensitive).
@@ -92,9 +94,13 @@ EXCLUDE_MARKETS = ["Uzhavar Sandhai"]
 # IST timezone
 IST = timezone(timedelta(hours=5, minutes=30))
 
+# HTTP settings
+HTTP_TIMEOUT = 45           # seconds — data.gov.in can be slow from GitHub runners
+MAX_ATTEMPTS = 5            # retry up to 5 times per commodity
+
 
 def fetch_prices(commodity_filter):
-    """Call data.gov.in API for a commodity. Retries on rate limit."""
+    """Call data.gov.in API for a commodity. Retries on rate limit AND network timeouts."""
     params = urllib.parse.urlencode({
         "api-key": API_KEY,
         "format": "json",
@@ -103,10 +109,11 @@ def fetch_prices(commodity_filter):
     })
     url = f"https://api.data.gov.in/resource/{RESOURCE_ID}?{params}"
 
-    for attempt in range(4):
+    last_error = None
+    for attempt in range(1, MAX_ATTEMPTS + 1):
         try:
             req = urllib.request.Request(url, headers={"User-Agent": "AgriDashboard/1.0"})
-            with urllib.request.urlopen(req, timeout=15) as resp:
+            with urllib.request.urlopen(req, timeout=HTTP_TIMEOUT) as resp:
                 data = json.loads(resp.read().decode())
 
             records = data.get("records", [])
@@ -115,13 +122,36 @@ def fetch_prices(commodity_filter):
             return records
 
         except urllib.error.HTTPError as e:
-            if e.code == 429 and attempt < 3:
-                wait = 30 * (attempt + 1)
-                print(f"  Rate limited. Waiting {wait}s before retry {attempt + 2}/4...")
+            last_error = e
+            if e.code == 429 and attempt < MAX_ATTEMPTS:
+                wait = 30 * attempt
+                print(f"    Rate limited (HTTP 429). Waiting {wait}s before retry {attempt + 1}/{MAX_ATTEMPTS}...")
                 time.sleep(wait)
             else:
-                raise
+                print(f"    HTTP {e.code} error: {e.reason}")
+                return None
 
+        except (socket.timeout, TimeoutError, urllib.error.URLError) as e:
+            last_error = e
+            if attempt < MAX_ATTEMPTS:
+                wait = 10 * attempt   # 10s, 20s, 30s, 40s backoff
+                print(f"    Network timeout (attempt {attempt}/{MAX_ATTEMPTS}): {e}. Waiting {wait}s...")
+                time.sleep(wait)
+            else:
+                print(f"    Gave up after {MAX_ATTEMPTS} network timeouts.")
+                return None
+
+        except json.JSONDecodeError as e:
+            last_error = e
+            if attempt < MAX_ATTEMPTS:
+                wait = 10 * attempt
+                print(f"    Bad JSON response (attempt {attempt}/{MAX_ATTEMPTS}): {e}. Waiting {wait}s...")
+                time.sleep(wait)
+            else:
+                print(f"    Gave up after {MAX_ATTEMPTS} bad-JSON responses.")
+                return None
+
+    print(f"    All {MAX_ATTEMPTS} attempts failed. Last error: {last_error}")
     return None
 
 
@@ -133,9 +163,9 @@ def process_records(records, commodity_key):
     sane_max = conf.get("sane_max", 10**9)
 
     clean = []
-    excluded_variety = 0   # dropped as wrong variety / processed dal
-    excluded_market = 0    # dropped as retail farmer market
-    excluded_band = 0      # dropped as outside sane price band
+    excluded_variety = 0
+    excluded_market = 0
+    excluded_band = 0
     for r in records:
         try:
             modal = int(float(r.get("modal_price", 0)))
@@ -147,15 +177,12 @@ def process_records(records, commodity_key):
         variety = r.get("variety", "")
         market = r.get("market", "")
 
-        # 1. Drop retail farmer markets (consumer-level, not wholesale)
         if any(ex.lower() in market.lower() for ex in EXCLUDE_MARKETS):
             excluded_market += 1
             continue
-        # 2. Drop processed dal / wrong-pulse varieties
         if any(ev in variety.lower() for ev in exclude_varieties):
             excluded_variety += 1
             continue
-        # 3. Drop prices outside the sane band (gross contamination backstop)
         if modal < sane_min or modal > sane_max:
             excluded_band += 1
             continue
@@ -174,7 +201,6 @@ def process_records(records, commodity_key):
     if not clean:
         return None
 
-    # 4. Statistical outlier removal via IQR (only with enough data points)
     outliers_removed = 0
     if len(clean) >= 8:
         modals_all = sorted(r["modal_price"] for r in clean)
@@ -184,7 +210,7 @@ def process_records(records, commodity_key):
         hi = q3 + 1.5 * iqr
         filtered = [r for r in clean if lo <= r["modal_price"] <= hi]
         outliers_removed = len(clean) - len(filtered)
-        if filtered:  # never wipe everything
+        if filtered:
             clean = filtered
 
     modals = [r["modal_price"] for r in clean]
@@ -227,50 +253,42 @@ def process_records(records, commodity_key):
     }
 
 
-def save_to_file(entries):
-    """Load existing data, append all entries, save back."""
+def load_existing():
+    """Load daily.json or return fresh skeleton with metadata."""
     if os.path.exists(DATA_FILE):
         with open(DATA_FILE, "r") as f:
-            data = json.load(f)
-    else:
-        data = {"updated": ""}
+            return json.load(f)
+    return {
+        "source": "AGMARKNET via data.gov.in (aggregated)",
+        "unit": "INR/qtl",
+        "updated": "",
+        "notes": [
+            "Daily rollup per commodity: avg/min/max/modal price + top 8 markets.",
+            "Two sessions per day (morning, evening). Retention: last 730 entries per commodity (~1 year × 2 sessions).",
+            "Current MSP values live in data/msp/<crop>.json (source of truth); do not read MSP from this file.",
+        ],
+    }
 
-    # Ensure config section exists with MSP defaults (user edits these in GitHub)
-    if "config" not in data:
-        data["config"] = {
-            "msp": {
-                "paddy":     {"value": 2300, "unit": "/qtl", "season": "KMS 2025-26", "effective": "2025-10-01"},
-                "wheat":     {"value": 2425, "unit": "/qtl", "season": "RMS 2025-26", "effective": "2025-04-01"},
-                "maize":     {"value": 2090, "unit": "/qtl", "season": "KMS 2025-26", "effective": "2025-10-01"},
-                "sugarcane": {"value": 340,  "unit": "/qtl", "season": "2025-26",     "effective": "2025-10-01"},
-                "tur":       {"value": 7550, "unit": "/qtl", "season": "KMS 2025-26", "effective": "2025-10-01"},
-                "gram":      {"value": 5650, "unit": "/qtl", "season": "RMS 2025-26", "effective": "2025-04-01"},
-                "onion":     {"value": 0,    "unit": "/qtl", "season": "N/A",         "effective": "N/A"},
-                "groundnut": {"value": 6783, "unit": "/qtl", "season": "KMS 2025-26", "effective": "2025-10-01"},
-                "sunflower": {"value": 7280, "unit": "/qtl", "season": "KMS 2025-26", "effective": "2025-10-01"},
-                "soybean":   {"value": 4892, "unit": "/qtl", "season": "KMS 2025-26", "effective": "2025-10-01"},
-                "mustard":   {"value": 5950, "unit": "/qtl", "season": "RMS 2025-26", "effective": "2025-04-01"}
-            }
-        }
+
+def save_to_file(entries):
+    """Load existing data, append all entries, save back."""
+    os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
+    data = load_existing()
 
     for entry in entries:
         key = entry["commodity"]
 
-        # Ensure structure exists for this commodity
-        if key not in data:
+        if key not in data or not isinstance(data.get(key), dict):
             data[key] = {"history": []}
         if "history" not in data[key]:
             data[key]["history"] = []
 
         history = data[key]["history"]
 
-        # Replace same date+session entry if exists
         today = entry["date"]
         session = entry["session"]
         history = [h for h in history if not (h["date"] == today and h.get("session") == session)]
         history.append(entry)
-
-        # Keep last 365 days max (730 entries with 2 sessions/day)
         history = history[-730:]
 
         data[key]["history"] = history
@@ -287,6 +305,7 @@ def main():
     print("=" * 60)
 
     entries = []
+    failed = []
 
     for key, conf in COMMODITIES.items():
         api_name = conf["filter"]
@@ -295,11 +314,15 @@ def main():
         records = fetch_prices(api_name)
         if not records:
             print(f"  ✗ No data returned for {key}")
+            failed.append(key)
+            time.sleep(5)
             continue
 
         entry = process_records(records, key)
         if not entry:
             print(f"  ✗ No valid prices for {key}")
+            failed.append(key)
+            time.sleep(5)
             continue
 
         entries.append(entry)
@@ -307,15 +330,17 @@ def main():
         dropped = cl["excluded_variety"] + cl["excluded_market"] + cl["excluded_band"] + cl["outliers_removed"]
         print(f"  ✓ Avg: ₹{entry['avg_price']} | Modal: ₹{entry['modal_price']} | Markets: {entry['total_markets']} | Dropped: {dropped}")
 
-        # Wait 5 seconds between API calls to avoid rate limiting
         time.sleep(5)
 
+    print(f"\n{'=' * 60}")
     if entries:
         save_to_file(entries)
-        print(f"\n{'=' * 60}")
-        print(f"Saved {len(entries)}/11 commodities to {DATA_FILE}")
+        print(f"Saved {len(entries)}/{len(COMMODITIES)} commodities to {DATA_FILE}")
     else:
-        print("\nFAILED: No data collected for any commodity")
+        print(f"FAILED: No data collected for any commodity")
+
+    if failed:
+        print(f"Failed commodities: {', '.join(failed)}")
 
     print("Done!")
 
