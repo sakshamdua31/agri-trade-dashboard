@@ -1656,7 +1656,8 @@ var DATA_BASE = (location.protocol === 'file:')
 var CACHE_BUSTER = '?t=' + Math.floor(Date.now() / 300000);
 
 var MARKETS_URL=DATA_BASE+'data/mandi/ticks.json'+CACHE_BUSTER;
-var AGRI_URL=DATA_BASE+'data/live/agri_data.json'+CACHE_BUSTER;
+var AGRI_URL=DATA_BASE+'data/live/agri_data.json'+CACHE_BUSTER; // legacy snapshot: DOCA/wholesale only (see loadAgriData)
+var DAILY_URL=DATA_BASE+'data/mandi/daily.json'+CACHE_BUSTER;   // live commodity price history
 var HISTORY_URL=DATA_BASE+'data/live/agri_history.json'+CACHE_BUSTER;
 var OILSEEDS_MIR_URL=DATA_BASE+'data/oilseeds_mir.json'+CACHE_BUSTER;
 var MDATA=null, MDATA_LOADING=false;
@@ -1905,19 +1906,28 @@ var AGRI = {};
   });
 })();
 function loadAgriData(){
-  fetchWithTimeout(AGRI_URL,10000).then(function(d){
+  // Live commodity price history — migrated to the domain-split data/mandi/daily.json.
+  fetchWithTimeout(DAILY_URL,10000).then(function(d){
     if(d){
-      // Merge real data over dummy
+      // Merge real data over dummy (only the 7 grain/pulse keys exist here; oilseed slots stay synthetic, as before)
       ['paddy','wheat','maize','sugarcane','tur','gram','onion','soy_seed','soy_oil','soy_meal','rm_seed','rm_oil'].forEach(function(k){
         if(d[k]) AGRI[k]=d[k];
       });
-      if(d.doca) AGRI.doca=d.doca;
-      if(d.cpi) AGRI.cpi=d.cpi;
       if(d.updated) AGRI.updated=d.updated;
       renderIndices();
       if(section==='price') fetchPrices(true);
     }
-  }).catch(function(e){ console.warn('agri_data.json load failed:',e.message); });
+  }).catch(function(e){ console.warn('daily.json load failed:',e.message); });
+  // DOCA retail/wholesale still comes from the legacy agri_data.json snapshot.
+  // The new data/retail/doca_items.json is item-keyed (broken_rice, atta_wheat, ...) and retail-only,
+  // so it can't drop-in replace the commodity-keyed {retail,wholesale} model here — pending a Wholesale-panel rework.
+  fetchWithTimeout(AGRI_URL,10000).then(function(d){
+    if(d){
+      if(d.doca) AGRI.doca=d.doca;
+      if(d.cpi) AGRI.cpi=d.cpi;
+      if(section==='price') fetchPrices(true);
+    }
+  }).catch(function(e){ console.warn('agri_data.json (doca) load failed:',e.message); });
 }
 
 // ===== RETAIL / WHOLESALE / CPI / WPI panel =====
