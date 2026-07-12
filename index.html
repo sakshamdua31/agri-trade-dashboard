@@ -1656,9 +1656,9 @@ var DATA_BASE = (location.protocol === 'file:')
 var CACHE_BUSTER = '?t=' + Math.floor(Date.now() / 300000);
 
 var MARKETS_URL=DATA_BASE+'data/mandi/ticks.json'+CACHE_BUSTER;
-var AGRI_URL=DATA_BASE+'data/live/agri_data.json'+CACHE_BUSTER; // legacy snapshot: DOCA/wholesale only (see loadAgriData)
+var DOCA_URL=DATA_BASE+'data/retail/doca_items.json'+CACHE_BUSTER; // live DOCA retail (item-keyed)
 var DAILY_URL=DATA_BASE+'data/mandi/daily.json'+CACHE_BUSTER;   // live commodity price history
-var HISTORY_URL=DATA_BASE+'data/live/agri_history.json'+CACHE_BUSTER;
+var HISTORY_URL=DATA_BASE+'data/mandi/history.json'+CACHE_BUSTER;
 var OILSEEDS_MIR_URL=DATA_BASE+'data/oilseeds_mir.json'+CACHE_BUSTER;
 var MDATA=null, MDATA_LOADING=false;
 var HISTORY_DATA=null;
@@ -1918,16 +1918,25 @@ function loadAgriData(){
       if(section==='price') fetchPrices(true);
     }
   }).catch(function(e){ console.warn('daily.json load failed:',e.message); });
-  // DOCA retail/wholesale still comes from the legacy agri_data.json snapshot.
-  // The new data/retail/doca_items.json is item-keyed (broken_rice, atta_wheat, ...) and retail-only,
-  // so it can't drop-in replace the commodity-keyed {retail,wholesale} model here — pending a Wholesale-panel rework.
-  fetchWithTimeout(AGRI_URL,10000).then(function(d){
-    if(d){
-      if(d.doca) AGRI.doca=d.doca;
-      if(d.cpi) AGRI.cpi=d.cpi;
+  // DOCA retail — migrated to data/retail/doca_items.json (item-keyed, retail-only).
+  // Only commodities with a matching consumer item are populated; the rest have no DOCA retail series.
+  // DOCA no longer publishes wholesale; the Wholesale panel now shows the AgMarknet mandi price instead.
+  var DOCA_ITEM_MAP={paddy:'broken_rice',wheat:'atta_wheat',gram:'besan',sugarcane:'gur'};
+  fetchWithTimeout(DOCA_URL,10000).then(function(d){
+    if(d&&d.items){
+      var doca={};
+      Object.keys(DOCA_ITEM_MAP).forEach(function(comm){
+        var series=d.items[DOCA_ITEM_MAP[comm]];
+        if(Array.isArray(series)){
+          var retail=series.filter(function(e){return e&&typeof e.retail==='number'&&e.retail<1000;})
+                           .map(function(e){return {date:e.date,price:Math.round(e.retail*100)/100,unit:'/kg',source:'DOCA'};});
+          doca[comm]={retail:retail,wholesale:[]};
+        }
+      });
+      AGRI.doca=doca;
       if(section==='price') fetchPrices(true);
     }
-  }).catch(function(e){ console.warn('agri_data.json (doca) load failed:',e.message); });
+  }).catch(function(e){ console.warn('doca_items.json load failed:',e.message); });
 }
 
 // ===== RETAIL / WHOLESALE / CPI / WPI panel =====
@@ -3863,14 +3872,14 @@ function renderWholesale(){
 
   // KPI Cards - .sk format, unique to Wholesale section
   var retailVal=retailPrice!==null?retailPrice:Math.round(c.price*0.04);
-  var wholeVal=wholePrice!==null?wholePrice:Math.round(c.price*0.98);
+  var wholeVal=wholePrice!==null?wholePrice:mandiAvg; // no DOCA wholesale — use AgMarknet mandi price (Rs/qtl)
   var rUnit=retailUnit||'/kg';var wUnit=wholeDoca?(wholeDoca.unit||'/qtl'):'/qtl';
   var retailMandiMargin=retailPrice!==null?Math.round((retailVal*25)-mandiAvg):Math.round(mandiAvg*0.45);
   var marginPct=mandiAvg>0?((Math.abs(retailMandiMargin)/mandiAvg)*100).toFixed(1):0;
 
   html+='<div class="spot-kpi-row">';
   html+='<div class="sk" style="--mcbar:#bd8347"><div class="sk-top"><span class="sk-label">Retail Price</span><span class="sk-tag neutral">DOCA</span></div><div class="sk-val">\u20B9'+retailVal+'<span class="sk-unit">'+rUnit+'</span></div><div class="sk-meta">'+(retailDate||'Latest')+'</div><div class="sk-bar"><div class="sk-bar-fill" style="width:75%;background:#bd8347"></div></div></div>';
-  html+='<div class="sk" style="--mcbar:#7d9bbf"><div class="sk-top"><span class="sk-label">Wholesale Price</span><span class="sk-tag neutral">DOCA</span></div><div class="sk-val">\u20B9'+wholeVal+'<span class="sk-unit">'+wUnit+'</span></div><div class="sk-meta">'+(wholeDoca?wholeDoca.date:'Latest')+'</div><div class="sk-bar"><div class="sk-bar-fill" style="width:68%;background:#7d9bbf"></div></div></div>';
+  html+='<div class="sk" style="--mcbar:#7d9bbf"><div class="sk-top"><span class="sk-label">Wholesale Price</span><span class="sk-tag neutral">'+(wholePrice!==null?'DOCA':'AgMarknet')+'</span></div><div class="sk-val">\u20B9'+wholeVal+'<span class="sk-unit">'+wUnit+'</span></div><div class="sk-meta">'+(wholeDoca?wholeDoca.date:'Latest')+'</div><div class="sk-bar"><div class="sk-bar-fill" style="width:68%;background:#7d9bbf"></div></div></div>';
   html+='<div class="sk" style="--mcbar:var(--accent2)"><div class="sk-top"><span class="sk-label">Retail-Mandi Margin</span><span class="sk-tag '+(parseFloat(marginPct)>30?'dn':'up')+'">'+marginPct+'%</span></div><div class="sk-val">'+fmt(Math.abs(retailMandiMargin))+'<span class="sk-unit">gap</span></div><div class="sk-meta">Retail markup over mandi</div><div class="sk-bar"><div class="sk-bar-fill" style="width:'+Math.min(100,Math.abs(parseFloat(marginPct)))+'%;background:var(--accent2)"></div></div></div>';
   html+='<div class="sk" style="--mcbar:'+c.cc+'"><div class="sk-top"><span class="sk-label">Mandi Median</span><span class="sk-tag neutral">AgMarknet</span></div><div class="sk-val">'+fmt(mandiAvg)+'<span class="sk-unit">'+c.unit.replace('\u20B9','')+'</span></div><div class="sk-meta">'+(hist.length?hist[hist.length-1].d:'Modelled')+'</div><div class="sk-bar"><div class="sk-bar-fill" style="width:80%;background:'+c.cc+'"></div></div></div>';
   html+='</div>';
