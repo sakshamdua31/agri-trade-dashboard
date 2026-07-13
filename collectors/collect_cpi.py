@@ -1,6 +1,6 @@
 """
 Monthly CPI Collector — MOSPI eSankhyiki (base year 2024, All-India, Combined).
-Fetches item-level CPI Index for the 7 dashboard commodities and writes them
+Fetches item-level CPI Index for the 10 tracked commodities and writes them
 to data/cpi/mospi_monthly.json.
 
 No authentication required — public GET endpoints.
@@ -20,25 +20,34 @@ DATA_FILE = "data/cpi/mospi_monthly.json"
 BASE = "https://api.mospi.gov.in"
 IST = timezone(timedelta(hours=5, minutes=30))
 
-# commodity key -> CPI item_code (base year 2024)
+# commodity key -> CPI item_code (base year 2024, All-India, Combined)
+#   Note: MoSPI 2024 basket has no separate Soybean oil / Sunflower oil;
+#         both are inside "Refined oil" (blended vegetable oil).
+#   Note: Sugar (item 111) was previously mis-labeled 'sugarcane'.
 ITEM_CODES = {
-    "paddy": 1,    # Rice
-    "wheat": 2,    # Wheat
-    "maize": 6,    # Maize and its products
-    "onion": 92,   # Onion
-    "tur": 99,     # Arhar, tur
-    "gram": 104,   # Gram: whole
-    "sugarcane": 111,  # Sugar
+    "paddy":         1,     # Rice
+    "wheat":         2,     # Wheat
+    "maize":         6,     # Maize and its products
+    "onion":         92,    # Onion
+    "tur":           99,    # Arhar, tur
+    "gram":          104,   # Gram: whole
+    "sugar":         111,   # Sugar
+    "refined_oil":   45,    # Refined oil (soybean/sunflower/palm blend)
+    "mustard_oil":   46,    # Mustard oil
+    "groundnut_oil": 47,    # Groundnut oil
 }
 # CPI item name (as returned by API, lowercased) -> commodity key
 NAME_TO_KEY = {
-    "rice": "paddy",
-    "wheat": "wheat",
-    "maize and its products": "maize",
-    "onion": "onion",
-    "arhar, tur": "tur",
-    "gram: whole": "gram",
-    "sugar": "sugarcane",
+    "rice":                    "paddy",
+    "wheat":                   "wheat",
+    "maize and its products":  "maize",
+    "onion":                   "onion",
+    "arhar, tur":              "tur",
+    "gram: whole":             "gram",
+    "sugar":                   "sugar",
+    "refined oil":             "refined_oil",
+    "mustard oil":             "mustard_oil",
+    "groundnut oil":           "groundnut_oil",
 }
 MONTHS = ["", "January", "February", "March", "April", "May", "June",
           "July", "August", "September", "October", "November", "December"]
@@ -59,7 +68,7 @@ def get(path, params):
 
 
 def fetch_month(year, month_code):
-    """Fetch all 7 items for one (year, month). Returns list of rows or []."""
+    """Fetch all configured items for one (year, month). Returns list of rows or []."""
     codes = ",".join(str(c) for c in ITEM_CODES.values())
     try:
         j = get("/api/cpi/getCPIData", {
@@ -100,9 +109,18 @@ def load_existing():
         "notes": [
             "Monthly CPI per commodity, base year 2024 (index=100).",
             "Grows monthly via collector.",
+            "refined_oil covers soybean/sunflower/palm blends (MoSPI does not track them separately).",
         ],
         "commodities": {},
     }
+
+
+def migrate_sugarcane_to_sugar(data):
+    """One-time migration: old key 'sugarcane' (item 111 is Sugar) → 'sugar'."""
+    coms = data.get("commodities") or {}
+    if "sugarcane" in coms and "sugar" not in coms:
+        coms["sugar"] = coms.pop("sugarcane")
+        print("  (migrated existing 'sugarcane' entries to 'sugar')")
 
 
 def main():
@@ -124,10 +142,12 @@ def main():
 
     # Map rows to commodities
     parsed = {}
+    unmatched = []
     for row in rows:
         name = (row.get("item") or "").strip().lower()
         key = NAME_TO_KEY.get(name)
         if not key:
+            unmatched.append(name)
             continue
         try:
             idx = float(row.get("index"))
@@ -142,9 +162,16 @@ def main():
             "source": "MOSPI eSankhyiki (All-India, Combined)",
         }
 
+    if unmatched:
+        print(f"  (unmatched names in response: {unmatched})")
+
     if not parsed:
         print("FAILED: could not match any items to commodities")
         return
+
+    missing = set(ITEM_CODES.keys()) - set(parsed.keys())
+    if missing:
+        print(f"  (expected keys missing from response: {sorted(missing)})")
 
     # Ensure output directory exists
     os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
@@ -152,6 +179,8 @@ def main():
     data = load_existing()
     if "commodities" not in data or not isinstance(data.get("commodities"), dict):
         data["commodities"] = {}
+
+    migrate_sugarcane_to_sugar(data)
 
     changed = False
     for key, entry in parsed.items():
@@ -165,8 +194,8 @@ def main():
             None,
         )
         if existing and abs(float(existing.get("index", -1)) - entry["index"]) < 1e-9:
-            data["commodities"][key] = hist  # unchanged, keep as-is
-            print(f"  {key:10s} index {entry['index']:.2f}  (no change)")
+            data["commodities"][key] = hist
+            print(f"  {key:15s} index {entry['index']:.2f}  (no change)")
             continue
         # New month, or a revised index for the same month -> update
         hist = [h for h in hist
@@ -176,7 +205,7 @@ def main():
         hist = hist[-120:]  # keep last 10 years monthly
         data["commodities"][key] = hist
         changed = True
-        print(f"  {key:10s} index {entry['index']:.2f}  (updated)")
+        print(f"  {key:15s} index {entry['index']:.2f}  (updated)")
 
     if not changed:
         print(f"No CPI change since last run ({MONTHS[mcode]} {year} already stored). Nothing to commit.")
