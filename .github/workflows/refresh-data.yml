@@ -1,0 +1,91 @@
+name: Refresh Data & Deploy
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'   # every 6 hours (00, 06, 12, 18 UTC = 05:30, 11:30, 17:30, 23:30 IST)
+  workflow_dispatch:
+
+# Prevent overlapping runs if a previous cycle is still going
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    name: Refresh data (all collectors)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      committed: ${{ steps.commit.outputs.committed }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # Each collector is allowed to fail without blocking the others or the deploy.
+      # Whatever succeeds gets committed; whatever fails is retried on the next 6-hour cycle.
+      - name: Collect market prices (AgMarknet)
+        continue-on-error: true
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+        run: python collectors/collect_markets.py
+
+      - name: Collect daily commodity prices
+        continue-on-error: true
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+        run: python collectors/collect_prices.py
+
+      - name: Collect CPI (MoSPI monthly)
+        continue-on-error: true
+        run: python collectors/collect_cpi.py
+
+      - name: Collect Forex USD/INR
+        continue-on-error: true
+        run: python collectors/collect_forex.py
+
+      - name: Commit updated data
+        id: commit
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "No data changes to commit."
+            echo "committed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "Refresh data ($(date -u '+%Y-%m-%d %H:%M') UTC)"
+            git pull --rebase
+            git push
+            echo "committed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  deploy:
+    name: Deploy to Azure Static Web Apps
+    needs: refresh
+    # Deploy whenever refresh finishes. We deploy even on "no data changes" runs
+    # so that manual dispatches always publish current main.
+    if: ${{ always() && needs.refresh.result == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout latest main (includes the just-committed data)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          submodules: true
+          lfs: false
+
+      - name: Build and deploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_NICE_SMOKE_06F694D00 }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: "upload"
+          app_location: "/"
+          api_location: ""
+          output_location: "."
