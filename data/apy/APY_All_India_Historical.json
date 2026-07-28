@@ -1,0 +1,2423 @@
+{
+  "dataset": "All-India Historical Crop Area, Production & Yield (APY)",
+  "source": "Ministry of Agriculture & Farmers Welfare, DA&FW, Govt. of India",
+  "units": {
+    "area": "Thousand Hectares",
+    "production": "Thousand Tonnes",
+    "yield": "Kg/Hectare"
+  },
+  "notes": [
+    "2025-26 data is of 3rd Advance Estimates",
+    "Cotton production in Bales (1 Bale = 170 Kg)",
+    "Jute, Sannhemp & Mesta production in Bales (1 Bale = 180 Kg)"
+  ],
+  "year_range": "1966-67 to 2025-26",
+  "crops": [
+    "Rice",
+    "Wheat",
+    "Maize",
+    "Tur",
+    "Gram",
+    "Soybean",
+    "Sunflower",
+    "Rapeseed & Mustard",
+    "Sugarcane"
+  ],
+  "data": {
+    "Rice": {
+      "1966-67": {
+        "Kharif": {
+          "area": 33932.4,
+          "production": 28621.8,
+          "yield": 843
+        }
+      },
+      "1967-68": {
+        "Kharif": {
+          "area": 34912.1,
+          "production": 35313,
+          "yield": 1011
+        }
+      },
+      "1968-69": {
+        "Kharif": {
+          "area": 35306.1,
+          "production": 37127.7,
+          "yield": 1052
+        }
+      },
+      "1969-70": {
+        "Kharif": {
+          "area": 35817.9,
+          "production": 37591.21,
+          "yield": 1050
+        }
+      },
+      "1970-71": {
+        "Kharif": {
+          "area": 35950.8,
+          "production": 39558.8,
+          "yield": 1100
+        }
+      },
+      "1971-72": {
+        "Kharif": {
+          "area": 36086.9,
+          "production": 39992.7,
+          "yield": 1108
+        }
+      },
+      "1972-73": {
+        "Kharif": {
+          "area": 35075.3,
+          "production": 36324.5,
+          "yield": 1036
+        }
+      },
+      "1973-74": {
+        "Kharif": {
+          "area": 36487.4,
+          "production": 40903.8,
+          "yield": 1121
+        }
+      },
+      "1974-75": {
+        "Kharif": {
+          "area": 35957.2,
+          "production": 35925.4,
+          "yield": 999
+        }
+      },
+      "1975-76": {
+        "Kharif": {
+          "area": 37441.7,
+          "production": 44744.8,
+          "yield": 1195
+        }
+      },
+      "1976-77": {
+        "Kharif": {
+          "area": 37106.7,
+          "production": 39265.5,
+          "yield": 1058
+        }
+      },
+      "1977-78": {
+        "Kharif": {
+          "area": 38416.6,
+          "production": 48947,
+          "yield": 1274
+        }
+      },
+      "1978-79": {
+        "Kharif": {
+          "area": 38419.8,
+          "production": 49336.7,
+          "yield": 1284
+        }
+      },
+      "1979-80": {
+        "Kharif": {
+          "area": 37598,
+          "production": 38486.3,
+          "yield": 1024
+        }
+      },
+      "1980-81": {
+        "Kharif": {
+          "area": 38441.1,
+          "production": 50089.5,
+          "yield": 1303
+        }
+      },
+      "1981-82": {
+        "Kharif": {
+          "area": 38892.4,
+          "production": 49244.7,
+          "yield": 1266
+        }
+      },
+      "1982-83": {
+        "Kharif": {
+          "area": 36411.3,
+          "production": 43164.4,
+          "yield": 1185
+        }
+      },
+      "1983-84": {
+        "Kharif": {
+          "area": 38954,
+          "production": 55052.2,
+          "yield": 1413
+        }
+      },
+      "1984-85": {
+        "Kharif": {
+          "area": 39169.1,
+          "production": 53781.7,
+          "yield": 1373
+        }
+      },
+      "1985-86": {
+        "Kharif": {
+          "area": 39287.1,
+          "production": 59515.8,
+          "yield": 1515
+        }
+      },
+      "1986-87": {
+        "Kharif": {
+          "area": 38437.4,
+          "production": 53560.9,
+          "yield": 1393
+        }
+      },
+      "1987-88": {
+        "Kharif": {
+          "area": 35846.5,
+          "production": 49049.3,
+          "yield": 1368
+        }
+      },
+      "1988-89": {
+        "Kharif": {
+          "area": 38944.4,
+          "production": 63376.3,
+          "yield": 1627
+        }
+      },
+      "1989-90": {
+        "Kharif": {
+          "area": 39293.4,
+          "production": 65877.8,
+          "yield": 1677
+        }
+      },
+      "1990-91": {
+        "Kharif": {
+          "area": 39701.6,
+          "production": 66317.1,
+          "yield": 1670
+        }
+      },
+      "1991-92": {
+        "Kharif": {
+          "area": 39594.1,
+          "production": 66367.8,
+          "yield": 1676
+        }
+      },
+      "1992-93": {
+        "Kharif": {
+          "area": 38900.5,
+          "production": 65242.8,
+          "yield": 1677
+        }
+      },
+      "1993-94": {
+        "Kharif": {
+          "area": 39139.8,
+          "production": 70723.7,
+          "yield": 1807
+        }
+      },
+      "1994-95": {
+        "Kharif": {
+          "area": 39440.5,
+          "production": 72602.7,
+          "yield": 1841
+        }
+      },
+      "1995-96": {
+        "Kharif": {
+          "area": 39440,
+          "production": 67878.8,
+          "yield": 1721
+        }
+      },
+      "1996-97": {
+        "Kharif": {
+          "area": 39786.8,
+          "production": 63556.42,
+          "yield": 1597
+        }
+      },
+      "1997-98": {
+        "Kharif": {
+          "area": 39824.9,
+          "production": 72529.9,
+          "yield": 1821
+        }
+      },
+      "1998-99": {
+        "Kharif": {
+          "area": 40455.6,
+          "production": 72720.1,
+          "yield": 1798
+        }
+      },
+      "1999-00": {
+        "Kharif": {
+          "area": 40948.9,
+          "production": 77480.5,
+          "yield": 1892
+        }
+      },
+      "2000-01": {
+        "Kharif": {
+          "area": 40702.6,
+          "production": 72778.37,
+          "yield": 1788
+        }
+      },
+      "2001-02": {
+        "Kharif": {
+          "area": 40619.4,
+          "production": 80521.8,
+          "yield": 1982
+        }
+      },
+      "2002-03": {
+        "Kharif": {
+          "area": 38037.2,
+          "production": 63083.1,
+          "yield": 1658
+        }
+      },
+      "2003-04": {
+        "Kharif": {
+          "area": 39230.5,
+          "production": 78618.5,
+          "yield": 2004
+        }
+      },
+      "2004-05": {
+        "Kharif": {
+          "area": 38364,
+          "production": 72230,
+          "yield": 1883
+        }
+      },
+      "2005-06": {
+        "Kharif": {
+          "area": 39335.2,
+          "production": 78271.9,
+          "yield": 1990
+        }
+      },
+      "2006-07": {
+        "Kharif": {
+          "area": 39601.2,
+          "production": 80170.8,
+          "yield": 2024
+        }
+      },
+      "2007-08": {
+        "Kharif": {
+          "area": 39472.3,
+          "production": 82702.9,
+          "yield": 2095
+        }
+      },
+      "2008-09": {
+        "Kharif": {
+          "area": 40810,
+          "production": 84951.4,
+          "yield": 2082
+        }
+      },
+      "2009-10": {
+        "Kharif": {
+          "area": 37602.32,
+          "production": 75906.84,
+          "yield": 2019
+        }
+      },
+      "2010-11": {
+        "Kharif": {
+          "area": 38017.91,
+          "production": 80606.82,
+          "yield": 2120
+        }
+      },
+      "2011-12": {
+        "Kharif": {
+          "area": 40123.03,
+          "production": 92737.68,
+          "yield": 2311
+        }
+      },
+      "2012-13": {
+        "Kharif": {
+          "area": 38914.09,
+          "production": 92358.6,
+          "yield": 2373
+        }
+      },
+      "2013-14": {
+        "Kharif": {
+          "area": 39449.06,
+          "production": 91496.76,
+          "yield": 2319
+        }
+      },
+      "2014-15": {
+        "Kharif": {
+          "area": 39829,
+          "production": 91391.55,
+          "yield": 2295
+        }
+      },
+      "2015-16": {
+        "Kharif": {
+          "area": 39656.45,
+          "production": 91412.78,
+          "yield": 2305
+        }
+      },
+      "2016-17": {
+        "Kharif": {
+          "area": 39845.77,
+          "production": 96302.79,
+          "yield": 2417
+        }
+      },
+      "2017-18": {
+        "Kharif": {
+          "area": 39349.27,
+          "production": 97135.16,
+          "yield": 2469
+        }
+      },
+      "2018-19": {
+        "Kharif": {
+          "area": 39964.35,
+          "production": 102039.99,
+          "yield": 2553
+        }
+      },
+      "2019-20": {
+        "Kharif": {
+          "area": 39012.96,
+          "production": 102276.51,
+          "yield": 2622
+        }
+      },
+      "2020-21": {
+        "Kharif": {
+          "area": 40357.97,
+          "production": 105208.14,
+          "yield": 2607
+        }
+      },
+      "2021-22": {
+        "Kharif": {
+          "area": 41038.41,
+          "production": 111000.79,
+          "yield": 2705
+        }
+      },
+      "2022-23": {
+        "Kharif": {
+          "area": 40402.88,
+          "production": 110511.56,
+          "yield": 2735
+        }
+      },
+      "2023-24": {
+        "Kharif": {
+          "area": 40734.17,
+          "production": 113258.77,
+          "yield": 2780
+        }
+      },
+      "2024-25": {
+        "Kharif": {
+          "area": 43465.66,
+          "production": 122771.9,
+          "yield": 2825
+        }
+      },
+      "2025-26": {
+        "Kharif": {
+          "area": 44669.93,
+          "production": 124758.2,
+          "yield": 2793
+        }
+      }
+    },
+    "Wheat": {},
+    "Maize": {
+      "1966-67": {
+        "Kharif": {
+          "area": 5073.8,
+          "production": 4893.6,
+          "yield": 964
+        }
+      },
+      "1967-68": {
+        "Kharif": {
+          "area": 5583.4,
+          "production": 6269.3,
+          "yield": 1123
+        }
+      },
+      "1968-69": {
+        "Kharif": {
+          "area": 5715.8,
+          "production": 5701.1,
+          "yield": 997
+        }
+      },
+      "1969-70": {
+        "Kharif": {
+          "area": 5862.2,
+          "production": 5674.3,
+          "yield": 968
+        }
+      },
+      "1970-71": {
+        "Kharif": {
+          "area": 5852.3,
+          "production": 7485.6,
+          "yield": 1279
+        }
+      },
+      "1971-72": {
+        "Kharif": {
+          "area": 5667.6,
+          "production": 5100.5,
+          "yield": 900
+        }
+      },
+      "1972-73": {
+        "Kharif": {
+          "area": 5837.8,
+          "production": 6388.5,
+          "yield": 1094
+        }
+      },
+      "1973-74": {
+        "Kharif": {
+          "area": 6015.4,
+          "production": 5803.5,
+          "yield": 965
+        }
+      },
+      "1974-75": {
+        "Kharif": {
+          "area": 5863.1,
+          "production": 5558.9,
+          "yield": 948
+        }
+      },
+      "1975-76": {
+        "Kharif": {
+          "area": 6030.7,
+          "production": 7255.8,
+          "yield": 1203
+        }
+      },
+      "1976-77": {
+        "Kharif": {
+          "area": 6000.3,
+          "production": 6361.2,
+          "yield": 1060
+        }
+      },
+      "1977-78": {
+        "Kharif": {
+          "area": 5682,
+          "production": 5973.3,
+          "yield": 1051
+        }
+      },
+      "1978-79": {
+        "Kharif": {
+          "area": 5760.3,
+          "production": 6199.4,
+          "yield": 1076
+        }
+      },
+      "1979-80": {
+        "Kharif": {
+          "area": 5720.6,
+          "production": 5602.9,
+          "yield": 979
+        }
+      },
+      "1980-81": {
+        "Kharif": {
+          "area": 6004.8,
+          "production": 6956.9,
+          "yield": 1159
+        }
+      },
+      "1981-82": {
+        "Kharif": {
+          "area": 5934.7,
+          "production": 6897.1,
+          "yield": 1162
+        }
+      },
+      "1982-83": {
+        "Kharif": {
+          "area": 5720.3,
+          "production": 6548.5,
+          "yield": 1145
+        }
+      },
+      "1983-84": {
+        "Kharif": {
+          "area": 5858.6,
+          "production": 7922.2,
+          "yield": 1352
+        }
+      },
+      "1984-85": {
+        "Kharif": {
+          "area": 5799.5,
+          "production": 8441.8,
+          "yield": 1456
+        }
+      },
+      "1985-86": {
+        "Kharif": {
+          "area": 5797.2,
+          "production": 6643.7,
+          "yield": 1146
+        }
+      },
+      "1986-87": {
+        "Kharif": {
+          "area": 5923.1,
+          "production": 7592.8,
+          "yield": 1282
+        }
+      },
+      "1987-88": {
+        "Kharif": {
+          "area": 5560.9,
+          "production": 5721.3,
+          "yield": 1029
+        }
+      },
+      "1988-89": {
+        "Kharif": {
+          "area": 5896.7,
+          "production": 8228.7,
+          "yield": 1395
+        }
+      },
+      "1989-90": {
+        "Kharif": {
+          "area": 5915.1,
+          "production": 9651.3,
+          "yield": 1632
+        }
+      },
+      "1990-91": {
+        "Kharif": {
+          "area": 5904.3,
+          "production": 8961.7,
+          "yield": 1518
+        }
+      },
+      "1991-92": {
+        "Kharif": {
+          "area": 5859.4,
+          "production": 8064.4,
+          "yield": 1376
+        }
+      },
+      "1992-93": {
+        "Kharif": {
+          "area": 5511,
+          "production": 8942.9,
+          "yield": 1623
+        }
+      },
+      "1993-94": {
+        "Kharif": {
+          "area": 5586.3,
+          "production": 8528.3,
+          "yield": 1527
+        }
+      },
+      "1994-95": {
+        "Kharif": {
+          "area": 5514.1,
+          "production": 7643.4,
+          "yield": 1386
+        }
+      },
+      "1995-96": {
+        "Kharif": {
+          "area": 5519.6,
+          "production": 8280.1,
+          "yield": 1500
+        }
+      },
+      "1996-97": {
+        "Kharif": {
+          "area": 5713.4,
+          "production": 9174.12,
+          "yield": 1606
+        }
+      },
+      "1997-98": {
+        "Kharif": {
+          "area": 5761.5,
+          "production": 9429.8,
+          "yield": 1637
+        }
+      },
+      "1998-99": {
+        "Kharif": {
+          "area": 5591,
+          "production": 9538.7,
+          "yield": 1706
+        }
+      },
+      "1999-00": {
+        "Kharif": {
+          "area": 5726.9,
+          "production": 9706.2,
+          "yield": 1695
+        }
+      },
+      "2000-01": {
+        "Kharif": {
+          "area": 5987.1,
+          "production": 10219.6,
+          "yield": 1707
+        }
+      },
+      "2001-02": {
+        "Kharif": {
+          "area": 5933.8,
+          "production": 11248.3,
+          "yield": 1896
+        }
+      },
+      "2002-03": {
+        "Kharif": {
+          "area": 5976.1,
+          "production": 9272.4,
+          "yield": 1552
+        }
+      },
+      "2003-04": {
+        "Kharif": {
+          "area": 6590.1,
+          "production": 12734.4,
+          "yield": 1932
+        }
+      },
+      "2004-05": {
+        "Kharif": {
+          "area": 6594.2,
+          "production": 11476.4,
+          "yield": 1740
+        }
+      },
+      "2005-06": {
+        "Kharif": {
+          "area": 6757.9,
+          "production": 12155.9,
+          "yield": 1799
+        }
+      },
+      "2006-07": {
+        "Kharif": {
+          "area": 6960.4,
+          "production": 11556.3,
+          "yield": 1660
+        }
+      },
+      "2007-08": {
+        "Kharif": {
+          "area": 7118.7,
+          "production": 15106.7,
+          "yield": 2122
+        }
+      },
+      "2008-09": {
+        "Kharif": {
+          "area": 6894.7,
+          "production": 14120.5,
+          "yield": 2048
+        }
+      },
+      "2009-10": {
+        "Kharif": {
+          "area": 7063.39,
+          "production": 12293.29,
+          "yield": 1740
+        }
+      },
+      "2010-11": {
+        "Kharif": {
+          "area": 7282.03,
+          "production": 16637.37,
+          "yield": 2285
+        }
+      },
+      "2011-12": {
+        "Kharif": {
+          "area": 7381.19,
+          "production": 16486.28,
+          "yield": 2234
+        }
+      },
+      "2012-13": {
+        "Kharif": {
+          "area": 7214.45,
+          "production": 16204.48,
+          "yield": 2246
+        }
+      },
+      "2013-14": {
+        "Kharif": {
+          "area": 7309.71,
+          "production": 17145.2,
+          "yield": 2346
+        }
+      },
+      "2014-15": {
+        "Kharif": {
+          "area": 7563.43,
+          "production": 17013.55,
+          "yield": 2249
+        }
+      },
+      "2015-16": {
+        "Kharif": {
+          "area": 7179.86,
+          "production": 16053.06,
+          "yield": 2236
+        }
+      },
+      "2016-17": {
+        "Kharif": {
+          "area": 7841.69,
+          "production": 18919.2,
+          "yield": 2413
+        }
+      },
+      "2017-18": {
+        "Kharif": {
+          "area": 7433.69,
+          "production": 20118.42,
+          "yield": 2706
+        }
+      },
+      "2018-19": {
+        "Kharif": {
+          "area": 7330.57,
+          "production": 19413.6,
+          "yield": 2648
+        }
+      },
+      "2019-20": {
+        "Kharif": {
+          "area": 7552.92,
+          "production": 19429.33,
+          "yield": 2572
+        }
+      },
+      "2020-21": {
+        "Kharif": {
+          "area": 7755.44,
+          "production": 21555.08,
+          "yield": 2779
+        }
+      },
+      "2021-22": {
+        "Kharif": {
+          "area": 7784.57,
+          "production": 22680.58,
+          "yield": 2914
+        }
+      },
+      "2022-23": {
+        "Kharif": {
+          "area": 8052.94,
+          "production": 23673.7,
+          "yield": 2940
+        }
+      },
+      "2023-24": {
+        "Kharif": {
+          "area": 8329,
+          "production": 22245.13,
+          "yield": 2671
+        }
+      },
+      "2024-25": {
+        "Kharif": {
+          "area": 8461.35,
+          "production": 24808.32,
+          "yield": 2932
+        }
+      },
+      "2025-26": {
+        "Kharif": {
+          "area": 9860.79,
+          "production": 30508.82,
+          "yield": 3094
+        }
+      }
+    },
+    "Tur": {
+      "1966-67": {
+        "Kharif": {
+          "area": 2521,
+          "production": 1129.7,
+          "yield": 448
+        }
+      },
+      "1967-68": {
+        "Kharif": {
+          "area": 2664.7,
+          "production": 1741.1,
+          "yield": 653
+        }
+      },
+      "1968-69": {
+        "Kharif": {
+          "area": 2528.9,
+          "production": 1815.8,
+          "yield": 718
+        }
+      },
+      "1969-70": {
+        "Kharif": {
+          "area": 2668.7,
+          "production": 1842.2,
+          "yield": 690
+        }
+      },
+      "1970-71": {
+        "Kharif": {
+          "area": 2655,
+          "production": 1883.3,
+          "yield": 709
+        }
+      },
+      "1971-72": {
+        "Kharif": {
+          "area": 2345.5,
+          "production": 1683,
+          "yield": 718
+        }
+      },
+      "1972-73": {
+        "Kharif": {
+          "area": 2424.1,
+          "production": 1927.6,
+          "yield": 795
+        }
+      },
+      "1973-74": {
+        "Kharif": {
+          "area": 2646,
+          "production": 1408.2,
+          "yield": 532
+        }
+      },
+      "1974-75": {
+        "Kharif": {
+          "area": 2528.9,
+          "production": 1844.2,
+          "yield": 729
+        }
+      },
+      "1975-76": {
+        "Kharif": {
+          "area": 2671,
+          "production": 2099.3,
+          "yield": 786
+        }
+      },
+      "1976-77": {
+        "Kharif": {
+          "area": 2566,
+          "production": 1725.3,
+          "yield": 672
+        }
+      },
+      "1977-78": {
+        "Kharif": {
+          "area": 2626.6,
+          "production": 1929.73,
+          "yield": 735
+        }
+      },
+      "1978-79": {
+        "Kharif": {
+          "area": 2634.9,
+          "production": 1887.4,
+          "yield": 716
+        }
+      },
+      "1979-80": {
+        "Kharif": {
+          "area": 2731,
+          "production": 1757,
+          "yield": 643
+        }
+      },
+      "1980-81": {
+        "Kharif": {
+          "area": 2842.2,
+          "production": 1957.3,
+          "yield": 689
+        }
+      },
+      "1981-82": {
+        "Kharif": {
+          "area": 3004.8,
+          "production": 2236.5,
+          "yield": 744
+        }
+      },
+      "1982-83": {
+        "Kharif": {
+          "area": 2926,
+          "production": 1988.9,
+          "yield": 680
+        }
+      },
+      "1983-84": {
+        "Kharif": {
+          "area": 3218.4,
+          "production": 2576.4,
+          "yield": 801
+        }
+      },
+      "1984-85": {
+        "Kharif": {
+          "area": 3154.2,
+          "production": 2585.2,
+          "yield": 820
+        }
+      },
+      "1985-86": {
+        "Kharif": {
+          "area": 3183.9,
+          "production": 2441,
+          "yield": 767
+        }
+      },
+      "1986-87": {
+        "Kharif": {
+          "area": 3147.5,
+          "production": 2271.6,
+          "yield": 722
+        }
+      },
+      "1987-88": {
+        "Kharif": {
+          "area": 3333.1,
+          "production": 2282.3,
+          "yield": 685
+        }
+      },
+      "1988-89": {
+        "Kharif": {
+          "area": 3488.7,
+          "production": 2717.7,
+          "yield": 779
+        }
+      },
+      "1989-90": {
+        "Kharif": {
+          "area": 3599.7,
+          "production": 2746.6,
+          "yield": 763
+        }
+      },
+      "1990-91": {
+        "Kharif": {
+          "area": 3593,
+          "production": 2416.8,
+          "yield": 673
+        }
+      },
+      "1991-92": {
+        "Kharif": {
+          "area": 3627,
+          "production": 2133.1,
+          "yield": 588
+        }
+      },
+      "1992-93": {
+        "Kharif": {
+          "area": 3575.6,
+          "production": 2330.8,
+          "yield": 652
+        }
+      },
+      "1993-94": {
+        "Kharif": {
+          "area": 3531.7,
+          "production": 2692.5,
+          "yield": 762
+        }
+      },
+      "1994-95": {
+        "Kharif": {
+          "area": 3314.3,
+          "production": 2143.8,
+          "yield": 647
+        }
+      },
+      "1995-96": {
+        "Kharif": {
+          "area": 3446.7,
+          "production": 2309.4,
+          "yield": 670
+        }
+      },
+      "1996-97": {
+        "Kharif": {
+          "area": 3513.3,
+          "production": 2659.6,
+          "yield": 757
+        }
+      },
+      "1997-98": {
+        "Kharif": {
+          "area": 3358.7,
+          "production": 1849.5,
+          "yield": 551
+        }
+      },
+      "1998-99": {
+        "Kharif": {
+          "area": 3439.3,
+          "production": 2707.9,
+          "yield": 787
+        }
+      },
+      "1999-00": {
+        "Kharif": {
+          "area": 3426.8,
+          "production": 2693.8,
+          "yield": 786
+        }
+      },
+      "2000-01": {
+        "Kharif": {
+          "area": 3632.1,
+          "production": 2246.3,
+          "yield": 618
+        }
+      },
+      "2001-02": {
+        "Kharif": {
+          "area": 3327.7,
+          "production": 2259.8,
+          "yield": 679
+        }
+      },
+      "2002-03": {
+        "Kharif": {
+          "area": 3358.9,
+          "production": 2185.8,
+          "yield": 651
+        }
+      },
+      "2003-04": {
+        "Kharif": {
+          "area": 3515.6,
+          "production": 2356.4,
+          "yield": 670
+        }
+      },
+      "2004-05": {
+        "Kharif": {
+          "area": 3518.5,
+          "production": 2346.9,
+          "yield": 667
+        }
+      },
+      "2005-06": {
+        "Kharif": {
+          "area": 3580.7,
+          "production": 2738,
+          "yield": 765
+        }
+      },
+      "2006-07": {
+        "Kharif": {
+          "area": 3561.6,
+          "production": 2314.1,
+          "yield": 650
+        }
+      },
+      "2007-08": {
+        "Kharif": {
+          "area": 3725.8,
+          "production": 3075.94,
+          "yield": 826
+        }
+      },
+      "2008-09": {
+        "Kharif": {
+          "area": 3377.9,
+          "production": 2265.5,
+          "yield": 671
+        }
+      },
+      "2009-10": {
+        "Kharif": {
+          "area": 3465.72,
+          "production": 2464.55,
+          "yield": 711
+        }
+      },
+      "2010-11": {
+        "Kharif": {
+          "area": 4366.69,
+          "production": 2861.12,
+          "yield": 655
+        }
+      },
+      "2011-12": {
+        "Kharif": {
+          "area": 4007.37,
+          "production": 2654.05,
+          "yield": 662
+        }
+      },
+      "2012-13": {
+        "Kharif": {
+          "area": 3892.87,
+          "production": 3022.7,
+          "yield": 776
+        }
+      },
+      "2013-14": {
+        "Kharif": {
+          "area": 3904.44,
+          "production": 3174.4,
+          "yield": 813
+        }
+      },
+      "2014-15": {
+        "Kharif": {
+          "area": 3853.54,
+          "production": 2807.32,
+          "yield": 729
+        }
+      },
+      "2015-16": {
+        "Kharif": {
+          "area": 3963.35,
+          "production": 2560.96,
+          "yield": 646
+        }
+      },
+      "2016-17": {
+        "Kharif": {
+          "area": 5337.89,
+          "production": 4873.24,
+          "yield": 913
+        }
+      },
+      "2017-18": {
+        "Kharif": {
+          "area": 4438.31,
+          "production": 4289.82,
+          "yield": 967
+        }
+      },
+      "2018-19": {
+        "Kharif": {
+          "area": 4549.54,
+          "production": 3315.44,
+          "yield": 729
+        }
+      },
+      "2019-20": {
+        "Kharif": {
+          "area": 4532.47,
+          "production": 3891.73,
+          "yield": 859
+        }
+      },
+      "2020-21": {
+        "Kharif": {
+          "area": 4724.45,
+          "production": 4315.9,
+          "yield": 914
+        }
+      },
+      "2021-22": {
+        "Kharif": {
+          "area": 4900.26,
+          "production": 4220.19,
+          "yield": 861
+        }
+      },
+      "2022-23": {
+        "Kharif": {
+          "area": 4068.43,
+          "production": 3311.53,
+          "yield": 814
+        }
+      },
+      "2023-24": {
+        "Kharif": {
+          "area": 4130.59,
+          "production": 3416.84,
+          "yield": 827
+        }
+      },
+      "2024-25": {
+        "Kharif": {
+          "area": 4335.7,
+          "production": 3623.87,
+          "yield": 836
+        }
+      },
+      "2025-26": {
+        "Kharif": {
+          "area": 4460.44,
+          "production": 3591.91,
+          "yield": 805
+        }
+      }
+    },
+    "Gram": {},
+    "Soybean": {
+      "1976-77": {
+        "Kharif": {
+          "area": 124.9,
+          "production": 123.4,
+          "yield": 988
+        }
+      },
+      "1977-78": {
+        "Kharif": {
+          "area": 194.8,
+          "production": 183.2,
+          "yield": 940
+        }
+      },
+      "1978-79": {
+        "Kharif": {
+          "area": 306.4,
+          "production": 298.7,
+          "yield": 975
+        }
+      },
+      "1979-80": {
+        "Kharif": {
+          "area": 496.4,
+          "production": 282,
+          "yield": 568
+        }
+      },
+      "1980-81": {
+        "Kharif": {
+          "area": 607.6,
+          "production": 442.2,
+          "yield": 728
+        }
+      },
+      "1981-82": {
+        "Kharif": {
+          "area": 474.6,
+          "production": 351.6,
+          "yield": 741
+        }
+      },
+      "1982-83": {
+        "Kharif": {
+          "area": 770.2,
+          "production": 491,
+          "yield": 637
+        }
+      },
+      "1983-84": {
+        "Kharif": {
+          "area": 836.2,
+          "production": 614.3,
+          "yield": 735
+        }
+      },
+      "1984-85": {
+        "Kharif": {
+          "area": 1242.7,
+          "production": 954.8,
+          "yield": 768
+        }
+      },
+      "1985-86": {
+        "Kharif": {
+          "area": 1339.7,
+          "production": 1024.1,
+          "yield": 764
+        }
+      },
+      "1986-87": {
+        "Kharif": {
+          "area": 1526.8,
+          "production": 891.4,
+          "yield": 584
+        }
+      },
+      "1987-88": {
+        "Kharif": {
+          "area": 1542.6,
+          "production": 898.3,
+          "yield": 582
+        }
+      },
+      "1988-89": {
+        "Kharif": {
+          "area": 1734.1,
+          "production": 1547.1,
+          "yield": 892
+        }
+      },
+      "1989-90": {
+        "Kharif": {
+          "area": 2253,
+          "production": 1805.6,
+          "yield": 801
+        }
+      },
+      "1990-91": {
+        "Kharif": {
+          "area": 2564.22,
+          "production": 2601.51,
+          "yield": 1015
+        }
+      },
+      "1991-92": {
+        "Kharif": {
+          "area": 3184.8,
+          "production": 2492.03,
+          "yield": 782
+        }
+      },
+      "1992-93": {
+        "Kharif": {
+          "area": 3788.7,
+          "production": 3386.9,
+          "yield": 894
+        }
+      },
+      "1993-94": {
+        "Kharif": {
+          "area": 4370.5,
+          "production": 4745.2,
+          "yield": 1086
+        }
+      },
+      "1994-95": {
+        "Kharif": {
+          "area": 4317.9,
+          "production": 3931.9,
+          "yield": 911
+        }
+      },
+      "1995-96": {
+        "Kharif": {
+          "area": 5035,
+          "production": 5095.6,
+          "yield": 1012
+        }
+      },
+      "1996-97": {
+        "Kharif": {
+          "area": 5441.7,
+          "production": 5380.2,
+          "yield": 989
+        }
+      },
+      "1997-98": {
+        "Kharif": {
+          "area": 5986.1,
+          "production": 6460,
+          "yield": 1079
+        }
+      },
+      "1998-99": {
+        "Kharif": {
+          "area": 6488.9,
+          "production": 7140,
+          "yield": 1100
+        }
+      },
+      "1999-00": {
+        "Kharif": {
+          "area": 6222.4,
+          "production": 7080,
+          "yield": 1138
+        }
+      },
+      "2000-01": {
+        "Kharif": {
+          "area": 6416.6,
+          "production": 5280,
+          "yield": 823
+        }
+      },
+      "2001-02": {
+        "Kharif": {
+          "area": 6343.1,
+          "production": 5962.7,
+          "yield": 940
+        }
+      },
+      "2002-03": {
+        "Kharif": {
+          "area": 6105.5,
+          "production": 4654.7,
+          "yield": 762
+        }
+      },
+      "2003-04": {
+        "Kharif": {
+          "area": 6554.7,
+          "production": 7818.9,
+          "yield": 1193
+        }
+      },
+      "2004-05": {
+        "Kharif": {
+          "area": 7571.2,
+          "production": 6876.3,
+          "yield": 908
+        }
+      },
+      "2005-06": {
+        "Kharif": {
+          "area": 7707.5,
+          "production": 8273.5,
+          "yield": 1073
+        }
+      },
+      "2006-07": {
+        "Kharif": {
+          "area": 8328.7,
+          "production": 8850.8,
+          "yield": 1063
+        }
+      },
+      "2007-08": {
+        "Kharif": {
+          "area": 8881.7,
+          "production": 10968.2,
+          "yield": 1235
+        }
+      },
+      "2008-09": {
+        "Kharif": {
+          "area": 9510.8,
+          "production": 9905.43,
+          "yield": 1041
+        }
+      },
+      "2009-10": {
+        "Kharif": {
+          "area": 9734.66,
+          "production": 9964.48,
+          "yield": 1024
+        }
+      },
+      "2010-11": {
+        "Kharif": {
+          "area": 9601.04,
+          "production": 12733.7,
+          "yield": 1326
+        }
+      },
+      "2011-12": {
+        "Kharif": {
+          "area": 10109.09,
+          "production": 12213.51,
+          "yield": 1208
+        }
+      },
+      "2012-13": {
+        "Kharif": {
+          "area": 10840.73,
+          "production": 14666.45,
+          "yield": 1353
+        }
+      },
+      "2013-14": {
+        "Kharif": {
+          "area": 11716.41,
+          "production": 11860.82,
+          "yield": 1012
+        }
+      },
+      "2014-15": {
+        "Kharif": {
+          "area": 10910.83,
+          "production": 10373.8,
+          "yield": 951
+        }
+      },
+      "2015-16": {
+        "Kharif": {
+          "area": 11604.54,
+          "production": 8569.79,
+          "yield": 738
+        }
+      },
+      "2016-17": {
+        "Kharif": {
+          "area": 11183.4,
+          "production": 13158.73,
+          "yield": 1177
+        }
+      },
+      "2017-18": {
+        "Kharif": {
+          "area": 10328.83,
+          "production": 10932.97,
+          "yield": 1058
+        }
+      },
+      "2018-19": {
+        "Kharif": {
+          "area": 11131.26,
+          "production": 13267.52,
+          "yield": 1192
+        }
+      },
+      "2019-20": {
+        "Kharif": {
+          "area": 12192.71,
+          "production": 11225.85,
+          "yield": 921
+        }
+      },
+      "2020-21": {
+        "Kharif": {
+          "area": 12918.28,
+          "production": 12610.3,
+          "yield": 976
+        }
+      },
+      "2021-22": {
+        "Kharif": {
+          "area": 12146.58,
+          "production": 12986.72,
+          "yield": 1069
+        }
+      },
+      "2022-23": {
+        "Kharif": {
+          "area": 13084.09,
+          "production": 14984.93,
+          "yield": 1145
+        }
+      },
+      "2023-24": {
+        "Kharif": {
+          "area": 13254.9,
+          "production": 13061.99,
+          "yield": 985
+        }
+      },
+      "2024-25": {
+        "Kharif": {
+          "area": 12951.96,
+          "production": 15268.33,
+          "yield": 1179
+        }
+      },
+      "2025-26": {
+        "Kharif": {
+          "area": 12386.13,
+          "production": 12596.47,
+          "yield": 1017
+        }
+      }
+    },
+    "Sunflower": {
+      "1976-77": {
+        "Kharif": {
+          "area": 254.5,
+          "production": 139.1,
+          "yield": 547
+        }
+      },
+      "1977-78": {
+        "Kharif": {
+          "area": 270.3,
+          "production": 144.16,
+          "yield": 533
+        }
+      },
+      "1978-79": {
+        "Kharif": {
+          "area": 181.9,
+          "production": 99.85,
+          "yield": 549
+        }
+      },
+      "1979-80": {
+        "Kharif": {
+          "area": 61.3,
+          "production": 31.8,
+          "yield": 519
+        }
+      },
+      "1980-81": {
+        "Kharif": {
+          "area": 119.4,
+          "production": 66.3,
+          "yield": 555
+        }
+      },
+      "1981-82": {
+        "Kharif": {
+          "area": 169.1,
+          "production": 95.4,
+          "yield": 564
+        }
+      },
+      "1982-83": {
+        "Kharif": {
+          "area": 277.3,
+          "production": 137.8,
+          "yield": 497
+        }
+      },
+      "1983-84": {
+        "Kharif": {
+          "area": 417.5,
+          "production": 178.9,
+          "yield": 429
+        }
+      },
+      "1984-85": {
+        "Kharif": {
+          "area": 500.8,
+          "production": 263.9,
+          "yield": 527
+        }
+      },
+      "1985-86": {
+        "Kharif": {
+          "area": 451,
+          "production": 168.7,
+          "yield": 374
+        }
+      },
+      "1986-87": {
+        "Kharif": {
+          "area": 613.5,
+          "production": 251.9,
+          "yield": 411
+        }
+      },
+      "1987-88": {
+        "Kharif": {
+          "area": 990.8,
+          "production": 381.3,
+          "yield": 385
+        }
+      },
+      "1988-89": {
+        "Kharif": {
+          "area": 644.9,
+          "production": 222,
+          "yield": 344
+        }
+      },
+      "1989-90": {
+        "Kharif": {
+          "area": 548.1,
+          "production": 267.2,
+          "yield": 488
+        }
+      },
+      "1990-91": {
+        "Kharif": {
+          "area": 714.9,
+          "production": 334.7,
+          "yield": 468
+        }
+      },
+      "1991-92": {
+        "Kharif": {
+          "area": 973.2,
+          "production": 363.1,
+          "yield": 373
+        }
+      },
+      "1992-93": {
+        "Kharif": {
+          "area": 919,
+          "production": 435.5,
+          "yield": 474
+        }
+      },
+      "1993-94": {
+        "Kharif": {
+          "area": 1378.6,
+          "production": 503.2,
+          "yield": 365
+        }
+      },
+      "1994-95": {
+        "Kharif": {
+          "area": 695.4,
+          "production": 338.5,
+          "yield": 487
+        }
+      },
+      "1995-96": {
+        "Kharif": {
+          "area": 902.6,
+          "production": 446.9,
+          "yield": 495
+        }
+      },
+      "1996-97": {
+        "Kharif": {
+          "area": 795,
+          "production": 390,
+          "yield": 491
+        }
+      },
+      "1997-98": {
+        "Kharif": {
+          "area": 590.5,
+          "production": 239.6,
+          "yield": 406
+        }
+      },
+      "1998-99": {
+        "Kharif": {
+          "area": 732.9,
+          "production": 240.1,
+          "yield": 328
+        }
+      },
+      "1999-00": {
+        "Kharif": {
+          "area": 473.4,
+          "production": 200.48,
+          "yield": 423
+        }
+      },
+      "2000-01": {
+        "Kharif": {
+          "area": 419.1,
+          "production": 240,
+          "yield": 573
+        }
+      },
+      "2001-02": {
+        "Kharif": {
+          "area": 309.3,
+          "production": 155.1,
+          "yield": 501
+        }
+      },
+      "2002-03": {
+        "Kharif": {
+          "area": 531.9,
+          "production": 271.5,
+          "yield": 510
+        }
+      },
+      "2003-04": {
+        "Kharif": {
+          "area": 610.7,
+          "production": 306.1,
+          "yield": 501
+        }
+      },
+      "2004-05": {
+        "Kharif": {
+          "area": 873.1,
+          "production": 431.1,
+          "yield": 494
+        }
+      },
+      "2005-06": {
+        "Kharif": {
+          "area": 919.4,
+          "production": 455.8,
+          "yield": 496
+        }
+      },
+      "2006-07": {
+        "Kharif": {
+          "area": 860.4,
+          "production": 365.5,
+          "yield": 425
+        }
+      },
+      "2007-08": {
+        "Kharif": {
+          "area": 761.9,
+          "production": 462.8,
+          "yield": 607
+        }
+      },
+      "2008-09": {
+        "Kharif": {
+          "area": 661.5,
+          "production": 357.1,
+          "yield": 540
+        }
+      },
+      "2009-10": {
+        "Kharif": {
+          "area": 567.72,
+          "production": 214.43,
+          "yield": 378
+        }
+      },
+      "2010-11": {
+        "Kharif": {
+          "area": 315.32,
+          "production": 191.83,
+          "yield": 608
+        }
+      },
+      "2011-12": {
+        "Kharif": {
+          "area": 260.21,
+          "production": 147.38,
+          "yield": 566
+        }
+      },
+      "2012-13": {
+        "Kharif": {
+          "area": 301.06,
+          "production": 187.17,
+          "yield": 622
+        }
+      },
+      "2013-14": {
+        "Kharif": {
+          "area": 256.09,
+          "production": 171.05,
+          "yield": 668
+        }
+      },
+      "2014-15": {
+        "Kharif": {
+          "area": 216.79,
+          "production": 143.01,
+          "yield": 660
+        }
+      },
+      "2015-16": {
+        "Kharif": {
+          "area": 157.33,
+          "production": 66.24,
+          "yield": 421
+        }
+      },
+      "2016-17": {
+        "Kharif": {
+          "area": 173.38,
+          "production": 98.3,
+          "yield": 567
+        }
+      },
+      "2017-18": {
+        "Kharif": {
+          "area": 135.26,
+          "production": 84.75,
+          "yield": 627
+        }
+      },
+      "2018-19": {
+        "Kharif": {
+          "area": 117.87,
+          "production": 90.28,
+          "yield": 766
+        }
+      },
+      "2019-20": {
+        "Kharif": {
+          "area": 125.43,
+          "production": 91.74,
+          "yield": 731
+        }
+      },
+      "2020-21": {
+        "Kharif": {
+          "area": 98.93,
+          "production": 77.64,
+          "yield": 785
+        }
+      },
+      "2021-22": {
+        "Kharif": {
+          "area": 138.05,
+          "production": 110.71,
+          "yield": 802
+        }
+      },
+      "2022-23": {
+        "Kharif": {
+          "area": 218.35,
+          "production": 203.72,
+          "yield": 933
+        }
+      },
+      "2023-24": {
+        "Kharif": {
+          "area": 66.61,
+          "production": 59.57,
+          "yield": 894
+        }
+      },
+      "2024-25": {
+        "Kharif": {
+          "area": 78.16,
+          "production": 72.27,
+          "yield": 925
+        }
+      },
+      "2025-26": {
+        "Kharif": {
+          "area": 87.79,
+          "production": 87.54,
+          "yield": 997
+        }
+      }
+    },
+    "Rapeseed & Mustard": {},
+    "Sugarcane": {
+      "1966-67": {
+        "Kharif": {
+          "area": 2301.3,
+          "production": 92826.1,
+          "yield": 40336
+        }
+      },
+      "1967-68": {
+        "Kharif": {
+          "area": 2046.5,
+          "production": 95499.7,
+          "yield": 46665
+        }
+      },
+      "1968-69": {
+        "Kharif": {
+          "area": 2460.7,
+          "production": 117571.7,
+          "yield": 47780
+        }
+      },
+      "1969-70": {
+        "Kharif": {
+          "area": 2748.8,
+          "production": 135024.3,
+          "yield": 49121
+        }
+      },
+      "1970-71": {
+        "Kharif": {
+          "area": 2615.1,
+          "production": 126368,
+          "yield": 48322
+        }
+      },
+      "1971-72": {
+        "Kharif": {
+          "area": 2390.4,
+          "production": 113569.5,
+          "yield": 47511
+        }
+      },
+      "1972-73": {
+        "Kharif": {
+          "area": 2451.6,
+          "production": 124866.7,
+          "yield": 50933
+        }
+      },
+      "1973-74": {
+        "Kharif": {
+          "area": 2752.1,
+          "production": 140804.5,
+          "yield": 51163
+        }
+      },
+      "1974-75": {
+        "Kharif": {
+          "area": 2894.2,
+          "production": 144288.9,
+          "yield": 49855
+        }
+      },
+      "1975-76": {
+        "Kharif": {
+          "area": 2762.2,
+          "production": 140603.5,
+          "yield": 50903
+        }
+      },
+      "1976-77": {
+        "Kharif": {
+          "area": 2865.3,
+          "production": 153006.7,
+          "yield": 53400
+        }
+      },
+      "1977-78": {
+        "Kharif": {
+          "area": 3151.1,
+          "production": 176965.5,
+          "yield": 56160
+        }
+      },
+      "1978-79": {
+        "Kharif": {
+          "area": 3087.8,
+          "production": 151655.1,
+          "yield": 49114
+        }
+      },
+      "1979-80": {
+        "Kharif": {
+          "area": 2610.2,
+          "production": 128833.4,
+          "yield": 49358
+        }
+      },
+      "1980-81": {
+        "Kharif": {
+          "area": 2666.6,
+          "production": 154248,
+          "yield": 57844
+        }
+      },
+      "1981-82": {
+        "Kharif": {
+          "area": 3193.3,
+          "production": 186357.6,
+          "yield": 58359
+        }
+      },
+      "1982-83": {
+        "Kharif": {
+          "area": 3357.6,
+          "production": 189505.6,
+          "yield": 56441
+        }
+      },
+      "1983-84": {
+        "Kharif": {
+          "area": 3109.6,
+          "production": 174076.3,
+          "yield": 55980
+        }
+      },
+      "1984-85": {
+        "Kharif": {
+          "area": 2953.4,
+          "production": 170319.2,
+          "yield": 57669
+        }
+      },
+      "1985-86": {
+        "Kharif": {
+          "area": 2849.2,
+          "production": 170648.1,
+          "yield": 59893
+        }
+      },
+      "1986-87": {
+        "Kharif": {
+          "area": 3078.74,
+          "production": 186089.52,
+          "yield": 60443
+        }
+      },
+      "1987-88": {
+        "Kharif": {
+          "area": 3278.6,
+          "production": 195737,
+          "yield": 59701
+        }
+      },
+      "1988-89": {
+        "Kharif": {
+          "area": 3328.9,
+          "production": 203036.8,
+          "yield": 60992
+        }
+      },
+      "1989-90": {
+        "Kharif": {
+          "area": 3437.9,
+          "production": 225569.2,
+          "yield": 65612
+        }
+      },
+      "1990-91": {
+        "Kharif": {
+          "area": 3686,
+          "production": 241045.5,
+          "yield": 65395
+        }
+      },
+      "1991-92": {
+        "Kharif": {
+          "area": 3844.4,
+          "production": 253995.1,
+          "yield": 66069
+        }
+      },
+      "1992-93": {
+        "Kharif": {
+          "area": 3572.7,
+          "production": 228033.4,
+          "yield": 63827
+        }
+      },
+      "1993-94": {
+        "Kharif": {
+          "area": 3421.6,
+          "production": 229659.3,
+          "yield": 67120
+        }
+      },
+      "1994-95": {
+        "Kharif": {
+          "area": 3866.8,
+          "production": 275539.9,
+          "yield": 71258
+        }
+      },
+      "1995-96": {
+        "Kharif": {
+          "area": 4147.4,
+          "production": 281099.5,
+          "yield": 67777
+        }
+      },
+      "1996-97": {
+        "Kharif": {
+          "area": 4174.1,
+          "production": 277560,
+          "yield": 66496
+        }
+      },
+      "1997-98": {
+        "Kharif": {
+          "area": 3929.8,
+          "production": 279540,
+          "yield": 71133
+        }
+      },
+      "1998-99": {
+        "Kharif": {
+          "area": 4054.9,
+          "production": 288720,
+          "yield": 71203
+        }
+      },
+      "1999-00": {
+        "Kharif": {
+          "area": 4219.7,
+          "production": 299320,
+          "yield": 70934
+        }
+      },
+      "2000-01": {
+        "Kharif": {
+          "area": 4315.7,
+          "production": 295960,
+          "yield": 68578
+        }
+      },
+      "2001-02": {
+        "Kharif": {
+          "area": 4411.6,
+          "production": 297207.8,
+          "yield": 67370
+        }
+      },
+      "2002-03": {
+        "Kharif": {
+          "area": 4520.3,
+          "production": 287383.2,
+          "yield": 63576
+        }
+      },
+      "2003-04": {
+        "Kharif": {
+          "area": 3938.4,
+          "production": 233861.8,
+          "yield": 59380
+        }
+      },
+      "2004-05": {
+        "Kharif": {
+          "area": 3661.5,
+          "production": 237088.4,
+          "yield": 64752
+        }
+      },
+      "2005-06": {
+        "Kharif": {
+          "area": 4201.7,
+          "production": 281171.8,
+          "yield": 66919
+        }
+      },
+      "2006-07": {
+        "Kharif": {
+          "area": 5150.8,
+          "production": 355519.7,
+          "yield": 69022
+        }
+      },
+      "2007-08": {
+        "Kharif": {
+          "area": 5055.2,
+          "production": 348187.9,
+          "yield": 68877
+        }
+      },
+      "2008-09": {
+        "Kharif": {
+          "area": 4415.4,
+          "production": 285029.3,
+          "yield": 64553
+        }
+      },
+      "2009-10": {
+        "Kharif": {
+          "area": 4174.56,
+          "production": 292301.62,
+          "yield": 70020
+        }
+      },
+      "2010-11": {
+        "Kharif": {
+          "area": 4884.83,
+          "production": 342381.56,
+          "yield": 70091
+        }
+      },
+      "2011-12": {
+        "Kharif": {
+          "area": 5037.66,
+          "production": 361036.49,
+          "yield": 71668
+        }
+      },
+      "2012-13": {
+        "Kharif": {
+          "area": 4998.94,
+          "production": 341199.65,
+          "yield": 68254
+        }
+      },
+      "2013-14": {
+        "Kharif": {
+          "area": 4993.35,
+          "production": 352141.83,
+          "yield": 70522
+        }
+      },
+      "2014-15": {
+        "Kharif": {
+          "area": 5066.78,
+          "production": 362332.77,
+          "yield": 71511
+        }
+      },
+      "2015-16": {
+        "Kharif": {
+          "area": 4927.12,
+          "production": 348448.4,
+          "yield": 70720
+        }
+      },
+      "2016-17": {
+        "Kharif": {
+          "area": 4435.69,
+          "production": 306069,
+          "yield": 69001
+        }
+      },
+      "2017-18": {
+        "Kharif": {
+          "area": 4737.06,
+          "production": 379904.85,
+          "yield": 80198
+        }
+      },
+      "2018-19": {
+        "Kharif": {
+          "area": 5061.09,
+          "production": 405416.18,
+          "yield": 80105
+        }
+      },
+      "2019-20": {
+        "Kharif": {
+          "area": 4602.68,
+          "production": 370500.3,
+          "yield": 80497
+        }
+      },
+      "2020-21": {
+        "Kharif": {
+          "area": 4851.23,
+          "production": 405398.71,
+          "yield": 83566
+        }
+      },
+      "2021-22": {
+        "Kharif": {
+          "area": 5175.41,
+          "production": 439424.89,
+          "yield": 84906
+        }
+      },
+      "2022-23": {
+        "Kharif": {
+          "area": 5885.32,
+          "production": 490533.35,
+          "yield": 83349
+        }
+      },
+      "2023-24": {
+        "Kharif": {
+          "area": 5739.6,
+          "production": 453158.49,
+          "yield": 78953
+        }
+      },
+      "2024-25": {
+        "Kharif": {
+          "area": 5449.93,
+          "production": 454610.97,
+          "yield": 83416
+        }
+      },
+      "2025-26": {
+        "Kharif": {
+          "area": 5883.98,
+          "production": 500063.24,
+          "yield": 84987
+        }
+      }
+    }
+  }
+}
