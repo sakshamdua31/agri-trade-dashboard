@@ -1,0 +1,36 @@
+# .github/workflows/daily-arrivals.yml
+# Runs daily at 7:30 PM IST (2:00 PM UTC) — after markets close
+# AGMARKNET data is usually uploaded by 6-7 PM IST
+
+name: Daily Mandi Arrivals
+
+on:
+  schedule:
+    - cron: '0 14 * * 1-6'   # Mon-Sat, 2:00 PM UTC = 7:30 PM IST
+  workflow_dispatch:           # manual trigger from Actions tab
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Fetch today's arrivals
+        run: python collect_arrivals.py
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "actions@github.com"
+          git add data/mandi_arrivals/
+          git commit -m "Daily arrivals $(date -u +%Y-%m-%d)" || echo "No changes"
+          git push
