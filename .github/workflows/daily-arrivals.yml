@@ -25,7 +25,7 @@ jobs:
         run: pip install requests beautifulsoup4
 
       - name: Fetch today's arrivals
-        run: python collect_arrivals.py
+        run: python collectors/collect_arrivals.py
 
       - name: Commit updated data
         run: |
