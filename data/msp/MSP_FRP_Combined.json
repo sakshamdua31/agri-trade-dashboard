@@ -1,0 +1,1449 @@
+{
+  "dataset": "India MSP (Minimum Support Price) & Sugarcane FRP — Combined",
+  "source": "CACP / DA&FW / DFPD, Government of India",
+  "updated": "2026-05-13",
+  "unit": "INR per Quintal",
+  "price_types": {
+    "MSP": "Minimum Support Price — government-fixed floor price (CACP-recommended, Cabinet-fixed).",
+    "FRP": "Fair and Remunerative Price — statutory minimum price for sugarcane paid by mills."
+  },
+  "coverage_notes": [
+    "MSP series shown for 9 crops; 'government_fixed' is the notified price, 'cacp_recommended' is the CACP proposal, 'bonus_over_recommended' = fixed − recommended.",
+    "Onion and Palm Oil have NO MSP/FRP: onion is under the Market Intervention Scheme (MIS)/buffer stocking; palm oil under NMEO-OP Viability Price.",
+    "'yoy_change_pct' and other *_pct fields are decimal fractions (0.05 = 5%).",
+    "null = price not announced/available for that year."
+  ],
+  "commodities_covered": [
+    "Paddy (Common)",
+    "Wheat",
+    "Maize",
+    "Tur (Arhar)",
+    "Gram",
+    "Soybean (Yellow)",
+    "Soybean (Black)",
+    "Rapeseed & Mustard",
+    "Sunflower Seed",
+    "Sugarcane"
+  ],
+  "msp": [
+    {
+      "commodity": "Paddy (Common)",
+      "category": "Cereal",
+      "season": "Kharif",
+      "price_type": "MSP",
+      "unit": "INR per Quintal",
+      "note": null,
+      "summary": {
+        "first_year": "2010-11",
+        "latest_year_with_price": "2026-27",
+        "total_increase_abs": 1441,
+        "total_increase_pct": 1.441,
+        "cagr_pct": 0.0574
+      },
+      "series": [
+        {
+          "year": "2010-11",
+          "cacp_recommended": 1000,
+          "government_fixed": 1000,
+          "yoy_change_abs": null,
+          "yoy_change_pct": null,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2011-12",
+          "cacp_recommended": 1080,
+          "government_fixed": 1080,
+          "yoy_change_abs": 80,
+          "yoy_change_pct": 0.08,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2012-13",
+          "cacp_recommended": 1250,
+          "government_fixed": 1250,
+          "yoy_change_abs": 170,
+          "yoy_change_pct": 0.1574,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2013-14",
+          "cacp_recommended": 1310,
+          "government_fixed": 1310,
+          "yoy_change_abs": 60,
+          "yoy_change_pct": 0.048,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2014-15",
+          "cacp_recommended": 1360,
+          "government_fixed": 1360,
+          "yoy_change_abs": 50,
+          "yoy_change_pct": 0.0382,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2015-16",
+          "cacp_recommended": 1410,
+          "government_fixed": 1410,
+          "yoy_change_abs": 50,
+          "yoy_change_pct": 0.0368,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2016-17",
+          "cacp_recommended": 1470,
+          "government_fixed": 1470,
+          "yoy_change_abs": 60,
+          "yoy_change_pct": 0.0426,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2017-18",
+          "cacp_recommended": 1550,
+          "government_fixed": 1550,
+          "yoy_change_abs": 80,
+          "yoy_change_pct": 0.0544,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2018-19",
+          "cacp_recommended": 1745,
+          "government_fixed": 1750,
+          "yoy_change_abs": 200,
+          "yoy_change_pct": 0.129,
+          "bonus_over_recommended": 5
+        },
+        {
+          "year": "2019-20",
+          "cacp_recommended": 1815,
+          "government_fixed": 1815,
+          "yoy_change_abs": 65,
+          "yoy_change_pct": 0.0371,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2020-21",
+          "cacp_recommended": 1868,
+          "government_fixed": 1868,
+          "yoy_change_abs": 53,
+          "yoy_change_pct": 0.0292,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2021-22",
+          "cacp_recommended": 1940,
+          "government_fixed": 1940,
+          "yoy_change_abs": 72,
+          "yoy_change_pct": 0.0385,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2022-23",
+          "cacp_recommended": 2040,
+          "government_fixed": 2040,
+          "yoy_change_abs": 100,
+          "yoy_change_pct": 0.0515,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2023-24",
+          "cacp_recommended": 2183,
+          "government_fixed": 2183,
+          "yoy_change_abs": 143,
+          "yoy_change_pct": 0.0701,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2024-25",
+          "cacp_recommended": 2300,
+          "government_fixed": 2300,
+          "yoy_change_abs": 117,
+          "yoy_change_pct": 0.0536,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2025-26",
+          "cacp_recommended": 2369,
+          "government_fixed": 2369,
+          "yoy_change_abs": 69,
+          "yoy_change_pct": 0.03,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2026-27",
+          "cacp_recommended": 2441,
+          "government_fixed": 2441,
+          "yoy_change_abs": 72,
+          "yoy_change_pct": 0.0304,
+          "bonus_over_recommended": 0
+        }
+      ]
+    },
+    {
+      "commodity": "Wheat",
+      "category": "Cereal",
+      "season": "Rabi",
+      "price_type": "MSP",
+      "unit": "INR per Quintal",
+      "note": null,
+      "summary": {
+        "first_year": "2010-11",
+        "latest_year_with_price": "2025-26",
+        "total_increase_abs": 1415,
+        "total_increase_pct": 1.2094,
+        "cagr_pct": 0.0543
+      },
+      "series": [
+        {
+          "year": "2010-11",
+          "cacp_recommended": 1120,
+          "government_fixed": 1170,
+          "yoy_change_abs": null,
+          "yoy_change_pct": null,
+          "bonus_over_recommended": 50
+        },
+        {
+          "year": "2011-12",
+          "cacp_recommended": 1285,
+          "government_fixed": 1285,
+          "yoy_change_abs": 115,
+          "yoy_change_pct": 0.0983,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2012-13",
+          "cacp_recommended": 1285,
+          "government_fixed": 1350,
+          "yoy_change_abs": 65,
+          "yoy_change_pct": 0.0506,
+          "bonus_over_recommended": 65
+        },
+        {
+          "year": "2013-14",
+          "cacp_recommended": 1400,
+          "government_fixed": 1400,
+          "yoy_change_abs": 50,
+          "yoy_change_pct": 0.037,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2014-15",
+          "cacp_recommended": 1450,
+          "government_fixed": 1450,
+          "yoy_change_abs": 50,
+          "yoy_change_pct": 0.0357,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2015-16",
+          "cacp_recommended": 1525,
+          "government_fixed": 1525,
+          "yoy_change_abs": 75,
+          "yoy_change_pct": 0.0517,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2016-17",
+          "cacp_recommended": 1625,
+          "government_fixed": 1625,
+          "yoy_change_abs": 100,
+          "yoy_change_pct": 0.0656,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2017-18",
+          "cacp_recommended": 1735,
+          "government_fixed": 1735,
+          "yoy_change_abs": 110,
+          "yoy_change_pct": 0.0677,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2018-19",
+          "cacp_recommended": 1840,
+          "government_fixed": 1840,
+          "yoy_change_abs": 105,
+          "yoy_change_pct": 0.0605,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2019-20",
+          "cacp_recommended": 1925,
+          "government_fixed": 1925,
+          "yoy_change_abs": 85,
+          "yoy_change_pct": 0.0462,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2020-21",
+          "cacp_recommended": 1975,
+          "government_fixed": 1975,
+          "yoy_change_abs": 50,
+          "yoy_change_pct": 0.026,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2021-22",
+          "cacp_recommended": 2015,
+          "government_fixed": 2015,
+          "yoy_change_abs": 40,
+          "yoy_change_pct": 0.0203,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2022-23",
+          "cacp_recommended": 2125,
+          "government_fixed": 2125,
+          "yoy_change_abs": 110,
+          "yoy_change_pct": 0.0546,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2023-24",
+          "cacp_recommended": 2275,
+          "government_fixed": 2275,
+          "yoy_change_abs": 150,
+          "yoy_change_pct": 0.0706,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2024-25",
+          "cacp_recommended": 2425,
+          "government_fixed": 2425,
+          "yoy_change_abs": 150,
+          "yoy_change_pct": 0.0659,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2025-26",
+          "cacp_recommended": 2585,
+          "government_fixed": 2585,
+          "yoy_change_abs": 160,
+          "yoy_change_pct": 0.066,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2026-27",
+          "cacp_recommended": null,
+          "government_fixed": null,
+          "yoy_change_abs": null,
+          "yoy_change_pct": null,
+          "bonus_over_recommended": null
+        }
+      ]
+    },
+    {
+      "commodity": "Maize",
+      "category": "Cereal",
+      "season": "Kharif",
+      "price_type": "MSP",
+      "unit": "INR per Quintal",
+      "note": null,
+      "summary": {
+        "first_year": "2010-11",
+        "latest_year_with_price": "2026-27",
+        "total_increase_abs": 1530,
+        "total_increase_pct": 1.7386,
+        "cagr_pct": 0.065
+      },
+      "series": [
+        {
+          "year": "2010-11",
+          "cacp_recommended": 880,
+          "government_fixed": 880,
+          "yoy_change_abs": null,
+          "yoy_change_pct": null,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2011-12",
+          "cacp_recommended": 980,
+          "government_fixed": 980,
+          "yoy_change_abs": 100,
+          "yoy_change_pct": 0.1136,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2012-13",
+          "cacp_recommended": 1175,
+          "government_fixed": 1175,
+          "yoy_change_abs": 195,
+          "yoy_change_pct": 0.199,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2013-14",
+          "cacp_recommended": 1310,
+          "government_fixed": 1310,
+          "yoy_change_abs": 135,
+          "yoy_change_pct": 0.1149,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2014-15",
+          "cacp_recommended": 1310,
+          "government_fixed": 1310,
+          "yoy_change_abs": 0,
+          "yoy_change_pct": 0.0,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2015-16",
+          "cacp_recommended": 1325,
+          "government_fixed": 1325,
+          "yoy_change_abs": 15,
+          "yoy_change_pct": 0.0115,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2016-17",
+          "cacp_recommended": 1365,
+          "government_fixed": 1365,
+          "yoy_change_abs": 40,
+          "yoy_change_pct": 0.0302,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2017-18",
+          "cacp_recommended": 1425,
+          "government_fixed": 1425,
+          "yoy_change_abs": 60,
+          "yoy_change_pct": 0.044,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2018-19",
+          "cacp_recommended": 1700,
+          "government_fixed": 1700,
+          "yoy_change_abs": 275,
+          "yoy_change_pct": 0.193,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2019-20",
+          "cacp_recommended": 1760,
+          "government_fixed": 1760,
+          "yoy_change_abs": 60,
+          "yoy_change_pct": 0.0353,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2020-21",
+          "cacp_recommended": 1850,
+          "government_fixed": 1850,
+          "yoy_change_abs": 90,
+          "yoy_change_pct": 0.0511,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2021-22",
+          "cacp_recommended": 1870,
+          "government_fixed": 1870,
+          "yoy_change_abs": 20,
+          "yoy_change_pct": 0.0108,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2022-23",
+          "cacp_recommended": 1962,
+          "government_fixed": 1962,
+          "yoy_change_abs": 92,
+          "yoy_change_pct": 0.0492,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2023-24",
+          "cacp_recommended": 2090,
+          "government_fixed": 2090,
+          "yoy_change_abs": 128,
+          "yoy_change_pct": 0.0652,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2024-25",
+          "cacp_recommended": 2225,
+          "government_fixed": 2225,
+          "yoy_change_abs": 135,
+          "yoy_change_pct": 0.0646,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2025-26",
+          "cacp_recommended": 2400,
+          "government_fixed": 2400,
+          "yoy_change_abs": 175,
+          "yoy_change_pct": 0.0787,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2026-27",
+          "cacp_recommended": 2410,
+          "government_fixed": 2410,
+          "yoy_change_abs": 10,
+          "yoy_change_pct": 0.0042,
+          "bonus_over_recommended": 0
+        }
+      ]
+    },
+    {
+      "commodity": "Tur (Arhar)",
+      "category": "Pulse",
+      "season": "Kharif",
+      "price_type": "MSP",
+      "unit": "INR per Quintal",
+      "note": null,
+      "summary": {
+        "first_year": "2010-11",
+        "latest_year_with_price": "2026-27",
+        "total_increase_abs": 5450,
+        "total_increase_pct": 1.8167,
+        "cagr_pct": 0.0669
+      },
+      "series": [
+        {
+          "year": "2010-11",
+          "cacp_recommended": 2800,
+          "government_fixed": 3000,
+          "yoy_change_abs": null,
+          "yoy_change_pct": null,
+          "bonus_over_recommended": 200
+        },
+        {
+          "year": "2011-12",
+          "cacp_recommended": 3100,
+          "government_fixed": 3200,
+          "yoy_change_abs": 200,
+          "yoy_change_pct": 0.0667,
+          "bonus_over_recommended": 100
+        },
+        {
+          "year": "2012-13",
+          "cacp_recommended": 3850,
+          "government_fixed": 3850,
+          "yoy_change_abs": 650,
+          "yoy_change_pct": 0.2031,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2013-14",
+          "cacp_recommended": 3850,
+          "government_fixed": 4300,
+          "yoy_change_abs": 450,
+          "yoy_change_pct": 0.1169,
+          "bonus_over_recommended": 450
+        },
+        {
+          "year": "2014-15",
+          "cacp_recommended": 4350,
+          "government_fixed": 4350,
+          "yoy_change_abs": 50,
+          "yoy_change_pct": 0.0116,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2015-16",
+          "cacp_recommended": 4425,
+          "government_fixed": 4625,
+          "yoy_change_abs": 275,
+          "yoy_change_pct": 0.0632,
+          "bonus_over_recommended": 200
+        },
+        {
+          "year": "2016-17",
+          "cacp_recommended": 4625,
+          "government_fixed": 5050,
+          "yoy_change_abs": 425,
+          "yoy_change_pct": 0.0919,
+          "bonus_over_recommended": 425
+        },
+        {
+          "year": "2017-18",
+          "cacp_recommended": 5250,
+          "government_fixed": 5450,
+          "yoy_change_abs": 400,
+          "yoy_change_pct": 0.0792,
+          "bonus_over_recommended": 200
+        },
+        {
+          "year": "2018-19",
+          "cacp_recommended": 5675,
+          "government_fixed": 5675,
+          "yoy_change_abs": 225,
+          "yoy_change_pct": 0.0413,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2019-20",
+          "cacp_recommended": 5800,
+          "government_fixed": 5800,
+          "yoy_change_abs": 125,
+          "yoy_change_pct": 0.022,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2020-21",
+          "cacp_recommended": 6000,
+          "government_fixed": 6000,
+          "yoy_change_abs": 200,
+          "yoy_change_pct": 0.0345,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2021-22",
+          "cacp_recommended": 6300,
+          "government_fixed": 6300,
+          "yoy_change_abs": 300,
+          "yoy_change_pct": 0.05,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2022-23",
+          "cacp_recommended": 6600,
+          "government_fixed": 6600,
+          "yoy_change_abs": 300,
+          "yoy_change_pct": 0.0476,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2023-24",
+          "cacp_recommended": 7000,
+          "government_fixed": 7000,
+          "yoy_change_abs": 400,
+          "yoy_change_pct": 0.0606,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2024-25",
+          "cacp_recommended": 7550,
+          "government_fixed": 7550,
+          "yoy_change_abs": 550,
+          "yoy_change_pct": 0.0786,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2025-26",
+          "cacp_recommended": 8000,
+          "government_fixed": 8000,
+          "yoy_change_abs": 450,
+          "yoy_change_pct": 0.0596,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2026-27",
+          "cacp_recommended": 8450,
+          "government_fixed": 8450,
+          "yoy_change_abs": 450,
+          "yoy_change_pct": 0.0563,
+          "bonus_over_recommended": 0
+        }
+      ]
+    },
+    {
+      "commodity": "Gram",
+      "category": "Pulse",
+      "season": "Rabi",
+      "price_type": "MSP",
+      "unit": "INR per Quintal",
+      "note": null,
+      "summary": {
+        "first_year": "2010-11",
+        "latest_year_with_price": "2025-26",
+        "total_increase_abs": 3775,
+        "total_increase_pct": 1.7976,
+        "cagr_pct": 0.071
+      },
+      "series": [
+        {
+          "year": "2010-11",
+          "cacp_recommended": 2100,
+          "government_fixed": 2100,
+          "yoy_change_abs": null,
+          "yoy_change_pct": null,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2011-12",
+          "cacp_recommended": 2800,
+          "government_fixed": 2800,
+          "yoy_change_abs": 700,
+          "yoy_change_pct": 0.3333,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2012-13",
+          "cacp_recommended": 3000,
+          "government_fixed": 3000,
+          "yoy_change_abs": 200,
+          "yoy_change_pct": 0.0714,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2013-14",
+          "cacp_recommended": 3100,
+          "government_fixed": 3100,
+          "yoy_change_abs": 100,
+          "yoy_change_pct": 0.0333,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2014-15",
+          "cacp_recommended": 3175,
+          "government_fixed": 3175,
+          "yoy_change_abs": 75,
+          "yoy_change_pct": 0.0242,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2015-16",
+          "cacp_recommended": 3425,
+          "government_fixed": 3500,
+          "yoy_change_abs": 325,
+          "yoy_change_pct": 0.1024,
+          "bonus_over_recommended": 75
+        },
+        {
+          "year": "2016-17",
+          "cacp_recommended": 3800,
+          "government_fixed": 4000,
+          "yoy_change_abs": 500,
+          "yoy_change_pct": 0.1429,
+          "bonus_over_recommended": 200
+        },
+        {
+          "year": "2017-18",
+          "cacp_recommended": 4250,
+          "government_fixed": 4400,
+          "yoy_change_abs": 400,
+          "yoy_change_pct": 0.1,
+          "bonus_over_recommended": 150
+        },
+        {
+          "year": "2018-19",
+          "cacp_recommended": 4620,
+          "government_fixed": 4620,
+          "yoy_change_abs": 220,
+          "yoy_change_pct": 0.05,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2019-20",
+          "cacp_recommended": 4875,
+          "government_fixed": 4875,
+          "yoy_change_abs": 255,
+          "yoy_change_pct": 0.0552,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2020-21",
+          "cacp_recommended": 5100,
+          "government_fixed": 5100,
+          "yoy_change_abs": 225,
+          "yoy_change_pct": 0.0462,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2021-22",
+          "cacp_recommended": 5230,
+          "government_fixed": 5230,
+          "yoy_change_abs": 130,
+          "yoy_change_pct": 0.0255,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2022-23",
+          "cacp_recommended": 5335,
+          "government_fixed": 5335,
+          "yoy_change_abs": 105,
+          "yoy_change_pct": 0.0201,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2023-24",
+          "cacp_recommended": 5440,
+          "government_fixed": 5440,
+          "yoy_change_abs": 105,
+          "yoy_change_pct": 0.0197,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2024-25",
+          "cacp_recommended": 5650,
+          "government_fixed": 5650,
+          "yoy_change_abs": 210,
+          "yoy_change_pct": 0.0386,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2025-26",
+          "cacp_recommended": 5875,
+          "government_fixed": 5875,
+          "yoy_change_abs": 225,
+          "yoy_change_pct": 0.0398,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2026-27",
+          "cacp_recommended": null,
+          "government_fixed": null,
+          "yoy_change_abs": null,
+          "yoy_change_pct": null,
+          "bonus_over_recommended": null
+        }
+      ]
+    },
+    {
+      "commodity": "Soybean (Yellow)",
+      "category": "Oilseed",
+      "season": "Kharif",
+      "price_type": "MSP",
+      "unit": "INR per Quintal",
+      "note": null,
+      "summary": {
+        "first_year": "2010-11",
+        "latest_year_with_price": "2026-27",
+        "total_increase_abs": 4268,
+        "total_increase_pct": 2.9639,
+        "cagr_pct": 0.0899
+      },
+      "series": [
+        {
+          "year": "2010-11",
+          "cacp_recommended": 1440,
+          "government_fixed": 1440,
+          "yoy_change_abs": null,
+          "yoy_change_pct": null,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2011-12",
+          "cacp_recommended": 1690,
+          "government_fixed": 1690,
+          "yoy_change_abs": 250,
+          "yoy_change_pct": 0.1736,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2012-13",
+          "cacp_recommended": null,
+          "government_fixed": 2240,
+          "yoy_change_abs": 550,
+          "yoy_change_pct": 0.3254,
+          "bonus_over_recommended": null
+        },
+        {
+          "year": "2013-14",
+          "cacp_recommended": 2560,
+          "government_fixed": 2560,
+          "yoy_change_abs": 320,
+          "yoy_change_pct": 0.1429,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2014-15",
+          "cacp_recommended": 2560,
+          "government_fixed": 2560,
+          "yoy_change_abs": 0,
+          "yoy_change_pct": 0.0,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2015-16",
+          "cacp_recommended": 2600,
+          "government_fixed": 2600,
+          "yoy_change_abs": 40,
+          "yoy_change_pct": 0.0156,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2016-17",
+          "cacp_recommended": 2675,
+          "government_fixed": 2775,
+          "yoy_change_abs": 175,
+          "yoy_change_pct": 0.0673,
+          "bonus_over_recommended": 100
+        },
+        {
+          "year": "2017-18",
+          "cacp_recommended": 2850,
+          "government_fixed": 3050,
+          "yoy_change_abs": 275,
+          "yoy_change_pct": 0.0991,
+          "bonus_over_recommended": 200
+        },
+        {
+          "year": "2018-19",
+          "cacp_recommended": 3390,
+          "government_fixed": 3399,
+          "yoy_change_abs": 349,
+          "yoy_change_pct": 0.1144,
+          "bonus_over_recommended": 9
+        },
+        {
+          "year": "2019-20",
+          "cacp_recommended": 3710,
+          "government_fixed": 3710,
+          "yoy_change_abs": 311,
+          "yoy_change_pct": 0.0915,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2020-21",
+          "cacp_recommended": 3880,
+          "government_fixed": 3880,
+          "yoy_change_abs": 170,
+          "yoy_change_pct": 0.0458,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2021-22",
+          "cacp_recommended": 3950,
+          "government_fixed": 3950,
+          "yoy_change_abs": 70,
+          "yoy_change_pct": 0.018,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2022-23",
+          "cacp_recommended": 4300,
+          "government_fixed": 4300,
+          "yoy_change_abs": 350,
+          "yoy_change_pct": 0.0886,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2023-24",
+          "cacp_recommended": 4600,
+          "government_fixed": 4600,
+          "yoy_change_abs": 300,
+          "yoy_change_pct": 0.0698,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2024-25",
+          "cacp_recommended": 4892,
+          "government_fixed": 4892,
+          "yoy_change_abs": 292,
+          "yoy_change_pct": 0.0635,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2025-26",
+          "cacp_recommended": 5328,
+          "government_fixed": 5328,
+          "yoy_change_abs": 436,
+          "yoy_change_pct": 0.0891,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2026-27",
+          "cacp_recommended": 5708,
+          "government_fixed": 5708,
+          "yoy_change_abs": 380,
+          "yoy_change_pct": 0.0713,
+          "bonus_over_recommended": 0
+        }
+      ]
+    },
+    {
+      "commodity": "Soybean (Black)",
+      "category": "Oilseed",
+      "season": "Kharif",
+      "price_type": "MSP",
+      "unit": "INR per Quintal",
+      "note": "Discontinued after 2014-15",
+      "summary": {
+        "first_year": "2010-11",
+        "latest_year_with_price": "2014-15",
+        "total_increase_abs": 1100,
+        "total_increase_pct": 0.7857,
+        "cagr_pct": 0.156
+      },
+      "series": [
+        {
+          "year": "2010-11",
+          "cacp_recommended": 1400,
+          "government_fixed": 1400,
+          "yoy_change_abs": null,
+          "yoy_change_pct": null,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2011-12",
+          "cacp_recommended": 1650,
+          "government_fixed": 1650,
+          "yoy_change_abs": 250,
+          "yoy_change_pct": 0.1786,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2012-13",
+          "cacp_recommended": 2200,
+          "government_fixed": 2200,
+          "yoy_change_abs": 550,
+          "yoy_change_pct": 0.3333,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2013-14",
+          "cacp_recommended": 2500,
+          "government_fixed": 2500,
+          "yoy_change_abs": 300,
+          "yoy_change_pct": 0.1364,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2014-15",
+          "cacp_recommended": 2500,
+          "government_fixed": 2500,
+          "yoy_change_abs": 0,
+          "yoy_change_pct": 0.0,
+          "bonus_over_recommended": 0
+        }
+      ]
+    },
+    {
+      "commodity": "Rapeseed & Mustard",
+      "category": "Oilseed",
+      "season": "Rabi",
+      "price_type": "MSP",
+      "unit": "INR per Quintal",
+      "note": null,
+      "summary": {
+        "first_year": "2010-11",
+        "latest_year_with_price": "2025-26",
+        "total_increase_abs": 4350,
+        "total_increase_pct": 2.3514,
+        "cagr_pct": 0.084
+      },
+      "series": [
+        {
+          "year": "2010-11",
+          "cacp_recommended": 1850,
+          "government_fixed": 1850,
+          "yoy_change_abs": null,
+          "yoy_change_pct": null,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2011-12",
+          "cacp_recommended": 2500,
+          "government_fixed": 2500,
+          "yoy_change_abs": 650,
+          "yoy_change_pct": 0.3514,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2012-13",
+          "cacp_recommended": 3000,
+          "government_fixed": 3000,
+          "yoy_change_abs": 500,
+          "yoy_change_pct": 0.2,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2013-14",
+          "cacp_recommended": 3050,
+          "government_fixed": 3050,
+          "yoy_change_abs": 50,
+          "yoy_change_pct": 0.0167,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2014-15",
+          "cacp_recommended": 3100,
+          "government_fixed": 3100,
+          "yoy_change_abs": 50,
+          "yoy_change_pct": 0.0164,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2015-16",
+          "cacp_recommended": 3350,
+          "government_fixed": 3350,
+          "yoy_change_abs": 250,
+          "yoy_change_pct": 0.0806,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2016-17",
+          "cacp_recommended": 3600,
+          "government_fixed": 3700,
+          "yoy_change_abs": 350,
+          "yoy_change_pct": 0.1045,
+          "bonus_over_recommended": 100
+        },
+        {
+          "year": "2017-18",
+          "cacp_recommended": 3900,
+          "government_fixed": 4000,
+          "yoy_change_abs": 300,
+          "yoy_change_pct": 0.0811,
+          "bonus_over_recommended": 100
+        },
+        {
+          "year": "2018-19",
+          "cacp_recommended": 4200,
+          "government_fixed": 4200,
+          "yoy_change_abs": 200,
+          "yoy_change_pct": 0.05,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2019-20",
+          "cacp_recommended": 4425,
+          "government_fixed": 4425,
+          "yoy_change_abs": 225,
+          "yoy_change_pct": 0.0536,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2020-21",
+          "cacp_recommended": 4650,
+          "government_fixed": 4650,
+          "yoy_change_abs": 225,
+          "yoy_change_pct": 0.0508,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2021-22",
+          "cacp_recommended": 5050,
+          "government_fixed": 5050,
+          "yoy_change_abs": 400,
+          "yoy_change_pct": 0.086,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2022-23",
+          "cacp_recommended": 5450,
+          "government_fixed": 5450,
+          "yoy_change_abs": 400,
+          "yoy_change_pct": 0.0792,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2023-24",
+          "cacp_recommended": 5650,
+          "government_fixed": 5650,
+          "yoy_change_abs": 200,
+          "yoy_change_pct": 0.0367,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2024-25",
+          "cacp_recommended": 5950,
+          "government_fixed": 5950,
+          "yoy_change_abs": 300,
+          "yoy_change_pct": 0.0531,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2025-26",
+          "cacp_recommended": 6200,
+          "government_fixed": 6200,
+          "yoy_change_abs": 250,
+          "yoy_change_pct": 0.042,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2026-27",
+          "cacp_recommended": null,
+          "government_fixed": null,
+          "yoy_change_abs": null,
+          "yoy_change_pct": null,
+          "bonus_over_recommended": null
+        }
+      ]
+    },
+    {
+      "commodity": "Sunflower Seed",
+      "category": "Oilseed",
+      "season": "Kharif",
+      "price_type": "MSP",
+      "unit": "INR per Quintal",
+      "note": null,
+      "summary": {
+        "first_year": "2010-11",
+        "latest_year_with_price": "2026-27",
+        "total_increase_abs": 5993,
+        "total_increase_pct": 2.5502,
+        "cagr_pct": 0.0824
+      },
+      "series": [
+        {
+          "year": "2010-11",
+          "cacp_recommended": 2350,
+          "government_fixed": 2350,
+          "yoy_change_abs": null,
+          "yoy_change_pct": null,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2011-12",
+          "cacp_recommended": 2800,
+          "government_fixed": 2800,
+          "yoy_change_abs": 450,
+          "yoy_change_pct": 0.1915,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2012-13",
+          "cacp_recommended": 3700,
+          "government_fixed": 3700,
+          "yoy_change_abs": 900,
+          "yoy_change_pct": 0.3214,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2013-14",
+          "cacp_recommended": 3700,
+          "government_fixed": 3700,
+          "yoy_change_abs": 0,
+          "yoy_change_pct": 0.0,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2014-15",
+          "cacp_recommended": 3750,
+          "government_fixed": 3750,
+          "yoy_change_abs": 50,
+          "yoy_change_pct": 0.0135,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2015-16",
+          "cacp_recommended": 3800,
+          "government_fixed": 3800,
+          "yoy_change_abs": 50,
+          "yoy_change_pct": 0.0133,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2016-17",
+          "cacp_recommended": 3850,
+          "government_fixed": 3950,
+          "yoy_change_abs": 150,
+          "yoy_change_pct": 0.0395,
+          "bonus_over_recommended": 100
+        },
+        {
+          "year": "2017-18",
+          "cacp_recommended": 4000,
+          "government_fixed": 4100,
+          "yoy_change_abs": 150,
+          "yoy_change_pct": 0.038,
+          "bonus_over_recommended": 100
+        },
+        {
+          "year": "2018-19",
+          "cacp_recommended": 5385,
+          "government_fixed": 5388,
+          "yoy_change_abs": 1288,
+          "yoy_change_pct": 0.3141,
+          "bonus_over_recommended": 3
+        },
+        {
+          "year": "2019-20",
+          "cacp_recommended": 5650,
+          "government_fixed": 5650,
+          "yoy_change_abs": 262,
+          "yoy_change_pct": 0.0486,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2020-21",
+          "cacp_recommended": 5885,
+          "government_fixed": 5885,
+          "yoy_change_abs": 235,
+          "yoy_change_pct": 0.0416,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2021-22",
+          "cacp_recommended": 6015,
+          "government_fixed": 6015,
+          "yoy_change_abs": 130,
+          "yoy_change_pct": 0.0221,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2022-23",
+          "cacp_recommended": 6400,
+          "government_fixed": 6400,
+          "yoy_change_abs": 385,
+          "yoy_change_pct": 0.064,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2023-24",
+          "cacp_recommended": 6760,
+          "government_fixed": 6760,
+          "yoy_change_abs": 360,
+          "yoy_change_pct": 0.0563,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2024-25",
+          "cacp_recommended": 7280,
+          "government_fixed": 7280,
+          "yoy_change_abs": 520,
+          "yoy_change_pct": 0.0769,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2025-26",
+          "cacp_recommended": 7721,
+          "government_fixed": 7721,
+          "yoy_change_abs": 441,
+          "yoy_change_pct": 0.0606,
+          "bonus_over_recommended": 0
+        },
+        {
+          "year": "2026-27",
+          "cacp_recommended": 8343,
+          "government_fixed": 8343,
+          "yoy_change_abs": 622,
+          "yoy_change_pct": 0.0806,
+          "bonus_over_recommended": 0
+        }
+      ]
+    }
+  ],
+  "frp": [
+    {
+      "commodity": "Sugarcane",
+      "category": "Commercial",
+      "price_type": "FRP",
+      "price_type_full": "Fair and Remunerative Price",
+      "unit": "INR per Quintal",
+      "note": "FRP is a statutory minimum price mills must pay; distinct from MSP. Recovery basis 9.5% up to 2016-17, 10% from 2017-18. Some states set higher State Advised Prices (SAP).",
+      "summary": {
+        "first_season": "2009-10",
+        "latest_season": "2025-26",
+        "total_increase_abs": 225.16,
+        "total_increase_pct": 1.7341,
+        "cagr_pct": 0.0649
+      },
+      "series": [
+        {
+          "season": "2009-10",
+          "frp": 129.84,
+          "recovery_basis": "9.5%",
+          "yoy_change_abs": null,
+          "yoy_change_pct": null
+        },
+        {
+          "season": "2010-11",
+          "frp": 139.12,
+          "recovery_basis": "9.5%",
+          "yoy_change_abs": 9.28,
+          "yoy_change_pct": 0.0715
+        },
+        {
+          "season": "2011-12",
+          "frp": 145,
+          "recovery_basis": "9.5%",
+          "yoy_change_abs": 5.88,
+          "yoy_change_pct": 0.0423
+        },
+        {
+          "season": "2012-13",
+          "frp": 170,
+          "recovery_basis": "9.5%",
+          "yoy_change_abs": 25,
+          "yoy_change_pct": 0.1724
+        },
+        {
+          "season": "2013-14",
+          "frp": 210,
+          "recovery_basis": "9.5%",
+          "yoy_change_abs": 40,
+          "yoy_change_pct": 0.2353
+        },
+        {
+          "season": "2014-15",
+          "frp": 220,
+          "recovery_basis": "9.5%",
+          "yoy_change_abs": 10,
+          "yoy_change_pct": 0.0476
+        },
+        {
+          "season": "2015-16",
+          "frp": 230,
+          "recovery_basis": "9.5%",
+          "yoy_change_abs": 10,
+          "yoy_change_pct": 0.0455
+        },
+        {
+          "season": "2016-17",
+          "frp": 230,
+          "recovery_basis": "9.5%",
+          "yoy_change_abs": 0,
+          "yoy_change_pct": 0.0
+        },
+        {
+          "season": "2017-18",
+          "frp": 255,
+          "recovery_basis": "10.0%",
+          "yoy_change_abs": 25,
+          "yoy_change_pct": 0.1087
+        },
+        {
+          "season": "2018-19",
+          "frp": 275,
+          "recovery_basis": "10.0%",
+          "yoy_change_abs": 20,
+          "yoy_change_pct": 0.0784
+        },
+        {
+          "season": "2019-20",
+          "frp": 275,
+          "recovery_basis": "10.0%",
+          "yoy_change_abs": 0,
+          "yoy_change_pct": 0.0
+        },
+        {
+          "season": "2020-21",
+          "frp": 285,
+          "recovery_basis": "10.0%",
+          "yoy_change_abs": 10,
+          "yoy_change_pct": 0.0364
+        },
+        {
+          "season": "2021-22",
+          "frp": 290,
+          "recovery_basis": "10.0%",
+          "yoy_change_abs": 5,
+          "yoy_change_pct": 0.0175
+        },
+        {
+          "season": "2022-23",
+          "frp": 305,
+          "recovery_basis": "10.0%",
+          "yoy_change_abs": 15,
+          "yoy_change_pct": 0.0517
+        },
+        {
+          "season": "2023-24",
+          "frp": 315,
+          "recovery_basis": "10.0%",
+          "yoy_change_abs": 10,
+          "yoy_change_pct": 0.0328
+        },
+        {
+          "season": "2024-25",
+          "frp": 340,
+          "recovery_basis": "10.0%",
+          "yoy_change_abs": 25,
+          "yoy_change_pct": 0.0794
+        },
+        {
+          "season": "2025-26",
+          "frp": 355,
+          "recovery_basis": "10.0%",
+          "yoy_change_abs": 15,
+          "yoy_change_pct": 0.0441
+        }
+      ]
+    }
+  ]
+}
