@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30 06:55:48 IST",
+  "updated": "2026-07-30 13:38:57 IST",
   "paddy": {
     "history": [
       {
@@ -7197,59 +7197,83 @@
       {
         "date": "2026-07-30",
         "session": "morning",
-        "collected_at": "2026-07-30 06:55:05 IST",
+        "collected_at": "2026-07-30 13:37:50 IST",
         "commodity": "paddy",
-        "total_markets": 5,
-        "avg_price": 2395,
-        "modal_price": 2379,
-        "max_price": 2550,
-        "min_price": 2300,
+        "total_markets": 162,
+        "avg_price": 2330,
+        "modal_price": 2369,
+        "max_price": 2800,
+        "min_price": 1872,
         "cleaning": {
           "excluded_variety": 0,
           "excluded_market": 0,
           "excluded_band": 0,
-          "outliers_removed": 0
+          "outliers_removed": 38
         },
         "top_markets": [
           {
-            "market": "Kakinada (Urban) APMC",
+            "market": "Puranpur APMC",
+            "state": "Uttar Pradesh",
+            "variety": "Other",
+            "modal_price": 2800,
+            "min_price": 2800,
+            "max_price": 2800
+          },
+          {
+            "market": "Avalurpet APMC",
+            "state": "Tamil Nadu",
+            "variety": "Other",
+            "modal_price": 2744,
+            "min_price": 1668,
+            "max_price": 3821
+          },
+          {
+            "market": "Dahod APMC",
+            "state": "Gujarat",
+            "variety": "Paddy fine",
+            "modal_price": 2730,
+            "min_price": 2700,
+            "max_price": 2750
+          },
+          {
+            "market": "Bilaspur APMC",
+            "state": "Uttar Pradesh",
+            "variety": "SuperFine(Basmati)",
+            "modal_price": 2700,
+            "min_price": 2700,
+            "max_price": 2700
+          },
+          {
+            "market": "Zalod(Sanjeli) APMC",
+            "state": "Gujarat",
+            "variety": "Other",
+            "modal_price": 2650,
+            "min_price": 2650,
+            "max_price": 2650
+          },
+          {
+            "market": "Channagiri APMC",
+            "state": "Karnataka",
+            "variety": "Paddy",
+            "modal_price": 2650,
+            "min_price": 2650,
+            "max_price": 2650
+          },
+          {
+            "market": "Kothabommali APMC",
             "state": "Andhra Pradesh",
-            "variety": "B P T",
-            "modal_price": 2550,
-            "min_price": 2389,
+            "variety": "Paddy",
+            "modal_price": 2600,
+            "min_price": 2600,
             "max_price": 2600
           },
           {
-            "market": "Pithapuram APMC",
-            "state": "Andhra Pradesh",
-            "variety": "1001",
-            "modal_price": 2379,
-            "min_price": 2369,
-            "max_price": 2389
-          },
-          {
-            "market": "Rampachodvaram APMC",
-            "state": "Andhra Pradesh",
-            "variety": "1001",
-            "modal_price": 2379,
-            "min_price": 2369,
-            "max_price": 2389
-          },
-          {
-            "market": "Karapa APMC",
-            "state": "Andhra Pradesh",
-            "variety": "1001",
-            "modal_price": 2366,
-            "min_price": 2364,
-            "max_price": 2369
-          },
-          {
-            "market": "Mydukur APMC",
-            "state": "Andhra Pradesh",
-            "variety": "Masuri",
-            "modal_price": 2300,
-            "min_price": 2200,
-            "max_price": 2400
+            "market": "Haliyala APMC",
+            "state": "Karnataka",
+            "variety": "Paddy Medium",
+            "modal_price": 2600,
+            "min_price": 2600,
+            "max_price": 2700
           }
         ],
         "arrival_date": "30/07/2026"
@@ -14425,35 +14449,83 @@
       {
         "date": "2026-07-30",
         "session": "morning",
-        "collected_at": "2026-07-30 06:55:11 IST",
+        "collected_at": "2026-07-30 13:37:58 IST",
         "commodity": "wheat",
-        "total_markets": 2,
-        "avg_price": 2550,
-        "modal_price": 2550,
-        "max_price": 2550,
-        "min_price": 2550,
+        "total_markets": 188,
+        "avg_price": 2524,
+        "modal_price": 2522,
+        "max_price": 2800,
+        "min_price": 2250,
         "cleaning": {
           "excluded_variety": 0,
           "excluded_market": 0,
           "excluded_band": 0,
-          "outliers_removed": 0
+          "outliers_removed": 12
         },
         "top_markets": [
           {
-            "market": "Barbigha APMC",
-            "state": "Bihar",
+            "market": "Dahod APMC",
+            "state": "Gujarat",
             "variety": "147 Average",
-            "modal_price": 2550,
-            "min_price": 2500,
-            "max_price": 2600
+            "modal_price": 2800,
+            "min_price": 2730,
+            "max_price": 2845
           },
           {
-            "market": "Shekhpura APMC",
-            "state": "Bihar",
-            "variety": "147 Average",
-            "modal_price": 2550,
-            "min_price": 2500,
-            "max_price": 2600
+            "market": "Dhar APMC",
+            "state": "Madhya Pradesh",
+            "variety": "Wheat",
+            "modal_price": 2792,
+            "min_price": 1920,
+            "max_price": 2828
+          },
+          {
+            "market": "Jaora APMC",
+            "state": "Madhya Pradesh",
+            "variety": "Wheat",
+            "modal_price": 2780,
+            "min_price": 2600,
+            "max_price": 2780
+          },
+          {
+            "market": "Dhamnod APMC",
+            "state": "Madhya Pradesh",
+            "variety": "Wheat",
+            "modal_price": 2752,
+            "min_price": 2742,
+            "max_price": 2752
+          },
+          {
+            "market": "Kasimbazar APMC",
+            "state": "West Bengal",
+            "variety": "Sonalika",
+            "modal_price": 2750,
+            "min_price": 2700,
+            "max_price": 2800
+          },
+          {
+            "market": "Kandi APMC",
+            "state": "West Bengal",
+            "variety": "Sonalika",
+            "modal_price": 2750,
+            "min_price": 2700,
+            "max_price": 2800
+          },
+          {
+            "market": "Aron APMC",
+            "state": "Madhya Pradesh",
+            "variety": "Sharbati",
+            "modal_price": 2740,
+            "min_price": 2740,
+            "max_price": 2740
+          },
+          {
+            "market": "Indore APMC",
+            "state": "Madhya Pradesh",
+            "variety": "Wheat",
+            "modal_price": 2740,
+            "min_price": 2400,
+            "max_price": 3124
           }
         ],
         "arrival_date": "30/07/2026"
@@ -21621,35 +21693,83 @@
       {
         "date": "2026-07-30",
         "session": "morning",
-        "collected_at": "2026-07-30 06:55:17 IST",
+        "collected_at": "2026-07-30 13:38:04 IST",
         "commodity": "maize",
-        "total_markets": 2,
-        "avg_price": 2125,
-        "modal_price": 2125,
-        "max_price": 2400,
-        "min_price": 1850,
+        "total_markets": 120,
+        "avg_price": 2202,
+        "modal_price": 2208,
+        "max_price": 2900,
+        "min_price": 1400,
         "cleaning": {
-          "excluded_variety": 0,
+          "excluded_variety": 1,
           "excluded_market": 0,
-          "excluded_band": 0,
-          "outliers_removed": 0
+          "excluded_band": 4,
+          "outliers_removed": 1
         },
         "top_markets": [
           {
-            "market": "Vijayanagaram APMC",
-            "state": "Andhra Pradesh",
-            "variety": "Local",
-            "modal_price": 2400,
-            "min_price": 2400,
-            "max_price": 2400
+            "market": "Pune APMC",
+            "state": "Maharashtra",
+            "variety": "Deshi Red",
+            "modal_price": 2900,
+            "min_price": 2800,
+            "max_price": 3000
           },
           {
-            "market": "Gorantla  APMC",
+            "market": "Kuchinapudi APMC",
+            "state": "Andhra Pradesh",
+            "variety": "Local",
+            "modal_price": 2900,
+            "min_price": 2800,
+            "max_price": 3000
+          },
+          {
+            "market": "Mumbai APMC",
+            "state": "Maharashtra",
+            "variety": "Other",
+            "modal_price": 2900,
+            "min_price": 2400,
+            "max_price": 3200
+          },
+          {
+            "market": "Alangeyam APMC",
+            "state": "Tamil Nadu",
+            "variety": "Other",
+            "modal_price": 2625,
+            "min_price": 2600,
+            "max_price": 2650
+          },
+          {
+            "market": "Veppur APMC",
+            "state": "Tamil Nadu",
+            "variety": "Other",
+            "modal_price": 2605,
+            "min_price": 2605,
+            "max_price": 2605
+          },
+          {
+            "market": "Honnali APMC",
+            "state": "Karnataka",
+            "variety": "Local",
+            "modal_price": 2600,
+            "min_price": 2480,
+            "max_price": 2700
+          },
+          {
+            "market": "Saluru APMC",
             "state": "Andhra Pradesh",
             "variety": "Hybrid/Local",
-            "modal_price": 1850,
-            "min_price": 1700,
-            "max_price": 2100
+            "modal_price": 2600,
+            "min_price": 2600,
+            "max_price": 2600
+          },
+          {
+            "market": "Sangli(Miraj) APMC",
+            "state": "Maharashtra",
+            "variety": "Deshi Red",
+            "modal_price": 2550,
+            "min_price": 2450,
+            "max_price": 2750
           }
         ],
         "arrival_date": "30/07/2026"
@@ -29508,27 +29628,83 @@
       {
         "date": "2026-07-30",
         "session": "morning",
-        "collected_at": "2026-07-30 06:55:25 IST",
+        "collected_at": "2026-07-30 13:38:12 IST",
         "commodity": "tur",
-        "total_markets": 1,
-        "avg_price": 4907,
-        "modal_price": 4907,
-        "max_price": 4907,
-        "min_price": 4907,
+        "total_markets": 157,
+        "avg_price": 6845,
+        "modal_price": 6500,
+        "max_price": 10490,
+        "min_price": 4444,
         "cleaning": {
-          "excluded_variety": 0,
-          "excluded_market": 0,
-          "excluded_band": 0,
-          "outliers_removed": 0
+          "excluded_variety": 27,
+          "excluded_market": 4,
+          "excluded_band": 7,
+          "outliers_removed": 5
         },
         "top_markets": [
           {
-            "market": "Gooti APMC",
-            "state": "Andhra Pradesh",
+            "market": "Raibareilly APMC",
+            "state": "Uttar Pradesh",
+            "variety": "Other",
+            "modal_price": 10490,
+            "min_price": 10490,
+            "max_price": 10490
+          },
+          {
+            "market": "Kustagi APMC",
+            "state": "Karnataka",
             "variety": "Local",
-            "modal_price": 4907,
-            "min_price": 3789,
-            "max_price": 5897
+            "modal_price": 10329,
+            "min_price": 10200,
+            "max_price": 10500
+          },
+          {
+            "market": "Mumbai APMC",
+            "state": "Maharashtra",
+            "variety": "Other",
+            "modal_price": 10300,
+            "min_price": 9000,
+            "max_price": 10800
+          },
+          {
+            "market": "Ghaziabad APMC",
+            "state": "Uttar Pradesh",
+            "variety": "Other",
+            "modal_price": 10104,
+            "min_price": 10104,
+            "max_price": 10104
+          },
+          {
+            "market": "Palakkad Market",
+            "state": "Keralam",
+            "variety": "Average (Whole)",
+            "modal_price": 9600,
+            "min_price": 9000,
+            "max_price": 10000
+          },
+          {
+            "market": "Pune APMC",
+            "state": "Maharashtra",
+            "variety": "Green (Whole)",
+            "modal_price": 9600,
+            "min_price": 9200,
+            "max_price": 10000
+          },
+          {
+            "market": "Pune APMC",
+            "state": "Maharashtra",
+            "variety": "Other",
+            "modal_price": 9550,
+            "min_price": 9000,
+            "max_price": 10100
+          },
+          {
+            "market": "Diglipur Vegetable Market (Subhashgram)",
+            "state": "Andaman and Nicobar",
+            "variety": "Other",
+            "modal_price": 9500,
+            "min_price": 8000,
+            "max_price": 12000
           }
         ],
         "arrival_date": "30/07/2026"
@@ -36496,27 +36672,83 @@
       {
         "date": "2026-07-30",
         "session": "morning",
-        "collected_at": "2026-07-30 06:55:31 IST",
+        "collected_at": "2026-07-30 13:38:19 IST",
         "commodity": "gram",
-        "total_markets": 1,
-        "avg_price": 4907,
-        "modal_price": 4907,
-        "max_price": 4907,
-        "min_price": 4907,
+        "total_markets": 115,
+        "avg_price": 6549,
+        "modal_price": 6132,
+        "max_price": 9000,
+        "min_price": 4444,
         "cleaning": {
-          "excluded_variety": 0,
+          "excluded_variety": 65,
           "excluded_market": 0,
-          "excluded_band": 0,
+          "excluded_band": 20,
           "outliers_removed": 0
         },
         "top_markets": [
           {
-            "market": "Gooti APMC",
+            "market": "Movva (HQ-Kuchipudi) APMC",
             "state": "Andhra Pradesh",
             "variety": "Local",
-            "modal_price": 4907,
-            "min_price": 3789,
-            "max_price": 5897
+            "modal_price": 9000,
+            "min_price": 9000,
+            "max_price": 9000
+          },
+          {
+            "market": "Hapur APMC",
+            "state": "Uttar Pradesh",
+            "variety": "Other",
+            "modal_price": 9000,
+            "min_price": 9000,
+            "max_price": 9000
+          },
+          {
+            "market": "Mehrauni APMC",
+            "state": "Uttar Pradesh",
+            "variety": "Other",
+            "modal_price": 8768,
+            "min_price": 8768,
+            "max_price": 8768
+          },
+          {
+            "market": "Chirgaon APMC",
+            "state": "Uttar Pradesh",
+            "variety": "Other",
+            "modal_price": 8768,
+            "min_price": 8768,
+            "max_price": 8768
+          },
+          {
+            "market": "Agra APMC",
+            "state": "Uttar Pradesh",
+            "variety": "Other",
+            "modal_price": 8768,
+            "min_price": 8768,
+            "max_price": 8768
+          },
+          {
+            "market": "HarappanaHalli APMC",
+            "state": "Karnataka",
+            "variety": "Alasande Gram",
+            "modal_price": 8700,
+            "min_price": 8700,
+            "max_price": 8700
+          },
+          {
+            "market": "Kanigiri APMC",
+            "state": "Andhra Pradesh",
+            "variety": "(Whole)",
+            "modal_price": 8600,
+            "min_price": 8400,
+            "max_price": 8800
+          },
+          {
+            "market": "Hapur APMC",
+            "state": "Uttar Pradesh",
+            "variety": "Other",
+            "modal_price": 8500,
+            "min_price": 8500,
+            "max_price": 8500
           }
         ],
         "arrival_date": "30/07/2026"
@@ -43668,35 +43900,43 @@
       {
         "date": "2026-07-30",
         "session": "morning",
-        "collected_at": "2026-07-30 00:28:05 IST",
+        "collected_at": "2026-07-30 13:38:26 IST",
         "commodity": "onion",
-        "total_markets": 135,
-        "avg_price": 2442,
-        "modal_price": 2450,
-        "max_price": 4400,
-        "min_price": 600,
+        "total_markets": 125,
+        "avg_price": 2423,
+        "modal_price": 2500,
+        "max_price": 4150,
+        "min_price": 550,
         "cleaning": {
           "excluded_variety": 0,
-          "excluded_market": 58,
+          "excluded_market": 71,
           "excluded_band": 0,
-          "outliers_removed": 7
+          "outliers_removed": 4
         },
         "top_markets": [
           {
-            "market": "Kayamkulam Market",
-            "state": "Keralam",
-            "variety": "Small",
-            "modal_price": 4400,
-            "min_price": 4300,
-            "max_price": 4500
+            "market": "Udumalpet APMC",
+            "state": "Tamil Nadu",
+            "variety": "Bellary",
+            "modal_price": 4150,
+            "min_price": 3500,
+            "max_price": 4800
           },
           {
-            "market": "vadakarapathy Market",
-            "state": "Keralam",
-            "variety": "Small",
-            "modal_price": 4200,
+            "market": "Ulundurpettai APMC",
+            "state": "Tamil Nadu",
+            "variety": "Bellary",
+            "modal_price": 4000,
             "min_price": 4000,
-            "max_price": 4500
+            "max_price": 4000
+          },
+          {
+            "market": "Karsiyang(Matigara) APMC",
+            "state": "West Bengal",
+            "variety": "Nasik",
+            "modal_price": 4000,
+            "min_price": 3900,
+            "max_price": 4100
           },
           {
             "market": "Thirupathur APMC",
@@ -43707,47 +43947,39 @@
             "max_price": 4000
           },
           {
-            "market": "Punalur Market",
+            "market": "Aroor Market",
+            "state": "Keralam",
+            "variety": "Big",
+            "modal_price": 3600,
+            "min_price": 3500,
+            "max_price": 3700
+          },
+          {
+            "market": "Kannur Market",
             "state": "Keralam",
             "variety": "Onion",
-            "modal_price": 3800,
+            "modal_price": 3600,
             "min_price": 3500,
+            "max_price": 3700
+          },
+          {
+            "market": "Thuraiyur APMC",
+            "state": "Tamil Nadu",
+            "variety": "Bellary",
+            "modal_price": 3500,
+            "min_price": 3000,
             "max_price": 4000
           },
           {
-            "market": "Dhand APMC",
-            "state": "Haryana",
+            "market": "Boudh APMC",
+            "state": "Odisha",
             "variety": "Other",
-            "modal_price": 3800,
-            "min_price": 3000,
-            "max_price": 4000
-          },
-          {
-            "market": "Dhekiajuli APMC",
-            "state": "Assam",
-            "variety": "Onion",
-            "modal_price": 3700,
-            "min_price": 3500,
-            "max_price": 3900
-          },
-          {
-            "market": "Ganaur APMC",
-            "state": "Haryana",
-            "variety": "Onion",
             "modal_price": 3500,
-            "min_price": 3000,
-            "max_price": 4000
-          },
-          {
-            "market": "Uluberia APMC",
-            "state": "West Bengal",
-            "variety": "Nasik",
-            "modal_price": 3500,
-            "min_price": 3200,
+            "min_price": 300,
             "max_price": 4000
           }
         ],
-        "arrival_date": "29/07/2026"
+        "arrival_date": "30/07/2026"
       }
     ]
   },
@@ -48128,86 +48360,86 @@
       {
         "date": "2026-07-30",
         "session": "morning",
-        "collected_at": "2026-07-30 00:28:12 IST",
+        "collected_at": "2026-07-30 13:38:32 IST",
         "commodity": "soybean",
-        "total_markets": 140,
-        "avg_price": 6807,
-        "modal_price": 6889,
-        "max_price": 7700,
-        "min_price": 5800,
+        "total_markets": 61,
+        "avg_price": 6837,
+        "modal_price": 6940,
+        "max_price": 7165,
+        "min_price": 6000,
         "cleaning": {
           "excluded_variety": 0,
           "excluded_market": 8,
           "excluded_band": 0,
-          "outliers_removed": 9
+          "outliers_removed": 2
         },
         "top_markets": [
           {
-            "market": "Haveri APMC",
-            "state": "Karnataka",
-            "variety": "Soyabeen",
-            "modal_price": 7700,
-            "min_price": 7700,
-            "max_price": 7700
-          },
-          {
-            "market": "Banda APMC",
+            "market": "Nagda APMC",
             "state": "Madhya Pradesh",
             "variety": "Soyabeen",
-            "modal_price": 7425,
-            "min_price": 6000,
-            "max_price": 7480
+            "modal_price": 7165,
+            "min_price": 5000,
+            "max_price": 7165
           },
           {
-            "market": "Susner APMC",
+            "market": "Jawar APMC",
             "state": "Madhya Pradesh",
             "variety": "Soyabeen",
-            "modal_price": 7400,
-            "min_price": 6980,
-            "max_price": 7400
+            "modal_price": 7150,
+            "min_price": 6115,
+            "max_price": 7150
           },
           {
-            "market": "Chandur Railway APMC",
-            "state": "Maharashtra",
-            "variety": "Yellow",
-            "modal_price": 7230,
-            "min_price": 7200,
-            "max_price": 7250
-          },
-          {
-            "market": "Khirakiya APMC",
+            "market": "Taal APMC",
             "state": "Madhya Pradesh",
             "variety": "Yellow",
-            "modal_price": 7180,
-            "min_price": 5800,
-            "max_price": 7180
+            "modal_price": 7149,
+            "min_price": 6575,
+            "max_price": 7149
           },
           {
-            "market": "Khurai APMC",
-            "state": "Madhya Pradesh",
-            "variety": "Soyabeen",
-            "modal_price": 7160,
-            "min_price": 6500,
-            "max_price": 7160
-          },
-          {
-            "market": "Badnawar APMC",
+            "market": "Harda APMC",
             "state": "Madhya Pradesh",
             "variety": "Yellow",
-            "modal_price": 7155,
-            "min_price": 2400,
-            "max_price": 7170
+            "modal_price": 7140,
+            "min_price": 6566,
+            "max_price": 7140
           },
           {
-            "market": "Mahidpur APMC",
+            "market": "Taal APMC",
             "state": "Madhya Pradesh",
             "variety": "Soyabeen",
-            "modal_price": 7151,
-            "min_price": 2305,
-            "max_price": 7151
+            "modal_price": 7130,
+            "min_price": 6576,
+            "max_price": 7130
+          },
+          {
+            "market": "Nagda APMC",
+            "state": "Madhya Pradesh",
+            "variety": "Soyabeen",
+            "modal_price": 7130,
+            "min_price": 6210,
+            "max_price": 7130
+          },
+          {
+            "market": "Sanwer APMC",
+            "state": "Madhya Pradesh",
+            "variety": "Soyabeen",
+            "modal_price": 7121,
+            "min_price": 7069,
+            "max_price": 7121
+          },
+          {
+            "market": "Berasia APMC",
+            "state": "Madhya Pradesh",
+            "variety": "Yellow",
+            "modal_price": 7120,
+            "min_price": 6465,
+            "max_price": 7125
           }
         ],
-        "arrival_date": "29/07/2026"
+        "arrival_date": "30/07/2026"
       }
     ]
   },
@@ -52468,86 +52700,86 @@
       {
         "date": "2026-07-30",
         "session": "morning",
-        "collected_at": "2026-07-30 00:28:31 IST",
+        "collected_at": "2026-07-30 13:38:52 IST",
         "commodity": "mustard",
-        "total_markets": 116,
-        "avg_price": 7279,
-        "modal_price": 7392,
-        "max_price": 8120,
+        "total_markets": 47,
+        "avg_price": 7196,
+        "modal_price": 7350,
+        "max_price": 8132,
         "min_price": 6200,
         "cleaning": {
           "excluded_variety": 0,
           "excluded_market": 0,
-          "excluded_band": 10,
-          "outliers_removed": 8
+          "excluded_band": 5,
+          "outliers_removed": 0
         },
         "top_markets": [
+          {
+            "market": "Hindoun APMC",
+            "state": "Rajasthan",
+            "variety": "Other",
+            "modal_price": 8132,
+            "min_price": 7994,
+            "max_price": 8270
+          },
           {
             "market": "Pohari APMC",
             "state": "Madhya Pradesh",
             "variety": "Mustard",
-            "modal_price": 8120,
-            "min_price": 8120,
-            "max_price": 8120
+            "modal_price": 8100,
+            "min_price": 8090,
+            "max_price": 8100
           },
           {
-            "market": "Sehore APMC",
-            "state": "Madhya Pradesh",
+            "market": "Jasdan APMC",
+            "state": "Gujarat",
             "variety": "Mustard",
-            "modal_price": 8101,
-            "min_price": 7103,
-            "max_price": 8101
-          },
-          {
-            "market": "Mahoba APMC",
-            "state": "Uttar Pradesh",
-            "variety": "Other",
-            "modal_price": 8029,
+            "modal_price": 8000,
             "min_price": 8000,
-            "max_price": 8070
+            "max_price": 8000
           },
           {
-            "market": "Begu APMC",
-            "state": "Rajasthan",
+            "market": "Akola APMC",
+            "state": "Maharashtra",
             "variety": "Other",
-            "modal_price": 7980,
-            "min_price": 7980,
-            "max_price": 7980
+            "modal_price": 7645,
+            "min_price": 7645,
+            "max_price": 7645
           },
           {
             "market": "Lashkar APMC",
             "state": "Madhya Pradesh",
             "variety": "Mustard",
-            "modal_price": 7940,
-            "min_price": 7450,
-            "max_price": 7940
+            "modal_price": 7625,
+            "min_price": 7625,
+            "max_price": 7625
           },
           {
-            "market": "Mandawari APMC",
-            "state": "Rajasthan",
-            "variety": "Other",
-            "modal_price": 7926,
-            "min_price": 7628,
-            "max_price": 8035
-          },
-          {
-            "market": "Vijaypur APMC",
+            "market": "Kailaras APMC",
             "state": "Madhya Pradesh",
             "variety": "Mustard",
-            "modal_price": 7900,
-            "min_price": 7800,
-            "max_price": 7950
+            "modal_price": 7612,
+            "min_price": 7612,
+            "max_price": 7612
           },
           {
-            "market": "Dausa APMC",
-            "state": "Rajasthan",
-            "variety": "Other",
-            "modal_price": 7850,
-            "min_price": 7800,
-            "max_price": 7900
+            "market": "Khairagarh APMC",
+            "state": "Uttar Pradesh",
+            "variety": "Sarson(Black)",
+            "modal_price": 7600,
+            "min_price": 7500,
+            "max_price": 7700
+          },
+          {
+            "market": "Lakhani APMC",
+            "state": "Gujarat",
+            "variety": "Mustard",
+            "modal_price": 7562,
+            "min_price": 7562,
+            "max_price": 7562
           }
         ],
-        "arrival_date": "29/07/2026"
+        "arrival_date": "30/07/2026"
       }
     ]
   },
@@ -55832,35 +56064,83 @@
       {
         "date": "2026-07-30",
         "session": "morning",
-        "collected_at": "2026-07-30 06:55:40 IST",
+        "collected_at": "2026-07-30 13:38:39 IST",
         "commodity": "groundnut",
-        "total_markets": 2,
-        "avg_price": 6634,
-        "modal_price": 6634,
-        "max_price": 7000,
-        "min_price": 6267,
+        "total_markets": 44,
+        "avg_price": 6907,
+        "modal_price": 6960,
+        "max_price": 8300,
+        "min_price": 5500,
         "cleaning": {
           "excluded_variety": 0,
-          "excluded_market": 0,
-          "excluded_band": 0,
-          "outliers_removed": 0
+          "excluded_market": 52,
+          "excluded_band": 1,
+          "outliers_removed": 4
         },
         "top_markets": [
           {
-            "market": "Chintapally APMC",
+            "market": "Kalyandurg APMC",
             "state": "Andhra Pradesh",
             "variety": "Local",
-            "modal_price": 7000,
-            "min_price": 6500,
-            "max_price": 7500
+            "modal_price": 8300,
+            "min_price": 8000,
+            "max_price": 8500
           },
           {
-            "market": "Gooti APMC",
+            "market": "Bapatla APMC",
             "state": "Andhra Pradesh",
             "variety": "Local",
-            "modal_price": 6267,
-            "min_price": 3209,
-            "max_price": 6345
+            "modal_price": 8250,
+            "min_price": 8000,
+            "max_price": 8500
+          },
+          {
+            "market": "Vellore APMC",
+            "state": "Tamil Nadu",
+            "variety": "Big (With Shell)",
+            "modal_price": 8000,
+            "min_price": 8000,
+            "max_price": 8000
+          },
+          {
+            "market": "Mandsaur APMC",
+            "state": "Madhya Pradesh",
+            "variety": "Big (With Shell)",
+            "modal_price": 7935,
+            "min_price": 7935,
+            "max_price": 7935
+          },
+          {
+            "market": "Lucknow APMC",
+            "state": "Uttar Pradesh",
+            "variety": "Other",
+            "modal_price": 7925,
+            "min_price": 7200,
+            "max_price": 9500
+          },
+          {
+            "market": "Mandsaur APMC",
+            "state": "Madhya Pradesh",
+            "variety": "Big (With Shell)",
+            "modal_price": 7900,
+            "min_price": 6901,
+            "max_price": 7900
+          },
+          {
+            "market": "Penukonda APMC",
+            "state": "Andhra Pradesh",
+            "variety": "Local",
+            "modal_price": 7500,
+            "min_price": 7400,
+            "max_price": 7800
+          },
+          {
+            "market": "Dahod APMC",
+            "state": "Gujarat",
+            "variety": "Other",
+            "modal_price": 7500,
+            "min_price": 7000,
+            "max_price": 8000
           }
         ],
         "arrival_date": "30/07/2026"
@@ -57364,13 +57644,13 @@
       {
         "date": "2026-07-30",
         "session": "morning",
-        "collected_at": "2026-07-30 00:28:25 IST",
+        "collected_at": "2026-07-30 13:38:46 IST",
         "commodity": "sunflower",
-        "total_markets": 5,
-        "avg_price": 8073,
-        "modal_price": 8100,
-        "max_price": 8300,
-        "min_price": 7597,
+        "total_markets": 2,
+        "avg_price": 7908,
+        "modal_price": 7908,
+        "max_price": 8216,
+        "min_price": 7600,
         "cleaning": {
           "excluded_variety": 0,
           "excluded_market": 0,
@@ -57379,47 +57659,23 @@
         },
         "top_markets": [
           {
-            "market": "Sindhanur APMC",
-            "state": "Karnataka",
-            "variety": "Sunflower",
-            "modal_price": 8300,
-            "min_price": 8206,
-            "max_price": 8405
-          },
-          {
-            "market": "Kustagi APMC",
-            "state": "Karnataka",
-            "variety": "Hybrid",
-            "modal_price": 8300,
-            "min_price": 8300,
-            "max_price": 8300
-          },
-          {
-            "market": "Kampli APMC",
-            "state": "Karnataka",
-            "variety": "Local",
-            "modal_price": 8100,
-            "min_price": 8100,
-            "max_price": 8100
-          },
-          {
             "market": "Mundaragi APMC",
             "state": "Karnataka",
             "variety": "Sunflower",
-            "modal_price": 8069,
-            "min_price": 7989,
-            "max_price": 8169
+            "modal_price": 8216,
+            "min_price": 8216,
+            "max_price": 8216
           },
           {
-            "market": "Vijayapura APMC",
+            "market": "Gundlupet APMC",
             "state": "Karnataka",
-            "variety": "Sunflower",
-            "modal_price": 7597,
-            "min_price": 7597,
-            "max_price": 7597
+            "variety": "Other",
+            "modal_price": 7600,
+            "min_price": 7600,
+            "max_price": 7600
           }
         ],
-        "arrival_date": "29/07/2026"
+        "arrival_date": "30/07/2026"
       }
     ]
   }
