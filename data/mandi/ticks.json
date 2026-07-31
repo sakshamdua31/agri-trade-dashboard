@@ -59683,6 +59683,58 @@
         "max_price": 4350,
         "arrival_date": "2026-07-30"
       }
+    ],
+    "2026-07-31": [
+      {
+        "market": "Mydukur APMC",
+        "state": "Andhra Pradesh",
+        "district": "YSR Kadapa",
+        "variety": "Masuri",
+        "modal_price": 2400,
+        "min_price": 2300,
+        "max_price": 2500,
+        "arrival_date": "2026-07-31"
+      },
+      {
+        "market": "Pithapuram APMC",
+        "state": "Andhra Pradesh",
+        "district": "Kakinada",
+        "variety": "1001",
+        "modal_price": 2379,
+        "min_price": 2369,
+        "max_price": 2389,
+        "arrival_date": "2026-07-31"
+      },
+      {
+        "market": "Karapa APMC",
+        "state": "Andhra Pradesh",
+        "district": "Kakinada",
+        "variety": "1001",
+        "modal_price": 2365,
+        "min_price": 2361,
+        "max_price": 2369,
+        "arrival_date": "2026-07-31"
+      },
+      {
+        "market": "Ipur APMC",
+        "state": "Andhra Pradesh",
+        "district": "Palnadu",
+        "variety": "Paddy",
+        "modal_price": 2450,
+        "min_price": 2350,
+        "max_price": 2600,
+        "arrival_date": "2026-07-31"
+      },
+      {
+        "market": "Kakinada (Urban) APMC",
+        "state": "Andhra Pradesh",
+        "district": "Kakinada",
+        "variety": "B P T",
+        "modal_price": 2550,
+        "min_price": 2389,
+        "max_price": 2600,
+        "arrival_date": "2026-07-31"
+      }
     ]
   },
   "wheat": {
@@ -392153,6 +392205,18 @@
         "max_price": 8300,
         "arrival_date": "2026-07-30"
       }
+    ],
+    "2026-07-31": [
+      {
+        "market": "Gooti APMC",
+        "state": "Andhra Pradesh",
+        "district": "Ananthapuramu",
+        "variety": "Local",
+        "modal_price": 4875,
+        "min_price": 3689,
+        "max_price": 5697,
+        "arrival_date": "2026-07-31"
+      }
     ]
   },
   "gram": {
@@ -481121,6 +481185,18 @@
         "max_price": 7400,
         "arrival_date": "2026-07-30"
       }
+    ],
+    "2026-07-31": [
+      {
+        "market": "Gooti APMC",
+        "state": "Andhra Pradesh",
+        "district": "Ananthapuramu",
+        "variety": "Local",
+        "modal_price": 4875,
+        "min_price": 3689,
+        "max_price": 5697,
+        "arrival_date": "2026-07-31"
+      }
     ]
   },
   "onion": {
@@ -567049,9 +567125,41 @@
         "max_price": 1200,
         "arrival_date": "2026-07-30"
       }
+    ],
+    "2026-07-31": [
+      {
+        "market": "Munnar Market",
+        "state": "Keralam",
+        "district": "Idukki",
+        "variety": "Small",
+        "modal_price": 6800,
+        "min_price": 6800,
+        "max_price": 6800,
+        "arrival_date": "2026-07-31"
+      },
+      {
+        "market": "Munnar Market",
+        "state": "Keralam",
+        "district": "Idukki",
+        "variety": "Big",
+        "modal_price": 4000,
+        "min_price": 4000,
+        "max_price": 4000,
+        "arrival_date": "2026-07-31"
+      },
+      {
+        "market": "Munnar Market",
+        "state": "Keralam",
+        "district": "Idukki",
+        "variety": "Onion Green",
+        "modal_price": 4500,
+        "min_price": 4500,
+        "max_price": 4500,
+        "arrival_date": "2026-07-31"
+      }
     ]
   },
-  "updated": "2026-07-31 00:39:15 IST",
+  "updated": "2026-07-31 07:21:13 IST",
   "retention_days": 30,
   "soybean": {
     "2026-07-01": [
@@ -653534,6 +653642,28 @@
         "min_price": 3000,
         "max_price": 6000,
         "arrival_date": "2026-07-30"
+      }
+    ],
+    "2026-07-31": [
+      {
+        "market": "Gooti APMC",
+        "state": "Andhra Pradesh",
+        "district": "Ananthapuramu",
+        "variety": "Local",
+        "modal_price": 5576,
+        "min_price": 3519,
+        "max_price": 5980,
+        "arrival_date": "2026-07-31"
+      },
+      {
+        "market": "Munnar Market",
+        "state": "Keralam",
+        "district": "Idukki",
+        "variety": "Other",
+        "modal_price": 6500,
+        "min_price": 6500,
+        "max_price": 6500,
+        "arrival_date": "2026-07-31"
       }
     ]
   },
