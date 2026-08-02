@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02 18:29:30 IST",
+  "updated": "2026-08-02 20:30:40 IST",
   "paddy": {
     "history": [
       {
@@ -57444,18 +57444,18 @@
       {
         "date": "2026-08-02",
         "session": "evening",
-        "collected_at": "2026-08-02 18:29:25 IST",
+        "collected_at": "2026-08-02 20:30:35 IST",
         "commodity": "mustard",
-        "total_markets": 26,
-        "avg_price": 7296,
-        "modal_price": 7258,
+        "total_markets": 33,
+        "avg_price": 7096,
+        "modal_price": 7200,
         "max_price": 8150,
-        "min_price": 6400,
+        "min_price": 5500,
         "cleaning": {
           "excluded_variety": 0,
           "excluded_market": 0,
           "excluded_band": 0,
-          "outliers_removed": 5
+          "outliers_removed": 2
         },
         "top_markets": [
           {
@@ -57494,9 +57494,25 @@
             "market": "Khairagarh APMC",
             "state": "Uttar Pradesh",
             "variety": "Other",
-            "modal_price": 7681,
-            "min_price": 7650,
+            "modal_price": 7659,
+            "min_price": 7600,
             "max_price": 7700
+          },
+          {
+            "market": "Jagnair APMC",
+            "state": "Uttar Pradesh",
+            "variety": "Other",
+            "modal_price": 7630,
+            "min_price": 7600,
+            "max_price": 7700
+          },
+          {
+            "market": "Lahar APMC",
+            "state": "Madhya Pradesh",
+            "variety": "Mustard",
+            "modal_price": 7600,
+            "min_price": 7250,
+            "max_price": 7665
           },
           {
             "market": "Surajgarh APMC",
@@ -57505,22 +57521,6 @@
             "modal_price": 7560,
             "min_price": 7560,
             "max_price": 7560
-          },
-          {
-            "market": "Chhatarpur APMC",
-            "state": "Madhya Pradesh",
-            "variety": "Mustard",
-            "modal_price": 7500,
-            "min_price": 7500,
-            "max_price": 7500
-          },
-          {
-            "market": "Aligarh APMC",
-            "state": "Uttar Pradesh",
-            "variety": "Other",
-            "modal_price": 7450,
-            "min_price": 7450,
-            "max_price": 7450
           }
         ],
         "arrival_date": "02/08/2026"
@@ -63244,7 +63244,7 @@
       {
         "date": "2026-08-02",
         "session": "evening",
-        "collected_at": "2026-08-02 18:29:18 IST",
+        "collected_at": "2026-08-02 20:30:29 IST",
         "commodity": "sunflower",
         "total_markets": 1,
         "avg_price": 8341,
