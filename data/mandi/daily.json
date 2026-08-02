@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02 00:25:29 IST",
+  "updated": "2026-08-02 07:19:36 IST",
   "paddy": {
     "history": [
       {
@@ -7701,86 +7701,30 @@
       {
         "date": "2026-08-02",
         "session": "morning",
-        "collected_at": "2026-08-02 00:24:22 IST",
+        "collected_at": "2026-08-02 07:19:18 IST",
         "commodity": "paddy",
-        "total_markets": 166,
-        "avg_price": 2301,
-        "modal_price": 2369,
-        "max_price": 3014,
-        "min_price": 1720,
+        "total_markets": 1,
+        "avg_price": 2375,
+        "modal_price": 2375,
+        "max_price": 2375,
+        "min_price": 2375,
         "cleaning": {
           "excluded_variety": 0,
           "excluded_market": 0,
           "excluded_band": 0,
-          "outliers_removed": 34
+          "outliers_removed": 0
         },
         "top_markets": [
           {
-            "market": "Prayagraj APMC",
-            "state": "Uttar Pradesh",
-            "variety": "Paddy fine",
-            "modal_price": 3014,
-            "min_price": 2500,
-            "max_price": 3400
-          },
-          {
-            "market": "Kosikalan APMC",
-            "state": "Uttar Pradesh",
-            "variety": "Basmati",
-            "modal_price": 3007,
-            "min_price": 3000,
-            "max_price": 3100
-          },
-          {
-            "market": "Tiroda APMC",
-            "state": "Maharashtra",
-            "variety": "Other",
-            "modal_price": 3001,
-            "min_price": 2811,
-            "max_price": 3190
-          },
-          {
-            "market": "Hapur APMC",
-            "state": "Uttar Pradesh",
+            "market": "Kakinada (Urban) APMC",
+            "state": "Andhra Pradesh",
             "variety": "Common",
-            "modal_price": 3000,
-            "min_price": 3000,
-            "max_price": 3000
-          },
-          {
-            "market": "Gangavathi APMC",
-            "state": "Karnataka",
-            "variety": "Paddy RNR new",
-            "modal_price": 3000,
-            "min_price": 2880,
-            "max_price": 3380
-          },
-          {
-            "market": "Kushinagar APMC",
-            "state": "Uttar Pradesh",
-            "variety": "Common",
-            "modal_price": 2950,
-            "min_price": 2950,
-            "max_price": 2950
-          },
-          {
-            "market": "Dhamtari APMC",
-            "state": "Chattisgarh",
-            "variety": "B P T",
-            "modal_price": 2900,
-            "min_price": 2900,
-            "max_price": 2900
-          },
-          {
-            "market": "Kurud APMC",
-            "state": "Chattisgarh",
-            "variety": "RB Gold",
-            "modal_price": 2880,
-            "min_price": 2870,
-            "max_price": 2955
+            "modal_price": 2375,
+            "min_price": 2369,
+            "max_price": 2390
           }
         ],
-        "arrival_date": "01/08/2026"
+        "arrival_date": "02/08/2026"
       }
     ]
   },
