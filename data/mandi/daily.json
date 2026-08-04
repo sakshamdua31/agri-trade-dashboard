@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04 00:50:09 IST",
+  "updated": "2026-08-04 06:57:24 IST",
   "paddy": {
     "history": [
       {
@@ -8029,86 +8029,38 @@
       {
         "date": "2026-08-04",
         "session": "morning",
-        "collected_at": "2026-08-04 00:49:04 IST",
+        "collected_at": "2026-08-04 06:57:02 IST",
         "commodity": "paddy",
-        "total_markets": 187,
-        "avg_price": 2421,
-        "modal_price": 2369,
-        "max_price": 3590,
-        "min_price": 1500,
+        "total_markets": 2,
+        "avg_price": 2374,
+        "modal_price": 2374,
+        "max_price": 2379,
+        "min_price": 2369,
         "cleaning": {
           "excluded_variety": 0,
           "excluded_market": 0,
           "excluded_band": 0,
-          "outliers_removed": 13
+          "outliers_removed": 0
         },
         "top_markets": [
           {
-            "market": "Varaseoni APMC",
-            "state": "Madhya Pradesh",
-            "variety": "Paddy",
-            "modal_price": 3590,
-            "min_price": 2000,
-            "max_price": 4100
-          },
-          {
-            "market": "Khair APMC",
-            "state": "Uttar Pradesh",
-            "variety": "Basmati",
-            "modal_price": 3500,
-            "min_price": 3500,
-            "max_price": 3500
-          },
-          {
-            "market": "Jahangirabad APMC",
-            "state": "Uttar Pradesh",
-            "variety": "Basmati",
-            "modal_price": 3480,
-            "min_price": 2800,
-            "max_price": 3846
-          },
-          {
-            "market": "Suryapeta APMC",
-            "state": "Telangana",
-            "variety": "B P T",
-            "modal_price": 3479,
-            "min_price": 3229,
-            "max_price": 3481
-          },
-          {
-            "market": "Raibareilly APMC",
-            "state": "Uttar Pradesh",
-            "variety": "Common",
-            "modal_price": 3467,
-            "min_price": 2600,
-            "max_price": 3525
-          },
-          {
-            "market": "Buland Shahr APMC",
-            "state": "Uttar Pradesh",
-            "variety": "Basmati",
-            "modal_price": 3439,
-            "min_price": 3201,
-            "max_price": 3755
-          },
-          {
-            "market": "Suryapeta APMC",
-            "state": "Telangana",
-            "variety": "Other",
-            "modal_price": 3429,
-            "min_price": 2109,
-            "max_price": 3908
-          },
-          {
-            "market": "RAYADURG APMC",
+            "market": "Pithapuram APMC",
             "state": "Andhra Pradesh",
-            "variety": "I.R. 64",
-            "modal_price": 3400,
-            "min_price": 3200,
-            "max_price": 3700
+            "variety": "B P T",
+            "modal_price": 2379,
+            "min_price": 2369,
+            "max_price": 2389
+          },
+          {
+            "market": "Amalapuram APMC",
+            "state": "Andhra Pradesh",
+            "variety": "1001",
+            "modal_price": 2369,
+            "min_price": 2369,
+            "max_price": 2468
           }
         ],
-        "arrival_date": "03/08/2026"
+        "arrival_date": "04/08/2026"
       }
     ]
   },
@@ -48820,86 +48772,30 @@
       {
         "date": "2026-08-04",
         "session": "morning",
-        "collected_at": "2026-08-04 00:49:38 IST",
+        "collected_at": "2026-08-04 06:57:14 IST",
         "commodity": "onion",
-        "total_markets": 147,
-        "avg_price": 2449,
-        "modal_price": 2400,
-        "max_price": 4500,
-        "min_price": 500,
+        "total_markets": 1,
+        "avg_price": 1432,
+        "modal_price": 1432,
+        "max_price": 1432,
+        "min_price": 1432,
         "cleaning": {
           "excluded_variety": 0,
-          "excluded_market": 49,
+          "excluded_market": 0,
           "excluded_band": 0,
-          "outliers_removed": 4
+          "outliers_removed": 0
         },
         "top_markets": [
           {
-            "market": "Munnar Market",
-            "state": "Keralam",
-            "variety": "Big",
-            "modal_price": 4500,
-            "min_price": 4500,
-            "max_price": 4500
-          },
-          {
-            "market": "Vadaseri APMC",
-            "state": "Tamil Nadu",
-            "variety": "Bellary",
-            "modal_price": 4250,
-            "min_price": 4000,
-            "max_price": 4500
-          },
-          {
-            "market": "Khagaria APMC",
-            "state": "Bihar",
-            "variety": "Red",
-            "modal_price": 4200,
-            "min_price": 4000,
-            "max_price": 4250
-          },
-          {
-            "market": "Talcher APMC",
-            "state": "Odisha",
+            "market": "Rayya APMC",
+            "state": "Punjab",
             "variety": "Other",
-            "modal_price": 4000,
-            "min_price": 3800,
-            "max_price": 4200
-          },
-          {
-            "market": "Chavakkad Market",
-            "state": "Keralam",
-            "variety": "Big",
-            "modal_price": 4000,
-            "min_price": 3200,
-            "max_price": 4000
-          },
-          {
-            "market": "Anchal Market",
-            "state": "Keralam",
-            "variety": "Small",
-            "modal_price": 4000,
-            "min_price": 4000,
-            "max_price": 4000
-          },
-          {
-            "market": "Ulundurpettai APMC",
-            "state": "Tamil Nadu",
-            "variety": "Bellary",
-            "modal_price": 4000,
-            "min_price": 4000,
-            "max_price": 4000
-          },
-          {
-            "market": "Bassi APMC",
-            "state": "Rajasthan",
-            "variety": "Other",
-            "modal_price": 3800,
-            "min_price": 3600,
-            "max_price": 4000
+            "modal_price": 1432,
+            "min_price": 1432,
+            "max_price": 1432
           }
         ],
-        "arrival_date": "03/08/2026"
+        "arrival_date": "04/08/2026"
       }
     ]
   },
