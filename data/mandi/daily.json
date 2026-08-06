@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-06 00:45:50 IST",
+  "updated": "2026-08-06 07:00:18 IST",
   "paddy": {
     "history": [
       {
@@ -8365,86 +8365,62 @@
       {
         "date": "2026-08-06",
         "session": "morning",
-        "collected_at": "2026-08-06 00:44:44 IST",
+        "collected_at": "2026-08-06 06:59:54 IST",
         "commodity": "paddy",
-        "total_markets": 184,
-        "avg_price": 2372,
-        "modal_price": 2369,
-        "max_price": 3453,
-        "min_price": 1299,
+        "total_markets": 5,
+        "avg_price": 2401,
+        "modal_price": 2379,
+        "max_price": 2500,
+        "min_price": 2366,
         "cleaning": {
           "excluded_variety": 0,
           "excluded_market": 0,
           "excluded_band": 0,
-          "outliers_removed": 16
+          "outliers_removed": 0
         },
         "top_markets": [
           {
-            "market": "Gangoh APMC",
-            "state": "Uttar Pradesh",
-            "variety": "Other",
-            "modal_price": 3453,
-            "min_price": 3000,
-            "max_price": 3806
-          },
-          {
-            "market": "Lingasugur APMC",
-            "state": "Karnataka",
+            "market": "Kothabommali APMC",
+            "state": "Andhra Pradesh",
             "variety": "Paddy",
-            "modal_price": 3450,
-            "min_price": 3450,
-            "max_price": 3560
+            "modal_price": 2500,
+            "min_price": 2500,
+            "max_price": 2500
           },
           {
-            "market": "Shikaripura APMC",
-            "state": "Karnataka",
-            "variety": "Paddy",
-            "modal_price": 3449,
-            "min_price": 3300,
-            "max_price": 3800
-          },
-          {
-            "market": "Suryapeta APMC",
-            "state": "Telangana",
-            "variety": "Other",
-            "modal_price": 3419,
-            "min_price": 2509,
-            "max_price": 4001
-          },
-          {
-            "market": "Repalli APMC",
+            "market": "Pithapuram APMC",
             "state": "Andhra Pradesh",
             "variety": "B P T",
-            "modal_price": 3400,
-            "min_price": 3200,
-            "max_price": 3600
+            "modal_price": 2379,
+            "min_price": 2369,
+            "max_price": 2389
           },
           {
-            "market": "Savali APMC",
-            "state": "Maharashtra",
-            "variety": "Other",
-            "modal_price": 3400,
-            "min_price": 3120,
-            "max_price": 3510
+            "market": "Rampachodvaram APMC",
+            "state": "Andhra Pradesh",
+            "variety": "1001",
+            "modal_price": 2379,
+            "min_price": 2369,
+            "max_price": 2489
           },
           {
-            "market": "Mahabubabad APMC",
-            "state": "Telangana",
-            "variety": "Common",
-            "modal_price": 3381,
-            "min_price": 2988,
-            "max_price": 3518
+            "market": "Sampara (Kakinada Rural) APMC",
+            "state": "Andhra Pradesh",
+            "variety": "Paddy Medium",
+            "modal_price": 2379,
+            "min_price": 2369,
+            "max_price": 2389
           },
           {
-            "market": "Arani APMC",
-            "state": "Tamil Nadu",
-            "variety": "Other",
-            "modal_price": 3365,
-            "min_price": 3025,
-            "max_price": 3705
+            "market": "Karapa APMC",
+            "state": "Andhra Pradesh",
+            "variety": "1001",
+            "modal_price": 2366,
+            "min_price": 2362,
+            "max_price": 2369
           }
         ],
-        "arrival_date": "05/08/2026"
+        "arrival_date": "06/08/2026"
       }
     ]
   },
@@ -66496,86 +66472,30 @@
       {
         "date": "2026-08-06",
         "session": "morning",
-        "collected_at": "2026-08-06 00:45:32 IST",
+        "collected_at": "2026-08-06 07:00:10 IST",
         "commodity": "groundnut",
-        "total_markets": 80,
-        "avg_price": 6865,
-        "modal_price": 6928,
-        "max_price": 9225,
-        "min_price": 5000,
+        "total_markets": 1,
+        "avg_price": 7000,
+        "modal_price": 7000,
+        "max_price": 7000,
+        "min_price": 7000,
         "cleaning": {
           "excluded_variety": 0,
-          "excluded_market": 42,
+          "excluded_market": 0,
           "excluded_band": 0,
-          "outliers_removed": 4
+          "outliers_removed": 0
         },
         "top_markets": [
           {
-            "market": "APMC HALVAD",
-            "state": "Gujarat",
-            "variety": "Seed",
-            "modal_price": 9225,
-            "min_price": 8400,
-            "max_price": 9600
-          },
-          {
-            "market": "Porbandar APMC",
-            "state": "Gujarat",
-            "variety": "Groundnut(Split)",
-            "modal_price": 9100,
-            "min_price": 8550,
-            "max_price": 9650
-          },
-          {
-            "market": "Jhansi APMC",
-            "state": "Uttar Pradesh",
-            "variety": "Other",
-            "modal_price": 8365,
-            "min_price": 8230,
-            "max_price": 8500
-          },
-          {
-            "market": "Kalyandurg APMC",
+            "market": "Chintapally APMC",
             "state": "Andhra Pradesh",
             "variety": "Local",
-            "modal_price": 8300,
-            "min_price": 8000,
-            "max_price": 8500
-          },
-          {
-            "market": "Challakere APMC",
-            "state": "Karnataka",
-            "variety": "Gejje",
-            "modal_price": 8300,
-            "min_price": 5006,
-            "max_price": 9429
-          },
-          {
-            "market": "Bapatla APMC",
-            "state": "Andhra Pradesh",
-            "variety": "Local",
-            "modal_price": 8250,
-            "min_price": 8000,
-            "max_price": 8500
-          },
-          {
-            "market": "Sandila APMC",
-            "state": "Uttar Pradesh",
-            "variety": "Other",
-            "modal_price": 8005,
-            "min_price": 7800,
-            "max_price": 8200
-          },
-          {
-            "market": "Visavadar APMC",
-            "state": "Gujarat",
-            "variety": "Groundnut(Split)",
-            "modal_price": 7805,
-            "min_price": 7005,
-            "max_price": 8605
+            "modal_price": 7000,
+            "min_price": 6500,
+            "max_price": 7500
           }
         ],
-        "arrival_date": "05/08/2026"
+        "arrival_date": "06/08/2026"
       }
     ]
   },
