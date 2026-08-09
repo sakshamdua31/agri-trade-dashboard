@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08 23:53:24 IST",
+  "updated": "2026-08-09 06:26:25 IST",
   "paddy": {
     "history": [
       {
@@ -8865,6 +8865,34 @@
           }
         ],
         "arrival_date": "08/08/2026"
+      },
+      {
+        "date": "2026-08-09",
+        "session": "morning",
+        "collected_at": "2026-08-09 06:26:03 IST",
+        "commodity": "paddy",
+        "total_markets": 1,
+        "avg_price": 2365,
+        "modal_price": 2365,
+        "max_price": 2365,
+        "min_price": 2365,
+        "cleaning": {
+          "excluded_variety": 0,
+          "excluded_market": 0,
+          "excluded_band": 0,
+          "outliers_removed": 0
+        },
+        "top_markets": [
+          {
+            "market": "Karapa APMC",
+            "state": "Andhra Pradesh",
+            "variety": "1001",
+            "modal_price": 2365,
+            "min_price": 2363,
+            "max_price": 2369
+          }
+        ],
+        "arrival_date": "09/08/2026"
       }
     ]
   },
@@ -17713,6 +17741,34 @@
           }
         ],
         "arrival_date": "08/08/2026"
+      },
+      {
+        "date": "2026-08-09",
+        "session": "morning",
+        "collected_at": "2026-08-09 06:26:09 IST",
+        "commodity": "wheat",
+        "total_markets": 1,
+        "avg_price": 2675,
+        "modal_price": 2675,
+        "max_price": 2675,
+        "min_price": 2675,
+        "cleaning": {
+          "excluded_variety": 0,
+          "excluded_market": 0,
+          "excluded_band": 0,
+          "outliers_removed": 0
+        },
+        "top_markets": [
+          {
+            "market": "Chotila APMC",
+            "state": "Gujarat",
+            "variety": "Local",
+            "modal_price": 2675,
+            "min_price": 2500,
+            "max_price": 2750
+          }
+        ],
+        "arrival_date": "09/08/2026"
       }
     ]
   },
