@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13 00:19:39 IST",
+  "updated": "2026-08-13 06:36:09 IST",
   "paddy": {
     "history": [
       {
@@ -9541,86 +9541,62 @@
       {
         "date": "2026-08-13",
         "session": "morning",
-        "collected_at": "2026-08-13 00:18:15 IST",
+        "collected_at": "2026-08-13 06:35:46 IST",
         "commodity": "paddy",
-        "total_markets": 174,
-        "avg_price": 2373,
-        "modal_price": 2374,
-        "max_price": 3250,
-        "min_price": 1625,
+        "total_markets": 5,
+        "avg_price": 2376,
+        "modal_price": 2379,
+        "max_price": 2379,
+        "min_price": 2369,
         "cleaning": {
           "excluded_variety": 0,
           "excluded_market": 0,
           "excluded_band": 0,
-          "outliers_removed": 26
+          "outliers_removed": 0
         },
         "top_markets": [
           {
-            "market": "Khambhat(Grain Market) APMC",
-            "state": "Gujarat",
-            "variety": "Paddy",
-            "modal_price": 3250,
-            "min_price": 2750,
-            "max_price": 3750
+            "market": "Sampara (Kakinada Rural) APMC",
+            "state": "Andhra Pradesh",
+            "variety": "Paddy Medium",
+            "modal_price": 2379,
+            "min_price": 2369,
+            "max_price": 2389
           },
           {
-            "market": "Ayodhya APMC",
-            "state": "Uttar Pradesh",
+            "market": "Prattipadu APMC",
+            "state": "Andhra Pradesh",
+            "variety": "1001",
+            "modal_price": 2379,
+            "min_price": 2369,
+            "max_price": 2380
+          },
+          {
+            "market": "Rampachodvaram APMC",
+            "state": "Andhra Pradesh",
+            "variety": "1001",
+            "modal_price": 2379,
+            "min_price": 2369,
+            "max_price": 2389
+          },
+          {
+            "market": "Kakinada (Urban) APMC",
+            "state": "Andhra Pradesh",
             "variety": "Common",
-            "modal_price": 3250,
-            "min_price": 3250,
-            "max_price": 3250
+            "modal_price": 2375,
+            "min_price": 2369,
+            "max_price": 2390
           },
           {
-            "market": "Armori(Desaiganj) APMC",
-            "state": "Maharashtra",
-            "variety": "Other",
-            "modal_price": 3218,
-            "min_price": 2700,
-            "max_price": 3710
-          },
-          {
-            "market": "Armori APMC",
-            "state": "Maharashtra",
-            "variety": "Other",
-            "modal_price": 3100,
-            "min_price": 3040,
-            "max_price": 3570
-          },
-          {
-            "market": "Sindhanur APMC",
-            "state": "Karnataka",
-            "variety": "Sona Masuri (OLD)",
-            "modal_price": 3100,
-            "min_price": 3100,
-            "max_price": 4089
-          },
-          {
-            "market": "Harihara APMC",
-            "state": "Karnataka",
-            "variety": "Paddy RNR new",
-            "modal_price": 3100,
-            "min_price": 3100,
-            "max_price": 3100
-          },
-          {
-            "market": "Kakching Market APMC",
-            "state": "Manipur",
-            "variety": "Other",
-            "modal_price": 3000,
-            "min_price": 3000,
-            "max_price": 3000
-          },
-          {
-            "market": "Imphal APMC",
-            "state": "Manipur",
-            "variety": "Other",
-            "modal_price": 3000,
-            "min_price": 3000,
-            "max_price": 3000
+            "market": "Karapa APMC",
+            "state": "Andhra Pradesh",
+            "variety": "1001",
+            "modal_price": 2369,
+            "min_price": 2369,
+            "max_price": 2369
           }
         ],
-        "arrival_date": "12/08/2026"
+        "arrival_date": "13/08/2026"
       }
     ]
   },
