@@ -65,6 +65,17 @@ jobs:
             echo "committed=true" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Upload data to Azure Blob Storage
+        env:
+          AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+        run: |
+          az storage blob upload-batch \
+            --account-name agritradedashboard01 \
+            --destination data \
+            --source ./data \
+            --connection-string "$AZURE_STORAGE_CONNECTION_STRING" \
+            --overwrite
+
   deploy:
     name: Deploy to Azure Static Web Apps
     needs: refresh
