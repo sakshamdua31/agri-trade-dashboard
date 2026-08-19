@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-18 23:53:53 IST",
+  "updated": "2026-08-19 06:09:26 IST",
   "paddy": {
     "history": [
       {
@@ -10545,6 +10545,34 @@
           }
         ],
         "arrival_date": "18/08/2026"
+      },
+      {
+        "date": "2026-08-19",
+        "session": "morning",
+        "collected_at": "2026-08-19 06:09:04 IST",
+        "commodity": "paddy",
+        "total_markets": 1,
+        "avg_price": 2375,
+        "modal_price": 2375,
+        "max_price": 2375,
+        "min_price": 2375,
+        "cleaning": {
+          "excluded_variety": 0,
+          "excluded_market": 0,
+          "excluded_band": 0,
+          "outliers_removed": 0
+        },
+        "top_markets": [
+          {
+            "market": "Kakinada (Urban) APMC",
+            "state": "Andhra Pradesh",
+            "variety": "Common",
+            "modal_price": 2375,
+            "min_price": 2369,
+            "max_price": 2390
+          }
+        ],
+        "arrival_date": "19/08/2026"
       }
     ]
   },
@@ -85136,6 +85164,34 @@
           }
         ],
         "arrival_date": "18/08/2026"
+      },
+      {
+        "date": "2026-08-19",
+        "session": "morning",
+        "collected_at": "2026-08-19 06:09:19 IST",
+        "commodity": "groundnut",
+        "total_markets": 1,
+        "avg_price": 7000,
+        "modal_price": 7000,
+        "max_price": 7000,
+        "min_price": 7000,
+        "cleaning": {
+          "excluded_variety": 0,
+          "excluded_market": 0,
+          "excluded_band": 0,
+          "outliers_removed": 0
+        },
+        "top_markets": [
+          {
+            "market": "Chintapally APMC",
+            "state": "Andhra Pradesh",
+            "variety": "Local",
+            "modal_price": 7000,
+            "min_price": 6500,
+            "max_price": 7500
+          }
+        ],
+        "arrival_date": "19/08/2026"
       }
     ]
   },
