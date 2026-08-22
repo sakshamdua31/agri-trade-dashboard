@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21 23:53:51 IST",
+  "updated": "2026-08-22 06:08:59 IST",
   "paddy": {
     "history": [
       {
@@ -11049,6 +11049,42 @@
           }
         ],
         "arrival_date": "21/08/2026"
+      },
+      {
+        "date": "2026-08-22",
+        "session": "morning",
+        "collected_at": "2026-08-22 06:08:26 IST",
+        "commodity": "paddy",
+        "total_markets": 2,
+        "avg_price": 2700,
+        "modal_price": 2700,
+        "max_price": 3000,
+        "min_price": 2400,
+        "cleaning": {
+          "excluded_variety": 0,
+          "excluded_market": 0,
+          "excluded_band": 0,
+          "outliers_removed": 0
+        },
+        "top_markets": [
+          {
+            "market": "Mydukur APMC",
+            "state": "Andhra Pradesh",
+            "variety": "Masuri",
+            "modal_price": 3000,
+            "min_price": 2900,
+            "max_price": 3100
+          },
+          {
+            "market": "Kanchili APMC",
+            "state": "Andhra Pradesh",
+            "variety": "1001",
+            "modal_price": 2400,
+            "min_price": 2400,
+            "max_price": 2400
+          }
+        ],
+        "arrival_date": "22/08/2026"
       }
     ]
   },
@@ -22081,6 +22117,42 @@
           }
         ],
         "arrival_date": "21/08/2026"
+      },
+      {
+        "date": "2026-08-22",
+        "session": "morning",
+        "collected_at": "2026-08-22 06:08:32 IST",
+        "commodity": "wheat",
+        "total_markets": 2,
+        "avg_price": 2580,
+        "modal_price": 2580,
+        "max_price": 2580,
+        "min_price": 2580,
+        "cleaning": {
+          "excluded_variety": 0,
+          "excluded_market": 0,
+          "excluded_band": 0,
+          "outliers_removed": 0
+        },
+        "top_markets": [
+          {
+            "market": "Barbigha APMC",
+            "state": "Bihar",
+            "variety": "147 Average",
+            "modal_price": 2580,
+            "min_price": 2500,
+            "max_price": 2700
+          },
+          {
+            "market": "Shekhpura APMC",
+            "state": "Bihar",
+            "variety": "147 Average",
+            "modal_price": 2580,
+            "min_price": 2500,
+            "max_price": 2675
+          }
+        ],
+        "arrival_date": "22/08/2026"
       }
     ]
   },
@@ -66540,6 +66612,34 @@
           }
         ],
         "arrival_date": "21/08/2026"
+      },
+      {
+        "date": "2026-08-22",
+        "session": "morning",
+        "collected_at": "2026-08-22 06:08:43 IST",
+        "commodity": "onion",
+        "total_markets": 1,
+        "avg_price": 1420,
+        "modal_price": 1420,
+        "max_price": 1420,
+        "min_price": 1420,
+        "cleaning": {
+          "excluded_variety": 0,
+          "excluded_market": 0,
+          "excluded_band": 0,
+          "outliers_removed": 0
+        },
+        "top_markets": [
+          {
+            "market": "Rayya APMC",
+            "state": "Punjab",
+            "variety": "Other",
+            "modal_price": 1420,
+            "min_price": 1420,
+            "max_price": 1420
+          }
+        ],
+        "arrival_date": "22/08/2026"
       }
     ]
   },
@@ -89656,6 +89756,34 @@
           }
         ],
         "arrival_date": "21/08/2026"
+      },
+      {
+        "date": "2026-08-22",
+        "session": "morning",
+        "collected_at": "2026-08-22 06:08:51 IST",
+        "commodity": "groundnut",
+        "total_markets": 1,
+        "avg_price": 7000,
+        "modal_price": 7000,
+        "max_price": 7000,
+        "min_price": 7000,
+        "cleaning": {
+          "excluded_variety": 0,
+          "excluded_market": 0,
+          "excluded_band": 0,
+          "outliers_removed": 0
+        },
+        "top_markets": [
+          {
+            "market": "Chintapally APMC",
+            "state": "Andhra Pradesh",
+            "variety": "Local",
+            "modal_price": 7000,
+            "min_price": 6500,
+            "max_price": 7500
+          }
+        ],
+        "arrival_date": "22/08/2026"
       }
     ]
   },
