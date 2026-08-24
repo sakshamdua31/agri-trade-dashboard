@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23 19:52:26 IST",
+  "updated": "2026-08-24 06:10:45 IST",
   "paddy": {
     "history": [
       {
@@ -11385,6 +11385,34 @@
           }
         ],
         "arrival_date": "23/08/2026"
+      },
+      {
+        "date": "2026-08-24",
+        "session": "morning",
+        "collected_at": "2026-08-24 06:10:28 IST",
+        "commodity": "paddy",
+        "total_markets": 1,
+        "avg_price": 2375,
+        "modal_price": 2375,
+        "max_price": 2375,
+        "min_price": 2375,
+        "cleaning": {
+          "excluded_variety": 0,
+          "excluded_market": 0,
+          "excluded_band": 0,
+          "outliers_removed": 0
+        },
+        "top_markets": [
+          {
+            "market": "Kakinada (Urban) APMC",
+            "state": "Andhra Pradesh",
+            "variety": "Common",
+            "modal_price": 2375,
+            "min_price": 2369,
+            "max_price": 2390
+          }
+        ],
+        "arrival_date": "24/08/2026"
       }
     ]
   },
