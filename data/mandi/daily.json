@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-25 12:21:59 IST",
+  "updated": "2026-08-26 06:11:32 IST",
   "paddy": {
     "history": [
       {
@@ -11553,6 +11553,34 @@
           }
         ],
         "arrival_date": "25/08/2026"
+      },
+      {
+        "date": "2026-08-26",
+        "session": "morning",
+        "collected_at": "2026-08-26 06:10:50 IST",
+        "commodity": "paddy",
+        "total_markets": 1,
+        "avg_price": 2365,
+        "modal_price": 2365,
+        "max_price": 2365,
+        "min_price": 2365,
+        "cleaning": {
+          "excluded_variety": 0,
+          "excluded_market": 0,
+          "excluded_band": 0,
+          "outliers_removed": 0
+        },
+        "top_markets": [
+          {
+            "market": "Karapa APMC",
+            "state": "Andhra Pradesh",
+            "variety": "1001",
+            "modal_price": 2365,
+            "min_price": 2363,
+            "max_price": 2369
+          }
+        ],
+        "arrival_date": "26/08/2026"
       }
     ]
   },
