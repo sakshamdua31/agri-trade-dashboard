@@ -1,7 +1,7 @@
 name: Refresh Data & Deploy
 on:
   schedule:
-    - cron: '0 */6 * * *'   # every 6 hours (00, 06, 12, 18 UTC = 05:30, 11:30, 17:30, 23:30 IST)
+    - cron: '0 */6 * * *'
   workflow_dispatch:
 concurrency:
   group: refresh-data
@@ -71,7 +71,7 @@ jobs:
     if: ${{ always() && needs.refresh.result == 'success' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout latest main (includes the just-committed data)
+      - name: Checkout latest main
         uses: actions/checkout@v5
         with:
           ref: main
@@ -81,4 +81,7 @@ jobs:
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_NICE_SMOKE_06F694D00 }}
-          repo_token: ${{ secrets.GITHUB_TOKEN
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: "upload"
+          api_location: ""
+          output_location: "."
