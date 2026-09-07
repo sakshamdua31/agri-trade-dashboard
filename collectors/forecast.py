@@ -123,9 +123,17 @@ def run():
     cur = cur_rows.iloc[0]
     print(f"Current forecast month: {cur[date_c]:%b-%Y} (Excel row {cur['row']})")
 
+    # Build the training series with a proper MONTHLY date index so the models
+    # know what "next month" is. The dates are month-start (e.g. 2026-07-01),
+    # so we label the frequency as 'MS' (month start). Without this, statsmodels
+    # raises "No supported index is available" when it tries to forecast forward.
+    hist_idx = hist.set_index(date_c).sort_index()
+    endog = hist_idx[cpi_c].asfreq("MS")
+    exog  = hist_idx[retail_c].asfreq("MS")
+
     # --- STEP 1: ARIMAX — current-month CPI from its month-end retail price ---
     mx = SARIMAX(
-        hist[cpi_c], exog=hist[retail_c],
+        endog, exog=exog,
         order=(1, 1, 1), seasonal_order=(0, 0, 0, 12),
         enforce_stationarity=False, enforce_invertibility=False,
     ).fit(disp=False)
@@ -134,9 +142,9 @@ def run():
 
     # --- STEP 2: ARIMA — chain it on, forecast the next 3 months on CPI pattern ---
     series = pd.concat([
-        hist.set_index(date_c)[cpi_c],
-        pd.Series([cur_cpi], index=[cur[date_c]]),
-    ])
+        endog,
+        pd.Series([cur_cpi], index=[pd.Timestamp(cur[date_c])]),
+    ]).sort_index().asfreq("MS")
     am = SARIMAX(
         series, order=(1, 1, 1), seasonal_order=(0, 0, 0, 12),
         enforce_stationarity=False, enforce_invertibility=False,
