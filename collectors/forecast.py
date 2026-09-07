@@ -131,6 +131,22 @@ def run():
     endog = hist_idx[cpi_c].asfreq("MS")
     exog  = hist_idx[retail_c].asfreq("MS")
 
+    # DIAGNOSTIC: show whether asfreq created any gaps (a skipped/misaligned month).
+    if endog.isna().any() or exog.isna().any():
+        bad_cpi    = [d.strftime("%b-%Y") for d in endog.index[endog.isna()]]
+        bad_retail = [d.strftime("%b-%Y") for d in exog.index[exog.isna()]]
+        print(f"  DIAGNOSTIC: months blank after aligning to a monthly calendar ->")
+        print(f"    CPI gaps:    {bad_cpi}")
+        print(f"    Retail gaps: {bad_retail}")
+        print(f"  (These months are either skipped in the sheet or their Date isn't on the 1st.)")
+
+    # If a month in the training window is missing its retail price, the ARIMAX
+    # model can't train ("exog contains inf or nans"). Fill any such gaps by
+    # carrying the last known price forward, then back-filling any leading gap.
+    # This only affects model training; nothing in the sheet is changed.
+    exog  = exog.ffill().bfill()
+    endog = endog.ffill().bfill()
+
     # --- STEP 1: ARIMAX — current-month CPI from its month-end retail price ---
     mx = SARIMAX(
         endog, exog=exog,
@@ -145,6 +161,7 @@ def run():
         endog,
         pd.Series([cur_cpi], index=[pd.Timestamp(cur[date_c])]),
     ]).sort_index().asfreq("MS")
+    series = series.ffill().bfill()
     am = SARIMAX(
         series, order=(1, 1, 1), seasonal_order=(0, 0, 0, 12),
         enforce_stationarity=False, enforce_invertibility=False,
@@ -152,19 +169,23 @@ def run():
     future = am.forecast(steps=3)
 
     # All predicted CPIs: current month + next 3.
-    predicted = pd.concat([pd.Series([cur_cpi], index=[cur[date_c]]), future])
+    predicted = pd.concat([pd.Series([cur_cpi], index=[pd.Timestamp(cur[date_c])]), future])
 
     # --- STEP 3: write Predicted CPI (C) and Predicted IR (E) ---
     row_of = {d: r for d, r in zip(df[date_c], df["row"])}
     for date, pcpi in predicted.items():
+        if date not in row_of:
+            print(f"  SKIP {date:%b-%Y}: no matching row in sheet.")
+            continue
         r = int(row_of[date])
-        write_cell(token, drive_id, item_id, f"C{r}", round(pcpi, 2))
+        write_cell(token, drive_id, item_id, f"C{r}", round(float(pcpi), 2))
         base = actual_cpi.get(date - pd.DateOffset(years=1))   # last year's ACTUAL CPI
+        pir = None
         if base and pd.notna(base):
-            pir = pcpi / base - 1
+            pir = float(pcpi) / base - 1
             write_cell(token, drive_id, item_id, f"E{r}", round(pir, 4))
-        print(f"  wrote {date:%b-%Y}: Predicted CPI={pcpi:.2f}"
-              + (f", Predicted IR={pir:.4f}" if base and pd.notna(base) else ""))
+        print(f"  wrote {date:%b-%Y}: Predicted CPI={float(pcpi):.2f}"
+              + (f", Predicted IR={pir:.4f}" if pir is not None else ""))
 
     # --- STEP 4: backfill Actual IR (F) + Error (G) for a just-declared month ---
     #     (a month that now has actual CPI, has a predicted IR already, but blank actual IR)
