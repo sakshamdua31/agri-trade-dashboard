@@ -1,0 +1,27 @@
+name: Rice CPI forecast
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  forecast:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install libraries
+        run: pip install msal requests pandas statsmodels openpyxl
+
+      - name: Run the forecast
+        env:
+          TENANT_ID:     ${{ secrets.TENANT_ID }}
+          CLIENT_ID:     ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          SITE_ID:       ${{ secrets.SITE_ID }}
+        run: python collectors/forecast.py
