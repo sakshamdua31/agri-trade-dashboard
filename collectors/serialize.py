@@ -1,18 +1,26 @@
 """
-Serialize the Rice CPI Excel -> data/rice_forecast.json (committed to the repo).
+Serialize the CPI Excel -> data/cpi_forecast.json (committed to the repo).
 
 Runs AFTER forecast.py in the same workflow, so it reads the freshly-updated
-sheet. Reuses the same Microsoft Graph access (same 4 secrets, same file).
+sheets. Reuses the same Microsoft Graph access (same 4 secrets, same file).
 
-Output shape (IR values in PERCENT, all months included, blanks as null):
+BOTH commodities are compiled into ONE file, keyed by commodity. IR/Error
+values are in PERCENT, every month is included, blanks are null:
+
 {
   "updated": "2026-09-07T12:00:00Z",
   "unit_note": "IR values are percentages (4.13 = 4.13%)",
-  "rows": [
-    {"month":"2024-08","actual_cpi":195.7,"predicted_cpi":195.53,
-     "predicted_ir":9.48,"actual_ir":9.57,"error":0.10},
-    ...
-  ]
+  "commodities": {
+    "rice": {
+      "name": "Rice",
+      "rows": [
+        {"month":"2024-08","actual_cpi":195.7,"predicted_cpi":195.53,
+         "predicted_ir":9.48,"actual_ir":9.57,"error":0.10},
+        ...
+      ]
+    },
+    "gram": { "name": "Gram", "rows": [ ... ] }
+  }
 }
 """
 
@@ -30,9 +38,16 @@ CLIENT_ID     = os.environ["CLIENT_ID"]
 CLIENT_SECRET = os.environ["CLIENT_SECRET"]
 SITE_ID       = os.environ["SITE_ID"]
 
-FILE_PATH = "Agri Data Dashboard/data-sources/Forecasting/Rice_Forecasting.xlsx"
-SHEET     = "Rice Forecasting"
-OUT_PATH  = "data/rice_forecast.json"
+# Same renamed workbook as forecast.py.
+FILE_PATH = "Agri Data Dashboard/data-sources/Forecasting/CPI_Forecasting.xlsx"
+
+# commodity key -> (display name, sheet name). Add a line here to extend.
+COMMODITIES = {
+    "rice": ("Rice", "Rice Forecasting"),
+    "gram": ("Gram", "Gram Forecasting"),
+}
+
+OUT_PATH  = "data/cpi_forecast.json"
 GRAPH     = "https://graph.microsoft.com/v1.0"
 
 
@@ -72,8 +87,8 @@ def cell(v, pct=False):
     return round(f * 100, 2) if pct else round(f, 2)
 
 
-def build_json(xlsx_bytes):
-    df = pd.read_excel(io.BytesIO(xlsx_bytes), sheet_name=SHEET)
+def rows_for_sheet(xlsx_bytes, sheet):
+    df = pd.read_excel(io.BytesIO(xlsx_bytes), sheet_name=sheet)
     df.columns = [str(c).strip() for c in df.columns]
     date_c, cpi_c, pcpi_c, retail_c, pir_c, air_c, err_c = df.columns[:7]
     df[date_c] = pd.to_datetime(df[date_c])
@@ -91,11 +106,20 @@ def build_json(xlsx_bytes):
             "actual_ir":     cell(r[air_c], pct=True),
             "error":         cell(r[err_c], pct=True),
         })
+    return rows
+
+
+def build_json(xlsx_bytes):
+    commodities = {}
+    for key, (name, sheet) in COMMODITIES.items():
+        rows = rows_for_sheet(xlsx_bytes, sheet)
+        commodities[key] = {"name": name, "rows": rows}
+        print(f"  {name}: {len(rows)} months")
 
     return {
         "updated": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "unit_note": "IR values are percentages (4.13 = 4.13%)",
-        "rows": rows,
+        "commodities": commodities,
     }
 
 
@@ -105,7 +129,8 @@ def run():
     os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
     with open(OUT_PATH, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
-    print(f"Wrote {OUT_PATH} with {len(data['rows'])} months.")
+    total = sum(len(c["rows"]) for c in data["commodities"].values())
+    print(f"Wrote {OUT_PATH} ({len(data['commodities'])} commodities, {total} rows total).")
 
 
 if __name__ == "__main__":
