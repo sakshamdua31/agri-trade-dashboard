@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-08T10:39:01Z",
+  "updated": "2026-09-08T12:15:06Z",
   "unit_note": "IR values are percentages (4.13 = 4.13%)",
   "commodities": {
     "rice": {
@@ -2215,6 +2215,1147 @@
           "actual_cpi": null,
           "predicted_cpi": 187.69,
           "predicted_ir": 2.06,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2026-12",
+          "actual_cpi": null,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2027-01",
+          "actual_cpi": null,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2027-02",
+          "actual_cpi": null,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2027-03",
+          "actual_cpi": null,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2027-04",
+          "actual_cpi": null,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2027-05",
+          "actual_cpi": null,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2027-06",
+          "actual_cpi": null,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2027-07",
+          "actual_cpi": null,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        }
+      ]
+    },
+    "wheat": {
+      "name": "Wheat",
+      "rows": [
+        {
+          "month": "2015-10",
+          "actual_cpi": 127.0,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2015-11",
+          "actual_cpi": 127.9,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2015-12",
+          "actual_cpi": 128.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2016-01",
+          "actual_cpi": 129.1,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2016-02",
+          "actual_cpi": 129.8,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2016-03",
+          "actual_cpi": 129.9,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2016-04",
+          "actual_cpi": 129.4,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2016-05",
+          "actual_cpi": 129.3,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2016-06",
+          "actual_cpi": 130.0,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2016-07",
+          "actual_cpi": 131.1,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2016-08",
+          "actual_cpi": 132.1,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2016-09",
+          "actual_cpi": 132.6,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2016-10",
+          "actual_cpi": 133.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2016-11",
+          "actual_cpi": 136.7,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2016-12",
+          "actual_cpi": 139.0,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2017-01",
+          "actual_cpi": 139.9,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2017-02",
+          "actual_cpi": 140.3,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2017-03",
+          "actual_cpi": 139.8,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2017-04",
+          "actual_cpi": 137.0,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2017-05",
+          "actual_cpi": 135.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2017-06",
+          "actual_cpi": 135.2,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2017-07",
+          "actual_cpi": 135.2,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2017-08",
+          "actual_cpi": 135.7,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2017-09",
+          "actual_cpi": 135.6,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2017-10",
+          "actual_cpi": 135.8,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2017-11",
+          "actual_cpi": 136.2,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2017-12",
+          "actual_cpi": 136.2,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2018-01",
+          "actual_cpi": 136.8,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2018-02",
+          "actual_cpi": 136.6,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2018-03",
+          "actual_cpi": 136.7,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2018-04",
+          "actual_cpi": 136.1,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2018-05",
+          "actual_cpi": 136.0,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2018-06",
+          "actual_cpi": 136.2,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2018-07",
+          "actual_cpi": 137.3,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2018-08",
+          "actual_cpi": 139.0,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2018-09",
+          "actual_cpi": 140.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2018-10",
+          "actual_cpi": 142.3,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2018-11",
+          "actual_cpi": 142.8,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2018-12",
+          "actual_cpi": 143.6,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2019-01",
+          "actual_cpi": 144.3,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2019-02",
+          "actual_cpi": 144.9,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2019-03",
+          "actual_cpi": 145.3,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2019-04",
+          "actual_cpi": 145.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2019-05",
+          "actual_cpi": 145.6,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2019-06",
+          "actual_cpi": 145.9,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2019-07",
+          "actual_cpi": 146.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2019-08",
+          "actual_cpi": 147.7,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2019-09",
+          "actual_cpi": 148.7,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2019-10",
+          "actual_cpi": 150.0,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2019-11",
+          "actual_cpi": 151.1,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2019-12",
+          "actual_cpi": 152.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2020-01",
+          "actual_cpi": 154.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2020-02",
+          "actual_cpi": 155.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2020-03",
+          "actual_cpi": 156.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2020-04",
+          "actual_cpi": 157.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2020-05",
+          "actual_cpi": 158.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2020-06",
+          "actual_cpi": 156.9,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2020-07",
+          "actual_cpi": 155.8,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2020-08",
+          "actual_cpi": 154.7,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2020-09",
+          "actual_cpi": 152.3,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2020-10",
+          "actual_cpi": 150.4,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2020-11",
+          "actual_cpi": 148.9,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2020-12",
+          "actual_cpi": 147.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2021-01",
+          "actual_cpi": 147.0,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2021-02",
+          "actual_cpi": 147.1,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2021-03",
+          "actual_cpi": 146.8,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2021-04",
+          "actual_cpi": 147.0,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2021-05",
+          "actual_cpi": 149.2,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2021-06",
+          "actual_cpi": 149.1,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2021-07",
+          "actual_cpi": 148.4,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2021-08",
+          "actual_cpi": 148.2,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2021-09",
+          "actual_cpi": 149.3,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2021-10",
+          "actual_cpi": 150.8,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2021-11",
+          "actual_cpi": 152.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2021-12",
+          "actual_cpi": 153.6,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2022-01",
+          "actual_cpi": 154.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2022-02",
+          "actual_cpi": 155.3,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2022-03",
+          "actual_cpi": 158.2,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2022-04",
+          "actual_cpi": 161.1,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2022-05",
+          "actual_cpi": 163.3,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2022-06",
+          "actual_cpi": 164.1,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2022-07",
+          "actual_cpi": 165.8,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2022-08",
+          "actual_cpi": 171.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2022-09",
+          "actual_cpi": 175.3,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2022-10",
+          "actual_cpi": 177.4,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2022-11",
+          "actual_cpi": 182.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2022-12",
+          "actual_cpi": 187.7,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2023-01",
+          "actual_cpi": 193.2,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2023-02",
+          "actual_cpi": 194.7,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2023-03",
+          "actual_cpi": 189.8,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2023-04",
+          "actual_cpi": 185.9,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2023-05",
+          "actual_cpi": 183.9,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2023-06",
+          "actual_cpi": 184.4,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2023-07",
+          "actual_cpi": 185.7,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2023-08",
+          "actual_cpi": 187.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2023-09",
+          "actual_cpi": 189.2,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2023-10",
+          "actual_cpi": 190.9,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2023-11",
+          "actual_cpi": 194.1,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2023-12",
+          "actual_cpi": 196.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2024-01",
+          "actual_cpi": 197.7,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2024-02",
+          "actual_cpi": 198.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2024-03",
+          "actual_cpi": 198.8,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2024-04",
+          "actual_cpi": 197.1,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2024-05",
+          "actual_cpi": 195.9,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2024-06",
+          "actual_cpi": 196.7,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2024-07",
+          "actual_cpi": 198.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2024-08",
+          "actual_cpi": 199.9,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2024-09",
+          "actual_cpi": 201.9,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2024-10",
+          "actual_cpi": 205.4,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2024-11",
+          "actual_cpi": 209.4,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2024-12",
+          "actual_cpi": 211.9,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2025-01",
+          "actual_cpi": 215.1,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2025-02",
+          "actual_cpi": 216.7,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2025-03",
+          "actual_cpi": 216.7,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2025-04",
+          "actual_cpi": 212.1,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2025-05",
+          "actual_cpi": 208.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2025-06",
+          "actual_cpi": 207.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2025-07",
+          "actual_cpi": 207.2,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2025-08",
+          "actual_cpi": 208.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2025-09",
+          "actual_cpi": 209.3,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2025-10",
+          "actual_cpi": 209.6,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2025-11",
+          "actual_cpi": 210.1,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2025-12",
+          "actual_cpi": 210.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2026-01",
+          "actual_cpi": 213.73,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2026-02",
+          "actual_cpi": 212.74,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2026-03",
+          "actual_cpi": 211.23,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2026-04",
+          "actual_cpi": 208.5,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2026-05",
+          "actual_cpi": 207.9,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2026-06",
+          "actual_cpi": 208.22,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2026-07",
+          "actual_cpi": 209.83,
+          "predicted_cpi": null,
+          "predicted_ir": null,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2026-08",
+          "actual_cpi": null,
+          "predicted_cpi": 210.81,
+          "predicted_ir": 1.11,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2026-09",
+          "actual_cpi": null,
+          "predicted_cpi": 211.27,
+          "predicted_ir": 0.94,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2026-10",
+          "actual_cpi": null,
+          "predicted_cpi": 211.54,
+          "predicted_ir": 0.93,
+          "actual_ir": null,
+          "error": null
+        },
+        {
+          "month": "2026-11",
+          "actual_cpi": null,
+          "predicted_cpi": 211.7,
+          "predicted_ir": 0.76,
           "actual_ir": null,
           "error": null
         },
