@@ -19,7 +19,8 @@ values are in PERCENT, every month is included, blanks are null:
         ...
       ]
     },
-    "gram": { "name": "Gram", "rows": [ ... ] }
+    "gram": { "name": "Gram", "rows": [ ... ] },
+    "wheat": { "name": "Wheat", "rows": [ ... ] }
   }
 }
 """
@@ -45,6 +46,7 @@ FILE_PATH = "Agri Data Dashboard/data-sources/Forecasting/CPI_Forecasting.xlsx"
 COMMODITIES = {
     "rice": ("Rice", "Rice Forecasting"),
     "gram": ("Gram", "Gram Forecasting"),
+    "wheat": ("Wheat", "Wheat Forecasting"),
 }
 
 OUT_PATH  = "data/cpi_forecast.json"
