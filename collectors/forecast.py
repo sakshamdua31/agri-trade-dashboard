@@ -4,6 +4,7 @@ CPI forecast -> writes results back into the SharePoint Excel.
 Handles BOTH commodities in the same workbook, each on its own sheet:
   - "Rice Forecasting"
   - "Gram Forecasting"
+  - "Wheat Forecasting"
 Both sheets share the identical column layout and use the identical models,
 so the same logic simply runs once per sheet.
 
@@ -44,8 +45,8 @@ FILE_PATH = "Agri Data Dashboard/data-sources/Forecasting/CPI_Forecasting.xlsx"
 # Every sheet in this list gets the exact same treatment. To add another
 # commodity later, just add its sheet name here — nothing else changes.
 # (The models write by sheet name + cell address, so the Excel *table* names
-#  such as Gram_Forecast are not needed by this script.)
-SHEETS = ["Rice Forecasting", "Gram Forecasting"]
+#  such as Wheat_Forecast / Gram_Forecast are not needed by this script.)
+SHEETS = ["Rice Forecasting", "Gram Forecasting", "Wheat Forecasting"]
 
 FIRST_DATA_ROW = 2          # row 1 is the header; data starts on row 2
 
