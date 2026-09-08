@@ -1,10 +1,16 @@
 """
-Rice CPI forecast -> writes results back into the SharePoint Excel.
+CPI forecast -> writes results back into the SharePoint Excel.
 
-What it does, in order:
-  1. Logs in to Microsoft Graph as the registered app (no human needed).
-  2. Finds Rice_Forecasting.xlsx in the SharePoint site and downloads it.
-  3. Reads the 'Rice Forecasting' sheet.
+Handles BOTH commodities in the same workbook, each on its own sheet:
+  - "Rice Forecasting"
+  - "Gram Forecasting"
+Both sheets share the identical column layout and use the identical models,
+so the same logic simply runs once per sheet.
+
+What it does, per sheet, in order:
+  1. Logs in to Microsoft Graph as the registered app (no human needed).   [once]
+  2. Finds CPI_Forecasting.xlsx in the SharePoint site and downloads it.   [once]
+  3. Reads the sheet.
   4. ARIMAX: predicts the CURRENT month's CPI from its month-end retail price.
   5. ARIMA: chains that on and forecasts the NEXT 3 months from the CPI pattern.
   6. Writes Predicted CPI (col C) and Predicted IR (col E) for those months.
@@ -31,8 +37,16 @@ CLIENT_ID     = os.environ["CLIENT_ID"]
 CLIENT_SECRET = os.environ["CLIENT_SECRET"]
 SITE_ID       = os.environ["SITE_ID"]
 
-FILE_PATH = "Agri Data Dashboard/data-sources/Forecasting/Rice_Forecasting.xlsx"
-SHEET     = "Rice Forecasting"
+# The file was renamed Rice_Forecasting.xlsx -> CPI_Forecasting.xlsx.
+# Only the file NAME changed here; adjust the folder part too if it ever moves.
+FILE_PATH = "Agri Data Dashboard/data-sources/Forecasting/CPI_Forecasting.xlsx"
+
+# Every sheet in this list gets the exact same treatment. To add another
+# commodity later, just add its sheet name here — nothing else changes.
+# (The models write by sheet name + cell address, so the Excel *table* names
+#  such as Gram_Forecast are not needed by this script.)
+SHEETS = ["Rice Forecasting", "Gram Forecasting"]
+
 FIRST_DATA_ROW = 2          # row 1 is the header; data starts on row 2
 
 GRAPH = "https://graph.microsoft.com/v1.0"
@@ -60,7 +74,7 @@ def headers(token):
 
 
 # ----------------------------------------------------------------------
-# 3. FIND + DOWNLOAD the workbook, then read the sheet into a DataFrame.
+# 3. FIND + DOWNLOAD the workbook ONCE (both sheets live in the same file).
 # ----------------------------------------------------------------------
 def get_drive_item(token):
     """Locate the file by its folder path and return its drive id + item id."""
@@ -71,11 +85,15 @@ def get_drive_item(token):
     return meta["parentReference"]["driveId"], meta["id"]
 
 
-def read_sheet(token, drive_id, item_id):
+def download_workbook(token, drive_id, item_id):
     url = f"{GRAPH}/drives/{drive_id}/items/{item_id}/content"
     r = requests.get(url, headers=headers(token))
     r.raise_for_status()
-    df = pd.read_excel(io.BytesIO(r.content), sheet_name=SHEET)
+    return r.content
+
+
+def read_sheet(xlsx_bytes, sheet):
+    df = pd.read_excel(io.BytesIO(xlsx_bytes), sheet_name=sheet)
     df.columns = [str(c).strip() for c in df.columns]
     df["Date"] = pd.to_datetime(df["Date"])
     df["row"] = df.index + FIRST_DATA_ROW      # Excel row number for this month
@@ -83,11 +101,11 @@ def read_sheet(token, drive_id, item_id):
 
 
 # ----------------------------------------------------------------------
-# 4. WRITE one cell back, by address (e.g. "C132").
+# 4. WRITE one cell back, by address (e.g. "C132") on a given sheet.
 # ----------------------------------------------------------------------
-def write_cell(token, drive_id, item_id, address, value):
+def write_cell(token, drive_id, item_id, sheet, address, value):
     url = (f"{GRAPH}/drives/{drive_id}/items/{item_id}"
-           f"/workbook/worksheets('{SHEET}')/range(address='{address}')")
+           f"/workbook/worksheets('{sheet}')/range(address='{address}')")
     h = headers(token)
     h["Content-Type"] = "application/json"
     r = requests.patch(url, headers=h, json={"values": [[value]]})
@@ -95,14 +113,12 @@ def write_cell(token, drive_id, item_id, address, value):
 
 
 # ----------------------------------------------------------------------
-# 5. THE FORECAST LOGIC.
+# 5. THE FORECAST LOGIC — runs once per sheet.
 # ----------------------------------------------------------------------
-def run():
-    token = get_token()
-    drive_id, item_id = get_drive_item(token)
-    df = read_sheet(token, drive_id, item_id)
+def forecast_sheet(token, drive_id, item_id, sheet, xlsx_bytes):
+    df = read_sheet(xlsx_bytes, sheet)
 
-    # Rename the working columns to short, safe names (positions are fixed).
+    # Column positions are fixed (A-G); grab them by position, not by name.
     cols = list(df.columns)
     date_c, cpi_c, pcpi_c, retail_c, pir_c, air_c, err_c = cols[0], cols[1], cols[2], cols[3], cols[4], cols[5], cols[6]
 
@@ -118,34 +134,17 @@ def run():
     # Current month = first row with a retail price but no actual CPI yet.
     cur_rows = df[df[cpi_c].isna() & df[retail_c].notna()]
     if cur_rows.empty:
-        print("No current month to forecast (every month with retail already has a CPI). Nothing to do.")
+        print(f"  [{sheet}] No current month to forecast "
+              f"(every month with retail already has a CPI). Nothing to do.")
         return
     cur = cur_rows.iloc[0]
-    print(f"Current forecast month: {cur[date_c]:%b-%Y} (Excel row {cur['row']})")
+    print(f"  [{sheet}] Current forecast month: {cur[date_c]:%b-%Y} (Excel row {cur['row']})")
 
     # Build the training series with a proper MONTHLY date index so the models
-    # know what "next month" is. The dates are month-start (e.g. 2026-07-01),
-    # so we label the frequency as 'MS' (month start). Without this, statsmodels
-    # raises "No supported index is available" when it tries to forecast forward.
+    # know what "next month" is. Dates are month-start, so label freq 'MS'.
     hist_idx = hist.set_index(date_c).sort_index()
     endog = hist_idx[cpi_c].asfreq("MS")
     exog  = hist_idx[retail_c].asfreq("MS")
-
-    # DIAGNOSTIC: show whether asfreq created any gaps (a skipped/misaligned month).
-    if endog.isna().any() or exog.isna().any():
-        bad_cpi    = [d.strftime("%b-%Y") for d in endog.index[endog.isna()]]
-        bad_retail = [d.strftime("%b-%Y") for d in exog.index[exog.isna()]]
-        print(f"  DIAGNOSTIC: months blank after aligning to a monthly calendar ->")
-        print(f"    CPI gaps:    {bad_cpi}")
-        print(f"    Retail gaps: {bad_retail}")
-        print(f"  (These months are either skipped in the sheet or their Date isn't on the 1st.)")
-
-    # If a month in the training window is missing its retail price, the ARIMAX
-    # model can't train ("exog contains inf or nans"). Fill any such gaps by
-    # carrying the last known price forward, then back-filling any leading gap.
-    # This only affects model training; nothing in the sheet is changed.
-    exog  = exog.ffill().bfill()
-    endog = endog.ffill().bfill()
 
     # --- STEP 1: ARIMAX — current-month CPI from its month-end retail price ---
     mx = SARIMAX(
@@ -154,14 +153,13 @@ def run():
         enforce_stationarity=False, enforce_invertibility=False,
     ).fit(disp=False)
     cur_cpi = float(mx.forecast(steps=1, exog=[[cur[retail_c]]]).iloc[0])
-    print(f"  ARIMAX predicted CPI for {cur[date_c]:%b-%Y}: {cur_cpi:.2f}")
+    print(f"    ARIMAX predicted CPI for {cur[date_c]:%b-%Y}: {cur_cpi:.2f}")
 
     # --- STEP 2: ARIMA — chain it on, forecast the next 3 months on CPI pattern ---
     series = pd.concat([
         endog,
         pd.Series([cur_cpi], index=[pd.Timestamp(cur[date_c])]),
     ]).sort_index().asfreq("MS")
-    series = series.ffill().bfill()
     am = SARIMAX(
         series, order=(1, 1, 1), seasonal_order=(0, 0, 0, 12),
         enforce_stationarity=False, enforce_invertibility=False,
@@ -169,22 +167,23 @@ def run():
     future = am.forecast(steps=3)
 
     # All predicted CPIs: current month + next 3.
-    predicted = pd.concat([pd.Series([cur_cpi], index=[pd.Timestamp(cur[date_c])]), future])
+    predicted = pd.concat([pd.Series([cur_cpi], index=[cur[date_c]]), future])
 
     # --- STEP 3: write Predicted CPI (C) and Predicted IR (E) ---
     row_of = {d: r for d, r in zip(df[date_c], df["row"])}
     for date, pcpi in predicted.items():
         if date not in row_of:
-            print(f"  SKIP {date:%b-%Y}: no matching row in sheet.")
+            print(f"    !! {date:%b-%Y} has no row in the sheet — skipped. "
+                  f"Add that month's date in column A so the forecast has somewhere to land.")
             continue
         r = int(row_of[date])
-        write_cell(token, drive_id, item_id, f"C{r}", round(float(pcpi), 2))
+        write_cell(token, drive_id, item_id, sheet, f"C{r}", round(pcpi, 2))
         base = actual_cpi.get(date - pd.DateOffset(years=1))   # last year's ACTUAL CPI
         pir = None
         if base and pd.notna(base):
-            pir = float(pcpi) / base - 1
-            write_cell(token, drive_id, item_id, f"E{r}", round(pir, 4))
-        print(f"  wrote {date:%b-%Y}: Predicted CPI={float(pcpi):.2f}"
+            pir = pcpi / base - 1
+            write_cell(token, drive_id, item_id, sheet, f"E{r}", round(pir, 4))
+        print(f"    wrote {date:%b-%Y}: Predicted CPI={pcpi:.2f}"
               + (f", Predicted IR={pir:.4f}" if pir is not None else ""))
 
     # --- STEP 4: backfill Actual IR (F) + Error (G) for a just-declared month ---
@@ -199,11 +198,22 @@ def run():
         air = m[cpi_c] / base - 1
         err = air - m[pir_c]
         r = int(m["row"])
-        write_cell(token, drive_id, item_id, f"F{r}", round(air, 4))
-        write_cell(token, drive_id, item_id, f"G{r}", round(err, 4))
-        print(f"  backfilled {m[date_c]:%b-%Y}: Actual IR={air:.4f}, Error={err:.4f}")
+        write_cell(token, drive_id, item_id, sheet, f"F{r}", round(air, 4))
+        write_cell(token, drive_id, item_id, sheet, f"G{r}", round(err, 4))
+        print(f"    backfilled {m[date_c]:%b-%Y}: Actual IR={air:.4f}, Error={err:.4f}")
 
-    print("Done.")
+
+# ----------------------------------------------------------------------
+# 6. RUN for every sheet.
+# ----------------------------------------------------------------------
+def run():
+    token = get_token()
+    drive_id, item_id = get_drive_item(token)
+    xlsx_bytes = download_workbook(token, drive_id, item_id)   # download once, reuse
+    for sheet in SHEETS:
+        print(f"===== {sheet} =====")
+        forecast_sheet(token, drive_id, item_id, sheet, xlsx_bytes)
+    print("All commodities done.")
 
 
 if __name__ == "__main__":
