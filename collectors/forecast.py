@@ -6,6 +6,7 @@ Handles ALL commodities in the same workbook, each on its own sheet:
   - "Gram Forecasting"
   - "Wheat Forecasting"
   - "Soybean Oil Forecasting"
+  - "Tur Forecasting"          <-- CONFIRM this matches your actual tab name
 All sheets share the identical column layout and use the identical model,
 so the same logic simply runs once per sheet.
 
@@ -33,6 +34,7 @@ NOTE ON DATA GAPS (added for soybean oil):
 import os
 import io
 import time
+import traceback
 import msal
 import requests
 import pandas as pd
@@ -60,6 +62,7 @@ SHEETS = [
     "Gram Forecasting",
     "Wheat Forecasting",
     "Soybean Oil Forecasting",
+    "Tur Forecasting",          # <-- set this to the EXACT tab name you created
 ]
 
 FIRST_DATA_ROW = 2          # row 1 is the header; data starts on row 2
@@ -110,8 +113,9 @@ def download_workbook(token, drive_id, item_id):
 def read_sheet(xlsx_bytes, sheet):
     df = pd.read_excel(io.BytesIO(xlsx_bytes), sheet_name=sheet)
     df.columns = [str(c).strip() for c in df.columns]
-    df["Date"] = pd.to_datetime(df["Date"])
-    df["row"] = df.index + FIRST_DATA_ROW      # Excel row number for this month
+    df["row"] = df.index + FIRST_DATA_ROW               # Excel row number (from the full index)
+    df["Date"] = pd.to_datetime(df["Date"], errors="coerce")  # blank/garbled date -> NaT, never crashes
+    df = df[df["Date"].notna()].copy()                 # keep only rows that carry a real date
     return df
 
 
@@ -245,10 +249,22 @@ def run():
     token = get_token()
     drive_id, item_id = get_drive_item(token)
     xlsx_bytes = download_workbook(token, drive_id, item_id)   # download once, reuse
+    failures = []
     for sheet in SHEETS:
-        print(f"===== {sheet} =====")
-        forecast_sheet(token, drive_id, item_id, sheet, xlsx_bytes)
-    print("All commodities done.")
+        print(f"===== {sheet} =====", flush=True)
+        try:
+            forecast_sheet(token, drive_id, item_id, sheet, xlsx_bytes)
+        except Exception:
+            # Isolate per-sheet failures: log the FULL reason and keep going, so one
+            # bad sheet can't abort the whole run (and Steps 2/3 — serialize + commit —
+            # still get to run for the sheets that did succeed).
+            failures.append(sheet)
+            print(f"  !! {sheet} FAILED — skipping it; the other sheets continue. Reason:", flush=True)
+            traceback.print_exc()
+    if failures:
+        print(f"\nFinished WITH ISSUES. These sheets need attention: {failures}", flush=True)
+    else:
+        print("All commodities done.", flush=True)
 
 
 if __name__ == "__main__":
