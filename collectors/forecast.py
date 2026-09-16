@@ -1,11 +1,12 @@
 """
 CPI forecast -> writes results back into the SharePoint Excel.
 
-Handles BOTH commodities in the same workbook, each on its own sheet:
+Handles ALL commodities in the same workbook, each on its own sheet:
   - "Rice Forecasting"
   - "Gram Forecasting"
   - "Wheat Forecasting"
-Both sheets share the identical column layout and use the identical models,
+  - "Soybean Oil Forecasting"
+All sheets share the identical column layout and use the identical model,
 so the same logic simply runs once per sheet.
 
 What it does, per sheet, in order:
@@ -20,10 +21,18 @@ What it does, per sheet, in order:
 
 It writes ONLY the computed columns (C, E, F, G). It never touches the two
 columns the admin fills by hand (B = Actual CPI, D = Last Day's Retail Price).
+
+NOTE ON DATA GAPS (added for soybean oil):
+  Soybean oil's CPI has a 3-month hole in 2020 (the COVID collection break) even
+  though the retail price for those months exists. Two places used to assume
+  "a month with retail but no CPI == the current forecast month" and "every
+  training month has a CPI"; both are now gap-safe (see comments in
+  forecast_sheet). These changes are no-ops for commodities without gaps.
 """
 
 import os
 import io
+import time
 import msal
 import requests
 import pandas as pd
@@ -45,8 +54,13 @@ FILE_PATH = "Agri Data Dashboard/data-sources/Forecasting/CPI_Forecasting.xlsx"
 # Every sheet in this list gets the exact same treatment. To add another
 # commodity later, just add its sheet name here — nothing else changes.
 # (The models write by sheet name + cell address, so the Excel *table* names
-#  such as Wheat_Forecast / Gram_Forecast are not needed by this script.)
-SHEETS = ["Rice Forecasting", "Gram Forecasting", "Wheat Forecasting"]
+#  such as Wheat_Forecast / Soybean_Oil_Forecast are not needed by this script.)
+SHEETS = [
+    "Rice Forecasting",
+    "Gram Forecasting",
+    "Wheat Forecasting",
+    "Soybean Oil Forecasting",
+]
 
 FIRST_DATA_ROW = 2          # row 1 is the header; data starts on row 2
 
@@ -75,7 +89,7 @@ def headers(token):
 
 
 # ----------------------------------------------------------------------
-# 3. FIND + DOWNLOAD the workbook ONCE (both sheets live in the same file).
+# 3. FIND + DOWNLOAD the workbook ONCE (all sheets live in the same file).
 # ----------------------------------------------------------------------
 def get_drive_item(token):
     """Locate the file by its folder path and return its drive id + item id."""
@@ -103,14 +117,23 @@ def read_sheet(xlsx_bytes, sheet):
 
 # ----------------------------------------------------------------------
 # 4. WRITE one cell back, by address (e.g. "C132") on a given sheet.
+#    Retries the transient throttling / gateway errors (429, 502, 503, 504)
+#    that Graph occasionally returns, with exponential backoff.
 # ----------------------------------------------------------------------
-def write_cell(token, drive_id, item_id, sheet, address, value):
+def write_cell(token, drive_id, item_id, sheet, address, value, tries=4):
     url = (f"{GRAPH}/drives/{drive_id}/items/{item_id}"
            f"/workbook/worksheets('{sheet}')/range(address='{address}')")
     h = headers(token)
     h["Content-Type"] = "application/json"
-    r = requests.patch(url, headers=h, json={"values": [[value]]})
-    r.raise_for_status()
+    for attempt in range(tries):
+        r = requests.patch(url, headers=h, json={"values": [[value]]})
+        if r.status_code in (429, 500, 502, 503, 504) and attempt < tries - 1:
+            wait = float(r.headers.get("Retry-After", 2 ** attempt))
+            print(f"      (Graph {r.status_code} on {address}; retrying in {wait:.0f}s)")
+            time.sleep(wait)
+            continue
+        r.raise_for_status()
+        return
 
 
 # ----------------------------------------------------------------------
@@ -131,21 +154,32 @@ def forecast_sheet(token, drive_id, item_id, sheet, xlsx_bytes):
 
     # Months that HAVE an actual CPI = training data.
     hist = df[df[cpi_c].notna()].copy()
+    if hist.empty:
+        print(f"  [{sheet}] No actual CPI anywhere yet — nothing to train on.")
+        return
+    last_cpi_date = hist[date_c].max()          # most recent month with an actual CPI
 
-    # Current month = first row with a retail price but no actual CPI yet.
-    cur_rows = df[df[cpi_c].isna() & df[retail_c].notna()]
+    # Current month = the FIRST month AFTER the last actual CPI that has a retail
+    # price. Deliberately keyed on "after the last actual" rather than merely
+    # "CPI is blank", so an INTERNAL gap in the CPI history (e.g. the 2020 break
+    # in soybean oil, where retail exists but CPI doesn't) is never mistaken for
+    # the current forecast month.
+    cur_rows = df[(df[date_c] > last_cpi_date) & df[retail_c].notna()]
     if cur_rows.empty:
         print(f"  [{sheet}] No current month to forecast "
-              f"(every month with retail already has a CPI). Nothing to do.")
+              f"(no month past the last actual CPI has a retail price yet). Nothing to do.")
         return
     cur = cur_rows.iloc[0]
     print(f"  [{sheet}] Current forecast month: {cur[date_c]:%b-%Y} (Excel row {cur['row']})")
 
     # Build the training series with a proper MONTHLY date index so the models
-    # know what "next month" is. Dates are month-start, so label freq 'MS'.
-    hist_idx = hist.set_index(date_c).sort_index()
-    endog = hist_idx[cpi_c].asfreq("MS")
-    exog  = hist_idx[retail_c].asfreq("MS")
+    # know what "next month" is. Take EVERY month up to the last actual CPI (not
+    # just the months that happen to have a CPI): that keeps the retail exog
+    # complete, then linearly fill any internal CPI holes so the target series is
+    # continuous. For commodities with no gaps this is identical to before.
+    train = df[df[date_c] <= last_cpi_date].set_index(date_c).sort_index()
+    endog = train[cpi_c].asfreq("MS").interpolate("linear")
+    exog  = train[retail_c].asfreq("MS").interpolate("linear")
 
     # --- STEP 1: ARIMAX — current-month CPI from its month-end retail price ---
     mx = SARIMAX(
