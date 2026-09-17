@@ -163,50 +163,61 @@ def forecast_sheet(token, drive_id, item_id, sheet, xlsx_bytes):
         return
     last_cpi_date = hist[date_c].max()          # most recent month with an actual CPI
 
-    # Current month = the FIRST month AFTER the last actual CPI that has a retail
-    # price. Deliberately keyed on "after the last actual" rather than merely
-    # "CPI is blank", so an INTERNAL gap in the CPI history (e.g. the 2020 break
-    # in soybean oil, where retail exists but CPI doesn't) is never mistaken for
-    # the current forecast month.
-    cur_rows = df[(df[date_c] > last_cpi_date) & df[retail_c].notna()]
-    if cur_rows.empty:
-        print(f"  [{sheet}] No current month to forecast "
-              f"(no month past the last actual CPI has a retail price yet). Nothing to do.")
-        return
-    cur = cur_rows.iloc[0]
-    print(f"  [{sheet}] Current forecast month: {cur[date_c]:%b-%Y} (Excel row {cur['row']})")
-
-    # Build the training series with a proper MONTHLY date index so the models
-    # know what "next month" is. Take EVERY month up to the last actual CPI (not
-    # just the months that happen to have a CPI): that keeps the retail exog
-    # complete, then linearly fill any internal CPI holes so the target series is
-    # continuous. For commodities with no gaps this is identical to before.
+    # Build the CPI training series once — both the retail-driven and the CPI-only
+    # path below use it. Take EVERY month up to the last actual CPI (this keeps the
+    # retail exog complete), put it on a proper monthly index, and linearly fill any
+    # internal CPI holes so the target series is continuous.
     train = df[df[date_c] <= last_cpi_date].set_index(date_c).sort_index()
     endog = train[cpi_c].asfreq("MS").interpolate("linear")
-    exog  = train[retail_c].asfreq("MS").interpolate("linear")
 
-    # --- STEP 1: ARIMAX — current-month CPI from its month-end retail price ---
-    mx = SARIMAX(
-        endog, exog=exog,
-        order=(1, 1, 1), seasonal_order=(0, 0, 0, 12),
-        enforce_stationarity=False, enforce_invertibility=False,
-    ).fit(disp=False)
-    cur_cpi = float(mx.forecast(steps=1, exog=[[cur[retail_c]]]).iloc[0])
-    print(f"    ARIMAX predicted CPI for {cur[date_c]:%b-%Y}: {cur_cpi:.2f}")
+    # Current month = the FIRST month AFTER the last actual CPI that has a retail
+    # price. Keyed on "after the last actual" rather than merely "CPI is blank", so
+    # an INTERNAL gap in the CPI history (e.g. the 2020 break in soybean oil, where
+    # retail exists but CPI doesn't) is never mistaken for the current forecast month.
+    cur_rows = df[(df[date_c] > last_cpi_date) & df[retail_c].notna()]
 
-    # --- STEP 2: ARIMA — chain it on, forecast the next 3 months on CPI pattern ---
-    series = pd.concat([
-        endog,
-        pd.Series([cur_cpi], index=[pd.Timestamp(cur[date_c])]),
-    ]).sort_index().asfreq("MS")
-    am = SARIMAX(
-        series, order=(1, 1, 1), seasonal_order=(0, 0, 0, 12),
-        enforce_stationarity=False, enforce_invertibility=False,
-    ).fit(disp=False)
-    future = am.forecast(steps=3)
+    if cur_rows.empty:
+        # No month past the last actual CPI carries a retail price — e.g. this
+        # month's retail hasn't been entered for this commodity yet. Rather than
+        # skip the commodity entirely, fall back to a CPI-only forecast: predict the
+        # next 4 months straight from the CPI pattern with no retail exog (the same
+        # pure-ARIMA model the CPI-only commodities use). If the retail price is
+        # filled in later, the next run automatically switches back to the
+        # retail-driven model below — no code change needed.
+        print(f"  [{sheet}] No retail price past the last actual CPI — "
+              f"CPI-only forecast for the 4 months after {last_cpi_date:%b-%Y}.")
+        am = SARIMAX(
+            endog, order=(1, 1, 1), seasonal_order=(0, 0, 0, 12),
+            enforce_stationarity=False, enforce_invertibility=False,
+        ).fit(disp=False)
+        predicted = am.forecast(steps=4)          # next 4 months, CPI pattern only
+    else:
+        cur = cur_rows.iloc[0]
+        print(f"  [{sheet}] Current forecast month: {cur[date_c]:%b-%Y} (Excel row {cur['row']})")
+        exog = train[retail_c].asfreq("MS").interpolate("linear")
 
-    # All predicted CPIs: current month + next 3.
-    predicted = pd.concat([pd.Series([cur_cpi], index=[cur[date_c]]), future])
+        # --- STEP 1: ARIMAX — current-month CPI from its month-end retail price ---
+        mx = SARIMAX(
+            endog, exog=exog,
+            order=(1, 1, 1), seasonal_order=(0, 0, 0, 12),
+            enforce_stationarity=False, enforce_invertibility=False,
+        ).fit(disp=False)
+        cur_cpi = float(mx.forecast(steps=1, exog=[[cur[retail_c]]]).iloc[0])
+        print(f"    ARIMAX predicted CPI for {cur[date_c]:%b-%Y}: {cur_cpi:.2f}")
+
+        # --- STEP 2: ARIMA — chain it on, forecast the next 3 months on CPI pattern ---
+        series = pd.concat([
+            endog,
+            pd.Series([cur_cpi], index=[pd.Timestamp(cur[date_c])]),
+        ]).sort_index().asfreq("MS")
+        am = SARIMAX(
+            series, order=(1, 1, 1), seasonal_order=(0, 0, 0, 12),
+            enforce_stationarity=False, enforce_invertibility=False,
+        ).fit(disp=False)
+        future = am.forecast(steps=3)
+
+        # All predicted CPIs: current month + next 3.
+        predicted = pd.concat([pd.Series([cur_cpi], index=[cur[date_c]]), future])
 
     # --- STEP 3: write Predicted CPI (C) and Predicted IR (E) ---
     row_of = {d: r for d, r in zip(df[date_c], df["row"])}
