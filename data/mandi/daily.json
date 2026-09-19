@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-19 16:00:43 IST",
+  "updated": "2026-09-19 22:30:32 IST",
   "paddy": {
     "history": [
       {
@@ -14205,83 +14205,83 @@
       {
         "date": "2026-09-19",
         "session": "evening",
-        "collected_at": "2026-09-19 15:59:37 IST",
+        "collected_at": "2026-09-19 22:30:11 IST",
         "commodity": "paddy",
-        "total_markets": 190,
-        "avg_price": 2547,
-        "modal_price": 2415,
-        "max_price": 3700,
-        "min_price": 1600,
+        "total_markets": 198,
+        "avg_price": 2641,
+        "modal_price": 2405,
+        "max_price": 4200,
+        "min_price": 1601,
         "cleaning": {
           "excluded_variety": 0,
           "excluded_market": 0,
           "excluded_band": 0,
-          "outliers_removed": 10
+          "outliers_removed": 2
         },
         "top_markets": [
           {
-            "market": "Panipat APMC",
-            "state": "Haryana",
-            "variety": "Basmati 1509",
-            "modal_price": 3700,
-            "min_price": 3600,
-            "max_price": 3821
-          },
-          {
-            "market": "Divai APMC",
-            "state": "Uttar Pradesh",
-            "variety": "Basmati",
-            "modal_price": 3648,
-            "min_price": 3590,
-            "max_price": 3705
-          },
-          {
-            "market": "DADRI APMC",
-            "state": "Uttar Pradesh",
-            "variety": "Other",
-            "modal_price": 3630,
-            "min_price": 3630,
-            "max_price": 3630
+            "market": "Vidisha APMC",
+            "state": "Madhya Pradesh",
+            "variety": "Paddy",
+            "modal_price": 4200,
+            "min_price": 3601,
+            "max_price": 4200
           },
           {
             "market": "Gangavathi APMC",
             "state": "Karnataka",
-            "variety": "Sona Masuri (OLD)",
-            "modal_price": 3620,
-            "min_price": 3220,
-            "max_price": 3907
+            "variety": "Paddy RNR Old",
+            "modal_price": 4133,
+            "min_price": 4000,
+            "max_price": 4300
           },
           {
-            "market": "Khair APMC",
+            "market": "Samana APMC",
+            "state": "Punjab",
+            "variety": "Basmati 1509",
+            "modal_price": 3860,
+            "min_price": 2400,
+            "max_price": 4155
+          },
+          {
+            "market": "Jewar APMC",
             "state": "Uttar Pradesh",
-            "variety": "Basmati",
-            "modal_price": 3608,
-            "min_price": 3600,
-            "max_price": 3650
+            "variety": "Other",
+            "modal_price": 3824,
+            "min_price": 3651,
+            "max_price": 3991
           },
           {
-            "market": "RAYADURG APMC",
-            "state": "Andhra Pradesh",
-            "variety": "I.R. 64",
-            "modal_price": 3600,
-            "min_price": 3300,
+            "market": "APMC Savali ",
+            "state": "Maharashtra",
+            "variety": "Other",
+            "modal_price": 3810,
+            "min_price": 3680,
             "max_price": 3900
           },
           {
-            "market": "Kosikalan APMC",
-            "state": "Uttar Pradesh",
-            "variety": "Basmati",
-            "modal_price": 3578,
-            "min_price": 3475,
-            "max_price": 3800
+            "market": "APMC Mul ",
+            "state": "Maharashtra",
+            "variety": "Other",
+            "modal_price": 3800,
+            "min_price": 3600,
+            "max_price": 4002
           },
           {
-            "market": "Kuchinapudi APMC",
-            "state": "Andhra Pradesh",
-            "variety": "B P T",
-            "modal_price": 3500,
-            "min_price": 3400,
-            "max_price": 3600
+            "market": "Dankaur APMC",
+            "state": "Uttar Pradesh",
+            "variety": "Basmati",
+            "modal_price": 3774,
+            "min_price": 3600,
+            "max_price": 3851
+          },
+          {
+            "market": "Charra APMC",
+            "state": "Uttar Pradesh",
+            "variety": "Other",
+            "modal_price": 3758,
+            "min_price": 3370,
+            "max_price": 3800
           }
         ],
         "arrival_date": "19/09/2026"
