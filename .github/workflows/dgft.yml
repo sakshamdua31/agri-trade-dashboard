@@ -32,9 +32,9 @@ jobs:
           pip install playwright
           python -m playwright install --with-deps chromium
 
-      - name: Scrape DGFT (last 90 days, all commodities)
+      - name: Scrape DGFT (last 30 days, all commodities)
         run: |
-          python collectors/dgft_fetch.py --days 90
+          python collectors/dgft_fetch.py --days 30
           mkdir -p data
           mv dgft_policies.json data/dgft_policies.json
 
