@@ -1,41 +1,26 @@
 #!/usr/bin/env python3
 """
-dgft_fetch.py — pull DGFT documents straight from the official site with their
-REAL PDF links (content.dgft.gov.in), for the last N days, across all commodities.
+dgft_fetch.py — pull DGFT documents from the official site with their REAL PDF
+links (content.dgft.gov.in), last N days, all commodities. No mirrors.
 
-WHY THIS EXISTS
-  dgft.gov.in/CP is a JavaScript app that loads its list from DGFT's own server
-  and serves every PDF from content.dgft.gov.in under an opaque per-file id.
-  You cannot guess those ids. This script renders each official DGFT listing page,
-  reads every row, and extracts the actual PDF href — no mirrors, DGFT only.
+DGFT's "Download" builds the PDF address in JavaScript on click, so a plain link
+selector finds nothing. This version tries THREE sources for the real URL:
+  1. the row's click-handler / href / data attributes (rendered DOM), and
+  2. the background API/JSON the page loads (captured from the network), and
+  3. any content.dgft.gov.in / dgftprod path found anywhere on the page.
+It also writes dgft_debug.json showing exactly what DGFT returned — send that back
+if the run finds 0 links and I'll finalize the extractor from it.
 
-WHAT IT DOES
-  - Visits the 4 official DGFT listing pages (Notification / Public Notice /
-    Circular / Trade Notice).
-  - Extracts: number, year, subject, date, and the direct content.dgft.gov.in PDF URL.
-  - Keeps rows from the last DAYS_BACK days (default 60).
-  - Tags each row with your tracked commodities (from keywords in the subject).
-  - Writes dgft_policies.json in the exact shape your Policies tab's DATA array uses.
-
-SETUP (one time)
-  pip install playwright
-  playwright install chromium
-
-RUN
-  python dgft_fetch.py                 # last 60 days, all documents
-  python dgft_fetch.py --days 90       # last 90 days
-  python dgft_fetch.py --only-commodity   # keep only rows that match a tracked commodity
-
-OUTPUT
-  dgft_policies.json  -> paste its contents in as the DATA array (or send it back to me
-                         and I'll wire it into the tab).
+SETUP:  pip install playwright  &&  playwright install --with-deps chromium
+RUN:    python dgft_fetch.py --days 90
+        python dgft_fetch.py --days 90 --only-commodity
+        python dgft_fetch.py --headful           # watch it locally
 """
 
 import argparse, json, re, sys
 from datetime import datetime, timedelta
 from playwright.sync_api import sync_playwright
 
-# ---- official DGFT listing pages (main site only) ----
 CATEGORIES = [
     ("notification",  "DGFT Notification",  "export_policy"),
     ("public-notice", "DGFT Public Notice", "export_policy"),
@@ -43,10 +28,11 @@ CATEGORIES = [
     ("trade-notice",  "DGFT Trade Notice",  "procurement"),
 ]
 BASE = "https://www.dgft.gov.in/CP/?opt={}"
+UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
 
-# ---- your tracked commodities -> keywords to look for in the subject line ----
 COMMODITY_KEYWORDS = {
-    "Soybean":   ["soya", "soybean", "de-oiled", "doc ", "oilmeal", "oil meal", "oilcake", "oil cake", "edible oil", "vegetable oil"],
+    "Soybean":   ["soya", "soybean", "de-oiled", "oilmeal", "oil meal", "oilcake", "oil cake", "edible oil", "vegetable oil"],
     "Mustard":   ["mustard", "rapeseed"],
     "Groundnut": ["groundnut"],
     "Sunflower": ["sunflower"],
@@ -59,116 +45,203 @@ COMMODITY_KEYWORDS = {
     "Sugarcane": ["sugar", "sugarcane", "molasses", "ethanol", "jaggery"],
 }
 
-DATE_RE = re.compile(r"(\d{2})/(\d{2})/(\d{4})")
-PDF_HOST = "content.dgft.gov.in"
+GUID = r"[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"
+DATE_RE = re.compile(r"(\d{1,2})[/-](\d{1,2})[/-](\d{4})|(\d{4})-(\d{2})-(\d{2})")
 
 
-def match_commodities(subject: str):
-    s = subject.lower()
-    hits = [c for c, kws in COMMODITY_KEYWORDS.items() if any(k in s for k in kws)]
-    return hits
+def find_pdf_url(text: str):
+    """Pull a content.dgft.gov.in PDF address out of href/onclick/JSON text."""
+    if not text:
+        return None
+    t = str(text)
+    m = re.search(r"https?://[^\s\"'<>]+?\.pdf", t, re.I)
+    if m:
+        return m.group(0)
+    m = re.search(r"(dgftprod/" + GUID + r"/[^\s\"'<>]+?\.pdf)", t, re.I)
+    if m:
+        return "https://content.dgft.gov.in/Website/" + m.group(1)
+    m = re.search(r"(/?Website/dgftprod/[^\s\"'<>]+?\.pdf)", t, re.I)
+    if m:
+        return "https://content.dgft.gov.in/" + m.group(1).lstrip("/")
+    # click handler like  fn('9fcbf4f3-...','Notification 61 ...pdf')
+    m = re.search(r"['\"](" + GUID + r")['\"]\s*,\s*['\"]([^'\"]+?\.pdf)['\"]", t, re.I)
+    if m:
+        return "https://content.dgft.gov.in/Website/dgftprod/" + m.group(1) + "/" + m.group(2)
+    return None
 
 
-def slugify(text: str) -> str:
-    return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")[:60]
+def parse_date(text: str):
+    m = DATE_RE.search(text or "")
+    if not m:
+        return None
+    try:
+        if m.group(4):
+            return datetime(int(m.group(4)), int(m.group(5)), int(m.group(6)))
+        return datetime(int(m.group(3)), int(m.group(2)), int(m.group(1)))
+    except ValueError:
+        return None
 
 
-def scrape_category(page, opt: str) -> list[dict]:
+def records_from_json(obj):
+    """Recursively find objects that reference a PDF; return (obj, pdf_url)."""
+    found = []
+    if isinstance(obj, dict):
+        url = find_pdf_url(json.dumps(obj, ensure_ascii=False))
+        if url:
+            found.append((obj, url))
+        for v in obj.values():
+            found += records_from_json(v)
+    elif isinstance(obj, list):
+        for v in obj:
+            found += records_from_json(v)
+    return found
+
+
+def pick(obj: dict, name_parts, avoid=()):
+    for k, v in obj.items():
+        lk = k.lower()
+        if any(p in lk for p in name_parts) and not any(a in lk for a in avoid):
+            if isinstance(v, (str, int, float)) and str(v).strip():
+                return str(v).strip()
+    return ""
+
+
+def scrape_category(pw_page, opt, debug):
     url = BASE.format(opt)
     print(f"  → {url}", file=sys.stderr)
-    page.goto(url, wait_until="networkidle", timeout=60000)
-    # give the table a moment to render, then wait for any DGFT PDF link to appear
+    responses = []
+    pw_page.on("response", lambda r: responses.append(r))
     try:
-        page.wait_for_selector(f"a[href*='{PDF_HOST}']", timeout=20000)
-    except Exception:
-        print("    (no PDF links detected — layout may have changed)", file=sys.stderr)
+        pw_page.goto(url, wait_until="networkidle", timeout=60000)
+    except Exception as e:
+        print(f"    goto warning: {e}", file=sys.stderr)
+    pw_page.wait_for_timeout(4000)
 
-    rows = []
-    # each result row is a <tr>; pull its cells + the row's PDF anchor
-    for tr in page.query_selector_all("table tr"):
-        anchor = tr.query_selector(f"a[href*='{PDF_HOST}']")
-        if not anchor:
-            continue
-        href = anchor.get_attribute("href") or ""
-        cells = [c.inner_text().strip() for c in tr.query_selector_all("td")]
-        if not href or not cells:
-            continue
-        row_text = " | ".join(cells)
-        m = DATE_RE.search(row_text)
-        if not m:
-            continue
-        d, mo, y = m.groups()
+    # ---- 1) read the rendered table rows + their links/handlers ----
+    rows = pw_page.evaluate("""() => {
+      const out = [];
+      document.querySelectorAll('table tr').forEach(tr => {
+        const cells = [...tr.querySelectorAll('td')].map(td => (td.innerText||'').trim());
+        if (!cells.length) return;
+        const acts = [...tr.querySelectorAll('a,button,[onclick],[data-url],[data-href]')].map(a => ({
+          href: a.getAttribute('href')||'', onclick: a.getAttribute('onclick')||'',
+          durl: a.getAttribute('data-url')||'', dhref: a.getAttribute('data-href')||'',
+          outer: a.outerHTML.slice(0,300)
+        }));
+        out.push({cells, acts});
+      });
+      return out;
+    }""")
+
+    # ---- 2) capture JSON bodies from the network ----
+    json_bodies = []
+    for r in responses:
         try:
-            issued = datetime(int(y), int(mo), int(d))
-        except ValueError:
-            continue
-        # number = first cell that looks like a notification number; subject = longest cell
-        number = next((c for c in cells if re.search(r"\d", c) and len(c) < 40), cells[0] if cells else "")
-        subject = max(cells, key=len)
-        rows.append({"number": number, "subject": subject, "issued": issued, "href": href})
-    print(f"    found {len(rows)} rows with PDF links", file=sys.stderr)
-    return rows
+            u = r.url
+            ct = (r.headers or {}).get("content-type", "")
+            if ("json" in ct or "/api" in u.lower() or "notification" in u.lower()
+                    or "getdynamic" in u.lower() or u.endswith(".json")):
+                json_bodies.append((u, r.text()))
+        except Exception:
+            pass
+
+    # ---- extract records: DOM first, then JSON ----
+    out = []
+    for row in rows:
+        blob = " ".join(row["cells"])
+        for a in row["acts"]:
+            blob += " " + a["href"] + " " + a["onclick"] + " " + a["durl"] + " " + a["dhref"]
+        pdf = find_pdf_url(blob)
+        if pdf:
+            subject = max(row["cells"], key=len) if row["cells"] else ""
+            number = next((c for c in row["cells"] if re.search(r"\d", c) and len(c) < 40), "")
+            out.append({"number": number, "subject": subject, "date": parse_date(blob), "url": pdf})
+
+    if not out:  # fall back to the API JSON
+        for _, body in json_bodies:
+            try:
+                data = json.loads(body)
+            except Exception:
+                continue
+            for obj, pdf in records_from_json(data):
+                subject = pick(obj, ["subject", "title", "description", "desc"], avoid=["file"]) \
+                          or max([str(v) for v in obj.values() if isinstance(v, str)] or [""], key=len)
+                number = pick(obj, ["notif", "circular", "publicnotice", "tradenotice", "docno", "number", "ntfn"],
+                              avoid=["date", "year", "file", "id"])
+                dt = None
+                for v in obj.values():
+                    dt = dt or (parse_date(v) if isinstance(v, str) else None)
+                out.append({"number": number, "subject": subject, "date": dt, "url": pdf})
+
+    # ---- debug snapshot ----
+    debug[opt] = {
+        "url": url,
+        "table_rows": len(rows),
+        "sample_row_html": [a["outer"] for row in rows[:2] for a in row["acts"]][:4],
+        "json_responses": [{"url": u, "snippet": (b or "")[:1500]} for u, b in json_bodies[:4]],
+        "records_extracted": len(out),
+    }
+    print(f"    table rows: {len(rows)} | json bodies: {len(json_bodies)} | PDF links found: {len(out)}",
+          file=sys.stderr)
+    return out
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--days", type=int, default=60, help="look-back window in days (default 60)")
-    ap.add_argument("--only-commodity", action="store_true", help="keep only rows matching a tracked commodity")
-    ap.add_argument("--headful", action="store_true", help="show the browser (debugging)")
+    ap.add_argument("--days", type=int, default=90)
+    ap.add_argument("--only-commodity", action="store_true")
+    ap.add_argument("--headful", action="store_true")
     args = ap.parse_args()
 
     cutoff = datetime.now() - timedelta(days=args.days)
-    out = []
+    all_out, debug = [], {}
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=not args.headful)
-        page = browser.new_page()
         for opt, issuer, lever in CATEGORIES:
+            page = browser.new_context(user_agent=UA).new_page()
             try:
-                for r in scrape_category(page, opt):
-                    if r["issued"] < cutoff:
-                        continue
-                    coms = match_commodities(r["subject"])
+                for r in scrape_category(page, opt, debug):
+                    if r["date"] and r["date"] < cutoff:
+                        continue  # only drop when we could parse a date
+                    s = (r["subject"] or "").lower()
+                    coms = [c for c, kws in COMMODITY_KEYWORDS.items() if any(k in s for k in kws)]
                     if args.only_commodity and not coms:
                         continue
-                    iso = r["issued"].strftime("%Y-%m-%d")
-                    out.append({
-                        "id": f"dgft-{opt}-{slugify(r['number'])}-{iso}",
-                        "date": iso,
-                        "eff": iso,
-                        "type": lever,
+                    iso = r["date"].strftime("%Y-%m-%d") if r["date"] else ""
+                    all_out.append({
+                        "id": f"dgft-{opt}-{re.sub(r'[^a-z0-9]+','-',(r['number'] or r['url']).lower())[:50]}",
+                        "date": iso, "eff": iso, "type": lever,
                         "issuer": "DGFT · Min. of Commerce",
-                        "ref": f"{issuer} No. {r['number']}",
-                        "title": r["subject"],
-                        "summary": r["subject"],
+                        "ref": f"{issuer} No. {r['number']}".strip(),
+                        "title": r["subject"] or "(see notice)",
+                        "summary": r["subject"] or "",
                         "commodities": coms or ["General"],
-                        "impact": "med" if coms else "low",
-                        "sig": "neu",
-                        "sigLabel": "See notice",
-                        "url": r["href"],        # <-- REAL official content.dgft.gov.in PDF
-                        "pdf": True,
-                        "gov": True,
+                        "impact": "med" if coms else "low", "sig": "neu", "sigLabel": "See notice",
+                        "url": r["url"], "pdf": True, "gov": True,
                     })
             except Exception as e:
                 print(f"  ! {opt} failed: {e}", file=sys.stderr)
+                debug.setdefault(opt, {})["error"] = str(e)
+            finally:
+                page.close()
         browser.close()
 
-    # newest first, de-dupe by url
     seen, deduped = set(), []
-    for r in sorted(out, key=lambda x: x["date"], reverse=True):
+    for r in sorted(all_out, key=lambda x: x["date"], reverse=True):
         if r["url"] in seen:
             continue
         seen.add(r["url"]); deduped.append(r)
 
     with open("dgft_policies.json", "w", encoding="utf-8") as f:
         json.dump(deduped, f, ensure_ascii=False, indent=2)
+    with open("dgft_debug.json", "w", encoding="utf-8") as f:
+        json.dump(debug, f, ensure_ascii=False, indent=2)
 
-    print(f"\n✓ wrote {len(deduped)} DGFT documents (last {args.days} days) → dgft_policies.json", file=sys.stderr)
-    by_com = {}
-    for r in deduped:
-        for c in r["commodities"]:
-            by_com[c] = by_com.get(c, 0) + 1
-    print("  by commodity:", ", ".join(f"{k} {v}" for k, v in sorted(by_com.items())), file=sys.stderr)
+    print(f"\n✓ {len(deduped)} DGFT documents with real PDF links → dgft_policies.json", file=sys.stderr)
+    if not deduped:
+        print("  0 links found — send me dgft_debug.json (Actions artifact) and I'll finalize the extractor.",
+              file=sys.stderr)
 
 
 if __name__ == "__main__":
