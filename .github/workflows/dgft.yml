@@ -38,6 +38,14 @@ jobs:
           mkdir -p data
           mv dgft_policies.json data/dgft_policies.json
 
+      - name: Upload debug dump (always)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dgft-debug
+          path: dgft_debug.json
+          if-no-files-found: ignore
+
       - name: Commit if the file changed
         run: |
           git config user.name  "github-actions[bot]"
