@@ -34,7 +34,7 @@ jobs:
 
       - name: Scrape DGFT (last 90 days, all commodities)
         run: |
-          python dgft_fetch.py --days 90
+          python collectors/dgft_fetch.py --days 90
           mkdir -p data
           mv dgft_policies.json data/dgft_policies.json
 
