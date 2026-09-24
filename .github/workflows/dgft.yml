@@ -1,0 +1,51 @@
+name: Fetch DGFT policies
+
+# Runs on a schedule and can be triggered by hand from the Actions tab.
+on:
+  schedule:
+    - cron: '30 2 * * *'      # 02:30 UTC = 08:00 IST, every day
+  workflow_dispatch: {}         # manual "Run workflow" button
+
+permissions:
+  contents: write               # needed so the job can commit the JSON back
+
+concurrency:
+  group: dgft-fetch
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Playwright + Chromium
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Scrape DGFT (last 90 days, all commodities)
+        run: |
+          python dgft_fetch.py --days 90
+          mkdir -p data
+          mv dgft_policies.json data/dgft_policies.json
+
+      - name: Commit if the file changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/dgft_policies.json
+          if git diff --staged --quiet; then
+            echo "No change in DGFT policies — nothing to commit."
+          else
+            git commit -m "chore(data): refresh DGFT policies ($(date -u +%F))"
+            git push
+          fi
