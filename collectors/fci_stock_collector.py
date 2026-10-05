@@ -52,6 +52,38 @@ FIELD_GUIDE = {
     "central_pool": "FCI + State agencies combined = total central pool stock (LMT)",
 }
 
+ZONE_HI_EN = {
+    "पश्चिम अंचल": "West Zone", "दक्षिण अंचल": "South Zone",
+    "उत्तर अंचल": "North Zone", "उत्तरी अंचल": "North Zone",
+    "पूर्व अंचल": "East Zone", "पूर्वी अंचल": "East Zone",
+    "उत्तर पूर्व अंचल": "North-East Zone", "पूर्वोत्तर अंचल": "North-East Zone",
+}
+
+# The site's own English spellings for a couple of states differ from the
+# canonical names in the target format; normalise them.
+EN_FIX = {"J&K": "Jammu & Kashmir", "Uttrakhand": "Uttarakhand"}
+
+EN_TO_HI = {en: hi for hi, en in STATE_HI_EN.items()}
+
+
+def normalize_state(v):
+    s = str(v).strip()
+    if s in STATE_HI_EN:            # Hindi cell -> canonical English
+        return STATE_HI_EN[s]
+    return EN_FIX.get(s, s)         # English variant -> canonical, else as-is
+
+
+def state_hindi_for(v):
+    s = str(v).strip()
+    if s in STATE_HI_EN:            # cell is already Hindi
+        return s
+    return EN_TO_HI.get(normalize_state(s), s)   # English -> Hindi
+
+
+def normalize_region(v):
+    s = str(v).strip()
+    return ZONE_HI_EN.get(s, s)     # Hindi zone -> English, else as-is
+
 
 def num(v):
     s = str(v).replace(",", "").strip()
@@ -73,53 +105,31 @@ def iso_date(v):
     return s
 
 
-def resolve_columns(cols):
-    m = {}
-    for c in cols:
-        n = " ".join(str(c).split()).strip()
-        low = n.lower()
-        if n == "State":
-            m["state"] = c
-        elif n == "Zone":
-            m["zone"] = c
-        elif "date" in low:
-            m["date"] = c
-        elif "fci" in low and "rice" in low:
-            m["fci_rice"] = c
-        elif "fci" in low and "wheat" in low:
-            m["fci_wheat"] = c
-        elif "fci" in low and "total" in low:
-            m["fci_total"] = c
-        elif "state" in low and "rice" in low:
-            m["sa_rice"] = c
-        elif "state" in low and "wheat" in low:
-            m["sa_wheat"] = c
-        elif "state" in low and "total" in low:
-            m["sa_total"] = c
-        elif "central" in low and "rice" in low:
-            m["cp_rice"] = c
-        elif "central" in low and "wheat" in low:
-            m["cp_wheat"] = c
-        elif "central" in low and "total" in low:
-            m["cp_total"] = c
-    return m
-
-
-def row_to_record(row, cm):
-    hindi = str(row[cm["state"]]).strip()
-    date = iso_date(row[cm["date"]])
+# The page renders HINDI column headers, so we parse by COLUMN POSITION
+# (the order is fixed regardless of language) rather than by header names.
+# Columns, left to right:
+#   0 Sl.No | 1 Zone | 2 State | 3 Date
+#   4-6   FCI      rice / wheat / total
+#   7-9   State    rice / wheat / total
+#  10-12  Central  rice / wheat / total
+def row_to_record(row):
+    vals = list(row)
+    if len(vals) < 13:
+        return None
+    state_cell = str(vals[2]).strip()
+    date = iso_date(vals[3])
+    year = int(date[:4]) if date[:4].isdigit() else None
+    if year is None:          # skip header/footer or malformed rows
+        return None
     return {
         "date": date,
-        "state": STATE_HI_EN.get(hindi, hindi),
-        "state_hindi": hindi,
-        "region": str(row[cm["zone"]]).strip(),
-        "year": int(date[:4]) if date[:4].isdigit() else None,
-        "fci": {"rice": num(row[cm["fci_rice"]]), "wheat": num(row[cm["fci_wheat"]]),
-                "total": num(row[cm["fci_total"]])},
-        "state_agencies": {"rice": num(row[cm["sa_rice"]]), "wheat": num(row[cm["sa_wheat"]]),
-                           "total": num(row[cm["sa_total"]])},
-        "central_pool": {"rice": num(row[cm["cp_rice"]]), "wheat": num(row[cm["cp_wheat"]]),
-                         "total": num(row[cm["cp_total"]])},
+        "state": normalize_state(state_cell),
+        "state_hindi": state_hindi_for(state_cell),
+        "region": normalize_region(vals[1]),
+        "year": year,
+        "fci": {"rice": num(vals[4]), "wheat": num(vals[5]), "total": num(vals[6])},
+        "state_agencies": {"rice": num(vals[7]), "wheat": num(vals[8]), "total": num(vals[9])},
+        "central_pool": {"rice": num(vals[10]), "wheat": num(vals[11]), "total": num(vals[12])},
     }
 
 
@@ -128,11 +138,15 @@ def stock_table(page):
         tables = pd.read_html(io.StringIO(page.content()))
     except ValueError:
         return None
-    for t in tables:
-        cols = [str(c) for c in t.columns]
-        if any("Zone" in c for c in cols) and any("Stock" in c for c in cols):
+    # The stock grid has 13 columns; headers may be Hindi or English, so
+    # identify it by shape rather than by column names.
+    candidates = [t for t in tables if t.shape[1] >= 13 and len(t) > 0]
+    if not candidates:
+        return None
+    for t in candidates:
+        if t.shape[1] == 13:
             return t
-    return None
+    return candidates[0]
 
 
 def find_year_select(page):
@@ -170,12 +184,13 @@ def scrape_year(page, year):
             break
         seen.add(fp)
 
-        cm = resolve_columns(t.columns)
-        if {"state", "zone", "date", "fci_rice", "cp_total"}.issubset(cm):
+        if t.shape[1] >= 13:
             for _, row in t.iterrows():
-                records.append(row_to_record(row, cm))
+                rec = row_to_record(row)
+                if rec:
+                    records.append(rec)
         else:
-            print(f"  (unexpected columns: {list(t.columns)})")
+            print(f"  (unexpected table shape {t.shape})")
 
         nxt = page.get_by_role("link", name="Next page")
         if nxt.count() == 0:
@@ -243,6 +258,21 @@ def main():
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
         page.goto(URL, wait_until="networkidle", timeout=60_000)
+
+        # Switch the site to English so headers, zones and state names render
+        # in English. (Positional parsing + the Hindi maps still work if this
+        # ever fails, so it's best-effort.)
+        try:
+            page.get_by_role("link", name="English", exact=True).first.click(timeout=8000)
+            page.wait_for_timeout(1500)
+            try:
+                page.wait_for_load_state("networkidle", timeout=8000)
+            except Exception:
+                pass
+            print("Switched to English.")
+        except Exception as e:
+            print(f"(could not click English toggle: {e}; continuing)")
+
         for y in YEARS:
             print(f"Year {y} ...")
             got = scrape_year(page, y)
