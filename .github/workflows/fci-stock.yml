@@ -1,17 +1,17 @@
-name: FCI stock scrape
+name: FCI stock collector
 
 on:
   schedule:
     - cron: '0 3 * * 1'    # every Monday 03:00 UTC
-  workflow_dispatch:         # manual "Run workflow" button
+  workflow_dispatch:
 
 permissions:
-  contents: write            # lets the job push govt_stocks.json back to the repo
+  contents: write
 
 jobs:
-  scrape:
+  collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 30      # full back-scrape is slow; raise if it ever times out
+    timeout-minutes: 30
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
@@ -23,18 +23,32 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install playwright pandas lxml       # lxml is needed by pandas.read_html
+          pip install playwright pandas lxml
           playwright install --with-deps chromium
 
-      # Runs from the repo root, so govt_stocks.json is written there.
-      # >>> change the filename here if your script is named differently <<<
-      - name: Run scraper
-        run: python collectors/fci_stock_json.py
+      - name: Run collector
+        run: python collectors/fci_stock_collector.py
+
+      - name: Upload debug output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scraper-debug
+          path: |
+            debug_page.html
+            debug_page.png
+            debug_selects.txt
+          if-no-files-found: ignore
 
       - name: Commit data
         run: |
+          if [ ! -f fci_stock.json ]; then
+            echo "fci_stock.json not produced — the collector got 0 records."
+            echo "Download the 'scraper-debug' artifact above to see the page."
+            exit 1
+          fi
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add govt_stocks.json
+          git add fci_stock.json
           git diff --staged --quiet || git commit -m "Update FCI stock data ($(date -u +%Y-%m-%d))"
           git push
