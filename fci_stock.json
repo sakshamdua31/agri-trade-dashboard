@@ -1,0 +1,2775 @@
+{
+  "metadata": {
+    "source": "Food Corporation of India (fci.gov.in/statistical-data/stock)",
+    "description": "Monthly state-wise stock position of wheat and rice held by FCI, State agencies, and Central Pool",
+    "unit": "Lakh Metric Tonnes (LMT)",
+    "generated_at": "2026-10-05T07:32:30Z",
+    "coverage": {
+      "states": 10,
+      "years": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2020,
+        2022,
+        2023,
+        2025,
+        2026
+      ],
+      "date_range": {
+        "from": "2012-04-01",
+        "to": "2026-09-01"
+      },
+      "total_records": 120
+    },
+    "states_included": [
+      "Andhra Pradesh",
+      "Chhattisgarh",
+      "Gujarat",
+      "Karnataka",
+      "Kerala",
+      "Madhya Pradesh",
+      "Maharashtra",
+      "Tamil Nadu",
+      "Telangana",
+      "Uttarakhand"
+    ],
+    "field_guide": {
+      "fci": "Stock held directly by Food Corporation of India (LMT)",
+      "state_agencies": "Stock held by state procurement agencies for central pool (LMT)",
+      "central_pool": "FCI + State agencies combined = total central pool stock (LMT)"
+    }
+  },
+  "national_monthly_summary": [
+    {
+      "month": "2012-04",
+      "rice_lakh_tonnes": 136.17,
+      "wheat_lakh_tonnes": 36.55,
+      "total_lakh_tonnes": 172.72,
+      "states_reporting": 10
+    },
+    {
+      "month": "2013-04",
+      "rice_lakh_tonnes": 133.1,
+      "wheat_lakh_tonnes": 44.07,
+      "total_lakh_tonnes": 177.17,
+      "states_reporting": 10
+    },
+    {
+      "month": "2014-04",
+      "rice_lakh_tonnes": 68.13,
+      "wheat_lakh_tonnes": 39.56,
+      "total_lakh_tonnes": 107.69,
+      "states_reporting": 10
+    },
+    {
+      "month": "2015-04",
+      "rice_lakh_tonnes": 70.31,
+      "wheat_lakh_tonnes": 39.73,
+      "total_lakh_tonnes": 110.04,
+      "states_reporting": 10
+    },
+    {
+      "month": "2016-04",
+      "rice_lakh_tonnes": 80.23,
+      "wheat_lakh_tonnes": 36.57,
+      "total_lakh_tonnes": 116.8,
+      "states_reporting": 10
+    },
+    {
+      "month": "2017-04",
+      "rice_lakh_tonnes": 73.15,
+      "wheat_lakh_tonnes": 30.54,
+      "total_lakh_tonnes": 103.69,
+      "states_reporting": 10
+    },
+    {
+      "month": "2018-04",
+      "rice_lakh_tonnes": 78.86,
+      "wheat_lakh_tonnes": 46.24,
+      "total_lakh_tonnes": 125.1,
+      "states_reporting": 10
+    },
+    {
+      "month": "2020-03",
+      "rice_lakh_tonnes": 108.35,
+      "wheat_lakh_tonnes": 76.25,
+      "total_lakh_tonnes": 184.6,
+      "states_reporting": 10
+    },
+    {
+      "month": "2022-03",
+      "rice_lakh_tonnes": 106.17,
+      "wheat_lakh_tonnes": 129.05,
+      "total_lakh_tonnes": 235.22,
+      "states_reporting": 10
+    },
+    {
+      "month": "2023-12",
+      "rice_lakh_tonnes": 82.86,
+      "wheat_lakh_tonnes": 77.81,
+      "total_lakh_tonnes": 160.67,
+      "states_reporting": 10
+    },
+    {
+      "month": "2025-12",
+      "rice_lakh_tonnes": 107.42,
+      "wheat_lakh_tonnes": 115.57,
+      "total_lakh_tonnes": 222.99,
+      "states_reporting": 10
+    },
+    {
+      "month": "2026-09",
+      "rice_lakh_tonnes": 131.65,
+      "wheat_lakh_tonnes": 178.35,
+      "total_lakh_tonnes": 310.0,
+      "states_reporting": 10
+    }
+  ],
+  "records": [
+    {
+      "date": "2012-04-01",
+      "state": "Andhra Pradesh",
+      "state_hindi": "आन्ध्र प्रदेश",
+      "region": "South Zone",
+      "year": 2012,
+      "fci": {
+        "rice": 48.63,
+        "wheat": 0.95,
+        "total": 49.58
+      },
+      "state_agencies": {
+        "rice": 4.14,
+        "wheat": 0.0,
+        "total": 4.14
+      },
+      "central_pool": {
+        "rice": 52.77,
+        "wheat": 0.95,
+        "total": 53.72
+      }
+    },
+    {
+      "date": "2012-04-01",
+      "state": "Chhattisgarh",
+      "state_hindi": "छत्तीसगढ",
+      "region": "West Zone",
+      "year": 2012,
+      "fci": {
+        "rice": 8.91,
+        "wheat": 0.52,
+        "total": 9.43
+      },
+      "state_agencies": {
+        "rice": 18.79,
+        "wheat": 0.0,
+        "total": 18.79
+      },
+      "central_pool": {
+        "rice": 27.7,
+        "wheat": 0.52,
+        "total": 28.22
+      }
+    },
+    {
+      "date": "2012-04-01",
+      "state": "Gujarat",
+      "state_hindi": "गुजरात",
+      "region": "West Zone",
+      "year": 2012,
+      "fci": {
+        "rice": 1.43,
+        "wheat": 4.25,
+        "total": 5.68
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.07,
+        "total": 0.07
+      },
+      "central_pool": {
+        "rice": 1.43,
+        "wheat": 4.32,
+        "total": 5.75
+      }
+    },
+    {
+      "date": "2012-04-01",
+      "state": "Karnataka",
+      "state_hindi": "कर्नाटक",
+      "region": "South Zone",
+      "year": 2012,
+      "fci": {
+        "rice": 7.21,
+        "wheat": 1.31,
+        "total": 8.52
+      },
+      "state_agencies": {
+        "rice": 2.99,
+        "wheat": 0.0,
+        "total": 2.99
+      },
+      "central_pool": {
+        "rice": 10.2,
+        "wheat": 1.31,
+        "total": 11.51
+      }
+    },
+    {
+      "date": "2012-04-01",
+      "state": "Kerala",
+      "state_hindi": "केरल",
+      "region": "South Zone",
+      "year": 2012,
+      "fci": {
+        "rice": 3.41,
+        "wheat": 0.67,
+        "total": 4.08
+      },
+      "state_agencies": {
+        "rice": 1.47,
+        "wheat": 0.0,
+        "total": 1.47
+      },
+      "central_pool": {
+        "rice": 4.88,
+        "wheat": 0.67,
+        "total": 5.55
+      }
+    },
+    {
+      "date": "2012-04-01",
+      "state": "Madhya Pradesh",
+      "state_hindi": "मध्य प्रदेश",
+      "region": "West Zone",
+      "year": 2012,
+      "fci": {
+        "rice": 0.47,
+        "wheat": 2.87,
+        "total": 3.34
+      },
+      "state_agencies": {
+        "rice": 6.93,
+        "wheat": 16.37,
+        "total": 23.3
+      },
+      "central_pool": {
+        "rice": 7.4,
+        "wheat": 19.24,
+        "total": 26.64
+      }
+    },
+    {
+      "date": "2012-04-01",
+      "state": "Maharashtra",
+      "state_hindi": "महाराष्ट्र",
+      "region": "West Zone",
+      "year": 2012,
+      "fci": {
+        "rice": 7.4,
+        "wheat": 8.06,
+        "total": 15.46
+      },
+      "state_agencies": {
+        "rice": 2.36,
+        "wheat": 0.0,
+        "total": 2.36
+      },
+      "central_pool": {
+        "rice": 9.76,
+        "wheat": 8.06,
+        "total": 17.82
+      }
+    },
+    {
+      "date": "2012-04-01",
+      "state": "Tamil Nadu",
+      "state_hindi": "तमिलनाडु",
+      "region": "South Zone",
+      "year": 2012,
+      "fci": {
+        "rice": 8.16,
+        "wheat": 1.02,
+        "total": 9.18
+      },
+      "state_agencies": {
+        "rice": 11.83,
+        "wheat": 0.0,
+        "total": 11.83
+      },
+      "central_pool": {
+        "rice": 19.99,
+        "wheat": 1.02,
+        "total": 21.01
+      }
+    },
+    {
+      "date": "2012-04-01",
+      "state": "Telangana",
+      "state_hindi": "तेलंगाना",
+      "region": "South Zone",
+      "year": 2012,
+      "fci": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      }
+    },
+    {
+      "date": "2012-04-01",
+      "state": "Uttarakhand",
+      "state_hindi": "उत्तराखण्ड",
+      "region": "North Zone",
+      "year": 2012,
+      "fci": {
+        "rice": 1.28,
+        "wheat": 0.46,
+        "total": 1.74
+      },
+      "state_agencies": {
+        "rice": 0.76,
+        "wheat": 0.0,
+        "total": 0.76
+      },
+      "central_pool": {
+        "rice": 2.04,
+        "wheat": 0.46,
+        "total": 2.5
+      }
+    },
+    {
+      "date": "2013-04-01",
+      "state": "Andhra Pradesh",
+      "state_hindi": "आन्ध्र प्रदेश",
+      "region": "South Zone",
+      "year": 2013,
+      "fci": {
+        "rice": 35.08,
+        "wheat": 1.85,
+        "total": 36.93
+      },
+      "state_agencies": {
+        "rice": 10.02,
+        "wheat": 0.0,
+        "total": 10.02
+      },
+      "central_pool": {
+        "rice": 45.1,
+        "wheat": 1.85,
+        "total": 46.95
+      }
+    },
+    {
+      "date": "2013-04-01",
+      "state": "Chhattisgarh",
+      "state_hindi": "छत्तीसगढ",
+      "region": "West Zone",
+      "year": 2013,
+      "fci": {
+        "rice": 4.15,
+        "wheat": 0.51,
+        "total": 4.66
+      },
+      "state_agencies": {
+        "rice": 37.94,
+        "wheat": 0.0,
+        "total": 37.94
+      },
+      "central_pool": {
+        "rice": 42.09,
+        "wheat": 0.51,
+        "total": 42.6
+      }
+    },
+    {
+      "date": "2013-04-01",
+      "state": "Gujarat",
+      "state_hindi": "गुजरात",
+      "region": "West Zone",
+      "year": 2013,
+      "fci": {
+        "rice": 0.8,
+        "wheat": 6.2,
+        "total": 7.0
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 0.8,
+        "wheat": 6.2,
+        "total": 7.0
+      }
+    },
+    {
+      "date": "2013-04-01",
+      "state": "Karnataka",
+      "state_hindi": "कर्नाटक",
+      "region": "South Zone",
+      "year": 2013,
+      "fci": {
+        "rice": 5.27,
+        "wheat": 2.59,
+        "total": 7.86
+      },
+      "state_agencies": {
+        "rice": 0.77,
+        "wheat": 0.0,
+        "total": 0.77
+      },
+      "central_pool": {
+        "rice": 6.04,
+        "wheat": 2.59,
+        "total": 8.63
+      }
+    },
+    {
+      "date": "2013-04-01",
+      "state": "Kerala",
+      "state_hindi": "केरल",
+      "region": "South Zone",
+      "year": 2013,
+      "fci": {
+        "rice": 1.78,
+        "wheat": 0.99,
+        "total": 2.77
+      },
+      "state_agencies": {
+        "rice": 0.56,
+        "wheat": 0.0,
+        "total": 0.56
+      },
+      "central_pool": {
+        "rice": 2.34,
+        "wheat": 0.99,
+        "total": 3.33
+      }
+    },
+    {
+      "date": "2013-04-01",
+      "state": "Madhya Pradesh",
+      "state_hindi": "मध्य प्रदेश",
+      "region": "West Zone",
+      "year": 2013,
+      "fci": {
+        "rice": 0.19,
+        "wheat": 2.92,
+        "total": 3.11
+      },
+      "state_agencies": {
+        "rice": 10.32,
+        "wheat": 14.37,
+        "total": 24.69
+      },
+      "central_pool": {
+        "rice": 10.51,
+        "wheat": 17.29,
+        "total": 27.8
+      }
+    },
+    {
+      "date": "2013-04-01",
+      "state": "Maharashtra",
+      "state_hindi": "महाराष्ट्र",
+      "region": "West Zone",
+      "year": 2013,
+      "fci": {
+        "rice": 5.27,
+        "wheat": 12.36,
+        "total": 17.63
+      },
+      "state_agencies": {
+        "rice": 2.54,
+        "wheat": 0.0,
+        "total": 2.54
+      },
+      "central_pool": {
+        "rice": 7.81,
+        "wheat": 12.36,
+        "total": 20.17
+      }
+    },
+    {
+      "date": "2013-04-01",
+      "state": "Tamil Nadu",
+      "state_hindi": "तमिलनाडु",
+      "region": "South Zone",
+      "year": 2013,
+      "fci": {
+        "rice": 6.78,
+        "wheat": 1.94,
+        "total": 8.72
+      },
+      "state_agencies": {
+        "rice": 9.46,
+        "wheat": 0.0,
+        "total": 9.46
+      },
+      "central_pool": {
+        "rice": 16.24,
+        "wheat": 1.94,
+        "total": 18.18
+      }
+    },
+    {
+      "date": "2013-04-01",
+      "state": "Telangana",
+      "state_hindi": "तेलंगाना",
+      "region": "South Zone",
+      "year": 2013,
+      "fci": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      }
+    },
+    {
+      "date": "2013-04-01",
+      "state": "Uttarakhand",
+      "state_hindi": "उत्तराखण्ड",
+      "region": "North Zone",
+      "year": 2013,
+      "fci": {
+        "rice": 1.41,
+        "wheat": 0.34,
+        "total": 1.75
+      },
+      "state_agencies": {
+        "rice": 0.76,
+        "wheat": 0.0,
+        "total": 0.76
+      },
+      "central_pool": {
+        "rice": 2.17,
+        "wheat": 0.34,
+        "total": 2.51
+      }
+    },
+    {
+      "date": "2014-04-01",
+      "state": "Andhra Pradesh",
+      "state_hindi": "आन्ध्र प्रदेश",
+      "region": "South Zone",
+      "year": 2014,
+      "fci": {
+        "rice": 17.82,
+        "wheat": 1.03,
+        "total": 18.85
+      },
+      "state_agencies": {
+        "rice": 11.83,
+        "wheat": 0.0,
+        "total": 11.83
+      },
+      "central_pool": {
+        "rice": 29.65,
+        "wheat": 1.03,
+        "total": 30.68
+      }
+    },
+    {
+      "date": "2014-04-01",
+      "state": "Chhattisgarh",
+      "state_hindi": "छत्तीसगढ",
+      "region": "West Zone",
+      "year": 2014,
+      "fci": {
+        "rice": 5.29,
+        "wheat": 0.28,
+        "total": 5.57
+      },
+      "state_agencies": {
+        "rice": 5.73,
+        "wheat": 0.0,
+        "total": 5.73
+      },
+      "central_pool": {
+        "rice": 11.02,
+        "wheat": 0.28,
+        "total": 11.3
+      }
+    },
+    {
+      "date": "2014-04-01",
+      "state": "Gujarat",
+      "state_hindi": "गुजरात",
+      "region": "West Zone",
+      "year": 2014,
+      "fci": {
+        "rice": 1.05,
+        "wheat": 4.49,
+        "total": 5.54
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 1.05,
+        "wheat": 4.49,
+        "total": 5.54
+      }
+    },
+    {
+      "date": "2014-04-01",
+      "state": "Karnataka",
+      "state_hindi": "कर्नाटक",
+      "region": "South Zone",
+      "year": 2014,
+      "fci": {
+        "rice": 4.24,
+        "wheat": 1.23,
+        "total": 5.47
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 4.24,
+        "wheat": 1.23,
+        "total": 5.47
+      }
+    },
+    {
+      "date": "2014-04-01",
+      "state": "Kerala",
+      "state_hindi": "केरल",
+      "region": "South Zone",
+      "year": 2014,
+      "fci": {
+        "rice": 2.4,
+        "wheat": 0.93,
+        "total": 3.33
+      },
+      "state_agencies": {
+        "rice": 1.17,
+        "wheat": 0.0,
+        "total": 1.17
+      },
+      "central_pool": {
+        "rice": 3.57,
+        "wheat": 0.93,
+        "total": 4.5
+      }
+    },
+    {
+      "date": "2014-04-01",
+      "state": "Madhya Pradesh",
+      "state_hindi": "मध्य प्रदेश",
+      "region": "West Zone",
+      "year": 2014,
+      "fci": {
+        "rice": 0.17,
+        "wheat": 0.99,
+        "total": 1.16
+      },
+      "state_agencies": {
+        "rice": 0.41,
+        "wheat": 20.29,
+        "total": 20.7
+      },
+      "central_pool": {
+        "rice": 0.58,
+        "wheat": 21.28,
+        "total": 21.86
+      }
+    },
+    {
+      "date": "2014-04-01",
+      "state": "Maharashtra",
+      "state_hindi": "महाराष्ट्र",
+      "region": "West Zone",
+      "year": 2014,
+      "fci": {
+        "rice": 6.7,
+        "wheat": 6.46,
+        "total": 13.16
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 6.7,
+        "wheat": 6.46,
+        "total": 13.16
+      }
+    },
+    {
+      "date": "2014-04-01",
+      "state": "Tamil Nadu",
+      "state_hindi": "तमिलनाडु",
+      "region": "South Zone",
+      "year": 2014,
+      "fci": {
+        "rice": 4.55,
+        "wheat": 3.49,
+        "total": 8.04
+      },
+      "state_agencies": {
+        "rice": 4.79,
+        "wheat": 0.0,
+        "total": 4.79
+      },
+      "central_pool": {
+        "rice": 9.34,
+        "wheat": 3.49,
+        "total": 12.83
+      }
+    },
+    {
+      "date": "2014-04-01",
+      "state": "Telangana",
+      "state_hindi": "तेलंगाना",
+      "region": "South Zone",
+      "year": 2014,
+      "fci": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      }
+    },
+    {
+      "date": "2014-04-01",
+      "state": "Uttarakhand",
+      "state_hindi": "उत्तराखण्ड",
+      "region": "North Zone",
+      "year": 2014,
+      "fci": {
+        "rice": 1.21,
+        "wheat": 0.37,
+        "total": 1.58
+      },
+      "state_agencies": {
+        "rice": 0.77,
+        "wheat": 0.0,
+        "total": 0.77
+      },
+      "central_pool": {
+        "rice": 1.98,
+        "wheat": 0.37,
+        "total": 2.35
+      }
+    },
+    {
+      "date": "2015-04-01",
+      "state": "Andhra Pradesh",
+      "state_hindi": "आन्ध्र प्रदेश",
+      "region": "South Zone",
+      "year": 2015,
+      "fci": {
+        "rice": 11.12,
+        "wheat": 0.54,
+        "total": 11.66
+      },
+      "state_agencies": {
+        "rice": 2.76,
+        "wheat": 0.0,
+        "total": 2.76
+      },
+      "central_pool": {
+        "rice": 13.88,
+        "wheat": 0.54,
+        "total": 14.42
+      }
+    },
+    {
+      "date": "2015-04-01",
+      "state": "Chhattisgarh",
+      "state_hindi": "छत्तीसगढ",
+      "region": "West Zone",
+      "year": 2015,
+      "fci": {
+        "rice": 5.42,
+        "wheat": 0.28,
+        "total": 5.7
+      },
+      "state_agencies": {
+        "rice": 7.75,
+        "wheat": 0.0,
+        "total": 7.75
+      },
+      "central_pool": {
+        "rice": 13.17,
+        "wheat": 0.28,
+        "total": 13.45
+      }
+    },
+    {
+      "date": "2015-04-01",
+      "state": "Gujarat",
+      "state_hindi": "गुजरात",
+      "region": "West Zone",
+      "year": 2015,
+      "fci": {
+        "rice": 1.73,
+        "wheat": 4.58,
+        "total": 6.31
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.03,
+        "total": 0.03
+      },
+      "central_pool": {
+        "rice": 1.73,
+        "wheat": 4.61,
+        "total": 6.34
+      }
+    },
+    {
+      "date": "2015-04-01",
+      "state": "Karnataka",
+      "state_hindi": "कर्नाटक",
+      "region": "South Zone",
+      "year": 2015,
+      "fci": {
+        "rice": 3.31,
+        "wheat": 1.33,
+        "total": 4.64
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 3.31,
+        "wheat": 1.33,
+        "total": 4.64
+      }
+    },
+    {
+      "date": "2015-04-01",
+      "state": "Kerala",
+      "state_hindi": "केरल",
+      "region": "South Zone",
+      "year": 2015,
+      "fci": {
+        "rice": 3.02,
+        "wheat": 1.28,
+        "total": 4.3
+      },
+      "state_agencies": {
+        "rice": 0.9,
+        "wheat": 0.0,
+        "total": 0.9
+      },
+      "central_pool": {
+        "rice": 3.92,
+        "wheat": 1.28,
+        "total": 5.2
+      }
+    },
+    {
+      "date": "2015-04-01",
+      "state": "Madhya Pradesh",
+      "state_hindi": "मध्य प्रदेश",
+      "region": "West Zone",
+      "year": 2015,
+      "fci": {
+        "rice": 0.1,
+        "wheat": 0.72,
+        "total": 0.82
+      },
+      "state_agencies": {
+        "rice": 3.95,
+        "wheat": 20.19,
+        "total": 24.14
+      },
+      "central_pool": {
+        "rice": 4.05,
+        "wheat": 20.91,
+        "total": 24.96
+      }
+    },
+    {
+      "date": "2015-04-01",
+      "state": "Maharashtra",
+      "state_hindi": "महाराष्ट्र",
+      "region": "West Zone",
+      "year": 2015,
+      "fci": {
+        "rice": 6.64,
+        "wheat": 8.48,
+        "total": 15.12
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 6.64,
+        "wheat": 8.48,
+        "total": 15.12
+      }
+    },
+    {
+      "date": "2015-04-01",
+      "state": "Tamil Nadu",
+      "state_hindi": "तमिलनाडु",
+      "region": "South Zone",
+      "year": 2015,
+      "fci": {
+        "rice": 6.45,
+        "wheat": 1.36,
+        "total": 7.81
+      },
+      "state_agencies": {
+        "rice": 4.48,
+        "wheat": 0.0,
+        "total": 4.48
+      },
+      "central_pool": {
+        "rice": 10.93,
+        "wheat": 1.36,
+        "total": 12.29
+      }
+    },
+    {
+      "date": "2015-04-01",
+      "state": "Telangana",
+      "state_hindi": "तेलंगाना",
+      "region": "South Zone",
+      "year": 2015,
+      "fci": {
+        "rice": 2.41,
+        "wheat": 0.48,
+        "total": 2.89
+      },
+      "state_agencies": {
+        "rice": 8.36,
+        "wheat": 0.0,
+        "total": 8.36
+      },
+      "central_pool": {
+        "rice": 10.77,
+        "wheat": 0.48,
+        "total": 11.25
+      }
+    },
+    {
+      "date": "2015-04-01",
+      "state": "Uttarakhand",
+      "state_hindi": "उत्तराखण्ड",
+      "region": "North Zone",
+      "year": 2015,
+      "fci": {
+        "rice": 1.01,
+        "wheat": 0.46,
+        "total": 1.47
+      },
+      "state_agencies": {
+        "rice": 0.9,
+        "wheat": 0.0,
+        "total": 0.9
+      },
+      "central_pool": {
+        "rice": 1.91,
+        "wheat": 0.46,
+        "total": 2.37
+      }
+    },
+    {
+      "date": "2016-04-01",
+      "state": "Andhra Pradesh",
+      "state_hindi": "आन्ध्र प्रदेश",
+      "region": "South Zone",
+      "year": 2016,
+      "fci": {
+        "rice": 3.25,
+        "wheat": 0.18,
+        "total": 3.43
+      },
+      "state_agencies": {
+        "rice": 18.49,
+        "wheat": 0.0,
+        "total": 18.49
+      },
+      "central_pool": {
+        "rice": 21.74,
+        "wheat": 0.18,
+        "total": 21.92
+      }
+    },
+    {
+      "date": "2016-04-01",
+      "state": "Chhattisgarh",
+      "state_hindi": "छत्तीसगढ",
+      "region": "West Zone",
+      "year": 2016,
+      "fci": {
+        "rice": 5.89,
+        "wheat": 0.3,
+        "total": 6.19
+      },
+      "state_agencies": {
+        "rice": 11.5,
+        "wheat": 0.0,
+        "total": 11.5
+      },
+      "central_pool": {
+        "rice": 17.39,
+        "wheat": 0.3,
+        "total": 17.69
+      }
+    },
+    {
+      "date": "2016-04-01",
+      "state": "Gujarat",
+      "state_hindi": "गुजरात",
+      "region": "West Zone",
+      "year": 2016,
+      "fci": {
+        "rice": 0.72,
+        "wheat": 4.15,
+        "total": 4.87
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 0.72,
+        "wheat": 4.15,
+        "total": 4.87
+      }
+    },
+    {
+      "date": "2016-04-01",
+      "state": "Karnataka",
+      "state_hindi": "कर्नाटक",
+      "region": "South Zone",
+      "year": 2016,
+      "fci": {
+        "rice": 5.31,
+        "wheat": 0.93,
+        "total": 6.24
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 5.31,
+        "wheat": 0.93,
+        "total": 6.24
+      }
+    },
+    {
+      "date": "2016-04-01",
+      "state": "Kerala",
+      "state_hindi": "केरल",
+      "region": "South Zone",
+      "year": 2016,
+      "fci": {
+        "rice": 3.33,
+        "wheat": 0.87,
+        "total": 4.2
+      },
+      "state_agencies": {
+        "rice": 0.28,
+        "wheat": 0.0,
+        "total": 0.28
+      },
+      "central_pool": {
+        "rice": 3.61,
+        "wheat": 0.87,
+        "total": 4.48
+      }
+    },
+    {
+      "date": "2016-04-01",
+      "state": "Madhya Pradesh",
+      "state_hindi": "मध्य प्रदेश",
+      "region": "West Zone",
+      "year": 2016,
+      "fci": {
+        "rice": 0.06,
+        "wheat": 0.44,
+        "total": 0.5
+      },
+      "state_agencies": {
+        "rice": 3.34,
+        "wheat": 19.53,
+        "total": 22.87
+      },
+      "central_pool": {
+        "rice": 3.4,
+        "wheat": 19.97,
+        "total": 23.37
+      }
+    },
+    {
+      "date": "2016-04-01",
+      "state": "Maharashtra",
+      "state_hindi": "महाराष्ट्र",
+      "region": "West Zone",
+      "year": 2016,
+      "fci": {
+        "rice": 7.38,
+        "wheat": 8.82,
+        "total": 16.2
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 7.38,
+        "wheat": 8.82,
+        "total": 16.2
+      }
+    },
+    {
+      "date": "2016-04-01",
+      "state": "Tamil Nadu",
+      "state_hindi": "तमिलनाडु",
+      "region": "South Zone",
+      "year": 2016,
+      "fci": {
+        "rice": 8.57,
+        "wheat": 0.67,
+        "total": 9.24
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 8.57,
+        "wheat": 0.67,
+        "total": 9.24
+      }
+    },
+    {
+      "date": "2016-04-01",
+      "state": "Telangana",
+      "state_hindi": "तेलंगाना",
+      "region": "South Zone",
+      "year": 2016,
+      "fci": {
+        "rice": 2.58,
+        "wheat": 0.21,
+        "total": 2.79
+      },
+      "state_agencies": {
+        "rice": 7.61,
+        "wheat": 0.0,
+        "total": 7.61
+      },
+      "central_pool": {
+        "rice": 10.19,
+        "wheat": 0.21,
+        "total": 10.4
+      }
+    },
+    {
+      "date": "2016-04-01",
+      "state": "Uttarakhand",
+      "state_hindi": "उत्तराखण्ड",
+      "region": "North Zone",
+      "year": 2016,
+      "fci": {
+        "rice": 0.97,
+        "wheat": 0.47,
+        "total": 1.44
+      },
+      "state_agencies": {
+        "rice": 0.95,
+        "wheat": 0.0,
+        "total": 0.95
+      },
+      "central_pool": {
+        "rice": 1.92,
+        "wheat": 0.47,
+        "total": 2.39
+      }
+    },
+    {
+      "date": "2017-04-01",
+      "state": "Andhra Pradesh",
+      "state_hindi": "आन्ध्र प्रदेश",
+      "region": "South Zone",
+      "year": 2017,
+      "fci": {
+        "rice": 3.86,
+        "wheat": 0.1,
+        "total": 3.96
+      },
+      "state_agencies": {
+        "rice": 18.26,
+        "wheat": 0.0,
+        "total": 18.26
+      },
+      "central_pool": {
+        "rice": 22.12,
+        "wheat": 0.1,
+        "total": 22.22
+      }
+    },
+    {
+      "date": "2017-04-01",
+      "state": "Chhattisgarh",
+      "state_hindi": "छत्तीसगढ",
+      "region": "West Zone",
+      "year": 2017,
+      "fci": {
+        "rice": 5.41,
+        "wheat": 0.25,
+        "total": 5.66
+      },
+      "state_agencies": {
+        "rice": 10.77,
+        "wheat": 0.0,
+        "total": 10.77
+      },
+      "central_pool": {
+        "rice": 16.18,
+        "wheat": 0.25,
+        "total": 16.43
+      }
+    },
+    {
+      "date": "2017-04-01",
+      "state": "Gujarat",
+      "state_hindi": "गुजरात",
+      "region": "West Zone",
+      "year": 2017,
+      "fci": {
+        "rice": 1.58,
+        "wheat": 2.4,
+        "total": 3.98
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.01,
+        "total": 0.01
+      },
+      "central_pool": {
+        "rice": 1.58,
+        "wheat": 2.41,
+        "total": 3.99
+      }
+    },
+    {
+      "date": "2017-04-01",
+      "state": "Karnataka",
+      "state_hindi": "कर्नाटक",
+      "region": "South Zone",
+      "year": 2017,
+      "fci": {
+        "rice": 3.25,
+        "wheat": 0.82,
+        "total": 4.07
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 3.25,
+        "wheat": 0.82,
+        "total": 4.07
+      }
+    },
+    {
+      "date": "2017-04-01",
+      "state": "Kerala",
+      "state_hindi": "केरल",
+      "region": "South Zone",
+      "year": 2017,
+      "fci": {
+        "rice": 2.33,
+        "wheat": 0.74,
+        "total": 3.07
+      },
+      "state_agencies": {
+        "rice": 0.29,
+        "wheat": 0.0,
+        "total": 0.29
+      },
+      "central_pool": {
+        "rice": 2.62,
+        "wheat": 0.74,
+        "total": 3.36
+      }
+    },
+    {
+      "date": "2017-04-01",
+      "state": "Madhya Pradesh",
+      "state_hindi": "मध्य प्रदेश",
+      "region": "West Zone",
+      "year": 2017,
+      "fci": {
+        "rice": 0.04,
+        "wheat": 0.03,
+        "total": 0.07
+      },
+      "state_agencies": {
+        "rice": 1.94,
+        "wheat": 20.05,
+        "total": 21.99
+      },
+      "central_pool": {
+        "rice": 1.98,
+        "wheat": 20.08,
+        "total": 22.06
+      }
+    },
+    {
+      "date": "2017-04-01",
+      "state": "Maharashtra",
+      "state_hindi": "महाराष्ट्र",
+      "region": "West Zone",
+      "year": 2017,
+      "fci": {
+        "rice": 8.75,
+        "wheat": 5.17,
+        "total": 13.92
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 8.75,
+        "wheat": 5.17,
+        "total": 13.92
+      }
+    },
+    {
+      "date": "2017-04-01",
+      "state": "Tamil Nadu",
+      "state_hindi": "तमिलनाडु",
+      "region": "South Zone",
+      "year": 2017,
+      "fci": {
+        "rice": 7.12,
+        "wheat": 0.49,
+        "total": 7.61
+      },
+      "state_agencies": {
+        "rice": 1.65,
+        "wheat": 0.0,
+        "total": 1.65
+      },
+      "central_pool": {
+        "rice": 8.77,
+        "wheat": 0.49,
+        "total": 9.26
+      }
+    },
+    {
+      "date": "2017-04-01",
+      "state": "Telangana",
+      "state_hindi": "तेलंगाना",
+      "region": "South Zone",
+      "year": 2017,
+      "fci": {
+        "rice": 0.51,
+        "wheat": 0.15,
+        "total": 0.66
+      },
+      "state_agencies": {
+        "rice": 5.33,
+        "wheat": 0.0,
+        "total": 5.33
+      },
+      "central_pool": {
+        "rice": 5.84,
+        "wheat": 0.15,
+        "total": 5.99
+      }
+    },
+    {
+      "date": "2017-04-01",
+      "state": "Uttarakhand",
+      "state_hindi": "उत्तराखण्ड",
+      "region": "North Zone",
+      "year": 2017,
+      "fci": {
+        "rice": 1.09,
+        "wheat": 0.33,
+        "total": 1.42
+      },
+      "state_agencies": {
+        "rice": 0.97,
+        "wheat": 0.0,
+        "total": 0.97
+      },
+      "central_pool": {
+        "rice": 2.06,
+        "wheat": 0.33,
+        "total": 2.39
+      }
+    },
+    {
+      "date": "2018-04-01",
+      "state": "Andhra Pradesh",
+      "state_hindi": "आन्ध्र प्रदेश",
+      "region": "South Zone",
+      "year": 2018,
+      "fci": {
+        "rice": 4.31,
+        "wheat": 0.29,
+        "total": 4.6
+      },
+      "state_agencies": {
+        "rice": 15.12,
+        "wheat": 0.0,
+        "total": 15.12
+      },
+      "central_pool": {
+        "rice": 19.43,
+        "wheat": 0.29,
+        "total": 19.72
+      }
+    },
+    {
+      "date": "2018-04-01",
+      "state": "Chhattisgarh",
+      "state_hindi": "छत्तीसगढ",
+      "region": "West Zone",
+      "year": 2018,
+      "fci": {
+        "rice": 4.89,
+        "wheat": 0.54,
+        "total": 5.43
+      },
+      "state_agencies": {
+        "rice": 11.52,
+        "wheat": 0.0,
+        "total": 11.52
+      },
+      "central_pool": {
+        "rice": 16.41,
+        "wheat": 0.54,
+        "total": 16.95
+      }
+    },
+    {
+      "date": "2018-04-01",
+      "state": "Gujarat",
+      "state_hindi": "गुजरात",
+      "region": "West Zone",
+      "year": 2018,
+      "fci": {
+        "rice": 1.71,
+        "wheat": 2.84,
+        "total": 4.55
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.06,
+        "total": 0.06
+      },
+      "central_pool": {
+        "rice": 1.71,
+        "wheat": 2.9,
+        "total": 4.61
+      }
+    },
+    {
+      "date": "2018-04-01",
+      "state": "Karnataka",
+      "state_hindi": "कर्नाटक",
+      "region": "South Zone",
+      "year": 2018,
+      "fci": {
+        "rice": 6.14,
+        "wheat": 0.48,
+        "total": 6.62
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 6.14,
+        "wheat": 0.48,
+        "total": 6.62
+      }
+    },
+    {
+      "date": "2018-04-01",
+      "state": "Kerala",
+      "state_hindi": "केरल",
+      "region": "South Zone",
+      "year": 2018,
+      "fci": {
+        "rice": 3.04,
+        "wheat": 0.91,
+        "total": 3.95
+      },
+      "state_agencies": {
+        "rice": 0.11,
+        "wheat": 0.0,
+        "total": 0.11
+      },
+      "central_pool": {
+        "rice": 3.15,
+        "wheat": 0.91,
+        "total": 4.06
+      }
+    },
+    {
+      "date": "2018-04-01",
+      "state": "Madhya Pradesh",
+      "state_hindi": "मध्य प्रदेश",
+      "region": "West Zone",
+      "year": 2018,
+      "fci": {
+        "rice": 0.01,
+        "wheat": 2.01,
+        "total": 2.02
+      },
+      "state_agencies": {
+        "rice": 3.29,
+        "wheat": 28.7,
+        "total": 31.99
+      },
+      "central_pool": {
+        "rice": 3.3,
+        "wheat": 30.71,
+        "total": 34.01
+      }
+    },
+    {
+      "date": "2018-04-01",
+      "state": "Maharashtra",
+      "state_hindi": "महाराष्ट्र",
+      "region": "West Zone",
+      "year": 2018,
+      "fci": {
+        "rice": 6.1,
+        "wheat": 9.07,
+        "total": 15.17
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 6.1,
+        "wheat": 9.07,
+        "total": 15.17
+      }
+    },
+    {
+      "date": "2018-04-01",
+      "state": "Tamil Nadu",
+      "state_hindi": "तमिलनाडु",
+      "region": "South Zone",
+      "year": 2018,
+      "fci": {
+        "rice": 8.58,
+        "wheat": 0.65,
+        "total": 9.23
+      },
+      "state_agencies": {
+        "rice": 1.61,
+        "wheat": 0.0,
+        "total": 1.61
+      },
+      "central_pool": {
+        "rice": 10.19,
+        "wheat": 0.65,
+        "total": 10.84
+      }
+    },
+    {
+      "date": "2018-04-01",
+      "state": "Telangana",
+      "state_hindi": "तेलंगाना",
+      "region": "South Zone",
+      "year": 2018,
+      "fci": {
+        "rice": 4.3,
+        "wheat": 0.29,
+        "total": 4.59
+      },
+      "state_agencies": {
+        "rice": 7.57,
+        "wheat": 0.0,
+        "total": 7.57
+      },
+      "central_pool": {
+        "rice": 11.87,
+        "wheat": 0.29,
+        "total": 12.16
+      }
+    },
+    {
+      "date": "2018-04-01",
+      "state": "Uttarakhand",
+      "state_hindi": "उत्तराखण्ड",
+      "region": "North Zone",
+      "year": 2018,
+      "fci": {
+        "rice": 0.54,
+        "wheat": 0.4,
+        "total": 0.94
+      },
+      "state_agencies": {
+        "rice": 0.02,
+        "wheat": 0.0,
+        "total": 0.02
+      },
+      "central_pool": {
+        "rice": 0.56,
+        "wheat": 0.4,
+        "total": 0.96
+      }
+    },
+    {
+      "date": "2020-03-01",
+      "state": "Andhra Pradesh",
+      "state_hindi": "आन्ध्र प्रदेश",
+      "region": "South Zone",
+      "year": 2020,
+      "fci": {
+        "rice": 8.54,
+        "wheat": 0.09,
+        "total": 8.63
+      },
+      "state_agencies": {
+        "rice": 12.58,
+        "wheat": 0.0,
+        "total": 12.58
+      },
+      "central_pool": {
+        "rice": 21.12,
+        "wheat": 0.09,
+        "total": 21.21
+      }
+    },
+    {
+      "date": "2020-03-01",
+      "state": "Chhattisgarh",
+      "state_hindi": "छत्तीसगढ",
+      "region": "West Zone",
+      "year": 2020,
+      "fci": {
+        "rice": 8.08,
+        "wheat": 0.19,
+        "total": 8.27
+      },
+      "state_agencies": {
+        "rice": 11.24,
+        "wheat": 0.0,
+        "total": 11.24
+      },
+      "central_pool": {
+        "rice": 19.32,
+        "wheat": 0.19,
+        "total": 19.51
+      }
+    },
+    {
+      "date": "2020-03-01",
+      "state": "Gujarat",
+      "state_hindi": "गुजरात",
+      "region": "West Zone",
+      "year": 2020,
+      "fci": {
+        "rice": 0.57,
+        "wheat": 5.85,
+        "total": 6.42
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 0.57,
+        "wheat": 5.85,
+        "total": 6.42
+      }
+    },
+    {
+      "date": "2020-03-01",
+      "state": "Karnataka",
+      "state_hindi": "कर्नाटक",
+      "region": "South Zone",
+      "year": 2020,
+      "fci": {
+        "rice": 7.32,
+        "wheat": 0.44,
+        "total": 7.76
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 7.32,
+        "wheat": 0.44,
+        "total": 7.76
+      }
+    },
+    {
+      "date": "2020-03-01",
+      "state": "Kerala",
+      "state_hindi": "केरल",
+      "region": "South Zone",
+      "year": 2020,
+      "fci": {
+        "rice": 3.54,
+        "wheat": 0.96,
+        "total": 4.5
+      },
+      "state_agencies": {
+        "rice": 0.2,
+        "wheat": 0.0,
+        "total": 0.2
+      },
+      "central_pool": {
+        "rice": 3.74,
+        "wheat": 0.96,
+        "total": 4.7
+      }
+    },
+    {
+      "date": "2020-03-01",
+      "state": "Madhya Pradesh",
+      "state_hindi": "मध्य प्रदेश",
+      "region": "West Zone",
+      "year": 2020,
+      "fci": {
+        "rice": 0.52,
+        "wheat": 1.53,
+        "total": 2.05
+      },
+      "state_agencies": {
+        "rice": 6.28,
+        "wheat": 53.89,
+        "total": 60.17
+      },
+      "central_pool": {
+        "rice": 6.8,
+        "wheat": 55.42,
+        "total": 62.22
+      }
+    },
+    {
+      "date": "2020-03-01",
+      "state": "Maharashtra",
+      "state_hindi": "महाराष्ट्र",
+      "region": "West Zone",
+      "year": 2020,
+      "fci": {
+        "rice": 5.78,
+        "wheat": 12.15,
+        "total": 17.93
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 5.78,
+        "wheat": 12.15,
+        "total": 17.93
+      }
+    },
+    {
+      "date": "2020-03-01",
+      "state": "Tamil Nadu",
+      "state_hindi": "तमिलनाडु",
+      "region": "South Zone",
+      "year": 2020,
+      "fci": {
+        "rice": 12.85,
+        "wheat": 0.64,
+        "total": 13.49
+      },
+      "state_agencies": {
+        "rice": 1.3,
+        "wheat": 0.0,
+        "total": 1.3
+      },
+      "central_pool": {
+        "rice": 14.15,
+        "wheat": 0.64,
+        "total": 14.79
+      }
+    },
+    {
+      "date": "2020-03-01",
+      "state": "Telangana",
+      "state_hindi": "तेलंगाना",
+      "region": "South Zone",
+      "year": 2020,
+      "fci": {
+        "rice": 19.49,
+        "wheat": 0.06,
+        "total": 19.55
+      },
+      "state_agencies": {
+        "rice": 8.21,
+        "wheat": 0.0,
+        "total": 8.21
+      },
+      "central_pool": {
+        "rice": 27.7,
+        "wheat": 0.06,
+        "total": 27.76
+      }
+    },
+    {
+      "date": "2020-03-01",
+      "state": "Uttarakhand",
+      "state_hindi": "उत्तराखण्ड",
+      "region": "North Zone",
+      "year": 2020,
+      "fci": {
+        "rice": 1.23,
+        "wheat": 0.45,
+        "total": 1.68
+      },
+      "state_agencies": {
+        "rice": 0.62,
+        "wheat": 0.0,
+        "total": 0.62
+      },
+      "central_pool": {
+        "rice": 1.85,
+        "wheat": 0.45,
+        "total": 2.3
+      }
+    },
+    {
+      "date": "2022-03-01",
+      "state": "Andhra Pradesh",
+      "state_hindi": "आन्ध्र प्रदेश",
+      "region": "South Zone",
+      "year": 2022,
+      "fci": {
+        "rice": 2.25,
+        "wheat": 0.03,
+        "total": 2.28
+      },
+      "state_agencies": {
+        "rice": 12.76,
+        "wheat": 0.0,
+        "total": 12.76
+      },
+      "central_pool": {
+        "rice": 15.01,
+        "wheat": 0.03,
+        "total": 15.04
+      }
+    },
+    {
+      "date": "2022-03-01",
+      "state": "Chhattisgarh",
+      "state_hindi": "छत्तीसगढ",
+      "region": "West Zone",
+      "year": 2022,
+      "fci": {
+        "rice": 11.81,
+        "wheat": 0.18,
+        "total": 11.99
+      },
+      "state_agencies": {
+        "rice": 7.38,
+        "wheat": 0.0,
+        "total": 7.38
+      },
+      "central_pool": {
+        "rice": 19.19,
+        "wheat": 0.18,
+        "total": 19.37
+      }
+    },
+    {
+      "date": "2022-03-01",
+      "state": "Gujarat",
+      "state_hindi": "गुजरात",
+      "region": "West Zone",
+      "year": 2022,
+      "fci": {
+        "rice": 1.67,
+        "wheat": 3.25,
+        "total": 4.92
+      },
+      "state_agencies": {
+        "rice": 0.13,
+        "wheat": 0.0,
+        "total": 0.13
+      },
+      "central_pool": {
+        "rice": 1.8,
+        "wheat": 3.25,
+        "total": 5.05
+      }
+    },
+    {
+      "date": "2022-03-01",
+      "state": "Karnataka",
+      "state_hindi": "कर्नाटक",
+      "region": "South Zone",
+      "year": 2022,
+      "fci": {
+        "rice": 5.03,
+        "wheat": 0.68,
+        "total": 5.71
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 5.03,
+        "wheat": 0.68,
+        "total": 5.71
+      }
+    },
+    {
+      "date": "2022-03-01",
+      "state": "Kerala",
+      "state_hindi": "केरल",
+      "region": "South Zone",
+      "year": 2022,
+      "fci": {
+        "rice": 3.93,
+        "wheat": 0.52,
+        "total": 4.45
+      },
+      "state_agencies": {
+        "rice": 0.14,
+        "wheat": 0.0,
+        "total": 0.14
+      },
+      "central_pool": {
+        "rice": 4.07,
+        "wheat": 0.52,
+        "total": 4.59
+      }
+    },
+    {
+      "date": "2022-03-01",
+      "state": "Madhya Pradesh",
+      "state_hindi": "मध्य प्रदेश",
+      "region": "West Zone",
+      "year": 2022,
+      "fci": {
+        "rice": 1.51,
+        "wheat": 1.51,
+        "total": 3.02
+      },
+      "state_agencies": {
+        "rice": 5.1,
+        "wheat": 115.41,
+        "total": 120.51
+      },
+      "central_pool": {
+        "rice": 6.61,
+        "wheat": 116.92,
+        "total": 123.53
+      }
+    },
+    {
+      "date": "2022-03-01",
+      "state": "Maharashtra",
+      "state_hindi": "महाराष्ट्र",
+      "region": "West Zone",
+      "year": 2022,
+      "fci": {
+        "rice": 4.36,
+        "wheat": 6.23,
+        "total": 10.59
+      },
+      "state_agencies": {
+        "rice": 0.21,
+        "wheat": 0.0,
+        "total": 0.21
+      },
+      "central_pool": {
+        "rice": 4.57,
+        "wheat": 6.23,
+        "total": 10.8
+      }
+    },
+    {
+      "date": "2022-03-01",
+      "state": "Tamil Nadu",
+      "state_hindi": "तमिलनाडु",
+      "region": "South Zone",
+      "year": 2022,
+      "fci": {
+        "rice": 11.7,
+        "wheat": 0.86,
+        "total": 12.56
+      },
+      "state_agencies": {
+        "rice": 5.82,
+        "wheat": 0.0,
+        "total": 5.82
+      },
+      "central_pool": {
+        "rice": 17.52,
+        "wheat": 0.86,
+        "total": 18.38
+      }
+    },
+    {
+      "date": "2022-03-01",
+      "state": "Telangana",
+      "state_hindi": "तेलंगाना",
+      "region": "South Zone",
+      "year": 2022,
+      "fci": {
+        "rice": 18.19,
+        "wheat": 0.03,
+        "total": 18.22
+      },
+      "state_agencies": {
+        "rice": 12.67,
+        "wheat": 0.0,
+        "total": 12.67
+      },
+      "central_pool": {
+        "rice": 30.86,
+        "wheat": 0.03,
+        "total": 30.89
+      }
+    },
+    {
+      "date": "2022-03-01",
+      "state": "Uttarakhand",
+      "state_hindi": "उत्तराखण्ड",
+      "region": "North Zone",
+      "year": 2022,
+      "fci": {
+        "rice": 0.82,
+        "wheat": 0.35,
+        "total": 1.17
+      },
+      "state_agencies": {
+        "rice": 0.69,
+        "wheat": 0.0,
+        "total": 0.69
+      },
+      "central_pool": {
+        "rice": 1.51,
+        "wheat": 0.35,
+        "total": 1.86
+      }
+    },
+    {
+      "date": "2023-12-01",
+      "state": "Andhra Pradesh",
+      "state_hindi": "आन्ध्र प्रदेश",
+      "region": "South Zone",
+      "year": 2023,
+      "fci": {
+        "rice": 7.53,
+        "wheat": 0.2,
+        "total": 7.73
+      },
+      "state_agencies": {
+        "rice": 3.46,
+        "wheat": 0.0,
+        "total": 3.46
+      },
+      "central_pool": {
+        "rice": 10.99,
+        "wheat": 0.2,
+        "total": 11.19
+      }
+    },
+    {
+      "date": "2023-12-01",
+      "state": "Chhattisgarh",
+      "state_hindi": "छत्तीसगढ",
+      "region": "West Zone",
+      "year": 2023,
+      "fci": {
+        "rice": 7.6,
+        "wheat": 0.09,
+        "total": 7.69
+      },
+      "state_agencies": {
+        "rice": 5.86,
+        "wheat": 0.0,
+        "total": 5.86
+      },
+      "central_pool": {
+        "rice": 13.46,
+        "wheat": 0.09,
+        "total": 13.55
+      }
+    },
+    {
+      "date": "2023-12-01",
+      "state": "Gujarat",
+      "state_hindi": "गुजरात",
+      "region": "West Zone",
+      "year": 2023,
+      "fci": {
+        "rice": 2.41,
+        "wheat": 4.81,
+        "total": 7.22
+      },
+      "state_agencies": {
+        "rice": 1.11,
+        "wheat": 0.0,
+        "total": 1.11
+      },
+      "central_pool": {
+        "rice": 3.52,
+        "wheat": 4.81,
+        "total": 8.33
+      }
+    },
+    {
+      "date": "2023-12-01",
+      "state": "Karnataka",
+      "state_hindi": "कर्नाटक",
+      "region": "South Zone",
+      "year": 2023,
+      "fci": {
+        "rice": 6.62,
+        "wheat": 0.39,
+        "total": 7.01
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 6.62,
+        "wheat": 0.39,
+        "total": 7.01
+      }
+    },
+    {
+      "date": "2023-12-01",
+      "state": "Kerala",
+      "state_hindi": "केरल",
+      "region": "South Zone",
+      "year": 2023,
+      "fci": {
+        "rice": 4.2,
+        "wheat": 0.66,
+        "total": 4.86
+      },
+      "state_agencies": {
+        "rice": 0.19,
+        "wheat": 0.0,
+        "total": 0.19
+      },
+      "central_pool": {
+        "rice": 4.39,
+        "wheat": 0.66,
+        "total": 5.05
+      }
+    },
+    {
+      "date": "2023-12-01",
+      "state": "Madhya Pradesh",
+      "state_hindi": "मध्य प्रदेश",
+      "region": "West Zone",
+      "year": 2023,
+      "fci": {
+        "rice": 6.27,
+        "wheat": 1.46,
+        "total": 7.73
+      },
+      "state_agencies": {
+        "rice": 5.27,
+        "wheat": 61.05,
+        "total": 66.32
+      },
+      "central_pool": {
+        "rice": 11.54,
+        "wheat": 62.51,
+        "total": 74.05
+      }
+    },
+    {
+      "date": "2023-12-01",
+      "state": "Maharashtra",
+      "state_hindi": "महाराष्ट्र",
+      "region": "West Zone",
+      "year": 2023,
+      "fci": {
+        "rice": 5.41,
+        "wheat": 6.45,
+        "total": 11.86
+      },
+      "state_agencies": {
+        "rice": 0.18,
+        "wheat": 0.0,
+        "total": 0.18
+      },
+      "central_pool": {
+        "rice": 5.59,
+        "wheat": 6.45,
+        "total": 12.04
+      }
+    },
+    {
+      "date": "2023-12-01",
+      "state": "Tamil Nadu",
+      "state_hindi": "तमिलनाडु",
+      "region": "South Zone",
+      "year": 2023,
+      "fci": {
+        "rice": 6.81,
+        "wheat": 1.96,
+        "total": 8.77
+      },
+      "state_agencies": {
+        "rice": 2.46,
+        "wheat": 0.0,
+        "total": 2.46
+      },
+      "central_pool": {
+        "rice": 9.27,
+        "wheat": 1.96,
+        "total": 11.23
+      }
+    },
+    {
+      "date": "2023-12-01",
+      "state": "Telangana",
+      "state_hindi": "तेलंगाना",
+      "region": "South Zone",
+      "year": 2023,
+      "fci": {
+        "rice": 7.47,
+        "wheat": 0.15,
+        "total": 7.62
+      },
+      "state_agencies": {
+        "rice": 9.15,
+        "wheat": 0.0,
+        "total": 9.15
+      },
+      "central_pool": {
+        "rice": 16.62,
+        "wheat": 0.15,
+        "total": 16.77
+      }
+    },
+    {
+      "date": "2023-12-01",
+      "state": "Uttarakhand",
+      "state_hindi": "उत्तराखण्ड",
+      "region": "North Zone",
+      "year": 2023,
+      "fci": {
+        "rice": 0.7,
+        "wheat": 0.59,
+        "total": 1.29
+      },
+      "state_agencies": {
+        "rice": 0.16,
+        "wheat": 0.0,
+        "total": 0.16
+      },
+      "central_pool": {
+        "rice": 0.86,
+        "wheat": 0.59,
+        "total": 1.45
+      }
+    },
+    {
+      "date": "2025-12-01",
+      "state": "Andhra Pradesh",
+      "state_hindi": "आन्ध्र प्रदेश",
+      "region": "South Zone",
+      "year": 2025,
+      "fci": {
+        "rice": 7.12,
+        "wheat": 0.61,
+        "total": 7.73
+      },
+      "state_agencies": {
+        "rice": 3.73,
+        "wheat": 0.0,
+        "total": 3.73
+      },
+      "central_pool": {
+        "rice": 10.85,
+        "wheat": 0.61,
+        "total": 11.46
+      }
+    },
+    {
+      "date": "2025-12-01",
+      "state": "Chhattisgarh",
+      "state_hindi": "छत्तीसगढ",
+      "region": "West Zone",
+      "year": 2025,
+      "fci": {
+        "rice": 18.14,
+        "wheat": 0.02,
+        "total": 18.16
+      },
+      "state_agencies": {
+        "rice": 2.35,
+        "wheat": 0.0,
+        "total": 2.35
+      },
+      "central_pool": {
+        "rice": 20.49,
+        "wheat": 0.02,
+        "total": 20.51
+      }
+    },
+    {
+      "date": "2025-12-01",
+      "state": "Gujarat",
+      "state_hindi": "गुजरात",
+      "region": "West Zone",
+      "year": 2025,
+      "fci": {
+        "rice": 2.46,
+        "wheat": 6.24,
+        "total": 8.7
+      },
+      "state_agencies": {
+        "rice": 0.1,
+        "wheat": 0.0,
+        "total": 0.1
+      },
+      "central_pool": {
+        "rice": 2.56,
+        "wheat": 6.24,
+        "total": 8.8
+      }
+    },
+    {
+      "date": "2025-12-01",
+      "state": "Karnataka",
+      "state_hindi": "कर्नाटक",
+      "region": "South Zone",
+      "year": 2025,
+      "fci": {
+        "rice": 8.78,
+        "wheat": 0.59,
+        "total": 9.37
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 8.78,
+        "wheat": 0.59,
+        "total": 9.37
+      }
+    },
+    {
+      "date": "2025-12-01",
+      "state": "Kerala",
+      "state_hindi": "केरल",
+      "region": "South Zone",
+      "year": 2025,
+      "fci": {
+        "rice": 5.06,
+        "wheat": 0.66,
+        "total": 5.72
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 5.06,
+        "wheat": 0.66,
+        "total": 5.72
+      }
+    },
+    {
+      "date": "2025-12-01",
+      "state": "Madhya Pradesh",
+      "state_hindi": "मध्य प्रदेश",
+      "region": "West Zone",
+      "year": 2025,
+      "fci": {
+        "rice": 9.2,
+        "wheat": 2.68,
+        "total": 11.88
+      },
+      "state_agencies": {
+        "rice": 6.85,
+        "wheat": 92.07,
+        "total": 98.92
+      },
+      "central_pool": {
+        "rice": 16.05,
+        "wheat": 94.75,
+        "total": 110.8
+      }
+    },
+    {
+      "date": "2025-12-01",
+      "state": "Maharashtra",
+      "state_hindi": "महाराष्ट्र",
+      "region": "West Zone",
+      "year": 2025,
+      "fci": {
+        "rice": 6.84,
+        "wheat": 9.74,
+        "total": 16.58
+      },
+      "state_agencies": {
+        "rice": 1.23,
+        "wheat": 0.0,
+        "total": 1.23
+      },
+      "central_pool": {
+        "rice": 8.07,
+        "wheat": 9.74,
+        "total": 17.81
+      }
+    },
+    {
+      "date": "2025-12-01",
+      "state": "Tamil Nadu",
+      "state_hindi": "तमिलनाडु",
+      "region": "South Zone",
+      "year": 2025,
+      "fci": {
+        "rice": 11.4,
+        "wheat": 1.18,
+        "total": 12.58
+      },
+      "state_agencies": {
+        "rice": 2.71,
+        "wheat": 0.0,
+        "total": 2.71
+      },
+      "central_pool": {
+        "rice": 14.11,
+        "wheat": 1.18,
+        "total": 15.29
+      }
+    },
+    {
+      "date": "2025-12-01",
+      "state": "Telangana",
+      "state_hindi": "तेलंगाना",
+      "region": "South Zone",
+      "year": 2025,
+      "fci": {
+        "rice": 19.1,
+        "wheat": 0.06,
+        "total": 19.16
+      },
+      "state_agencies": {
+        "rice": 2.19,
+        "wheat": 0.0,
+        "total": 2.19
+      },
+      "central_pool": {
+        "rice": 21.29,
+        "wheat": 0.06,
+        "total": 21.35
+      }
+    },
+    {
+      "date": "2025-12-01",
+      "state": "Uttarakhand",
+      "state_hindi": "उत्तराखण्ड",
+      "region": "North Zone",
+      "year": 2025,
+      "fci": {
+        "rice": 0.14,
+        "wheat": 1.72,
+        "total": 1.86
+      },
+      "state_agencies": {
+        "rice": 0.02,
+        "wheat": 0.0,
+        "total": 0.02
+      },
+      "central_pool": {
+        "rice": 0.16,
+        "wheat": 1.72,
+        "total": 1.88
+      }
+    },
+    {
+      "date": "2026-09-01",
+      "state": "Andhra Pradesh",
+      "state_hindi": "आन्ध्र प्रदेश",
+      "region": "South Zone",
+      "year": 2026,
+      "fci": {
+        "rice": 15.58,
+        "wheat": 0.36,
+        "total": 15.94
+      },
+      "state_agencies": {
+        "rice": 9.36,
+        "wheat": 0.0,
+        "total": 9.36
+      },
+      "central_pool": {
+        "rice": 24.94,
+        "wheat": 0.36,
+        "total": 25.3
+      }
+    },
+    {
+      "date": "2026-09-01",
+      "state": "Chhattisgarh",
+      "state_hindi": "छत्तीसगढ",
+      "region": "West Zone",
+      "year": 2026,
+      "fci": {
+        "rice": 18.44,
+        "wheat": 0.02,
+        "total": 18.46
+      },
+      "state_agencies": {
+        "rice": 2.59,
+        "wheat": 0.0,
+        "total": 2.59
+      },
+      "central_pool": {
+        "rice": 21.03,
+        "wheat": 0.02,
+        "total": 21.05
+      }
+    },
+    {
+      "date": "2026-09-01",
+      "state": "Gujarat",
+      "state_hindi": "गुजरात",
+      "region": "West Zone",
+      "year": 2026,
+      "fci": {
+        "rice": 3.58,
+        "wheat": 5.03,
+        "total": 8.61
+      },
+      "state_agencies": {
+        "rice": 0.18,
+        "wheat": 0.77,
+        "total": 0.95
+      },
+      "central_pool": {
+        "rice": 3.76,
+        "wheat": 5.8,
+        "total": 9.56
+      }
+    },
+    {
+      "date": "2026-09-01",
+      "state": "Karnataka",
+      "state_hindi": "कर्नाटक",
+      "region": "South Zone",
+      "year": 2026,
+      "fci": {
+        "rice": 10.65,
+        "wheat": 0.88,
+        "total": 11.53
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 10.65,
+        "wheat": 0.88,
+        "total": 11.53
+      }
+    },
+    {
+      "date": "2026-09-01",
+      "state": "Kerala",
+      "state_hindi": "केरल",
+      "region": "South Zone",
+      "year": 2026,
+      "fci": {
+        "rice": 4.92,
+        "wheat": 0.66,
+        "total": 5.58
+      },
+      "state_agencies": {
+        "rice": 0.0,
+        "wheat": 0.0,
+        "total": 0.0
+      },
+      "central_pool": {
+        "rice": 4.92,
+        "wheat": 0.66,
+        "total": 5.58
+      }
+    },
+    {
+      "date": "2026-09-01",
+      "state": "Madhya Pradesh",
+      "state_hindi": "मध्य प्रदेश",
+      "region": "West Zone",
+      "year": 2026,
+      "fci": {
+        "rice": 7.71,
+        "wheat": 2.79,
+        "total": 10.5
+      },
+      "state_agencies": {
+        "rice": 4.68,
+        "wheat": 155.7,
+        "total": 160.38
+      },
+      "central_pool": {
+        "rice": 12.39,
+        "wheat": 158.49,
+        "total": 170.88
+      }
+    },
+    {
+      "date": "2026-09-01",
+      "state": "Maharashtra",
+      "state_hindi": "महाराष्ट्र",
+      "region": "West Zone",
+      "year": 2026,
+      "fci": {
+        "rice": 7.55,
+        "wheat": 9.5,
+        "total": 17.05
+      },
+      "state_agencies": {
+        "rice": 2.89,
+        "wheat": 0.0,
+        "total": 2.89
+      },
+      "central_pool": {
+        "rice": 10.44,
+        "wheat": 9.5,
+        "total": 19.94
+      }
+    },
+    {
+      "date": "2026-09-01",
+      "state": "Tamil Nadu",
+      "state_hindi": "तमिलनाडु",
+      "region": "South Zone",
+      "year": 2026,
+      "fci": {
+        "rice": 11.42,
+        "wheat": 1.13,
+        "total": 12.55
+      },
+      "state_agencies": {
+        "rice": 4.22,
+        "wheat": 0.0,
+        "total": 4.22
+      },
+      "central_pool": {
+        "rice": 15.64,
+        "wheat": 1.13,
+        "total": 16.77
+      }
+    },
+    {
+      "date": "2026-09-01",
+      "state": "Telangana",
+      "state_hindi": "तेलंगाना",
+      "region": "South Zone",
+      "year": 2026,
+      "fci": {
+        "rice": 23.48,
+        "wheat": 0.21,
+        "total": 23.69
+      },
+      "state_agencies": {
+        "rice": 2.79,
+        "wheat": 0.0,
+        "total": 2.79
+      },
+      "central_pool": {
+        "rice": 26.27,
+        "wheat": 0.21,
+        "total": 26.48
+      }
+    },
+    {
+      "date": "2026-09-01",
+      "state": "Uttarakhand",
+      "state_hindi": "उत्तराखण्ड",
+      "region": "North Zone",
+      "year": 2026,
+      "fci": {
+        "rice": 0.6,
+        "wheat": 1.29,
+        "total": 1.89
+      },
+      "state_agencies": {
+        "rice": 1.01,
+        "wheat": 0.01,
+        "total": 1.02
+      },
+      "central_pool": {
+        "rice": 1.61,
+        "wheat": 1.3,
+        "total": 2.91
+      }
+    }
+  ]
+}
