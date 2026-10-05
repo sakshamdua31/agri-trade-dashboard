@@ -2,8 +2,8 @@ name: FCI stock collector
 
 on:
   schedule:
-    - cron: '0 3 * * 1'    # every Monday 03:00 UTC
-  workflow_dispatch:
+    - cron: '0 3 * * 1'        # every Monday 03:00 UTC
+  workflow_dispatch:            # lets you run it by hand from the Actions tab
 
 permissions:
   contents: write
@@ -11,7 +11,7 @@ permissions:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
@@ -26,29 +26,26 @@ jobs:
           pip install playwright pandas lxml
           playwright install --with-deps chromium
 
-      - name: Run collector
+      # If this step fails (any year could not be fully scraped) the job stops
+      # here, the commit step below is skipped, and NOTHING is written to the repo.
+      - name: Collect FCI stock 2012-2026 (all pages, all years, or fail)
         run: python collectors/fci_stock_collector.py
 
-      - name: Upload debug output
-        if: always()
+      - name: Upload debug output (only if it failed)
+        if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: scraper-debug
           path: |
             debug_page.html
             debug_page.png
-            debug_selects.txt
           if-no-files-found: ignore
 
       - name: Commit data
         run: |
-          if [ ! -f fci_stock.json ]; then
-            echo "fci_stock.json not produced — the collector got 0 records."
-            echo "Download the 'scraper-debug' artifact above to see the page."
-            exit 1
-          fi
+          test -f data/fci_stock.json || { echo "no output produced"; exit 1; }
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add fci_stock.json
-          git diff --staged --quiet || git commit -m "Update FCI stock data ($(date -u +%Y-%m-%d))"
+          git add data/fci_stock.json data/fci_stock.csv
+          git diff --staged --quiet || git commit -m "Update FCI stock 2012-2026 ($(date -u +%Y-%m-%d))"
           git push
