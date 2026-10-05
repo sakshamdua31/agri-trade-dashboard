@@ -158,6 +158,26 @@ def find_year_select(page):
     return None
 
 
+def first_fingerprint(page):
+    """(fingerprint of the first data row, the table) for the current page."""
+    t = stock_table(page)
+    if t is None or t.empty:
+        return None, None
+    return tuple(t.iloc[0].astype(str)), t
+
+
+def wait_for_year(page, year, tries=25):
+    """Wait until the loaded table's rows belong to the requested year."""
+    for _ in range(tries):
+        page.wait_for_timeout(400)
+        t = stock_table(page)
+        if t is not None and len(t):
+            d = iso_date(list(t.iloc[0])[3])
+            if d[:4] == str(year):
+                return True
+    return False
+
+
 def scrape_year(page, year):
     sel = find_year_select(page)
     if sel is not None:
@@ -168,37 +188,41 @@ def scrape_year(page, year):
     else:
         print("  (year dropdown not found; scraping default view)")
 
-    records, seen = [], set()
+    # Make sure the table for THIS year has loaded before reading page 1.
+    wait_for_year(page, year)
+
+    records = []
     for _ in range(MAX_PAGES):
-        try:
-            page.wait_for_load_state("networkidle", timeout=8000)
-        except Exception:
-            pass
-        page.wait_for_timeout(600)
-
-        t = stock_table(page)
-        if t is None or t.empty:
+        fp, t = first_fingerprint(page)
+        if t is None:
             break
-        fp = tuple(t.iloc[0].astype(str))
-        if fp in seen:
-            break
-        seen.add(fp)
 
-        if t.shape[1] >= 13:
-            for _, row in t.iterrows():
-                rec = row_to_record(row)
-                if rec:
-                    records.append(rec)
-        else:
-            print(f"  (unexpected table shape {t.shape})")
+        for _, row in t.iterrows():
+            rec = row_to_record(row)
+            if rec:
+                records.append(rec)
 
-        nxt = page.get_by_role("link", name="Next page")
+        # The pager anchors have no href (Angular click handlers), so target
+        # them by class. On the last page this <a> is absent (a <span> instead).
+        nxt = page.locator("li.pagination-next > a")
         if nxt.count() == 0:
             break
         try:
-            nxt.first.click()
+            nxt.first.click(timeout=5000)
         except Exception:
             break
+
+        # Wait until the first row actually changes (page advanced / loaded).
+        advanced = False
+        for _ in range(20):
+            page.wait_for_timeout(300)
+            nf, nt = first_fingerprint(page)
+            if nt is not None and nf != fp:
+                advanced = True
+                break
+        if not advanced:
+            break
+
     return records
 
 
