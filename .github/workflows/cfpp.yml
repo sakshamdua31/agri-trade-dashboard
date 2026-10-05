@@ -1,0 +1,40 @@
+name: CFPP procurement scrape
+
+# Runs on a schedule and can also be triggered by hand from the Actions tab.
+on:
+  schedule:
+    - cron: '30 2 * * *'   # 02:30 UTC daily (= 08:00 IST)
+  workflow_dispatch:
+
+# Required so the job can push the captured data back into the repo.
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install playwright pandas
+          playwright install --with-deps chromium   # --with-deps is essential on CI
+
+      - name: Run scraper
+        run: python cfpp_capture.py
+
+      - name: Commit captured data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add cfpp_output/
+          # Only commit if something actually changed, so empty runs don't fail.
+          git diff --staged --quiet || git commit -m "Update CFPP data ($(date -u +%Y-%m-%d))"
+          git push
