@@ -1,220 +1,642 @@
 [
   {
-    "commodity_list": [
-      {
-        "commodity_procured_id": 1,
-        "commodity_procured_name_en": "Wheat"
-      },
-      {
-        "commodity_procured_id": 4,
-        "commodity_procured_name_en": "Paddy"
-      }
-    ],
-    "main_list": [
-      {
-        "row_number": 1,
-        "lgd_state_code": 10,
-        "lgd_state_name_en": "BIHAR",
-        "lgd_district_code": 0,
-        "lgd_district_name_en": "",
-        "procurement_center_farm_gate_id": null,
-        "procurement_center_farm_gate_name": null,
-        "date_of_procurement": null,
-        "farmer_registered": "31,759",
-        "farmer_benefitted": "4,291",
-        "quantity_procured": "18,074.83",
-        "msp_benefitted_farmers": "4,286",
-        "msp_paid_to_farmer": "4,377.88",
-        "state_short_name": "BR",
-        "msp_due_to_farmer": "4,377.88"
-      },
-      {
-        "row_number": 2,
-        "lgd_state_code": 4,
-        "lgd_state_name_en": "CHANDIGARH",
-        "lgd_district_code": 0,
-        "lgd_district_name_en": "",
-        "procurement_center_farm_gate_id": null,
-        "procurement_center_farm_gate_name": null,
-        "date_of_procurement": null,
-        "farmer_registered": "769",
-        "farmer_benefitted": "769",
-        "quantity_procured": "9,065.20",
-        "msp_benefitted_farmers": "0",
-        "msp_paid_to_farmer": "0.00",
-        "state_short_name": "CH",
-        "msp_due_to_farmer": "0.00"
-      },
-      {
-        "row_number": 3,
-        "lgd_state_code": 24,
-        "lgd_state_name_en": "GUJARAT",
-        "lgd_district_code": 0,
-        "lgd_district_name_en": "",
-        "procurement_center_farm_gate_id": null,
-        "procurement_center_farm_gate_name": null,
-        "date_of_procurement": null,
-        "farmer_registered": "52,845",
-        "farmer_benefitted": "892",
-        "quantity_procured": "3,780.45",
-        "msp_benefitted_farmers": "892",
-        "msp_paid_to_farmer": "920.37",
-        "state_short_name": "GJ",
-        "msp_due_to_farmer": "920.37"
-      },
-      {
-        "row_number": 4,
-        "lgd_state_code": 6,
-        "lgd_state_name_en": "HARYANA",
-        "lgd_district_code": 0,
-        "lgd_district_name_en": "",
-        "procurement_center_farm_gate_id": null,
-        "procurement_center_farm_gate_name": null,
-        "date_of_procurement": null,
-        "farmer_registered": "7,80,643",
-        "farmer_benefitted": "4,37,546",
-        "quantity_procured": "71,03,877.11",
-        "msp_benefitted_farmers": "4,33,715",
-        "msp_paid_to_farmer": "17,07,519.64",
-        "state_short_name": "HR",
-        "msp_due_to_farmer": "17,07,519.64"
-      },
-      {
-        "row_number": 5,
-        "lgd_state_code": 2,
-        "lgd_state_name_en": "HIMACHAL PRADESH",
-        "lgd_district_code": 0,
-        "lgd_district_name_en": "",
-        "procurement_center_farm_gate_id": null,
-        "procurement_center_farm_gate_name": null,
-        "date_of_procurement": null,
-        "farmer_registered": "1,299",
-        "farmer_benefitted": "583",
-        "quantity_procured": "2,995.95",
-        "msp_benefitted_farmers": "583",
-        "msp_paid_to_farmer": "726.52",
-        "state_short_name": "HP",
-        "msp_due_to_farmer": "726.52"
-      },
-      {
-        "row_number": 6,
-        "lgd_state_code": 1,
-        "lgd_state_name_en": "JAMMU AND KASHMIR",
-        "lgd_district_code": 0,
-        "lgd_district_name_en": "",
-        "procurement_center_farm_gate_id": null,
-        "procurement_center_farm_gate_name": null,
-        "date_of_procurement": null,
-        "farmer_registered": "10,414",
-        "farmer_benefitted": "0",
-        "quantity_procured": "0.00",
-        "msp_benefitted_farmers": "0",
-        "msp_paid_to_farmer": "0.00",
-        "state_short_name": "JK",
-        "msp_due_to_farmer": "0.00"
-      },
-      {
-        "row_number": 7,
-        "lgd_state_code": 23,
-        "lgd_state_name_en": "MADHYA PRADESH",
-        "lgd_district_code": 0,
-        "lgd_district_name_en": "",
-        "procurement_center_farm_gate_id": null,
-        "procurement_center_farm_gate_name": null,
-        "date_of_procurement": null,
-        "farmer_registered": "15,35,998",
-        "farmer_benefitted": "9,00,289",
-        "quantity_procured": "77,72,203.91",
-        "msp_benefitted_farmers": "8,99,470",
-        "msp_paid_to_farmer": "18,83,079.25",
-        "state_short_name": "MP",
-        "msp_due_to_farmer": "18,83,079.25"
-      },
-      {
-        "row_number": 8,
-        "lgd_state_code": 3,
-        "lgd_state_name_en": "PUNJAB",
-        "lgd_district_code": 0,
-        "lgd_district_name_en": "",
-        "procurement_center_farm_gate_id": null,
-        "procurement_center_farm_gate_name": null,
-        "date_of_procurement": null,
-        "farmer_registered": "7,71,929",
-        "farmer_benefitted": "7,29,007",
-        "quantity_procured": "1,19,13,284.35",
-        "msp_benefitted_farmers": "6,99,353",
-        "msp_paid_to_farmer": "27,77,901.27",
-        "state_short_name": "PB",
-        "msp_due_to_farmer": "27,77,901.27"
-      },
-      {
-        "row_number": 9,
-        "lgd_state_code": 8,
-        "lgd_state_name_en": "RAJASTHAN",
-        "lgd_district_code": 0,
-        "lgd_district_name_en": "",
-        "procurement_center_farm_gate_id": null,
-        "procurement_center_farm_gate_name": null,
-        "date_of_procurement": null,
-        "farmer_registered": "2,44,388",
-        "farmer_benefitted": "1,72,679",
-        "quantity_procured": "21,36,682.20",
-        "msp_benefitted_farmers": "1,72,679",
-        "msp_paid_to_farmer": "5,50,195.67",
-        "state_short_name": "RJ",
-        "msp_due_to_farmer": "5,18,145.65"
-      },
-      {
-        "row_number": 10,
-        "lgd_state_code": 5,
-        "lgd_state_name_en": "UTTARAKHAND",
-        "lgd_district_code": 0,
-        "lgd_district_name_en": "",
-        "procurement_center_farm_gate_id": null,
-        "procurement_center_farm_gate_name": null,
-        "date_of_procurement": null,
-        "farmer_registered": "85",
-        "farmer_benefitted": "65",
-        "quantity_procured": "523.55",
-        "msp_benefitted_farmers": "0",
-        "msp_paid_to_farmer": "0.00",
-        "state_short_name": "UK",
-        "msp_due_to_farmer": "0.00"
-      },
-      {
-        "row_number": 11,
-        "lgd_state_code": 9,
-        "lgd_state_name_en": "UTTAR PRADESH",
-        "lgd_district_code": 0,
-        "lgd_district_name_en": "",
-        "procurement_center_farm_gate_id": null,
-        "procurement_center_farm_gate_name": null,
-        "date_of_procurement": null,
-        "farmer_registered": "4,60,562",
-        "farmer_benefitted": "1,43,895",
-        "quantity_procured": "10,27,320.92",
-        "msp_benefitted_farmers": "1,43,890",
-        "msp_paid_to_farmer": "2,51,164.17",
-        "state_short_name": "UP",
-        "msp_due_to_farmer": "2,51,164.17"
-      }
-    ],
-    "grand_total_list": [
-      {
-        "row_number": 1,
-        "lgd_state_code": 0,
-        "lgd_state_name_en": "",
-        "lgd_district_code": 0,
-        "lgd_district_name_en": "",
-        "procurement_center_farm_gate_id": "",
-        "procurement_center_farm_gate_name": "",
-        "date_of_procurement": "",
-        "farmer_registered": "38,90,691",
-        "farmer_benefitted": "23,90,016",
-        "quantity_procured": "2,99,87,808.47",
-        "msp_benefitted_farmers": "23,54,868",
-        "msp_paid_to_farmer": "71,75,884.77"
-      }
-    ]
+    "id": 1,
+    "marketing_season": 2,
+    "marketing_year": "2022-2023",
+    "crop_type_id": 2,
+    "date_of_procurement": "2022-09-21",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 2,
+    "marketing_season": 2,
+    "marketing_year": "2022-2023",
+    "crop_type_id": 2,
+    "date_of_procurement": "2022-09-22",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 3,
+    "marketing_season": 2,
+    "marketing_year": "2022-2023",
+    "crop_type_id": 2,
+    "date_of_procurement": "2022-09-23",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 4,
+    "marketing_season": 2,
+    "marketing_year": "2022-2023",
+    "crop_type_id": 2,
+    "date_of_procurement": "2022-09-24",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 5,
+    "marketing_season": 2,
+    "marketing_year": "2022-2023",
+    "crop_type_id": 2,
+    "date_of_procurement": "2022-09-25",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 6,
+    "marketing_season": 2,
+    "marketing_year": "2022-2023",
+    "crop_type_id": 2,
+    "date_of_procurement": "2022-09-26",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 7,
+    "marketing_season": 2,
+    "marketing_year": "2022-2023",
+    "crop_type_id": 2,
+    "date_of_procurement": "2022-09-27",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 8,
+    "marketing_season": 2,
+    "marketing_year": "2022-2023",
+    "crop_type_id": 2,
+    "date_of_procurement": "2022-09-28",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 9,
+    "marketing_season": 2,
+    "marketing_year": "2022-2023",
+    "crop_type_id": 2,
+    "date_of_procurement": "2022-09-29",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 10,
+    "marketing_season": 2,
+    "marketing_year": "2022-2023",
+    "crop_type_id": 2,
+    "date_of_procurement": "2022-09-30",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 11,
+    "marketing_season": 2,
+    "marketing_year": "2022-2023",
+    "crop_type_id": 2,
+    "date_of_procurement": "2022-10-01",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 12,
+    "marketing_season": 2,
+    "marketing_year": "2022-2023",
+    "crop_type_id": 2,
+    "date_of_procurement": "2022-10-02",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 13,
+    "marketing_season": 2,
+    "marketing_year": "2022-2023",
+    "crop_type_id": 2,
+    "date_of_procurement": "2022-10-03",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 14,
+    "marketing_season": 2,
+    "marketing_year": "2022-2023",
+    "crop_type_id": 2,
+    "date_of_procurement": "2022-10-04",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 15,
+    "marketing_season": 2,
+    "marketing_year": "2022-2023",
+    "crop_type_id": 2,
+    "date_of_procurement": "2022-10-05",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 16,
+    "marketing_season": 2,
+    "marketing_year": "2022-2023",
+    "crop_type_id": 2,
+    "date_of_procurement": "2022-10-06",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 17,
+    "marketing_season": 2,
+    "marketing_year": "2022-2023",
+    "crop_type_id": 2,
+    "date_of_procurement": "2022-10-07",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 18,
+    "marketing_season": 2,
+    "marketing_year": "2022-2023",
+    "crop_type_id": 2,
+    "date_of_procurement": "2022-10-08",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 19,
+    "marketing_season": 2,
+    "marketing_year": "2022-2023",
+    "crop_type_id": 2,
+    "date_of_procurement": "2022-10-09",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 20,
+    "marketing_season": 2,
+    "marketing_year": "2022-2023",
+    "crop_type_id": 2,
+    "date_of_procurement": "2022-10-10",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 21,
+    "marketing_season": 2,
+    "marketing_year": "2023-2024",
+    "crop_type_id": 2,
+    "date_of_procurement": "2023-09-21",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 22,
+    "marketing_season": 2,
+    "marketing_year": "2023-2024",
+    "crop_type_id": 2,
+    "date_of_procurement": "2023-09-22",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 23,
+    "marketing_season": 2,
+    "marketing_year": "2023-2024",
+    "crop_type_id": 2,
+    "date_of_procurement": "2023-09-23",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 24,
+    "marketing_season": 2,
+    "marketing_year": "2023-2024",
+    "crop_type_id": 2,
+    "date_of_procurement": "2023-09-24",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 25,
+    "marketing_season": 2,
+    "marketing_year": "2023-2024",
+    "crop_type_id": 2,
+    "date_of_procurement": "2023-09-25",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 26,
+    "marketing_season": 2,
+    "marketing_year": "2023-2024",
+    "crop_type_id": 2,
+    "date_of_procurement": "2023-09-26",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 27,
+    "marketing_season": 2,
+    "marketing_year": "2023-2024",
+    "crop_type_id": 2,
+    "date_of_procurement": "2023-09-27",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 28,
+    "marketing_season": 2,
+    "marketing_year": "2023-2024",
+    "crop_type_id": 2,
+    "date_of_procurement": "2023-09-28",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 29,
+    "marketing_season": 2,
+    "marketing_year": "2023-2024",
+    "crop_type_id": 2,
+    "date_of_procurement": "2023-09-29",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 30,
+    "marketing_season": 2,
+    "marketing_year": "2023-2024",
+    "crop_type_id": 2,
+    "date_of_procurement": "2023-09-30",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 31,
+    "marketing_season": 2,
+    "marketing_year": "2023-2024",
+    "crop_type_id": 2,
+    "date_of_procurement": "2023-10-01",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 32,
+    "marketing_season": 2,
+    "marketing_year": "2023-2024",
+    "crop_type_id": 2,
+    "date_of_procurement": "2023-10-02",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 33,
+    "marketing_season": 2,
+    "marketing_year": "2023-2024",
+    "crop_type_id": 2,
+    "date_of_procurement": "2023-10-03",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 34,
+    "marketing_season": 2,
+    "marketing_year": "2023-2024",
+    "crop_type_id": 2,
+    "date_of_procurement": "2023-10-04",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 35,
+    "marketing_season": 2,
+    "marketing_year": "2023-2024",
+    "crop_type_id": 2,
+    "date_of_procurement": "2023-10-05",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 36,
+    "marketing_season": 2,
+    "marketing_year": "2023-2024",
+    "crop_type_id": 2,
+    "date_of_procurement": "2023-10-06",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 37,
+    "marketing_season": 2,
+    "marketing_year": "2023-2024",
+    "crop_type_id": 2,
+    "date_of_procurement": "2023-10-07",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 38,
+    "marketing_season": 2,
+    "marketing_year": "2023-2024",
+    "crop_type_id": 2,
+    "date_of_procurement": "2023-10-08",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 39,
+    "marketing_season": 2,
+    "marketing_year": "2023-2024",
+    "crop_type_id": 2,
+    "date_of_procurement": "2023-10-09",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 40,
+    "marketing_season": 2,
+    "marketing_year": "2023-2024",
+    "crop_type_id": 2,
+    "date_of_procurement": "2023-10-10",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 41,
+    "marketing_season": 2,
+    "marketing_year": "2024-2025",
+    "crop_type_id": 2,
+    "date_of_procurement": "2024-09-21",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 42,
+    "marketing_season": 2,
+    "marketing_year": "2024-2025",
+    "crop_type_id": 2,
+    "date_of_procurement": "2024-09-22",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 43,
+    "marketing_season": 2,
+    "marketing_year": "2024-2025",
+    "crop_type_id": 2,
+    "date_of_procurement": "2024-09-23",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 44,
+    "marketing_season": 2,
+    "marketing_year": "2024-2025",
+    "crop_type_id": 2,
+    "date_of_procurement": "2024-09-24",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 45,
+    "marketing_season": 2,
+    "marketing_year": "2024-2025",
+    "crop_type_id": 2,
+    "date_of_procurement": "2024-09-25",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 46,
+    "marketing_season": 2,
+    "marketing_year": "2024-2025",
+    "crop_type_id": 2,
+    "date_of_procurement": "2024-09-26",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 47,
+    "marketing_season": 2,
+    "marketing_year": "2024-2025",
+    "crop_type_id": 2,
+    "date_of_procurement": "2024-09-27",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 48,
+    "marketing_season": 2,
+    "marketing_year": "2024-2025",
+    "crop_type_id": 2,
+    "date_of_procurement": "2024-09-28",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 49,
+    "marketing_season": 2,
+    "marketing_year": "2024-2025",
+    "crop_type_id": 2,
+    "date_of_procurement": "2024-09-29",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 50,
+    "marketing_season": 2,
+    "marketing_year": "2024-2025",
+    "crop_type_id": 2,
+    "date_of_procurement": "2024-09-30",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 51,
+    "marketing_season": 2,
+    "marketing_year": "2024-2025",
+    "crop_type_id": 2,
+    "date_of_procurement": "2024-10-01",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 52,
+    "marketing_season": 2,
+    "marketing_year": "2024-2025",
+    "crop_type_id": 2,
+    "date_of_procurement": "2024-10-02",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 53,
+    "marketing_season": 2,
+    "marketing_year": "2024-2025",
+    "crop_type_id": 2,
+    "date_of_procurement": "2024-10-03",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 54,
+    "marketing_season": 2,
+    "marketing_year": "2024-2025",
+    "crop_type_id": 2,
+    "date_of_procurement": "2024-10-04",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 55,
+    "marketing_season": 2,
+    "marketing_year": "2024-2025",
+    "crop_type_id": 2,
+    "date_of_procurement": "2024-10-05",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 56,
+    "marketing_season": 2,
+    "marketing_year": "2024-2025",
+    "crop_type_id": 2,
+    "date_of_procurement": "2024-10-06",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 57,
+    "marketing_season": 2,
+    "marketing_year": "2024-2025",
+    "crop_type_id": 2,
+    "date_of_procurement": "2024-10-07",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 58,
+    "marketing_season": 2,
+    "marketing_year": "2024-2025",
+    "crop_type_id": 2,
+    "date_of_procurement": "2024-10-08",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 59,
+    "marketing_season": 2,
+    "marketing_year": "2024-2025",
+    "crop_type_id": 2,
+    "date_of_procurement": "2024-10-09",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 60,
+    "marketing_season": 2,
+    "marketing_year": "2024-2025",
+    "crop_type_id": 2,
+    "date_of_procurement": "2024-10-10",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 61,
+    "marketing_season": 2,
+    "marketing_year": "2025-2026",
+    "crop_type_id": 2,
+    "date_of_procurement": "2025-09-21",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 62,
+    "marketing_season": 2,
+    "marketing_year": "2025-2026",
+    "crop_type_id": 2,
+    "date_of_procurement": "2025-09-22",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 63,
+    "marketing_season": 2,
+    "marketing_year": "2025-2026",
+    "crop_type_id": 2,
+    "date_of_procurement": "2025-09-23",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 64,
+    "marketing_season": 2,
+    "marketing_year": "2025-2026",
+    "crop_type_id": 2,
+    "date_of_procurement": "2025-09-24",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 65,
+    "marketing_season": 2,
+    "marketing_year": "2025-2026",
+    "crop_type_id": 2,
+    "date_of_procurement": "2025-09-25",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 66,
+    "marketing_season": 2,
+    "marketing_year": "2025-2026",
+    "crop_type_id": 2,
+    "date_of_procurement": "2025-09-26",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 67,
+    "marketing_season": 2,
+    "marketing_year": "2025-2026",
+    "crop_type_id": 2,
+    "date_of_procurement": "2025-09-27",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 68,
+    "marketing_season": 2,
+    "marketing_year": "2025-2026",
+    "crop_type_id": 2,
+    "date_of_procurement": "2025-09-28",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 69,
+    "marketing_season": 2,
+    "marketing_year": "2025-2026",
+    "crop_type_id": 2,
+    "date_of_procurement": "2025-09-29",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 70,
+    "marketing_season": 2,
+    "marketing_year": "2025-2026",
+    "crop_type_id": 2,
+    "date_of_procurement": "2025-09-30",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 71,
+    "marketing_season": 2,
+    "marketing_year": "2025-2026",
+    "crop_type_id": 2,
+    "date_of_procurement": "2025-10-01",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 72,
+    "marketing_season": 2,
+    "marketing_year": "2025-2026",
+    "crop_type_id": 2,
+    "date_of_procurement": "2025-10-02",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 73,
+    "marketing_season": 2,
+    "marketing_year": "2025-2026",
+    "crop_type_id": 2,
+    "date_of_procurement": "2025-10-03",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 74,
+    "marketing_season": 2,
+    "marketing_year": "2025-2026",
+    "crop_type_id": 2,
+    "date_of_procurement": "2025-10-04",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 75,
+    "marketing_season": 2,
+    "marketing_year": "2025-2026",
+    "crop_type_id": 2,
+    "date_of_procurement": "2025-10-05",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 76,
+    "marketing_season": 2,
+    "marketing_year": "2025-2026",
+    "crop_type_id": 2,
+    "date_of_procurement": "2025-10-06",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 77,
+    "marketing_season": 2,
+    "marketing_year": "2025-2026",
+    "crop_type_id": 2,
+    "date_of_procurement": "2025-10-07",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 78,
+    "marketing_season": 2,
+    "marketing_year": "2025-2026",
+    "crop_type_id": 2,
+    "date_of_procurement": "2025-10-08",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 79,
+    "marketing_season": 2,
+    "marketing_year": "2025-2026",
+    "crop_type_id": 2,
+    "date_of_procurement": "2025-10-09",
+    "daily_quantity": 0.0
+  },
+  {
+    "id": 80,
+    "marketing_season": 2,
+    "marketing_year": "2025-2026",
+    "crop_type_id": 2,
+    "date_of_procurement": "2025-10-10",
+    "daily_quantity": 0.0
   }
 ]
